@@ -12,4 +12,13 @@
     <string name="login_password">Password를 입력하세요</string>
     <string name="login_goToRegister">김일정이 처음이신가요? <u>회원가입</u></string>
 
+    <string name="register_email">이메일을 입력해 주세요</string>
+    <string name="register_verifyEmail">이메일 인증</string>
+    <string name="register_verificationCode">인증번호를 입력해 주세요</string>
+    <string name="register_checkEmailVerified">확인하기</string>
+    <string name="register_userId">아이디를 입력해 주세요</string>
+    <string name="register_checkUserIdDuplicate">중복 확인</string>
+    <string name="register_password">Password를 입력하세요</string>
+    <string name="register_repeatPassword">Password를 한번 더 입력하세요</string>
+    <string name="register_passwordFormatHint">비밀번호는 숫자 + 문자를 사용하여 8글자 이상 15글자 이하로 만들어 주세요.</string>
 </resources>
