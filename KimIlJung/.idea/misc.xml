@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable/all_button_primary.xml" value="0.205" />
         <entry key="app/src/main/res/drawable/all_text_primary.xml" value="0.205" />
         <entry key="app/src/main/res/drawable/auth_button_check.xml" value="0.2455" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.155" />
         <entry key="app/src/main/res/layout/activity/activity_start.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.247222900390625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.38958333333333334" />

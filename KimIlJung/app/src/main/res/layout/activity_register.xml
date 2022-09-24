@@ -37,7 +37,8 @@
                 android:layout_marginBottom="0dp"
                 android:layout_weight="1"
                 android:hint="@string/register_email"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:autofillHints="" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_register_verifyEmail"
@@ -56,7 +57,8 @@
                 android:layout_marginBottom="0dp"
                 android:layout_weight="1"
                 android:hint="@string/register_verificationCode"
-                android:inputType="number" />
+                android:inputType="number"
+                android:autofillHints="" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_register_checkEmailVerified"
@@ -75,7 +77,8 @@
                 android:layout_marginBottom="0dp"
                 android:layout_weight="1"
                 android:hint="@string/register_userId"
-                android:inputType="text" />
+                android:inputType="text"
+                android:autofillHints="" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_register_checkUserIdDuplicate"
@@ -92,7 +95,9 @@
                 style="@style/Widget.EditText.Primary"
                 android:layout_marginBottom="0dp"
                 android:layout_weight="1"
-                android:hint="@string/register_password" />
+                android:hint="@string/register_password"
+                android:autofillHints=""
+                android:inputType="textPassword" />
         </TableRow>
 
         <TableRow android:gravity="center">
@@ -102,7 +107,9 @@
                 style="@style/Widget.EditText.Primary"
                 android:layout_marginBottom="0dp"
                 android:layout_weight="1"
-                android:hint="@string/register_repeatPassword" />
+                android:hint="@string/register_repeatPassword"
+                android:autofillHints=""
+                android:inputType="textPassword" />
         </TableRow>
     </TableLayout>
 
