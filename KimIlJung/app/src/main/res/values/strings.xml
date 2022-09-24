@@ -3,6 +3,8 @@
 
     <string name="login">로그인</string>
     <string name="register">회원가입</string>
+    
+    <string name="start_loginWithEmail"><u>이메일로 로그인하기</u></string>
 
     <string name="login_email">Email을 입력하세요</string>
     <string name="login_password">Password를 입력하세요</string>
