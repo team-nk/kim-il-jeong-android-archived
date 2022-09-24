@@ -49,7 +49,7 @@
         </LinearLayout>
 
         <TextView
-            style="@style/Widget.TextView.Primary"
+            style="@style/Widget.TextView.Auth.Primary"
             android:layout_marginTop="201dp"
             android:text="@string/login_goToRegister"
             app:layout_constraintEnd_toEndOf="parent"
