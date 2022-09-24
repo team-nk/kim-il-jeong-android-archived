@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">Kim Il Jung</string>
+    <string name="app_name">김일정</string>
+
+    <string name="login">로그인</string>
+    <string name="register">회원가입</string>
+
+    <string name="login_email">Email을 입력하세요</string>
+    <string name="login_password">Password를 입력하세요</string>
+    <string name="login_goToRegister">김일정이 처음이신가요? <u>회원가입</u></string>
+
 </resources>
