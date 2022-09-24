@@ -1,7 +1,8 @@
-package com.teamnk.kimiljung
+package com.teamnk.kimiljung.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.teamnk.kimiljung.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
