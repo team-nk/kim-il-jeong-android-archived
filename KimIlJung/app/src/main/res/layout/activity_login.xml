@@ -43,12 +43,14 @@
                 android:inputType="textPassword" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_login_login"
                 style="@style/Widget.Button.Primary"
                 android:text="@string/login" />
 
         </LinearLayout>
 
         <TextView
+            android:id="@+id/tv_login_goToRegister"
             style="@style/Widget.TextView.Auth.Primary"
             android:layout_marginTop="201dp"
             android:text="@string/login_goToRegister"
