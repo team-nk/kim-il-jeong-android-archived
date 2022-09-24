@@ -7,6 +7,7 @@
         <item name="android:layout_height">40dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:paddingStart">16dp</item>
+        <item name="android:fontFamily">@font/notosans_kr</item>
         <item name="android:layout_marginBottom">14dp</item>
         <item name="android:textColor">@color/color_text</item>
         <item name="android:textColorHint">@color/color_text_deactivation</item>
@@ -16,6 +17,7 @@
     <style name="Widget.Button.Primary" parent="Widget.AppCompat.Button">
         <item name="android:textSize">15sp</item>
         <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/notosans_kr</item>
         <item name="android:layout_height">40dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:textColor">@color/color_surface</item>
@@ -26,16 +28,47 @@
     <style name="Widget.TextView.Auth.Primary" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">14sp</item>
         <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/notosans_kr</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/color_text</item>
     </style>
 
-    <style name="Widget.TextView.Auth.Start" parent="Widget.AppCompat.TextView">
+    <style name="Widget.TextView.Auth.StartWithEmail" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">16sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/notosans_kr</item>
         <item name="android:textColor">@color/color_text</item>
     </style>
+
+    <style name="Widget.TextView.Auth.MainTitle" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">28sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/notosans_kr</item>
+        <item name="android:textColor">@color/color_text</item>
+    </style>
+
+    <style name="Widget.TextView.Auth.Register.Hint" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">10sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/notosans_kr</item>
+        <item name="android:textColor">@color/color_strong_explanation</item>
+    </style>
+
+    <style name="Widget.Button.Auth.Register.Check" parent="Widget.AppCompat.Button">
+        <item name="android:textSize">15sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/notosans_kr</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/color_text</item>
+    </style>
+
 </resources>
