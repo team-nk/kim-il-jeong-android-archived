@@ -12,6 +12,7 @@
     <color name="color_surface">#FFFFFF</color>
     <color name="color_surface2">#EBEDF4</color>
     <color name="color_text">#53677F</color>
+    <color name="color_error">#FF9090</color>
 
     <color name="color_text_deactivation">#C1C3CA</color>
     <color name="color_strong_explanation">#757575</color>

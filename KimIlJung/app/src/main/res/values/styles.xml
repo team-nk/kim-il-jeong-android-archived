@@ -56,8 +56,8 @@
     <style name="Widget.TextView.Auth.Register.Hint" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">10sp</item>
         <item name="android:gravity">center</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:textStyle">bold</item>
         <item name="android:fontFamily">@font/notosans_kr</item>
         <item name="android:textColor">@color/color_strong_explanation</item>
     </style>
@@ -71,6 +71,15 @@
         <item name="android:background">@drawable/auth_button_check</item>
         <item name="android:textColor">@color/color_text</item>
         <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="Widget.TextView.Auth.Register.Error" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:fontFamily">@font/notosans_kr</item>
+        <item name="android:textColor">@color/color_error</item>
     </style>
 
 </resources>
