@@ -1,9 +1,8 @@
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- TODO dataBinding -->
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,7 +16,8 @@
             android:layout_marginTop="148dp"
             android:src="@drawable/initial_login_logo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/logo_description" />
 
         <LinearLayout
             android:id="@+id/layout_login_info"
@@ -34,13 +34,15 @@
                 android:id="@+id/et_login_email"
                 style="@style/Widget.EditText.Primary"
                 android:hint="@string/login_email"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:autofillHints="" />
 
             <EditText
                 android:id="@+id/et_login_password"
                 style="@style/Widget.EditText.Primary"
                 android:hint="@string/login_password"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:autofillHints="" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_login_login"
