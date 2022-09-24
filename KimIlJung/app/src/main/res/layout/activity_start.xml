@@ -46,7 +46,7 @@
 
         <TextView
             android:id="@+id/tv_start_loginWithEmail"
-            style="@style/Widget.TextView.Auth.Start"
+            style="@style/Widget.TextView.Auth.StartWithEmail"
             android:layout_marginBottom="103dp"
             android:text="@string/start_loginWithEmail"
             app:layout_constraintBottom_toBottomOf="parent"
