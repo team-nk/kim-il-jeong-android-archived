@@ -1,3 +1,32 @@
 <resources>
-    <string name="app_name">Kim Il Jung</string>
+    <string name="app_name">김일정</string>
+
+    <string name="login">로그인</string>
+    <string name="register">회원가입</string>
+
+    <string name="signUp">Sign Up</string>
+
+    <string name="start_loginWithEmail"><u>이메일로 로그인하기</u></string>
+
+    <string name="login_email">Email을 입력하세요</string>
+    <string name="login_password">Password를 입력하세요</string>
+    <string name="login_goToRegister">김일정이 처음이신가요? <u>회원가입</u></string>
+
+    <string name="register_email">이메일을 입력해 주세요</string>
+    <string name="register_verifyEmail">이메일 인증</string>
+    <string name="register_verificationCode">인증번호를 입력해 주세요</string>
+    <string name="register_checkEmailVerified">확인하기</string>
+    <string name="register_userId">아이디를 입력해 주세요</string>
+    <string name="register_checkUserIdDuplicate">중복 확인</string>
+    <string name="register_password">Password를 입력하세요</string>
+    <string name="register_repeatPassword">Password를 한번 더 입력하세요</string>
+    <string name="register_passwordFormatHint">비밀번호는 숫자 + 문자를 사용하여 8글자 이상 15글자 이하로 만들어 주세요.</string>
+    <string name="register_next">다음</string>
+    <string name="register_error_missingIdDuplicationCheck">아이디 중복 확인을 해 주세요.</string>
+    <string name="register_error_missingEmailVerification">이메일 인증을 해 주세요.</string>
+    <string name="register_error_passwordIncorrect">비밀번호가 다릅니다.</string>
+    <string name="logo_description">Kim il jeong Logo</string>
+    <string name="google_social_login">Google Social Login</string>
+    <string name="kakao_social_login">Kakao Social Login</string>
+
 </resources>

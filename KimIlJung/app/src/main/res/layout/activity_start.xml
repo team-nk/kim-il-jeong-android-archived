@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- TODO dataBinding -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.StartActivity">
+
+        <ImageView
+            android:id="@+id/img_start_text_logo"
+            android:layout_width="260dp"
+            android:layout_height="112dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="148dp"
+            android:contentDescription="@string/logo_description"
+            android:src="@drawable/initial_login_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/layout_start_socialLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/tv_start_loginWithEmail"
+            app:layout_constraintEnd_toEndOf="@id/tv_start_loginWithEmail"
+            app:layout_constraintStart_toStartOf="@id/tv_start_loginWithEmail">
+
+            <ImageView
+                android:id="@+id/img_start_loginWithGoogle"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:layout_marginEnd="30dp"
+                android:contentDescription="@string/google_social_login"
+                android:src="@drawable/google_start_logo" />
+
+            <ImageView
+                android:id="@+id/img_start_loginWithKakao"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:contentDescription="@string/kakao_social_login"
+                android:src="@drawable/kakao_start_logo" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_start_loginWithEmail"
+            style="@style/Widget.TextView.Auth.StartWithEmail"
+            android:layout_marginBottom="103dp"
+            android:text="@string/start_loginWithEmail"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

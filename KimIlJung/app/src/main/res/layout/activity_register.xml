@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.RegisterActivity">
+
+    <TextView
+        android:id="@+id/tv_register_mainTitle"
+        style="@style/Widget.TextView.Auth.MainTitle"
+        android:layout_marginTop="40dp"
+        android:text="@string/signUp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/tableLayout_register_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4">
+
+        <TableRow
+            android:layout_marginBottom="14dp"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/et_register_email"
+                style="@style/Widget.EditText.Primary"
+                android:layout_marginEnd="11dp"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="1"
+                android:hint="@string/register_email"
+                android:inputType="textEmailAddress"
+                android:autofillHints="" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_register_verifyEmail"
+                style="@style/Widget.Button.Auth.Register.Check"
+                android:text="@string/register_verifyEmail" />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginBottom="14dp"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/et_register_verificationCode"
+                style="@style/Widget.EditText.Primary"
+                android:layout_marginEnd="11dp"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="1"
+                android:hint="@string/register_verificationCode"
+                android:inputType="number"
+                android:autofillHints="" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_register_checkEmailVerified"
+                style="@style/Widget.Button.Auth.Register.Check"
+                android:text="@string/register_checkEmailVerified" />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginBottom="14dp"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/et_register_userId"
+                style="@style/Widget.EditText.Primary"
+                android:layout_marginEnd="11dp"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="1"
+                android:hint="@string/register_userId"
+                android:inputType="text"
+                android:autofillHints="" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_register_checkUserIdDuplicate"
+                style="@style/Widget.Button.Auth.Register.Check"
+                android:text="@string/register_checkUserIdDuplicate" />
+        </TableRow>
+
+        <TableRow
+            android:layout_marginBottom="14dp"
+            android:gravity="center">
+
+            <EditText
+                android:id="@+id/et_register_password"
+                style="@style/Widget.EditText.Primary"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="1"
+                android:hint="@string/register_password"
+                android:autofillHints=""
+                android:inputType="textPassword" />
+        </TableRow>
+
+        <TableRow android:gravity="center">
+
+            <EditText
+                android:id="@+id/et_register_repeatPassword"
+                style="@style/Widget.EditText.Primary"
+                android:layout_marginBottom="0dp"
+                android:layout_weight="1"
+                android:hint="@string/register_repeatPassword"
+                android:autofillHints=""
+                android:inputType="textPassword" />
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/tv_register_hint"
+        style="@style/Widget.TextView.Auth.Register.Hint"
+        android:text="@string/register_passwordFormatHint"
+        app:layout_constraintEnd_toEndOf="@id/tableLayout_register_info"
+        app:layout_constraintStart_toStartOf="@id/tableLayout_register_info"
+        app:layout_constraintTop_toBottomOf="@id/tableLayout_register_info" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_register_next"
+        style="@style/Widget.Button.Primary"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/register_next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        style="@style/Widget.TextView.Auth.Register.Error"
+        app:layout_constraintBottom_toTopOf="@id/btn_register_next"
+        app:layout_constraintEnd_toEndOf="@id/btn_register_next"
+        app:layout_constraintStart_toStartOf="@id/btn_register_next"
+        tools:text="정승훈 최고." />
+</androidx.constraintlayout.widget.ConstraintLayout>
