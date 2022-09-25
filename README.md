@@ -1,2 +1,2 @@
 # kim-il-jeong-android
-NK 프로젝트 김일정 리포지토리
+Team-NK의 일정 관리 서비스 Kim il jeong의 Android repository입니다.
