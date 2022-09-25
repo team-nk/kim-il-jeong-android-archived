@@ -28,5 +28,7 @@
     <string name="logo_description">Kim il jeong Logo</string>
     <string name="google_social_login">Google Social Login</string>
     <string name="kakao_social_login">Kakao Social Login</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
