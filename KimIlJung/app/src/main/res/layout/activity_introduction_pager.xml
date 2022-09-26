@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:fontFamily="@font/notosans_kr"
-                android:text="@string/viewPager_next"
+                android:text="@string/introduction_viewpager_next"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
 
