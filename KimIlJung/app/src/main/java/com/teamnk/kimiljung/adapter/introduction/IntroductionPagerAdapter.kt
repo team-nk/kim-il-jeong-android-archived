@@ -12,7 +12,9 @@ import com.teamnk.kimiljung.R
 
 class IntroductionPagerAdapter(private val context: Context) : PagerAdapter() {
 
-    private var layoutInflater: LayoutInflater? = null
+    private val layoutInflater by lazy {
+        context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+    }
 
     private val image = intArrayOf(
         R.drawable.start_image1,
@@ -29,10 +31,9 @@ class IntroductionPagerAdapter(private val context: Context) : PagerAdapter() {
         return view == `object`
     }
 
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint("MissingInflatedId", "InflateParams")
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
-        layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        val view = layoutInflater!!.inflate(R.layout.item_introduction_pager, null)
+        val view = layoutInflater.inflate(R.layout.item_introduction_pager, null)
         val image = view.findViewById<ImageView>(R.id.img_item_viewpager)
         val viewpager = container as ViewPager
 

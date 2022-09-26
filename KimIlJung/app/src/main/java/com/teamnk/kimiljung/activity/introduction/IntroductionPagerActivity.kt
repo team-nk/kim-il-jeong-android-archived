@@ -33,7 +33,7 @@ class IntroductionPagerActivity : AppCompatActivity() {
     }
 
     private fun initNextLinearLayout() {
-        binding.linearLayoutViewPager.setOnClickListener {
+        binding.layoutViewPagerNext.setOnClickListener {
             val current = binding.vpViewPagerViewPager.currentItem
             binding.vpViewPagerViewPager.setCurrentItem(current + 1, true)
             if (current == 3) {
