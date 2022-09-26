@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activity.IntroductionPagerActivity">
+        tools:context=".activity.introduction.IntroductionPagerActivity">
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/vp_viewPager_viewPager"
