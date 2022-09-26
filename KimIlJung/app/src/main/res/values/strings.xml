@@ -25,8 +25,11 @@
     <string name="register_error_missingIdDuplicationCheck">아이디 중복 확인을 해 주세요.</string>
     <string name="register_error_missingEmailVerification">이메일 인증을 해 주세요.</string>
     <string name="register_error_passwordIncorrect">비밀번호가 다릅니다.</string>
+
     <string name="logo_description">Kim il jeong Logo</string>
     <string name="google_social_login">Google Social Login</string>
     <string name="kakao_social_login">Kakao Social Login</string>
+
+    <string name="viewPager_next">다음</string>
 
 </resources>
