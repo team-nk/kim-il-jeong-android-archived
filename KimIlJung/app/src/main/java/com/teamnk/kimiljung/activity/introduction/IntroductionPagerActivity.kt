@@ -32,7 +32,7 @@ class IntroductionPagerActivity : AppCompatActivity() {
     }
 
     private fun checkIntroductionPageShown() {
-        if(sharedPreferences.getBoolean("isIntroductionPagerActivityShown", false)) {
+        if (sharedPreferences.getBoolean("isIntroductionPagerActivityShown", false)) {
             startIntentToMainActivity()
         }
     }
@@ -48,8 +48,16 @@ class IntroductionPagerActivity : AppCompatActivity() {
             binding.vpViewPagerViewPager.setCurrentItem(current + 1, true)
             if (current == 3) {
                 startIntentToMainActivity()
-                sharedPreferencesEditor.putBoolean("isIntroductionPagerActivityShown", true).apply()
+                put("isIntroductionPagerActivityShown", true)
             }
+        }
+    }
+
+    private fun put(key: String, value: Any?) {
+        when (value) {
+            is Int -> sharedPreferencesEditor.putInt(key, value).apply()
+            is String -> sharedPreferencesEditor.putString(key, value).apply()
+            is Boolean -> sharedPreferencesEditor.putBoolean(key, value).apply()
         }
     }
 
