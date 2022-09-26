@@ -1,35 +1,41 @@
-package com.teamnk.kimiljung.activity
+package com.teamnk.kimiljung.activity.introduction
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.teamnk.kimiljung.R
-import com.teamnk.kimiljung.adapter.IntroductionPagerAdapter
-import com.teamnk.kimiljung.databinding.ActivityViewPagerBinding
+import com.teamnk.kimiljung.activity.StartActivity
+import com.teamnk.kimiljung.adapter.introduction.IntroductionPagerAdapter
+import com.teamnk.kimiljung.databinding.ActivityIntroductionPagerBinding
 import com.teamnk.kimiljung.utils.IntentUtil
 
 class IntroductionPagerActivity : AppCompatActivity() {
 
-    private val binding: ActivityViewPagerBinding by lazy {
-        DataBindingUtil.setContentView(this, R.layout.activity_view_pager)
+    private val binding: ActivityIntroductionPagerBinding by lazy {
+        DataBindingUtil.setContentView(this, R.layout.activity_introduction_pager)
+    }
+
+    private val sharedPreferences by lazy {
+        getSharedPreferences("introductionPage", MODE_PRIVATE)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding.vpViewPagerViewPager.adapter = IntroductionPagerAdapter(this)
-
-        binding.tabLayoutViewPager.setupWithViewPager(binding.vpViewPagerViewPager)
-
+        initViewPager()
         initNextLinearLayout()
-
         initTabLayout()
     }
 
+    private fun initViewPager() {
+        binding.vpViewPagerViewPager.adapter = IntroductionPagerAdapter(this)
+        binding.tabLayoutViewPager.setupWithViewPager(binding.vpViewPagerViewPager)
+    }
+
     private fun initNextLinearLayout() {
-        binding.linearLayoutViewPager.setOnClickListener {
+        binding.layoutViewPagerNext.setOnClickListener {
             val current = binding.vpViewPagerViewPager.currentItem
-            binding.vpViewPagerViewPager.setCurrentItem(current + 1, false)
+            binding.vpViewPagerViewPager.setCurrentItem(current + 1, true)
             if (current == 3) {
                 IntentUtil.startIntentClearTop(this, StartActivity::class.java)
             }
