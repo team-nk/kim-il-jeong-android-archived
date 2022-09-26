@@ -16,9 +16,12 @@ class StartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        initStartLoginText()
+    }
+
+    private fun initStartLoginText() {
         binding.tvStartLoginWithEmail.setOnClickListener {
             IntentUtil.startIntent(this, LoginActivity::class.java)
         }
-
     }
 }

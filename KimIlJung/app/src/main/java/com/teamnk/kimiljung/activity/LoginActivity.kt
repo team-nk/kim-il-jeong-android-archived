@@ -16,11 +16,19 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        initLoginButton()
+
+        initRegisterText()
+    }
+
+    private fun initLoginButton() {
         binding.btnLoginLogin.setOnClickListener {
             // Todo Server Logic
             IntentUtil.startIntentClearTop(this, MainActivity::class.java)
         }
+    }
 
+    private fun initRegisterText() {
         binding.tvLoginGoToRegister.setOnClickListener {
             IntentUtil.startIntent(this, RegisterActivity::class.java)
         }
