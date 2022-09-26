@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.adapter
+package com.teamnk.kimiljung.adapter.introduction
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -10,18 +10,19 @@ import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.teamnk.kimiljung.R
 
-class IntroductionPagerAdapter(private val context : Context) : PagerAdapter() {
+class IntroductionPagerAdapter(private val context: Context) : PagerAdapter() {
 
-    private var layoutInflater : LayoutInflater? = null
+    private var layoutInflater: LayoutInflater? = null
 
-    val Image = intArrayOf(
+    private val image = intArrayOf(
         R.drawable.start_image1,
         R.drawable.start_image2,
         R.drawable.start_image3,
         R.drawable.start_image4
     )
+
     override fun getCount(): Int {
-        return Image.size
+        return image.size
     }
 
     override fun isViewFromObject(view: View, `object`: Any): Boolean {
@@ -31,11 +32,11 @@ class IntroductionPagerAdapter(private val context : Context) : PagerAdapter() {
     @SuppressLint("MissingInflatedId")
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         layoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        val view = layoutInflater!!.inflate(R.layout.item_view_pager, null)
+        val view = layoutInflater!!.inflate(R.layout.item_introduction_pager, null)
         val image = view.findViewById<ImageView>(R.id.img_item_viewpager)
-
-        image.setImageResource(Image[position])
         val viewpager = container as ViewPager
+
+        image.setImageResource(this.image[position])
         viewpager.addView(view, 0)
 
         return view

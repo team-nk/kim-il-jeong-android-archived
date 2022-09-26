@@ -7,11 +7,15 @@
         <entry key="app/src/main/res/drawable/all_text_primary.xml" value="0.205" />
         <entry key="app/src/main/res/drawable/auth_button_check.xml" value="0.2455" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.155" />
+        <entry key="app/src/main/res/drawable/view_pager_indicator.xml" value="0.155" />
         <entry key="app/src/main/res/layout/activity/activity_start.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/activity_introduction_pager.xml" value="0.8433734939759037" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.3636077880859375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.38958333333333334" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.3563858032226564" />
         <entry key="app/src/main/res/layout/activity_start.xml" value="0.14534759521484375" />
+        <entry key="app/src/main/res/layout/activity_view_pager.xml" value="0.2526041666666667" />
+        <entry key="app/src/main/res/layout/item_view_pager.xml" value="0.2526041666666667" />
       </map>
     </option>
   </component>

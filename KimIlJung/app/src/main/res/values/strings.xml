@@ -31,5 +31,7 @@
     <string name="kakao_social_login">Kakao Social Login</string>
 
     <string name="viewPager_next">다음</string>
+    <string name="introduction_viewpager_image_introduction">Viewpager Image</string>
+    <string name="introduction_next_page_icon">Introduction Next Page Icon</string>
 
 </resources>
