@@ -47,6 +47,4 @@ class IntroductionPagerAdapter(private val context: Context) : PagerAdapter() {
         val view = `object` as View
         viewpager.removeView(view)
     }
-
-
 }
