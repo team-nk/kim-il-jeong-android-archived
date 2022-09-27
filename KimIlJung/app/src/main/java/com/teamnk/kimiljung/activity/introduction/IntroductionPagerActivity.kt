@@ -18,13 +18,23 @@ class IntroductionPagerActivity : AppCompatActivity() {
     private val sharedPreferences by lazy {
         getSharedPreferences("introductionPage", MODE_PRIVATE)
     }
+    private val sharedPreferencesEditor by lazy {
+        sharedPreferences.edit()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        checkIntroductionPageShown()
         initViewPager()
         initNextLinearLayout()
         initTabLayout()
+    }
+
+    private fun checkIntroductionPageShown() {
+        if (sharedPreferences.getBoolean("isIntroductionPagerActivityShown", false)) {
+            startIntentToMainActivity()
+        }
     }
 
     private fun initViewPager() {
@@ -37,9 +47,23 @@ class IntroductionPagerActivity : AppCompatActivity() {
             val current = binding.vpViewPagerViewPager.currentItem
             binding.vpViewPagerViewPager.setCurrentItem(current + 1, true)
             if (current == 3) {
-                IntentUtil.startIntentClearTop(this, StartActivity::class.java)
+                startIntentToMainActivity()
+                put("isIntroductionPagerActivityShown", true)
             }
         }
+    }
+
+    private fun put(key: String, value: Any?) {
+        when (value) {
+            is Int -> sharedPreferencesEditor.putInt(key, value).apply()
+            is String -> sharedPreferencesEditor.putString(key, value).apply()
+            is Boolean -> sharedPreferencesEditor.putBoolean(key, value).apply()
+        }
+    }
+
+    private fun startIntentToMainActivity() {
+        IntentUtil.startIntentClearTop(this, StartActivity::class.java)
+        finish()
     }
 
     private fun initTabLayout() {
