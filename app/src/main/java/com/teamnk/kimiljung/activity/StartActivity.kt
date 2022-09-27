@@ -1,15 +1,15 @@
 package com.teamnk.kimiljung.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.databinding.ActivityStartBinding
-import com.teamnk.kimiljung.utils.IntentUtil
+import com.teamnk.kimiljung.util.startIntent
 
 class StartActivity : AppCompatActivity() {
 
-    private val binding : ActivityStartBinding by lazy {
+    private val binding: ActivityStartBinding by lazy {
         DataBindingUtil.setContentView(this, R.layout.activity_start)
     }
 
@@ -21,7 +21,7 @@ class StartActivity : AppCompatActivity() {
 
     private fun initStartLoginText() {
         binding.tvStartLoginWithEmail.setOnClickListener {
-            IntentUtil.startIntent(this, LoginActivity::class.java)
+            startIntent(this, LoginActivity::class.java)
         }
     }
 }
