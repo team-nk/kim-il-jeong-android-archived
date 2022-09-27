@@ -5,8 +5,8 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.databinding.ActivityLoginBinding
-import com.teamnk.kimiljung.utils.startIntent
-import com.teamnk.kimiljung.utils.startIntentClearTop
+import com.teamnk.kimiljung.util.startIntent
+import com.teamnk.kimiljung.util.startIntentClearTop
 
 class LoginActivity : AppCompatActivity() {
 
@@ -25,13 +25,13 @@ class LoginActivity : AppCompatActivity() {
     private fun initLoginButton() {
         binding.btnLoginLogin.setOnClickListener {
             // Todo Server Logic
-            startIntentClearTop(this, MainActivity::class.java)
+            startIntentClearTop(baseContext, MainActivity::class.java)
         }
     }
 
     private fun initRegisterText() {
         binding.tvLoginGoToRegister.setOnClickListener {
-            startIntent(this, RegisterActivity::class.java)
+            startIntent(baseContext, RegisterActivity::class.java)
         }
     }
 }

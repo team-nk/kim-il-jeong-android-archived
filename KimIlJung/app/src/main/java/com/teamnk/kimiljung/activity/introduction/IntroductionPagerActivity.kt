@@ -7,7 +7,7 @@ import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.activity.StartActivity
 import com.teamnk.kimiljung.adapter.introduction.IntroductionPagerAdapter
 import com.teamnk.kimiljung.databinding.ActivityIntroductionPagerBinding
-import com.teamnk.kimiljung.utils.startIntentClearTop
+import com.teamnk.kimiljung.util.startIntentClearTop
 
 class IntroductionPagerActivity : AppCompatActivity() {
 
@@ -62,7 +62,7 @@ class IntroductionPagerActivity : AppCompatActivity() {
     }
 
     private fun startIntentToMainActivity() {
-        startIntentClearTop(this, StartActivity::class.java)
+        startIntentClearTop(baseContext, StartActivity::class.java)
         finish()
     }
 
