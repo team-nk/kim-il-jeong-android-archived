@@ -1,16 +1,16 @@
 package com.teamnk.kimiljung.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.teamnk.kimiljung.R
+import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityLoginBinding
-import com.teamnk.kimiljung.utils.startIntent
-import com.teamnk.kimiljung.utils.startIntentClearTop
+import com.teamnk.kimiljung.util.startIntent
+import com.teamnk.kimiljung.util.startIntentClearTop
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login) {
 
-    private val binding: ActivityLoginBinding by lazy{
+    private val binding: ActivityLoginBinding by lazy {
         DataBindingUtil.setContentView(this, R.layout.activity_login)
     }
 
@@ -33,5 +33,8 @@ class LoginActivity : AppCompatActivity() {
         binding.tvLoginGoToRegister.setOnClickListener {
             startIntent(this, RegisterActivity::class.java)
         }
+    }
+
+    override fun observeEvent() {
     }
 }
