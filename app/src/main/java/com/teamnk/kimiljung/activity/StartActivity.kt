@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.databinding.ActivityStartBinding
-import com.teamnk.kimiljung.util.startIntent
+import com.teamnk.kimiljung.utils.startIntent
 
 class StartActivity : AppCompatActivity() {
 

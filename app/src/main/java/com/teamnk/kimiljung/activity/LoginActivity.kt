@@ -5,8 +5,8 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.databinding.ActivityLoginBinding
-import com.teamnk.kimiljung.util.startIntent
-import com.teamnk.kimiljung.util.startIntentClearTop
+import com.teamnk.kimiljung.utils.startIntent
+import com.teamnk.kimiljung.utils.startIntentClearTop
 
 class LoginActivity : AppCompatActivity() {
 

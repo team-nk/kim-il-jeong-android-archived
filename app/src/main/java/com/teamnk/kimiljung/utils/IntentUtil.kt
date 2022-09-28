@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.util
+package com.teamnk.kimiljung.utils
 
 import android.content.Context
 import android.content.Intent
