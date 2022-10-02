@@ -1,7 +1,6 @@
 package com.teamnk.kimiljung.activity
 
 import android.os.Bundle
-import androidx.databinding.DataBindingUtil
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityLoginBinding
@@ -16,7 +15,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         initializeBinding(this, binding, this)
 
         initLoginButton()
-        initRegisterText()
+        initGoToRegisterText()
     }
 
     private fun initLoginButton() {
@@ -26,7 +25,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         }
     }
 
-    private fun initRegisterText() {
+    private fun initGoToRegisterText() {
         binding.tvLoginGoToRegister.setOnClickListener {
             startIntent(this, RegisterActivity::class.java)
         }
