@@ -6,9 +6,12 @@ import com.teamnk.kimiljung.activity.StartActivity
 import com.teamnk.kimiljung.adapter.introduction.IntroductionPagerAdapter
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityIntroductionPagerBinding
-import com.teamnk.kimiljung.util.*
 import com.teamnk.kimiljung.util.SharedPreferencesKeys.IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN
-import com.teamnk.kimiljung.util.SharedPreferencesNames.*
+import com.teamnk.kimiljung.util.SharedPreferencesNames.INTRODUCTION_PAGE
+import com.teamnk.kimiljung.util.initializeBinding
+import com.teamnk.kimiljung.util.initializeSharedPreferences
+import com.teamnk.kimiljung.util.putInSharedPreferences
+import com.teamnk.kimiljung.util.startIntentClearTop
 
 class IntroductionPagerActivity :
     BaseActivity<ActivityIntroductionPagerBinding>(R.layout.activity_introduction_pager) {
@@ -37,17 +40,21 @@ class IntroductionPagerActivity :
     }
 
     private fun initViewPager() {
-        binding.vpViewPagerViewPager.adapter = IntroductionPagerAdapter(this)
-        binding.tabLayoutViewPager.setupWithViewPager(binding.vpViewPagerViewPager)
+        binding.vpIntroduction.adapter = IntroductionPagerAdapter(this)
+        binding.tabLayoutIntroductionViewPager.setupWithViewPager(binding.vpIntroduction)
     }
 
     private fun initNextLinearLayout() {
-        binding.layoutViewPagerNext.setOnClickListener {
-            val current = binding.vpViewPagerViewPager.currentItem
-            binding.vpViewPagerViewPager.setCurrentItem(current + 1, true)
+        binding.viewGroupIntroductionNext.setOnClickListener {
+            val current = binding.vpIntroduction.currentItem
+            binding.vpIntroduction.setCurrentItem(current + 1, true)
             if (current == 3) {
                 moveToStartActivity()
-                putInSharedPreferences(sharedPreferencesEditor, IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN.key, true)
+                putInSharedPreferences(
+                    sharedPreferencesEditor,
+                    IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN.key,
+                    true
+                )
             }
         }
     }
@@ -58,12 +65,15 @@ class IntroductionPagerActivity :
     }
 
     private fun initTabLayout() {
-        when (binding.tabLayoutViewPager.id) {
-            0 -> binding.tabLayoutViewPager.getTabAt(0)?.select()
-            1 -> binding.tabLayoutViewPager.getTabAt(1)?.select()
-            2 -> binding.tabLayoutViewPager.getTabAt(2)?.select()
-            3 -> binding.tabLayoutViewPager.getTabAt(3)?.select()
-            4 -> binding.tabLayoutViewPager.getTabAt(4)?.select()
+        with(binding.tabLayoutIntroductionViewPager) {
+            when (this.id) {
+                0 -> getTabAt(0)?.select()
+                1 -> getTabAt(1)?.select()
+                2 -> getTabAt(2)?.select()
+                3 -> getTabAt(3)?.select()
+                4 -> getTabAt(4)?.select()
+                else -> {}
+            }
         }
     }
 }
