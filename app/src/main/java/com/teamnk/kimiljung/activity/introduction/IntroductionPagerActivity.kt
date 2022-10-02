@@ -8,7 +8,6 @@ import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityIntroductionPagerBinding
 import com.teamnk.kimiljung.util.SharedPreferencesKeys.IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN
 import com.teamnk.kimiljung.util.SharedPreferencesNames.INTRODUCTION_PAGE
-import com.teamnk.kimiljung.util.initializeBinding
 import com.teamnk.kimiljung.util.initializeSharedPreferences
 import com.teamnk.kimiljung.util.putInSharedPreferences
 import com.teamnk.kimiljung.util.startIntentClearTop
@@ -25,7 +24,6 @@ class IntroductionPagerActivity :
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initializeBinding(this, binding, this)
 
         checkIntroductionPageShown()
         initViewPager()
