@@ -10,15 +10,12 @@ import com.teamnk.kimiljung.util.startIntentClearTop
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login) {
 
-    private val binding: ActivityLoginBinding by lazy {
-        DataBindingUtil.setContentView(this, R.layout.activity_login)
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+        binding.lifecycleOwner = this
 
         initLoginButton()
-
         initRegisterText()
     }
 
@@ -33,8 +30,5 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         binding.tvLoginGoToRegister.setOnClickListener {
             startIntent(this, RegisterActivity::class.java)
         }
-    }
-
-    override fun observeEvent() {
     }
 }
