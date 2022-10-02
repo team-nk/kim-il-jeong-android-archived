@@ -11,8 +11,8 @@ class LoginViewModel(
     private val rp: LoginRepository
 ) : ViewModel() {
 
-    var success: MutableLiveData<Boolean> = MutableLiveData()
-    val failed: MutableLiveData<Boolean> = MutableLiveData()
+    private var success: MutableLiveData<Boolean> = MutableLiveData()
+    private val failed: MutableLiveData<Boolean> = MutableLiveData()
 
     suspend fun postLogin(loginRequest: LoginRequest) {
         kotlin.runCatching {

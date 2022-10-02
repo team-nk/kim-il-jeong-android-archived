@@ -1,22 +1,20 @@
 package com.teamnk.kimiljung.activity.introduction
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.activity.StartActivity
 import com.teamnk.kimiljung.adapter.introduction.IntroductionPagerAdapter
+import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityIntroductionPagerBinding
-import com.teamnk.kimiljung.util.startIntentClearTop
+import com.teamnk.kimiljung.util.*
+import com.teamnk.kimiljung.util.SharedPreferencesKeys.IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN
+import com.teamnk.kimiljung.util.SharedPreferencesNames.*
 
-class IntroductionPagerActivity : AppCompatActivity() {
-
-    private val binding: ActivityIntroductionPagerBinding by lazy {
-        DataBindingUtil.setContentView(this, R.layout.activity_introduction_pager)
-    }
+class IntroductionPagerActivity :
+    BaseActivity<ActivityIntroductionPagerBinding>(R.layout.activity_introduction_pager) {
 
     private val sharedPreferences by lazy {
-        getSharedPreferences("introductionPage", MODE_PRIVATE)
+        initializeSharedPreferences(this, INTRODUCTION_PAGE.preferencesName, MODE_PRIVATE)
     }
     private val sharedPreferencesEditor by lazy {
         sharedPreferences.edit()
@@ -24,6 +22,7 @@ class IntroductionPagerActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initializeBinding(this, binding, this)
 
         checkIntroductionPageShown()
         initViewPager()
@@ -32,8 +31,8 @@ class IntroductionPagerActivity : AppCompatActivity() {
     }
 
     private fun checkIntroductionPageShown() {
-        if (sharedPreferences.getBoolean("isIntroductionPagerActivityShown", false)) {
-            startIntentToMainActivity()
+        if (sharedPreferences.getBoolean(IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN.key, false)) {
+            moveToStartActivity()
         }
     }
 
@@ -47,21 +46,13 @@ class IntroductionPagerActivity : AppCompatActivity() {
             val current = binding.vpViewPagerViewPager.currentItem
             binding.vpViewPagerViewPager.setCurrentItem(current + 1, true)
             if (current == 3) {
-                startIntentToMainActivity()
-                put("isIntroductionPagerActivityShown", true)
+                moveToStartActivity()
+                putInSharedPreferences(sharedPreferencesEditor, IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN.key, true)
             }
         }
     }
 
-    private fun put(key: String, value: Any?) {
-        when (value) {
-            is Int -> sharedPreferencesEditor.putInt(key, value).apply()
-            is String -> sharedPreferencesEditor.putString(key, value).apply()
-            is Boolean -> sharedPreferencesEditor.putBoolean(key, value).apply()
-        }
-    }
-
-    private fun startIntentToMainActivity() {
+    private fun moveToStartActivity() {
         startIntentClearTop(this, StartActivity::class.java)
         finish()
     }

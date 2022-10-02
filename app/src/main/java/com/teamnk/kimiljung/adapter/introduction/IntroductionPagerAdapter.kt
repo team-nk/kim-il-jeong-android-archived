@@ -16,15 +16,15 @@ class IntroductionPagerAdapter(private val context: Context) : PagerAdapter() {
         context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
     }
 
-    private val image = intArrayOf(
-        R.drawable.start_image1,
-        R.drawable.start_image2,
-        R.drawable.start_image3,
-        R.drawable.start_image4
+    private val images = intArrayOf(
+        R.drawable.introduction_pager_image_1,
+        R.drawable.introduction_pager_image_2,
+        R.drawable.introduction_pager_image_3,
+        R.drawable.introduction_pager_image_4
     )
 
     override fun getCount(): Int {
-        return image.size
+        return images.size
     }
 
     override fun isViewFromObject(view: View, `object`: Any): Boolean {
@@ -37,7 +37,7 @@ class IntroductionPagerAdapter(private val context: Context) : PagerAdapter() {
         val image = view.findViewById<ImageView>(R.id.img_item_viewpager)
         val viewpager = container as ViewPager
 
-        image.setImageResource(this.image[position])
+        image.setImageResource(this.images[position])
         viewpager.addView(view, 0)
 
         return view
