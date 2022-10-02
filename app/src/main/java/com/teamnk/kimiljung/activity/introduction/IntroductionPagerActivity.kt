@@ -6,14 +6,11 @@ import androidx.databinding.DataBindingUtil
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.activity.StartActivity
 import com.teamnk.kimiljung.adapter.introduction.IntroductionPagerAdapter
+import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityIntroductionPagerBinding
 import com.teamnk.kimiljung.util.startIntentClearTop
 
-class IntroductionPagerActivity : AppCompatActivity() {
-
-    private val binding: ActivityIntroductionPagerBinding by lazy {
-        DataBindingUtil.setContentView(this, R.layout.activity_introduction_pager)
-    }
+class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>(R.layout.activity_introduction_pager) {
 
     private val sharedPreferences by lazy {
         getSharedPreferences("introductionPage", MODE_PRIVATE)
@@ -74,5 +71,9 @@ class IntroductionPagerActivity : AppCompatActivity() {
             3 -> binding.tabLayoutViewPager.getTabAt(3)?.select()
             4 -> binding.tabLayoutViewPager.getTabAt(4)?.select()
         }
+    }
+
+    override fun observeEvent() {
+        TODO("Not yet implemented")
     }
 }
