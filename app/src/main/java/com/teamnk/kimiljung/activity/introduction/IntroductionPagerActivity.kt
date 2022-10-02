@@ -6,6 +6,7 @@ import com.teamnk.kimiljung.activity.StartActivity
 import com.teamnk.kimiljung.adapter.introduction.IntroductionPagerAdapter
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityIntroductionPagerBinding
+import com.teamnk.kimiljung.util.initializeBinding
 import com.teamnk.kimiljung.util.startIntentClearTop
 
 class IntroductionPagerActivity :
@@ -20,8 +21,7 @@ class IntroductionPagerActivity :
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
-        binding.lifecycleOwner = this
+        initializeBinding(this, binding, this)
 
         checkIntroductionPageShown()
         initViewPager()
