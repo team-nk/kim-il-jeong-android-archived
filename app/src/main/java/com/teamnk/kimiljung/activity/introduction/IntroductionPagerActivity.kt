@@ -31,7 +31,7 @@ class IntroductionPagerActivity :
 
     private fun checkIntroductionPageShown() {
         if (sharedPreferences.getBoolean("isIntroductionPagerActivityShown", false)) {
-            startIntentToMainActivity()
+            moveToStartActivity()
         }
     }
 
@@ -45,7 +45,7 @@ class IntroductionPagerActivity :
             val current = binding.vpViewPagerViewPager.currentItem
             binding.vpViewPagerViewPager.setCurrentItem(current + 1, true)
             if (current == 3) {
-                startIntentToMainActivity()
+                moveToStartActivity()
                 put("isIntroductionPagerActivityShown", true)
             }
         }
@@ -59,7 +59,7 @@ class IntroductionPagerActivity :
         }
     }
 
-    private fun startIntentToMainActivity() {
+    private fun moveToStartActivity() {
         startIntentClearTop(this, StartActivity::class.java)
         finish()
     }
