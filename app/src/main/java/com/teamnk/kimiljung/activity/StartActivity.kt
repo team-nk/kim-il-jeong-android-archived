@@ -11,7 +11,6 @@ import com.teamnk.kimiljung.util.startIntent
 class StartActivity : BaseActivity<ActivityStartBinding>(R.layout.activity_start) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initializeBinding(this, binding, this)
 
         initStartLoginText()
     }
