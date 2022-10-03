@@ -17,7 +17,7 @@ fun showDialogWithSingleButton(context: Context, activity: Activity) {
             false
         )
     }
-    val dialogBuilder = AlertDialog.Builder(activity)
+    val dialogBuilder = AlertDialog.Builder(activity, R.style.SingleButtonAlertDialog)
         .setView(binding.root)
         .create()
     binding.tvDialogSingleTitle.setText(R.string.dialog_register_success_title)
