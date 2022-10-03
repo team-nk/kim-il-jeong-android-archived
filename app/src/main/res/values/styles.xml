@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <style name="SingleButtonAlertDialog">
+        <item name="android:windowBackground">@drawable/all_background_dialog</item>
+        <item name="android:windowMinWidthMajor">100%</item>
+        <item name="android:windowMinWidthMinor">100%</item>
+
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:colorBackground">?attr/colorBackgroundFloating</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
     <style name="Widget.EditText.Primary" parent="Widget.AppCompat.EditText">
         <item name="android:textSize">15sp</item>
         <item name="android:gravity">center_vertical</item>
