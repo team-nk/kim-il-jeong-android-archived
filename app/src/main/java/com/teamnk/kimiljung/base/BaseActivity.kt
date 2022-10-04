@@ -17,6 +17,6 @@ abstract class BaseActivity<B : ViewDataBinding>(
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initializeBinding(binding, this)
+        binding.lifecycleOwner = this
     }
 }
