@@ -4,6 +4,8 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.view.WindowManager
@@ -11,7 +13,7 @@ import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.databinding.DialogAllSingleButtonBinding
 
 // TODO title, descriptions parameter
-fun showDialogWithSingleButton(context: Context, activity: Activity) {
+fun showDialogWithSingleButton(context: Context) {
     val binding: DialogAllSingleButtonBinding by lazy {
         DialogAllSingleButtonBinding.inflate(
             LayoutInflater.from(context)

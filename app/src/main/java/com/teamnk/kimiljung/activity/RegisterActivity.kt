@@ -17,7 +17,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
 
     private fun initNextButton() {
         binding.btnRegisterNext.setOnClickListener {
-            showDialogWithSingleButton(this, this)
+            showDialogWithSingleButton(this)
         }
     }
 }
