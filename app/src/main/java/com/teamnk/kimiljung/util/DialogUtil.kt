@@ -26,7 +26,6 @@ fun showDialogWithSingleButton(context: Context, title: String, description: Str
     binding.tvDialogSingleTitle.text = title
     binding.tvDialogSingleDescription.text = description
     binding.btnDialogAccept.setOnClickListener {
-        // todo 로그인 페이지 로직
         functionWhenAcceptButtonClicked()
     }
 }
