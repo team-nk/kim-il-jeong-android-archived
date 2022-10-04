@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.widget.Toast
 import com.teamnk.kimiljung.databinding.DialogAllSingleButtonBinding
 
-fun showDialogWithSingleButton(context: Context, title: String, description: String) {
+fun showDialogWithSingleButton(context: Context, title: String, description: String, functionWhenAcceptButtonClicked: () -> Unit) {
     val binding: DialogAllSingleButtonBinding by lazy {
         DialogAllSingleButtonBinding.inflate(
             LayoutInflater.from(context)
@@ -27,6 +27,6 @@ fun showDialogWithSingleButton(context: Context, title: String, description: Str
     binding.tvDialogSingleDescription.text = description
     binding.btnDialogAccept.setOnClickListener {
         // todo 로그인 페이지 로직
-        Toast.makeText(context, "SignUp", Toast.LENGTH_SHORT).show()
+        functionWhenAcceptButtonClicked()
     }
 }
