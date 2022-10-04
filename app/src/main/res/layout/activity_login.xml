@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.teamnk.kimiljung.activity.auth.LoginActivity" />
+            type="com.teamnk.kimiljung.viewmodel.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -52,6 +52,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_login_login"
                 style="@style/Widget.Button.Primary"
+                android:onClick="@{() -> viewModel.postLogin}"
                 android:text="@string/login" />
 
         </LinearLayout>
