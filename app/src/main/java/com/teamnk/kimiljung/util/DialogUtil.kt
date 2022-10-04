@@ -2,6 +2,8 @@ package com.teamnk.kimiljung.util
 
 import android.app.Dialog
 import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import com.teamnk.kimiljung.databinding.DialogAllSingleButtonBinding
 
@@ -17,6 +19,7 @@ fun showDialogWithSingleButton(context: Context, title: String, description: Str
         setContentView(binding.root)
         setCancelable(false)
         show()
+        window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
     }
 
     binding.tvDialogSingleTitle.text = title
