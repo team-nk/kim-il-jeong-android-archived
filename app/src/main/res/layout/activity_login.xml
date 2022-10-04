@@ -52,7 +52,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_login_login"
                 style="@style/Widget.Button.Primary"
-                android:onClick="@{() -> viewModel.postLogin}"
+                android:onClick="@{() -> viewModel.startLogin()}"
                 android:text="@string/login" />
 
         </LinearLayout>
