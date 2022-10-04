@@ -3,52 +3,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+
+    <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="260dp"
-            android:layout_height="200dp"
-            android:background="@drawable/all_background_dialog">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/tv_dialog_single_title"
+                style="@style/Widget.TextView.Dialog.Title"
+                app:layout_constraintBottom_toTopOf="@id/tv_dialog_single_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/dialog_register_success_title" />
 
-                <TextView
-                    android:id="@+id/tv_dialog_single_title"
-                    style="@style/Widget.TextView.Dialog.Title"
-                    android:layout_marginTop="28dp"
-                    tools:text="@string/dialog_register_success_title"
-                    app:layout_constraintBottom_toTopOf="@id/tv_dialog_single_description"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/tv_dialog_single_description"
+                style="@style/Widget.TextView.Dialog.Description"
+                app:layout_constraintBottom_toTopOf="@id/btn_dialog_accept"
+                app:layout_constraintEnd_toEndOf="@id/tv_dialog_single_title"
+                app:layout_constraintStart_toStartOf="@id/tv_dialog_single_title"
+                app:layout_constraintTop_toBottomOf="@id/tv_dialog_single_title"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="@string/dialog_register_success_description" />
 
-                <TextView
-                    android:id="@+id/tv_dialog_single_description"
-                    style="@style/Widget.TextView.Dialog.Description"
-                    tools:text="@string/dialog_register_success_description"
-                    app:layout_constraintBottom_toTopOf="@id/btn_dialog_accept"
-                    app:layout_constraintEnd_toEndOf="@id/tv_dialog_single_title"
-                    app:layout_constraintStart_toStartOf="@id/tv_dialog_single_title"
-                    app:layout_constraintTop_toBottomOf="@id/tv_dialog_single_title"
-                    app:layout_constraintVertical_chainStyle="packed" />
-
-                <Button
-                    android:id="@+id/btn_dialog_accept"
-                    style="@style/Widget.Button.Primary"
-                    android:layout_height="40dp"
-                    android:layout_marginHorizontal="19dp"
-                    android:layout_marginBottom="16dp"
-                    android:text="@string/accept"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_dialog_single_description"
-                    app:layout_constraintVertical_chainStyle="packed" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
+            <Button
+                android:id="@+id/btn_dialog_accept"
+                style="@style/Widget.Button.Primary"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:text="@string/accept"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_dialog_single_description" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 </layout>
