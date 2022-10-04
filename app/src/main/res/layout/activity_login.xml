@@ -4,14 +4,14 @@
 
     <data>
         <variable
-            name="viewModel"
-            type="com.teamnk.kimiljung.activity.LoginActivity" />
+            name="viewmodel"
+            type="com.teamnk.kimiljung.activity.auth.LoginActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activity.LoginActivity">
+        tools:context=".activity.auth.LoginActivity">
 
         <ImageView
             android:id="@+id/img_login_text_logo"

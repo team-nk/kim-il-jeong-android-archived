@@ -3,7 +3,7 @@ package com.teamnk.kimiljung.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.teamnk.kimiljung.dto.LoginRequest
-import com.teamnk.kimiljung.repository.LoginRepository
+import com.teamnk.kimiljung.repository.auth.LoginRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

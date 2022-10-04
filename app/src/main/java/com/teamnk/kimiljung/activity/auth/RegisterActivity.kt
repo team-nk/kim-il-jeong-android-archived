@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.activity
+package com.teamnk.kimiljung.activity.auth
 
 import android.os.Bundle
 import com.teamnk.kimiljung.R
