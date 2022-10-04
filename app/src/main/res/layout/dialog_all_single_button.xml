@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/all_background_dialog"
         android:layout_width="260dp"
         android:layout_height="200dp">
 
@@ -20,9 +21,11 @@
             android:id="@+id/tv_dialog_single_description"
             style="@style/Widget.TextView.Dialog.Description"
             android:text="@string/dialog_register_success_description"
+            app:layout_constraintBottom_toTopOf="@id/btn_dialog_accept"
             app:layout_constraintEnd_toEndOf="@id/tv_dialog_single_title"
             app:layout_constraintStart_toStartOf="@id/tv_dialog_single_title"
-            app:layout_constraintTop_toBottomOf="@id/tv_dialog_single_title" />
+            app:layout_constraintTop_toBottomOf="@id/tv_dialog_single_title"
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <Button
             android:id="@+id/btn_dialog_accept"
@@ -31,8 +34,10 @@
             android:layout_marginHorizontal="19dp"
             android:layout_marginBottom="16dp"
             android:text="@string/accept"
+            app:layout_constraintVertical_chainStyle="packed"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_dialog_single_description" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
