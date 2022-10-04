@@ -17,7 +17,11 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
 
     private fun initNextButton() {
         binding.btnRegisterNext.setOnClickListener {
-            showDialogWithSingleButton(this)
+            showDialogWithSingleButton(
+                this,
+                getString(R.string.dialog_register_success_title),
+                getString(R.string.dialog_register_success_description)
+            )
         }
     }
 }
