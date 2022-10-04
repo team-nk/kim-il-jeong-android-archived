@@ -4,7 +4,6 @@ import android.os.Bundle
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityLoginBinding
-import com.teamnk.kimiljung.util.initializeBinding
 import com.teamnk.kimiljung.util.startIntent
 import com.teamnk.kimiljung.util.startIntentClearTop
 

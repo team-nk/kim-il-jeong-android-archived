@@ -15,6 +15,6 @@
     <color name="color_error">#FF9090</color>
 
     <color name="color_text_deactivation">#C1C3CA</color>
-    <color name="color_chapger_deactivation">#E1E1E1</color>
+    <color name="color_description">#A7B8CA</color>
     <color name="color_strong_explanation">#757575</color>
 </resources>
