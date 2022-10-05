@@ -26,15 +26,4 @@ class LoginViewModel(
             failed
         }
     }
-
-    suspend fun startLogin(id: String, password: String) {
-        viewModelScope.launch {
-            postLogin(
-                LoginRequest(
-                    id, password
-                )
-            )
-        }
-    }
-
 }

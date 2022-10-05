@@ -1,6 +1,7 @@
 package com.teamnk.kimiljung.activity.auth
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
@@ -13,7 +14,7 @@ import com.teamnk.kimiljung.viewmodel.LoginViewModel
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login) {
 
-    private val viewModel: LoginViewModel by viewModels()
+    //private val viewModel: LoginViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,9 +24,13 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
     }
 
     private fun initLoginButton() {
-        binding.btnLoginLogin.setOnClickListener {
+        /*binding.btnLoginLogin.setOnClickListener {
             // Todo Server Logic
             startIntentClearTop(this, MainActivity::class.java)
+        }*/
+
+        binding.btnLoginLogin.setOnClickListener {
+
         }
     }
 
