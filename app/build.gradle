@@ -8,14 +8,13 @@ android {
 
     defaultConfig {
         applicationId "com.teamnk.kimiljung"
-        minSdk 21
+        minSdk 23
         targetSdk 33
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -35,9 +34,9 @@ android {
 }
 
 dependencies {
-
     implementation 'me.relex:circleindicator:2.1.6'
     implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.activity:activity-ktx:1.5.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
