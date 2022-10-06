@@ -102,6 +102,7 @@
     </style>
 
     <style name="MainBottomNavigationView">
+        <item name="android:background">@drawable/background_bn</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">72dp</item>
     </style>
