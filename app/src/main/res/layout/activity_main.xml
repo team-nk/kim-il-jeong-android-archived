@@ -19,12 +19,10 @@
             android:id="@+id/bn_main"
             style="@style/MainBottomNavigationView"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:background="@color/white"
-            app:itemBackground="@android:color/transparent"
-            app:menu="@menu/menu_main_bottom_navigation"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/frameLayout_main" />
+            app:layout_constraintTop_toBottomOf="@id/frameLayout_main"
+            app:menu="@menu/menu_main_bottom_navigation" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
