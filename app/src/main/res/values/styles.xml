@@ -100,4 +100,9 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/color_description</item>
     </style>
+
+    <style name="MainBottomNavigationView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">72dp</item>
+    </style>
 </resources>
