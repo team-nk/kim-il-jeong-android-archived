@@ -37,28 +37,28 @@
 
             <EditText
                 android:id="@+id/et_login_email"
-                style="@style/Widget.EditText.Primary"
+                style="@style/EditTextPrimary"
                 android:hint="@string/login_email"
                 android:inputType="textEmailAddress"
                 android:autofillHints="" />
 
             <EditText
                 android:id="@+id/et_login_password"
-                style="@style/Widget.EditText.Primary"
+                style="@style/EditTextPrimary"
                 android:hint="@string/login_password"
                 android:inputType="textPassword"
                 android:autofillHints="" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_login_login"
-                style="@style/Widget.Button.Primary"
+                style="@style/ButtonPrimary"
                 android:text="@string/login" />
 
         </LinearLayout>
 
         <TextView
             android:id="@+id/tv_login_goToRegister"
-            style="@style/Widget.TextView.Auth.Primary"
+            style="@style/AuthTextViewPrimary"
             android:layout_marginTop="201dp"
             android:text="@string/login_goToRegister"
             app:layout_constraintEnd_toEndOf="parent"

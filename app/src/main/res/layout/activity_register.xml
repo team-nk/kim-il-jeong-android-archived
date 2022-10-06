@@ -10,7 +10,7 @@
 
         <TextView
             android:id="@+id/tv_register_mainTitle"
-            style="@style/Widget.TextView.Auth.MainTitle"
+            style="@style/AuthTextViewMainTitle"
             android:layout_marginTop="40dp"
             android:text="@string/signUp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +34,7 @@
 
                 <EditText
                     android:id="@+id/et_register_email"
-                    style="@style/Widget.EditText.Primary"
+                    style="@style/EditTextPrimary"
                     android:layout_marginEnd="11dp"
                     android:layout_marginBottom="0dp"
                     android:layout_weight="1"
@@ -44,7 +44,7 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_register_verifyEmail"
-                    style="@style/Widget.Button.Auth.Register.Check"
+                    style="@style/AuthButtonRegisterCheck"
                     android:text="@string/register_verifyEmail" />
             </TableRow>
 
@@ -54,7 +54,7 @@
 
                 <EditText
                     android:id="@+id/et_register_verificationCode"
-                    style="@style/Widget.EditText.Primary"
+                    style="@style/EditTextPrimary"
                     android:layout_marginEnd="11dp"
                     android:layout_marginBottom="0dp"
                     android:layout_weight="1"
@@ -64,7 +64,7 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_register_checkEmailVerified"
-                    style="@style/Widget.Button.Auth.Register.Check"
+                    style="@style/AuthButtonRegisterCheck"
                     android:text="@string/register_checkEmailVerified" />
             </TableRow>
 
@@ -74,7 +74,7 @@
 
                 <EditText
                     android:id="@+id/et_register_userId"
-                    style="@style/Widget.EditText.Primary"
+                    style="@style/EditTextPrimary"
                     android:layout_marginEnd="11dp"
                     android:layout_marginBottom="0dp"
                     android:layout_weight="1"
@@ -84,7 +84,7 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_register_checkUserIdDuplicate"
-                    style="@style/Widget.Button.Auth.Register.Check"
+                    style="@style/AuthButtonRegisterCheck"
                     android:text="@string/register_checkUserIdDuplicate" />
             </TableRow>
 
@@ -94,7 +94,7 @@
 
                 <EditText
                     android:id="@+id/et_register_password"
-                    style="@style/Widget.EditText.Primary"
+                    style="@style/EditTextPrimary"
                     android:layout_marginBottom="0dp"
                     android:layout_weight="1"
                     android:autofillHints=""
@@ -106,7 +106,7 @@
 
                 <EditText
                     android:id="@+id/et_register_repeatPassword"
-                    style="@style/Widget.EditText.Primary"
+                    style="@style/EditTextPrimary"
                     android:layout_marginBottom="0dp"
                     android:layout_weight="1"
                     android:autofillHints=""
@@ -117,7 +117,7 @@
 
         <TextView
             android:id="@+id/tv_register_hint"
-            style="@style/Widget.TextView.Auth.Register.Hint"
+            style="@style/AuthTextViewRegisterHint"
             android:text="@string/register_passwordFormatHint"
             app:layout_constraintEnd_toEndOf="@id/tableLayout_register_info"
             app:layout_constraintStart_toStartOf="@id/tableLayout_register_info"
@@ -125,7 +125,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_register_next"
-            style="@style/Widget.Button.Primary"
+            style="@style/ButtonPrimary"
             android:layout_marginHorizontal="20dp"
             android:layout_marginBottom="40dp"
             android:text="@string/register_next"
@@ -134,7 +134,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            style="@style/Widget.TextView.Auth.Register.Error"
+            style="@style/AuthTextViewRegisterError"
             app:layout_constraintBottom_toTopOf="@id/btn_register_next"
             app:layout_constraintEnd_toEndOf="@id/btn_register_next"
             app:layout_constraintStart_toStartOf="@id/btn_register_next"
