@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bn_main_calendar"
+        android:enabled="true"
+        android:icon="@drawable/icon_calendar"
+        android:title="@string/calendar" />
+    <item
+        android:id="@+id/bn_main_map"
+        android:enabled="true"
+        android:icon="@drawable/icon_user"
+        android:title="@string/map" />
+    <item
+        android:id="@+id/bn_main_notification"
+        android:enabled="true"
+        android:icon="@drawable/icon_notification"
+        android:title="@string/notification" />
+    <item
+        android:id="@+id/bn_main_user"
+        android:enabled="true"
+        android:icon="@drawable/icon_user"
+        android:title="@string/user" />
+</menu>
