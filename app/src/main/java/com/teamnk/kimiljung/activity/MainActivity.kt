@@ -7,6 +7,8 @@ import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityMainBinding
 import com.teamnk.kimiljung.fragment.CalendarFragment
 import com.teamnk.kimiljung.fragment.MapFragment
+import com.teamnk.kimiljung.fragment.NotificationFragment
+import com.teamnk.kimiljung.fragment.UserFragment
 
 class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
@@ -16,6 +18,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     }
     private val mapFragment by lazy {
         MapFragment()
+    }
+    private val notificationFragment by lazy {
+        NotificationFragment()
+    }
+    private val userFragment by lazy {
+        UserFragment()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,6 +46,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
                     }
                     R.id.bn_main_map -> {
                         changeFragment(mapFragment)
+                    }
+                    R.id.bn_main_notification -> {
+                        changeFragment(notificationFragment)
+                    }
+                    R.id.bn_main_user -> {
+                        changeFragment(userFragment)
                     }
                 }
                 true
