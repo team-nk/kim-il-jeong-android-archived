@@ -4,20 +4,20 @@
         android:id="@+id/bn_main_calendar"
         android:enabled="true"
         android:icon="@drawable/icon_calendar"
-        android:title="@string/calendar" />
+        android:title="@string/menu_nb_main_selected" />
     <item
         android:id="@+id/bn_main_map"
         android:enabled="true"
         android:icon="@drawable/icon_map"
-        android:title="@string/map" />
+        android:title="@string/menu_nb_main_selected" />
     <item
         android:id="@+id/bn_main_notification"
         android:enabled="true"
         android:icon="@drawable/icon_notification"
-        android:title="@string/notification" />
+        android:title="@string/menu_nb_main_selected" />
     <item
         android:id="@+id/bn_main_user"
         android:enabled="true"
         android:icon="@drawable/icon_user"
-        android:title="@string/user" />
+        android:title="@string/menu_nb_main_selected" />
 </menu>
