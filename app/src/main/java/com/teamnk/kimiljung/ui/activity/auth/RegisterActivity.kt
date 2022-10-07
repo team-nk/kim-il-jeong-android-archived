@@ -1,7 +1,6 @@
-package com.teamnk.kimiljung.activity.auth
+package com.teamnk.kimiljung.ui.activity.auth
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.viewModels
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity

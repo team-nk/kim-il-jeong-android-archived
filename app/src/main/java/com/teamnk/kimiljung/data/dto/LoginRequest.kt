@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.dto
+package com.teamnk.kimiljung.data.dto
 
 data class LoginRequest(
     val email: String,

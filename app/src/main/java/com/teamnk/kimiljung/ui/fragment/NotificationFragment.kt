@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.fragment
+package com.teamnk.kimiljung.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,8 +8,8 @@ import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseFragment
 import com.teamnk.kimiljung.databinding.FragmentCalendarBinding
 
-class UserFragment : BaseFragment<FragmentCalendarBinding>(
-    R.layout.fragment_user
+class NotificationFragment : BaseFragment<FragmentCalendarBinding>(
+    R.layout.fragment_notification
 ) {
 
     override fun onCreate(savedInstanceState: Bundle?) {

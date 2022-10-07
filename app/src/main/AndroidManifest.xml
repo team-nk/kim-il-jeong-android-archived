@@ -17,7 +17,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".activity.introduction.IntroductionPagerActivity"
+            android:name=".ui.activity.introduction.IntroductionPagerActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,16 +26,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.auth.RegisterActivity"
+            android:name=".ui.activity.auth.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.auth.LoginActivity"
+            android:name=".ui.activity.auth.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.StartActivity"
+            android:name=".ui.activity.StartActivity"
             android:exported="false"/>
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".ui.activity.MainActivity"
             android:exported="true" />
     </application>
 

@@ -1,9 +1,9 @@
-package com.teamnk.kimiljung.activity.introduction
+package com.teamnk.kimiljung.ui.activity.introduction
 
 import android.os.Bundle
 import com.teamnk.kimiljung.R
-import com.teamnk.kimiljung.activity.StartActivity
-import com.teamnk.kimiljung.adapter.introduction.IntroductionPagerAdapter
+import com.teamnk.kimiljung.ui.activity.StartActivity
+import com.teamnk.kimiljung.ui.adapter.introduction.IntroductionPagerAdapter
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityIntroductionPagerBinding
 import com.teamnk.kimiljung.util.SharedPreferencesKeys.IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN
