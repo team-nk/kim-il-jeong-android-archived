@@ -110,7 +110,7 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">72dp</item>
         <item name="android:itemBackground">@android:color/transparent</item>
-        <item name="android:paddingHorizontal" tools:targetApi="o">64dp</item>
+        <item name="android:paddingHorizontal" tools:targetApi="o">48dp</item>
         <item name="labelVisibilityMode">unlabeled</item>
         <item name="itemIconSize">32dp</item>
     </style>
