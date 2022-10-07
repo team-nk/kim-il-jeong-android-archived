@@ -1,6 +1,7 @@
 package com.teamnk.kimiljung.activity.auth
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
@@ -20,6 +21,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
 
         initNextButton()
         initEmailVerifyButton()
+        initCheckEmailVerifyButton()
     }
 
     private fun initNextButton() {
@@ -45,4 +47,20 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
             }
         }
     }
+
+    private fun initCheckEmailVerifyButton(){
+        binding.btnRegisterCheckEmailVerified.setOnClickListener {
+            val key = binding.etRegisterVerificationCode.text
+            if(key.isNotBlank()){
+                // TODO Verify Code Logic
+                viewModel.run {
+
+                }
+            } else{
+
+            }
+
+        }
+    }
+
 }
