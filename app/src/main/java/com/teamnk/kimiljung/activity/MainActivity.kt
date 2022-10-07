@@ -10,7 +10,7 @@ import com.teamnk.kimiljung.fragment.CalendarFragment
 class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
 ) {
-    val calendarFragment by lazy {
+    private val calendarFragment by lazy {
         CalendarFragment()
     }
 
@@ -18,6 +18,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
         super.onCreate(savedInstanceState)
 
         initBottomNavigationView()
+        initFragment()
+    }
+
+    private fun initFragment() {
+        changeFragment(calendarFragment)
     }
 
     private fun initBottomNavigationView() {
