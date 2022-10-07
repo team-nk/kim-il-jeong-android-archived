@@ -20,8 +20,8 @@ abstract class BaseFragment<B : ViewDataBinding>(
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
+
         return binding.root
     }
 }
