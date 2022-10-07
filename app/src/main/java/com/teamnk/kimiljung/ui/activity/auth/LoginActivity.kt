@@ -30,7 +30,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
             startIntentClearTop(this, MainActivity::class.java)
 
             if (email == "" || password == "") {
-                TODO("toast")
+                // TODO toast
             } else {
                 val loginRequest = LoginRequest(email, password)
                 viewModel.postLogin(loginRequest)
@@ -48,12 +48,12 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
         viewModel.run {
             success.observe(this@LoginActivity) {
                 it.run {
-                    TODO("Toast")
+                    // TODO toast
                 }
             }
             failed.observe(this@LoginActivity) {
                 it.run {
-                    TODO("toast")
+                    // TODO toast
                 }
             }
         }
