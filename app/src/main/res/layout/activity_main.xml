@@ -17,8 +17,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-        <!-- TODO BottomNavigationView Icons tint -->
+        <!-- TODO indicator shape -->
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bn_main"
             style="@style/MainBottomNavigationView"
