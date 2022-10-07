@@ -9,17 +9,17 @@ import com.teamnk.kimiljung.databinding.ActivityLoginBinding
 import com.teamnk.kimiljung.dto.LoginRequest
 import com.teamnk.kimiljung.util.startIntent
 import com.teamnk.kimiljung.viewmodel.LoginViewModel
-import kotlin.math.log
 
-class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login) {
+class LoginActivity : BaseActivity<ActivityLoginBinding>(
+    R.layout.activity_login
+) {
 
     private val viewModel by viewModels<LoginViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         initLoginButton()
-        initGoToRegisterText()
+        initGoToRegister()
     }
 
     private fun initLoginButton() {
@@ -37,7 +37,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(R.layout.activity_login
         }
     }
 
-    private fun initGoToRegisterText() {
+    private fun initGoToRegister() {
         binding.tvLoginGoToRegister.setOnClickListener {
             startIntent(this, RegisterActivity::class.java)
         }
