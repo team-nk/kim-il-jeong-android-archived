@@ -113,5 +113,6 @@
         <item name="android:paddingHorizontal" tools:targetApi="o">48dp</item>
         <item name="labelVisibilityMode">unlabeled</item>
         <item name="itemIconSize">32dp</item>
+        <item name="itemIconTint">@drawable/bn_main_color_selector</item>
     </style>
 </resources>

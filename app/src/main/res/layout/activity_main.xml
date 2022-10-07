@@ -21,7 +21,6 @@
         <!-- TODO BottomNavigationView Icons tint -->
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bn_main"
-            app:itemIconTint="@drawable/bn_main_color_selector"
             style="@style/MainBottomNavigationView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
