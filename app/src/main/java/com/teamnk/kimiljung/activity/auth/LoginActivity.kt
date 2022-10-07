@@ -19,7 +19,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initLoginButton()
-        initGoToRegister()
+        initGoToRegisterText()
     }
 
     private fun initLoginButton() {
@@ -37,7 +37,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
         }
     }
 
-    private fun initGoToRegister() {
+    private fun initGoToRegisterText() {
         binding.tvLoginGoToRegister.setOnClickListener {
             startIntent(this, RegisterActivity::class.java)
         }
