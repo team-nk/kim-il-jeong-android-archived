@@ -13,6 +13,6 @@ class RegisterRepository(
     suspend fun verifyCode(verifyCodeRequest: VerifyCodeRequest) =
         registerApi.verifyCode(verifyCodeRequest)
 
-    suspend fun idDuplicate(duplicateRequest: DuplicateRequest) =
-        registerApi.idDuplicate(duplicateRequest)
+    suspend fun checkIdDuplicated(duplicateRequest: DuplicateRequest) =
+        registerApi.checkIdDuplicated(duplicateRequest)
 }
