@@ -15,7 +15,7 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="148dp"
             android:contentDescription="@string/logo_description"
-            android:src="@drawable/start_logo_initial"
+            android:src="@drawable/all_logo_login"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,7 +47,7 @@
 
         <TextView
             android:id="@+id/tv_start_loginWithEmail"
-            style="@style/Widget.TextView.Auth.StartWithEmail"
+            style="@style/AuthTextViewStartWithEmail"
             android:layout_marginBottom="103dp"
             android:text="@string/start_loginWithEmail"
             app:layout_constraintBottom_toBottomOf="parent"

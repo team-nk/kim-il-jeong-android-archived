@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">김일정</string>
 
+    <string name="user">사용자</string>
+    <string name="calendar">일정</string>
+    <string name="map">지도</string>
+    <string name="notification">공지사항</string>
+
     <string name="login">로그인</string>
     <string name="register">회원가입</string>
     <string name="accept">확인</string>
@@ -39,5 +44,4 @@
     <string name="introduction_next_page_icon">Introduction Next Page Icon</string>
     <string name="dialog_register_success_title">회원가입이 완료되었습니다!</string>
     <string name="dialog_register_success_description">확인 버튼을 누르면 로그인 화면으로 이동\n합니다. 다시 로그인 해 주세요.</string>
-
 </resources>
