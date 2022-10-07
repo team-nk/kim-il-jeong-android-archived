@@ -65,4 +65,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
             .replace(R.id.container_main, fragment)
             .commit()
     }
+
+    override fun observeEvent() {}
 }
