@@ -1,5 +1,6 @@
 package com.teamnk.kimiljung.data
 
+import com.teamnk.kimiljung.dto.DuplicateRequest
 import com.teamnk.kimiljung.dto.VerifyCodeRequest
 import com.teamnk.kimiljung.dto.VerifyRequest
 import retrofit2.http.Body
@@ -15,5 +16,10 @@ interface RegisterApi {
     @POST("verify/code")
     suspend fun verifyCode(
         @Body verifyCodeRequest: VerifyCodeRequest
+    )
+
+    @POST("duplicate")
+    suspend fun idDuplicate(
+        @Body duplicateRequest: DuplicateRequest
     )
 }

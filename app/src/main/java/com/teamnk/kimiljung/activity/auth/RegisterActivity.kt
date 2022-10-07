@@ -22,16 +22,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
         initNextButton()
         initEmailVerifyButton()
         initCheckEmailVerifyButton()
-    }
-
-    private fun initNextButton() {
-        binding.btnRegisterNext.setOnClickListener {
-            showDialogWithSingleButton(
-                this,
-                getString(R.string.dialog_register_success_title),
-                getString(R.string.dialog_register_success_description)
-            ) { startIntent(this, LoginActivity::class.java) }
-        }
+        initCheckUserIdDuplicate()
     }
 
     private fun initEmailVerifyButton() {
@@ -59,8 +50,30 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
             } else{
 
             }
-
         }
     }
 
+    private fun initCheckUserIdDuplicate() {
+        binding.btnRegisterCheckUserIdDuplicate.setOnClickListener {
+            val userId = binding.etRegisterUserId.text.toString()
+            if(userId.isNotBlank()){
+                // TODO UserIdDuplicate Logic
+                viewModel.run {
+
+                }
+            } else{
+
+            }
+        }
+    }
+
+    private fun initNextButton() {
+        binding.btnRegisterNext.setOnClickListener {
+            showDialogWithSingleButton(
+                this,
+                getString(R.string.dialog_register_success_title),
+                getString(R.string.dialog_register_success_description)
+            ) { startIntent(this, LoginActivity::class.java) }
+        }
+    }
 }

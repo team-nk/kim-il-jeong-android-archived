@@ -2,6 +2,7 @@ package com.teamnk.kimiljung.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.teamnk.kimiljung.dto.DuplicateRequest
 import com.teamnk.kimiljung.dto.VerifyCodeRequest
 import com.teamnk.kimiljung.dto.VerifyRequest
 import com.teamnk.kimiljung.repository.auth.RegisterRepository
@@ -30,6 +31,18 @@ class RegisterViewModel(
         kotlin.runCatching {
             withContext(Dispatchers.Default){
                 rp.verifyCode(verifyCodeRequest)
+            }
+        }.onSuccess {
+            success
+        }.onFailure {
+            failed
+        }
+    }
+
+    suspend fun userIdDuplicate(duplicateRequest: DuplicateRequest){
+        kotlin.runCatching {
+            withContext(Dispatchers.Default){
+                rp.idDuplicate(duplicateRequest)
             }
         }.onSuccess {
             success
