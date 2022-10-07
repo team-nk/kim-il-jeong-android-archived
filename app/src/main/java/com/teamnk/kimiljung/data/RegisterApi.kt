@@ -6,6 +6,8 @@ import com.teamnk.kimiljung.dto.VerifyRequest
 import retrofit2.http.Body
 import retrofit2.http.POST
 
+// TODO apply interfaces api specs
+
 interface RegisterApi {
 
     @POST("verify")
