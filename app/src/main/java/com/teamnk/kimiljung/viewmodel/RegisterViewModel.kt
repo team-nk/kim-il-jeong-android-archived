@@ -42,7 +42,7 @@ class RegisterViewModel(
     suspend fun userIdDuplicate(duplicateRequest: DuplicateRequest){
         kotlin.runCatching {
             withContext(Dispatchers.Default){
-                rp.idDuplicate(duplicateRequest)
+                rp.checkIdDuplicated(duplicateRequest)
             }
         }.onSuccess {
             success
