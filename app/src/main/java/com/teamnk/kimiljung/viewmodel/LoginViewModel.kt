@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.teamnk.kimiljung.dto.LoginRequest
+import com.teamnk.kimiljung.data.dto.LoginRequest
 import com.teamnk.kimiljung.repository.auth.LoginRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

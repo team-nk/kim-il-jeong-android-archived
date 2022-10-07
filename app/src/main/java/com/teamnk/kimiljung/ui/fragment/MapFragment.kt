@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.fragment
+package com.teamnk.kimiljung.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

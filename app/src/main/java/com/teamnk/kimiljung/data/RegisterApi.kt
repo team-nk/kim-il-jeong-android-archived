@@ -1,8 +1,8 @@
 package com.teamnk.kimiljung.data
 
-import com.teamnk.kimiljung.dto.DuplicateRequest
-import com.teamnk.kimiljung.dto.VerifyCodeRequest
-import com.teamnk.kimiljung.dto.VerifyRequest
+import com.teamnk.kimiljung.data.dto.DuplicateRequest
+import com.teamnk.kimiljung.data.dto.VerifyCodeRequest
+import com.teamnk.kimiljung.data.dto.VerifyRequest
 import retrofit2.http.Body
 import retrofit2.http.POST
 

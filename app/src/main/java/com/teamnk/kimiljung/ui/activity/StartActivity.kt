@@ -1,8 +1,8 @@
-package com.teamnk.kimiljung.activity
+package com.teamnk.kimiljung.ui.activity
 
 import android.os.Bundle
 import com.teamnk.kimiljung.R
-import com.teamnk.kimiljung.activity.auth.LoginActivity
+import com.teamnk.kimiljung.ui.activity.auth.LoginActivity
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityStartBinding
 import com.teamnk.kimiljung.util.startIntent

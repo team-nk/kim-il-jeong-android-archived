@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.adapter.introduction
+package com.teamnk.kimiljung.ui.adapter.introduction
 
 import android.annotation.SuppressLint
 import android.content.Context

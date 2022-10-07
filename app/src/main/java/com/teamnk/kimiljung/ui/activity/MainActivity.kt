@@ -1,14 +1,14 @@
-package com.teamnk.kimiljung.activity
+package com.teamnk.kimiljung.ui.activity
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityMainBinding
-import com.teamnk.kimiljung.fragment.CalendarFragment
-import com.teamnk.kimiljung.fragment.MapFragment
-import com.teamnk.kimiljung.fragment.NotificationFragment
-import com.teamnk.kimiljung.fragment.UserFragment
+import com.teamnk.kimiljung.ui.fragment.CalendarFragment
+import com.teamnk.kimiljung.ui.fragment.MapFragment
+import com.teamnk.kimiljung.ui.fragment.NotificationFragment
+import com.teamnk.kimiljung.ui.fragment.UserFragment
 
 class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
