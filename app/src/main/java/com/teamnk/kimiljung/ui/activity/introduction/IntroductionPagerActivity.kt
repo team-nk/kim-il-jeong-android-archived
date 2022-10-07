@@ -2,10 +2,10 @@ package com.teamnk.kimiljung.ui.activity.introduction
 
 import android.os.Bundle
 import com.teamnk.kimiljung.R
-import com.teamnk.kimiljung.ui.activity.StartActivity
-import com.teamnk.kimiljung.ui.adapter.introduction.IntroductionPagerAdapter
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityIntroductionPagerBinding
+import com.teamnk.kimiljung.ui.activity.StartActivity
+import com.teamnk.kimiljung.ui.adapter.introduction.IntroductionPagerAdapter
 import com.teamnk.kimiljung.util.SharedPreferencesKeys.IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN
 import com.teamnk.kimiljung.util.SharedPreferencesNames.INTRODUCTION_PAGE
 import com.teamnk.kimiljung.util.initializeSharedPreferences
@@ -74,4 +74,6 @@ class IntroductionPagerActivity :
             }
         }
     }
+
+    override fun observeEvent() {}
 }
