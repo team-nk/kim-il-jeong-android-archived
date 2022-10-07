@@ -21,7 +21,7 @@ interface RegisterApi {
     )
 
     @POST("duplicate")
-    suspend fun checkEmailDuplicated(
+    suspend fun checkIdDuplicated(
         @Body duplicateRequest: DuplicateRequest
     )
 }
