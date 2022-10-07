@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     
     <color name="color_main">#76A9FF</color>
+    <color name="color_background">#F9FAFE</color>
     <color name="color_surface">#FFFFFF</color>
     <color name="color_surface2">#EBEDF4</color>
     <color name="color_text">#53677F</color>
