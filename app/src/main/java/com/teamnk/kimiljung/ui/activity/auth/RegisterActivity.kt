@@ -38,15 +38,15 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
         }
     }
 
-    private fun initCheckEmailVerifyButton(){
+    private fun initCheckEmailVerifyButton() {
         binding.btnRegisterCheckEmailVerified.setOnClickListener {
             val key = binding.etRegisterVerificationCode.text
-            if(key.isNotBlank()){
+            if (key.isNotBlank()) {
                 // TODO Verify Code Logic
                 viewModel.run {
 
                 }
-            } else{
+            } else {
 
             }
         }
@@ -55,12 +55,12 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     private fun initCheckUserIdDuplicate() {
         binding.btnRegisterCheckUserIdDuplicate.setOnClickListener {
             val userId = binding.etRegisterUserId.text.toString()
-            if(userId.isNotBlank()){
+            if (userId.isNotBlank()) {
                 // TODO UserIdDuplicate Logic
                 viewModel.run {
 
                 }
-            } else{
+            } else {
 
             }
         }
@@ -75,4 +75,6 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
             ) { startIntent(this, LoginActivity::class.java) }
         }
     }
+
+    override fun observeEvent() {}
 }
