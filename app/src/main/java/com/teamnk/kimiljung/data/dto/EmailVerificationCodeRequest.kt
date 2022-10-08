@@ -1,5 +1,5 @@
 package com.teamnk.kimiljung.data.dto
 // TODO refactor
-data class VerifyCodeRequest(
+data class EmailVerificationCodeRequest(
     val code : Int
 )
