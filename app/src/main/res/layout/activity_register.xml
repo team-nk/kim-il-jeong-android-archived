@@ -118,6 +118,7 @@
         <TextView
             android:id="@+id/tv_register_hint"
             style="@style/AuthTextViewRegisterHint"
+            android:layout_marginTop="10dp"
             android:text="@string/register_passwordFormatHint"
             app:layout_constraintEnd_toEndOf="@id/tableLayout_register_info"
             app:layout_constraintStart_toStartOf="@id/tableLayout_register_info"
@@ -135,6 +136,7 @@
 
         <TextView
             style="@style/AuthTextViewRegisterError"
+            android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toTopOf="@id/btn_register_next"
             app:layout_constraintEnd_toEndOf="@id/btn_register_next"
             app:layout_constraintStart_toStartOf="@id/btn_register_next"
