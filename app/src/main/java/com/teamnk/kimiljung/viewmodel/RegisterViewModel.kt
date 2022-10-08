@@ -15,7 +15,7 @@ class RegisterViewModel(
     private var success : MutableLiveData<Boolean> = MutableLiveData()
     private var failed : MutableLiveData<Boolean> = MutableLiveData()
 
-    suspend fun emailVerify(verifyRequest: VerifyRequest){
+    suspend fun verifyEmail(verifyRequest: VerifyRequest){
         kotlin.runCatching {
             withContext(Dispatchers.Default){
                 rp.verify(verifyRequest)
