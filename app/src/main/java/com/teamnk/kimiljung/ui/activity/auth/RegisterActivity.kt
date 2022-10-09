@@ -1,14 +1,12 @@
 package com.teamnk.kimiljung.ui.activity.auth
 
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityRegisterBinding
 import com.teamnk.kimiljung.util.showDialogWithSingleButton
-import com.teamnk.kimiljung.util.startIntent
-import com.teamnk.kimiljung.viewmodel.LoginViewModel
+import com.teamnk.kimiljung.util.startIntentClearTop
 import com.teamnk.kimiljung.viewmodel.RegisterViewModel
 
 class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
@@ -77,7 +75,9 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
                 this,
                 getString(R.string.dialog_register_success_title),
                 getString(R.string.dialog_register_success_description)
-            ) { startIntent(this, LoginActivity::class.java) }
+            ) {
+                startIntentClearTop(this, LoginActivity::class.java)
+            }
         }
     }
 
