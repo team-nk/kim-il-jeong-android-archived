@@ -37,10 +37,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
             val password = binding.etLoginPassword.text.toString()
 
             if (email == "" || password == "") {
-                // TODO toast
+                // TODO success message
             } else {
                 val loginRequest = LoginRequest(email, password)
                 viewModel.postLogin(loginRequest)
+                // TODO remove test toast
                 Toast.makeText(this, "...", Toast.LENGTH_SHORT).show()
             }
         }
