@@ -9,9 +9,8 @@ import com.teamnk.kimiljung.data.dto.LoginRequest
 import com.teamnk.kimiljung.repository.auth.LoginRepository
 import kotlinx.coroutines.launch
 
-class LoginViewModel(
-    private val repository: LoginRepository
-) : ViewModel() {
+class LoginViewModel : ViewModel() {
+    private val repository = LoginRepository()
 
     var success: MutableLiveData<Boolean> = MutableLiveData()
     var failure: MutableLiveData<Boolean> = MutableLiveData()
