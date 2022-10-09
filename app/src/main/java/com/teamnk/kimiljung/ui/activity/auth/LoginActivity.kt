@@ -18,7 +18,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
 
     // TODO MOVE
     private val viewModel by lazy {
-        ViewModelProvider(this).get(LoginViewModel::class.java)
+        ViewModelProvider(this)[LoginViewModel::class.java]
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
