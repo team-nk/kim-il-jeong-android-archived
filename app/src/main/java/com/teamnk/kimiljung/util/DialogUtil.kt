@@ -19,8 +19,8 @@ fun showDialogWithSingleButton(context: Context, title: String, description: Str
     with(dialog) {
         setContentView(binding.root)
         setCancelable(false)
-        show()
         window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        show()
     }
 
     binding.tvDialogSingleTitle.text = title
