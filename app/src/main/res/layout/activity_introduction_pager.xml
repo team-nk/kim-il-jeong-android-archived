@@ -3,28 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.teamnk.kimiljung.viewmodel.IntroductionPagerViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activity.introduction.IntroductionPagerActivity">
+        tools:context=".ui.activity.introduction.IntroductionPagerActivity">
 
         <androidx.viewpager.widget.ViewPager
-            android:id="@+id/vp_viewPager_viewPager"
-            android:layout_width="match_parent"
-            android:layout_height="498dp"
-            android:layout_marginTop="64dp"
+            android:id="@+id/vp_introduction"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@id/tabLayout_introduction_viewPager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayout_viewPager"
+            android:id="@+id/tabLayout_introduction_viewPager"
             android:layout_width="112dp"
             android:layout_height="12dp"
-            android:layout_marginTop="64dp"
-            app:layout_constraintEnd_toEndOf="@id/vp_viewPager_viewPager"
-            app:layout_constraintStart_toStartOf="@id/vp_viewPager_viewPager"
-            app:layout_constraintTop_toBottomOf="@id/vp_viewPager_viewPager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/vp_introduction"
+            app:layout_constraintStart_toStartOf="@id/vp_introduction"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.8"
             app:tabBackground="@drawable/view_pager_indicator"
             app:tabIndicator="@null">
 
@@ -51,22 +60,22 @@
         </com.google.android.material.tabs.TabLayout>
 
         <LinearLayout
-            android:id="@+id/layout_viewPager_next"
+            android:id="@+id/viewGroup_introduction_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="64dp"
             android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/vp_introduction"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toStartOf="@id/vp_introduction"
+            app:layout_constraintTop_toBottomOf="@id/tabLayout_introduction_viewPager"
             tools:ignore="UseCompoundDrawables">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:fontFamily="@font/notosans_kr"
                 android:text="@string/introduction_viewpager_next"
                 android:textColor="@color/black"
                 android:textSize="15sp" />
@@ -75,7 +84,7 @@
                 android:layout_width="24dp"
                 android:layout_height="22dp"
                 android:contentDescription="@string/introduction_next_page_icon"
-                android:src="@drawable/next_icon" />
+                android:src="@drawable/introduction_icon_next" />
 
         </LinearLayout>
 

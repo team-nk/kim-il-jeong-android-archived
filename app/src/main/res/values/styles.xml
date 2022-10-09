@@ -1,85 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Widget.EditText.Primary" parent="Widget.AppCompat.EditText">
+    <style name="BackgroundAll">
+        <item name="android:background">@color/color_background</item>
+    </style>
+
+    <style name="EditTextPrimary" parent="Widget.AppCompat.EditText">
         <item name="android:textSize">15sp</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">40dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:paddingStart">16dp</item>
-        <item name="android:fontFamily">@font/notosans_kr</item>
         <item name="android:layout_marginBottom">14dp</item>
+        <item name="android:gravity">center_vertical</item>
         <item name="android:textColor">@color/color_text</item>
         <item name="android:textColorHint">@color/color_text_deactivation</item>
         <item name="android:background">@drawable/all_text_primary</item>
     </style>
 
-    <style name="Widget.Button.Primary" parent="Widget.AppCompat.Button">
+    <style name="ButtonPrimary" parent="Widget.AppCompat.Button">
         <item name="android:textSize">15sp</item>
+        <item name="android:textAlignment">center</item>
         <item name="android:gravity">center</item>
-        <item name="android:fontFamily">@font/notosans_kr</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">40dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:textColor">@color/color_surface</item>
         <item name="android:background">@drawable/all_button_primary</item>
         <item name="android:stateListAnimator">@null</item>
     </style>
 
-    <style name="Widget.TextView.Auth.Primary" parent="Widget.AppCompat.TextView">
+    <style name="AuthTextViewPrimary" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">14sp</item>
         <item name="android:gravity">center</item>
-        <item name="android:fontFamily">@font/notosans_kr</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/color_text</item>
     </style>
 
-    <style name="Widget.TextView.Auth.StartWithEmail" parent="Widget.AppCompat.TextView">
+    <style name="AuthTextViewStartWithEmail" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">16sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:fontFamily">@font/notosans_kr</item>
         <item name="android:textColor">@color/color_text</item>
     </style>
 
-    <style name="Widget.TextView.Auth.MainTitle" parent="Widget.AppCompat.TextView">
+    <style name="AuthTextViewMainTitle" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">28sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:fontFamily">@font/notosans_kr</item>
         <item name="android:textColor">@color/color_text</item>
     </style>
 
-    <style name="Widget.TextView.Auth.Register.Hint" parent="Widget.AppCompat.TextView">
+    <style name="AuthTextViewRegisterHint" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">10sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:fontFamily">@font/notosans_kr</item>
         <item name="android:textColor">@color/color_strong_explanation</item>
     </style>
 
-    <style name="Widget.Button.Auth.Register.Check" parent="Widget.AppCompat.Button">
+    <style name="AuthButtonRegisterCheck" parent="Widget.AppCompat.Button">
         <item name="android:textSize">15sp</item>
         <item name="android:gravity">center</item>
-        <item name="android:fontFamily">@font/notosans_kr</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">40dp</item>
         <item name="android:layout_width">80dp</item>
         <item name="android:background">@drawable/auth_button_check</item>
         <item name="android:textColor">@color/color_text</item>
         <item name="android:stateListAnimator">@null</item>
     </style>
 
-    <style name="Widget.TextView.Auth.Register.Error" parent="Widget.AppCompat.TextView">
+    <style name="AuthTextViewRegisterError" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">12sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:fontFamily">@font/notosans_kr</item>
         <item name="android:textColor">@color/color_error</item>
     </style>
 
+    <style name="DialogTextViewTitle" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_text</item>
+    </style>
+
+    <style name="DialogTextViewDescription" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">13sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_description</item>
+    </style>
+
+    <style name="MainBottomNavigationView">
+        <item name="android:background">@drawable/background_bn</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:paddingHorizontal" tools:targetApi="o">48dp</item>
+        <item name="labelVisibilityMode">selected</item>
+        <item name="itemTextColor">@drawable/bn_main_color_selector</item>
+        <item name="itemIconSize">32dp</item>
+        <item name="itemIconTint">@drawable/bn_main_color_selector</item>
+    </style>
 </resources>
