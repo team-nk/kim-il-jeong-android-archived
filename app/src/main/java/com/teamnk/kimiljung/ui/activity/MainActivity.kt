@@ -13,6 +13,7 @@ import com.teamnk.kimiljung.ui.fragment.UserFragment
 class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
 ) {
+
     private val calendarFragment by lazy {
         CalendarFragment()
     }
