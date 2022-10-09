@@ -2,18 +2,23 @@ package com.teamnk.kimiljung.ui.activity.auth
 
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityRegisterBinding
 import com.teamnk.kimiljung.util.showDialogWithSingleButton
 import com.teamnk.kimiljung.util.startIntent
+import com.teamnk.kimiljung.viewmodel.LoginViewModel
 import com.teamnk.kimiljung.viewmodel.RegisterViewModel
 
 class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     R.layout.activity_register
 ) {
 
-    private val viewModel by viewModels<RegisterViewModel>()
+    // TODO MOVE
+    private val viewModel by lazy {
+        ViewModelProvider(this)[RegisterViewModel::class.java]
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
