@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.teamnk.kimiljung.viewmodel.LoginViewModel" />
@@ -17,12 +18,15 @@
             android:id="@+id/img_login_text_logo"
             android:layout_width="260dp"
             android:layout_height="112dp"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="148dp"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="@string/logo_description"
             android:src="@drawable/all_logo_login"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/layout_login_info"
+            app:layout_constraintEnd_toEndOf="@id/layout_login_info"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="@id/layout_login_info"
             app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/logo_description" />
+            app:layout_constraintVertical_bias="0.8" />
 
         <LinearLayout
             android:id="@+id/layout_login_info"
@@ -38,16 +42,16 @@
             <EditText
                 android:id="@+id/et_login_email"
                 style="@style/EditTextPrimary"
+                android:autofillHints=""
                 android:hint="@string/login_email"
-                android:inputType="textEmailAddress"
-                android:autofillHints="" />
+                android:inputType="textEmailAddress" />
 
             <EditText
                 android:id="@+id/et_login_password"
                 style="@style/EditTextPrimary"
+                android:autofillHints=""
                 android:hint="@string/login_password"
-                android:inputType="textPassword"
-                android:autofillHints="" />
+                android:inputType="textPassword" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_login_login"
@@ -59,11 +63,12 @@
         <TextView
             android:id="@+id/tv_login_goToRegister"
             style="@style/AuthTextViewPrimary"
-            android:layout_marginTop="201dp"
             android:text="@string/login_goToRegister"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/layout_login_info" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/layout_login_info"
+            app:layout_constraintStart_toStartOf="@id/layout_login_info"
+            app:layout_constraintTop_toBottomOf="@id/layout_login_info"
+            app:layout_constraintVertical_bias="0.8" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
