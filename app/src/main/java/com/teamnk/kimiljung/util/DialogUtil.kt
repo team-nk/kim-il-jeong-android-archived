@@ -9,24 +9,25 @@ import android.widget.Toast
 import com.teamnk.kimiljung.databinding.DialogAllSingleButtonBinding
 
 fun showDialogWithSingleButton(context: Context, title: String, description: String, functionWhenAcceptButtonClicked: () -> Unit) {
+
     val binding: DialogAllSingleButtonBinding by lazy {
         DialogAllSingleButtonBinding.inflate(
             LayoutInflater.from(context)
         )
     }
-
-    val dialog = Dialog(context)
-    with(dialog) {
+    val dialog = Dialog(context).apply {
         setContentView(binding.root)
         setCancelable(false)
         window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         show()
     }
-
-    binding.tvDialogSingleTitle.text = title
-    binding.tvDialogSingleDescription.text = description
-    binding.btnDialogAccept.setOnClickListener {
-        functionWhenAcceptButtonClicked()
-        dialog.dismiss()
+    with(binding) {
+        tvDialogSingleTitle.text = title
+        tvDialogSingleDescription.text = description
+        btnDialogAccept.setOnClickListener {
+            functionWhenAcceptButtonClicked()
+            
+            dialog.dismiss()
+        }
     }
 }
