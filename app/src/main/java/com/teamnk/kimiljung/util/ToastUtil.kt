@@ -2,11 +2,17 @@ package com.teamnk.kimiljung.util
 
 import android.content.Context
 import android.widget.Toast
-// TODO use snackBar instead of Toast
-fun print(context: Context, message : String){
-    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+import android.widget.Toast.LENGTH_SHORT
+import android.widget.Toast.LENGTH_LONG
+
+fun showShortToast(context: Context, text: String) {
+    showToast(context, text, LENGTH_SHORT)
 }
 
-fun errorPrint(context: Context){
-    Toast.makeText(context, "서버 통신 에러", Toast.LENGTH_SHORT).show()
+fun showLongToast(context: Context, text: String) {
+    showToast(context, text, LENGTH_LONG)
+}
+
+fun showToast(context: Context, text: String, length: Int) {
+    Toast.makeText(context, text, length).show()
 }

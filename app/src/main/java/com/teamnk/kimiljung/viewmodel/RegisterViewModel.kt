@@ -5,20 +5,21 @@ import androidx.lifecycle.ViewModel
 import com.teamnk.kimiljung.data.dto.UserIdDuplicationRequest
 import com.teamnk.kimiljung.data.dto.EmailVerificationCodeRequest
 import com.teamnk.kimiljung.data.dto.EmailVerificationRequest
-import com.teamnk.kimiljung.repository.auth.RegisterRepository
+import com.teamnk.kimiljung.data.repository.auth.RegisterRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class RegisterViewModel(
-    private val rp : RegisterRepository
+    private val repository : RegisterRepository
 ) : ViewModel() {
+
     private var success : MutableLiveData<Boolean> = MutableLiveData()
     private var failed : MutableLiveData<Boolean> = MutableLiveData()
 
     suspend fun verifyEmail(EmailVerificationRequest: EmailVerificationRequest){
         kotlin.runCatching {
             withContext(Dispatchers.Default){
-                rp.verifyEmail(EmailVerificationRequest)
+                repository.verifyEmail(EmailVerificationRequest)
             }
         }.onSuccess {
             success
@@ -30,7 +31,7 @@ class RegisterViewModel(
     suspend fun checkEmailVerificationCode(emailVerificationCodeRequest: EmailVerificationCodeRequest){
         kotlin.runCatching {
             withContext(Dispatchers.Default){
-                rp.checkEmailVerificationCode(emailVerificationCodeRequest)
+                repository.checkEmailVerificationCode(emailVerificationCodeRequest)
             }
         }.onSuccess {
             success
@@ -42,7 +43,7 @@ class RegisterViewModel(
     suspend fun checkUserIdDuplication(userIdDuplicationRequest: UserIdDuplicationRequest){
         kotlin.runCatching {
             withContext(Dispatchers.Default){
-                rp.checkUserIdDuplication(userIdDuplicationRequest)
+                repository.checkUserIdDuplication(userIdDuplicationRequest)
             }
         }.onSuccess {
             success

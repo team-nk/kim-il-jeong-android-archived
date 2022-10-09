@@ -2,7 +2,7 @@ package com.teamnk.kimiljung.ui.activity.auth
 
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.data.dto.LoginRequest
@@ -16,10 +16,17 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
     R.layout.activity_login
 ) {
 
-    private val viewModel by viewModels<LoginViewModel>()
+    // TODO MOVE to BaseActivity
+    private val viewModel by lazy {
+        ViewModelProvider(this)[LoginViewModel::class.java]
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // TODO
+        binding.viewModel = viewModel
+
         initLoginButton()
         initGoToRegisterText()
     }
@@ -30,10 +37,12 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
             val password = binding.etLoginPassword.text.toString()
 
             if (email == "" || password == "") {
-                // TODO toast
+                // TODO success message
             } else {
                 val loginRequest = LoginRequest(email, password)
                 viewModel.postLogin(loginRequest)
+                // TODO remove test toast
+                Toast.makeText(this, "...", Toast.LENGTH_SHORT).show()
             }
         }
     }

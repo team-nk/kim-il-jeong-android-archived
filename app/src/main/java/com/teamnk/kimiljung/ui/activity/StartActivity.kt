@@ -7,7 +7,9 @@ import com.teamnk.kimiljung.databinding.ActivityStartBinding
 import com.teamnk.kimiljung.ui.activity.auth.LoginActivity
 import com.teamnk.kimiljung.util.startIntent
 
-class StartActivity : BaseActivity<ActivityStartBinding>(R.layout.activity_start) {
+class StartActivity : BaseActivity<ActivityStartBinding>(
+    R.layout.activity_start
+) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.data
+package com.teamnk.kimiljung.data.api
 
 import com.teamnk.kimiljung.data.dto.EmailVerificationCodeRequest
 import com.teamnk.kimiljung.data.dto.EmailVerificationRequest
@@ -8,9 +8,8 @@ import retrofit2.http.POST
 
 // TODO apply interfaces api specs
 
-interface RegisterApi {
-
-    @POST("verify")
+interface RegisterAPI {
+    @POST("user")
     suspend fun verifyEmail(
         @Body emailVerificationRequest: EmailVerificationRequest
     )

@@ -6,19 +6,21 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.teamnk.kimiljung.data.dto.LoginRequest
-import com.teamnk.kimiljung.repository.auth.LoginRepository
+import com.teamnk.kimiljung.data.repository.auth.LoginRepository
 import kotlinx.coroutines.launch
 
 class LoginViewModel(
-    private val rp: LoginRepository
+    private val repository: LoginRepository = LoginRepository()
 ) : ViewModel() {
+
     var success: MutableLiveData<Boolean> = MutableLiveData()
     var failure: MutableLiveData<Boolean> = MutableLiveData()
 
     fun postLogin(loginRequest: LoginRequest) {
+        Log.d(TAG, "postLogin: ")
         viewModelScope.launch {
             kotlin.runCatching {
-                rp.login(loginRequest)
+                repository.login(loginRequest)
             }.onSuccess {
                 success
             }.onFailure {
