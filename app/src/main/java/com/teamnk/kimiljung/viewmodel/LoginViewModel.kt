@@ -10,15 +10,17 @@ import com.teamnk.kimiljung.repository.auth.LoginRepository
 import kotlinx.coroutines.launch
 
 class LoginViewModel(
-    private val rp: LoginRepository
+    private val repository: LoginRepository
 ) : ViewModel() {
+
     var success: MutableLiveData<Boolean> = MutableLiveData()
     var failure: MutableLiveData<Boolean> = MutableLiveData()
 
     fun postLogin(loginRequest: LoginRequest) {
+        Log.d(TAG, "postLogin: ")
         viewModelScope.launch {
             kotlin.runCatching {
-                rp.login(loginRequest)
+                repository.login(loginRequest)
             }.onSuccess {
                 success
             }.onFailure {
