@@ -9,7 +9,6 @@ import retrofit2.http.POST
 // TODO apply interfaces api specs
 
 interface RegisterApi {
-
     @POST("verify")
     suspend fun verifyEmail(
         @Body emailVerificationRequest: EmailVerificationRequest
