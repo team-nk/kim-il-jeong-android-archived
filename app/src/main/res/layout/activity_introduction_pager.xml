@@ -2,8 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    
+
     <data>
+
         <variable
             name="viewModel"
             type="com.teamnk.kimiljung.viewmodel.IntroductionPagerViewModel" />
@@ -16,9 +17,10 @@
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/vp_introduction"
-            android:layout_width="match_parent"
-            android:layout_height="498dp"
-            android:layout_marginTop="64dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@id/tabLayout_introduction_viewPager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -27,10 +29,11 @@
             android:id="@+id/tabLayout_introduction_viewPager"
             android:layout_width="112dp"
             android:layout_height="12dp"
-            android:layout_marginTop="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/vp_introduction"
             app:layout_constraintStart_toStartOf="@id/vp_introduction"
-            app:layout_constraintTop_toBottomOf="@id/vp_introduction"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.8"
             app:tabBackground="@drawable/view_pager_indicator"
             app:tabIndicator="@null">
 
@@ -60,12 +63,13 @@
             android:id="@+id/viewGroup_introduction_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="64dp"
             android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/vp_introduction"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toStartOf="@id/vp_introduction"
+            app:layout_constraintTop_toBottomOf="@id/tabLayout_introduction_viewPager"
             tools:ignore="UseCompoundDrawables">
 
             <TextView
