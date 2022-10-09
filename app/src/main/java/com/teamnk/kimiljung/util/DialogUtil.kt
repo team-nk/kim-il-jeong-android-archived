@@ -5,7 +5,6 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
-import android.widget.Toast
 import com.teamnk.kimiljung.databinding.DialogAllSingleButtonBinding
 
 fun showDialogWithSingleButton(context: Context, title: String, description: String, functionWhenAcceptButtonClicked: () -> Unit) {
@@ -26,7 +25,7 @@ fun showDialogWithSingleButton(context: Context, title: String, description: Str
         tvDialogSingleDescription.text = description
         btnDialogAccept.setOnClickListener {
             functionWhenAcceptButtonClicked()
-            
+
             dialog.dismiss()
         }
     }
