@@ -27,5 +27,6 @@ fun showDialogWithSingleButton(context: Context, title: String, description: Str
     binding.tvDialogSingleDescription.text = description
     binding.btnDialogAccept.setOnClickListener {
         functionWhenAcceptButtonClicked()
+        dialog.dismiss()
     }
 }
