@@ -16,7 +16,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
     R.layout.activity_login
 ) {
 
-    // TODO MOVE
+    // TODO MOVE to BaseActivity
     private val viewModel by lazy {
         ViewModelProvider(this)[LoginViewModel::class.java]
     }
