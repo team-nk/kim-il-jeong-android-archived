@@ -1,5 +1,7 @@
 package com.teamnk.kimiljung.viewmodel
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,7 +13,7 @@ class LoginViewModel(
     private val rp: LoginRepository
 ) : ViewModel() {
     var success: MutableLiveData<Boolean> = MutableLiveData()
-    val failed: MutableLiveData<Boolean> = MutableLiveData()
+    var failure: MutableLiveData<Boolean> = MutableLiveData()
 
     fun postLogin(loginRequest: LoginRequest) {
         viewModelScope.launch {
@@ -20,7 +22,9 @@ class LoginViewModel(
             }.onSuccess {
                 success
             }.onFailure {
-                failed
+                failure
+            }.also {
+                Log.d(TAG, "$success, $failure")
             }
         }
     }

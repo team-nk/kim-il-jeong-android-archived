@@ -2,9 +2,9 @@ package com.teamnk.kimiljung.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.teamnk.kimiljung.data.dto.DuplicateRequest
-import com.teamnk.kimiljung.data.dto.VerifyCodeRequest
-import com.teamnk.kimiljung.data.dto.VerifyRequest
+import com.teamnk.kimiljung.data.dto.UserIdDuplicationRequest
+import com.teamnk.kimiljung.data.dto.EmailVerificationCodeRequest
+import com.teamnk.kimiljung.data.dto.EmailVerificationRequest
 import com.teamnk.kimiljung.repository.auth.RegisterRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -15,10 +15,10 @@ class RegisterViewModel(
     private var success : MutableLiveData<Boolean> = MutableLiveData()
     private var failed : MutableLiveData<Boolean> = MutableLiveData()
 
-    suspend fun emailVerify(verifyRequest: VerifyRequest){
+    suspend fun verifyEmail(EmailVerificationRequest: EmailVerificationRequest){
         kotlin.runCatching {
             withContext(Dispatchers.Default){
-                rp.verify(verifyRequest)
+                rp.verifyEmail(EmailVerificationRequest)
             }
         }.onSuccess {
             success
@@ -27,10 +27,10 @@ class RegisterViewModel(
         }
     }
 
-    suspend fun verifyCode(verifyCodeRequest: VerifyCodeRequest){
+    suspend fun checkEmailVerificationCode(emailVerificationCodeRequest: EmailVerificationCodeRequest){
         kotlin.runCatching {
             withContext(Dispatchers.Default){
-                rp.verifyCode(verifyCodeRequest)
+                rp.checkEmailVerificationCode(emailVerificationCodeRequest)
             }
         }.onSuccess {
             success
@@ -39,10 +39,10 @@ class RegisterViewModel(
         }
     }
 
-    suspend fun userIdDuplicate(duplicateRequest: DuplicateRequest){
+    suspend fun checkUserIdDuplication(userIdDuplicationRequest: UserIdDuplicationRequest){
         kotlin.runCatching {
             withContext(Dispatchers.Default){
-                rp.checkIdDuplicated(duplicateRequest)
+                rp.checkUserIdDuplication(userIdDuplicationRequest)
             }
         }.onSuccess {
             success
