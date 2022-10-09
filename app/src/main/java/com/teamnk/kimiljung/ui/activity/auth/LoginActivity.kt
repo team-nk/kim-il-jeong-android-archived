@@ -7,13 +7,16 @@ import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.data.dto.LoginRequest
 import com.teamnk.kimiljung.databinding.ActivityLoginBinding
+import com.teamnk.kimiljung.ui.activity.MainActivity
 import com.teamnk.kimiljung.util.startIntent
+import com.teamnk.kimiljung.util.startIntentClearTop
 import com.teamnk.kimiljung.viewmodel.LoginViewModel
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(
     R.layout.activity_login
 ) {
 
+    // TODO MOVE
     private val viewModel by lazy {
         ViewModelProvider(this).get(LoginViewModel::class.java)
     }
@@ -21,6 +24,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // TODO
         binding.viewModel = viewModel
 
         initLoginButton()
@@ -49,7 +53,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
     }
 
     override fun observeEvent() {
-        /*viewModel.run {
+        viewModel.run {
             success.observe(this@LoginActivity) {
                 it.run {
                     Toast.makeText(baseContext, "로그인 성공!", Toast.LENGTH_SHORT).show()
@@ -62,6 +66,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
                     Toast.makeText(baseContext, "로그인 실패", Toast.LENGTH_SHORT).show()
                 }
             }
-        }*/
+        }
     }
 }
