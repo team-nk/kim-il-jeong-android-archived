@@ -12,6 +12,7 @@ import kotlinx.coroutines.withContext
 class RegisterViewModel(
     private val repository : RegisterRepository
 ) : ViewModel() {
+
     private var success : MutableLiveData<Boolean> = MutableLiveData()
     private var failed : MutableLiveData<Boolean> = MutableLiveData()
 
