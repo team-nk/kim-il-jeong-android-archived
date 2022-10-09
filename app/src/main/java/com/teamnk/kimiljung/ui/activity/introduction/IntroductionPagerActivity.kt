@@ -12,8 +12,9 @@ import com.teamnk.kimiljung.util.initializeSharedPreferences
 import com.teamnk.kimiljung.util.putInSharedPreferences
 import com.teamnk.kimiljung.util.startIntentClearTop
 
-class IntroductionPagerActivity :
-    BaseActivity<ActivityIntroductionPagerBinding>(R.layout.activity_introduction_pager) {
+class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>(
+    R.layout.activity_introduction_pager
+) {
 
     private val sharedPreferences by lazy {
         initializeSharedPreferences(this, INTRODUCTION_PAGE.preferencesName, MODE_PRIVATE)
@@ -49,9 +50,7 @@ class IntroductionPagerActivity :
             if (current == 3) {
                 moveToStartActivity()
                 putInSharedPreferences(
-                    sharedPreferencesEditor,
-                    IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN.key,
-                    true
+                    sharedPreferencesEditor, IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN.key, true
                 )
             }
         }
