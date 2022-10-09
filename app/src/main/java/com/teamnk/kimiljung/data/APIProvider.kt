@@ -7,10 +7,10 @@ private val retrofit: Retrofit = Retrofit.Builder().apply {
     // TODO GSON
 }.build()
 
-val loginAPI: LoginApi by lazy {
-    retrofit.create(LoginApi::class.java)
+val loginAPI: LoginAPI by lazy {
+    retrofit.create(LoginAPI::class.java)
 }
 
-val registerAPI: RegisterApi by lazy {
-    retrofit.create(RegisterApi::class.java)
+val registerAPI: RegisterAPI by lazy {
+    retrofit.create(RegisterAPI::class.java)
 }
