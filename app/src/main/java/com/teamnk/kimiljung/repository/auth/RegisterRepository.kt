@@ -1,18 +1,17 @@
 package com.teamnk.kimiljung.repository.auth
-import com.teamnk.kimiljung.data.RegisterAPI
-import com.teamnk.kimiljung.data.dto.UserIdDuplicationRequest
+
 import com.teamnk.kimiljung.data.dto.EmailVerificationCodeRequest
 import com.teamnk.kimiljung.data.dto.EmailVerificationRequest
-// TODO refactor
-class RegisterRepository(
-    private val registerApi: RegisterAPI
-) {
+import com.teamnk.kimiljung.data.dto.UserIdDuplicationRequest
+import com.teamnk.kimiljung.data.registerAPI
+
+class RegisterRepository {
     suspend fun verifyEmail(emailVerificationRequest: EmailVerificationRequest) =
-        registerApi.verifyEmail(emailVerificationRequest)
+        registerAPI.verifyEmail(emailVerificationRequest)
 
     suspend fun checkEmailVerificationCode(emailVerificationCodeRequest: EmailVerificationCodeRequest) =
-        registerApi.checkEmailVerificationCode(emailVerificationCodeRequest)
+        registerAPI.checkEmailVerificationCode(emailVerificationCodeRequest)
 
     suspend fun checkUserIdDuplication(userIdDuplicationRequest: UserIdDuplicationRequest) =
-        registerApi.checkUserIdDuplication(userIdDuplicationRequest)
+        registerAPI.checkUserIdDuplication(userIdDuplicationRequest)
 }
