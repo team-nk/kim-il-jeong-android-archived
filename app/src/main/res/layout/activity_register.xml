@@ -13,8 +13,8 @@
             style="@style/AuthTextViewMainTitle"
             android:text="@string/signUp"
             app:layout_constraintBottom_toTopOf="@id/tableLayout_register_info"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/tableLayout_register_info"
+            app:layout_constraintStart_toStartOf="@id/tableLayout_register_info"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.2" />
 
@@ -23,10 +23,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tv_register_hint"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_register_mainTitle"
             app:layout_constraintVertical_bias="0.4">
 
             <TableRow
@@ -121,6 +121,7 @@
             style="@style/AuthTextViewRegisterHint"
             android:layout_marginTop="10dp"
             android:text="@string/register_passwordFormatHint"
+            app:layout_constraintBottom_toTopOf="@id/btn_register_next"
             app:layout_constraintEnd_toEndOf="@id/tableLayout_register_info"
             app:layout_constraintStart_toStartOf="@id/tableLayout_register_info"
             app:layout_constraintTop_toBottomOf="@id/tableLayout_register_info" />
@@ -131,9 +132,9 @@
             android:layout_marginHorizontal="20dp"
             android:text="@string/register_next"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_register_error" />
+            app:layout_constraintEnd_toEndOf="@id/tableLayout_register_info"
+            app:layout_constraintStart_toStartOf="@id/tableLayout_register_info"
+            app:layout_constraintTop_toBottomOf="@id/tv_register_hint" />
 
         <TextView
             android:id="@+id/tv_register_error"
@@ -142,9 +143,6 @@
             app:layout_constraintBottom_toTopOf="@id/btn_register_next"
             app:layout_constraintEnd_toEndOf="@id/btn_register_next"
             app:layout_constraintStart_toStartOf="@id/btn_register_next"
-            app:layout_constraintTop_toBottomOf="@id/tv_register_hint"
-            app:layout_constraintVertical_bias="0.8"
-            app:layout_constraintVertical_chainStyle="packed"
             tools:text="정승훈 최고." />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
