@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.teamnk.kimiljung.data.dto.UserIdDuplicationRequest
 import com.teamnk.kimiljung.data.dto.EmailVerificationCodeRequest
 import com.teamnk.kimiljung.data.dto.EmailVerificationRequest
-import com.teamnk.kimiljung.repository.auth.RegisterRepository
+import com.teamnk.kimiljung.data.repository.auth.RegisterRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

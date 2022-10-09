@@ -2,7 +2,7 @@ package com.teamnk.kimiljung.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.teamnk.kimiljung.repository.auth.LoginRepository
+import com.teamnk.kimiljung.data.repository.auth.LoginRepository
 
 /*
 class LoginViewModelFactory(private val loginRepository: LoginRepository) :

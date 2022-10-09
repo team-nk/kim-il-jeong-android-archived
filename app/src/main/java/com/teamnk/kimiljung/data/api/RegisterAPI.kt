@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.data
+package com.teamnk.kimiljung.data.api
 
 import com.teamnk.kimiljung.data.dto.EmailVerificationCodeRequest
 import com.teamnk.kimiljung.data.dto.EmailVerificationRequest

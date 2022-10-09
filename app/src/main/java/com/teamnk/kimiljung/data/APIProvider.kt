@@ -1,5 +1,7 @@
 package com.teamnk.kimiljung.data
 
+import com.teamnk.kimiljung.data.api.LoginAPI
+import com.teamnk.kimiljung.data.api.RegisterAPI
 import retrofit2.Retrofit
 
 private val retrofit: Retrofit = Retrofit.Builder().apply {

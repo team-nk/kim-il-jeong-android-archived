@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.repository.auth
+package com.teamnk.kimiljung.data.repository.auth
 
 import com.teamnk.kimiljung.data.dto.LoginRequest
 import com.teamnk.kimiljung.data.dto.LoginResponse
