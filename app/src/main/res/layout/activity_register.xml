@@ -22,7 +22,7 @@
             android:id="@+id/tableLayout_register_info"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@id/tv_register_hint"
+            app:layout_constraintBottom_toTopOf="@id/btn_register_next"
             app:layout_constraintEnd_toEndOf="@id/guideline_register_start_vertical_2"
             app:layout_constraintStart_toStartOf="@id/guideline_register_start_vertical_1"
             app:layout_constraintTop_toBottomOf="@id/tv_register_mainTitle"
@@ -120,7 +120,6 @@
             style="@style/AuthTextViewRegisterHint"
             android:layout_marginTop="10dp"
             android:text="@string/register_passwordFormatHint"
-            app:layout_constraintBottom_toTopOf="@id/btn_register_next"
             app:layout_constraintEnd_toEndOf="@id/tableLayout_register_info"
             app:layout_constraintStart_toStartOf="@id/tableLayout_register_info"
             app:layout_constraintTop_toBottomOf="@id/tableLayout_register_info" />
