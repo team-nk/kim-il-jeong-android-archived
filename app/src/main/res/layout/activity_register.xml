@@ -128,7 +128,6 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_register_next"
             style="@style/ButtonPrimary"
-            android:layout_marginHorizontal="20dp"
             android:text="@string/register_next"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/tableLayout_register_info"

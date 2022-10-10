@@ -41,6 +41,7 @@
             <EditText
                 android:id="@+id/et_login_email"
                 style="@style/EditTextPrimary"
+                android:layout_width="match_parent"
                 android:autofillHints=""
                 android:hint="@string/login_email"
                 android:inputType="textEmailAddress" />
@@ -48,6 +49,7 @@
             <EditText
                 android:id="@+id/et_login_password"
                 style="@style/EditTextPrimary"
+                android:layout_width="match_parent"
                 android:autofillHints=""
                 android:hint="@string/login_password"
                 android:inputType="textPassword" />
@@ -55,6 +57,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_login_login"
                 style="@style/ButtonPrimary"
+                android:layout_width="match_parent"
                 android:text="@string/login" />
 
         </LinearLayout>
