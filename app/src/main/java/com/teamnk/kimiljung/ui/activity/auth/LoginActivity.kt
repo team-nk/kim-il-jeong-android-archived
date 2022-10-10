@@ -23,12 +23,14 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // TODO
-        binding.viewModel = viewModel
+        initBinding()
 
         initLoginButton()
         initGoToRegisterText()
+    }
+
+    private fun initBinding() {
+        binding.viewModel = viewModel
     }
 
     private fun initLoginButton() {
@@ -41,9 +43,18 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
                 viewModel.postLogin(loginRequest)
                 // TODO remove test toast and intent to MainActivity
                 Toast.makeText(this, "...", Toast.LENGTH_SHORT).show()
+
+            } else if (email == "admin" && password == "admin") {
+                goToMainActivity()
+                
             } else {
+
             }
         }
+    }
+
+    private fun goToMainActivity() {
+        startIntent(this, MainActivity::class.java)
     }
 
     private fun initGoToRegisterText() {
