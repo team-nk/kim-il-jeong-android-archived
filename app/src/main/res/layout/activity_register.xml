@@ -22,10 +22,9 @@
             android:id="@+id/tableLayout_register_info"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
             app:layout_constraintBottom_toTopOf="@id/tv_register_hint"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_register_start_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_register_start_vertical_1"
             app:layout_constraintTop_toBottomOf="@id/tv_register_mainTitle"
             app:layout_constraintVertical_bias="0.4">
 
@@ -144,5 +143,19 @@
             app:layout_constraintEnd_toEndOf="@id/btn_register_next"
             app:layout_constraintStart_toStartOf="@id/btn_register_next"
             tools:text="정승훈 최고." />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_register_start_vertical_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_register_start_vertical_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
