@@ -34,8 +34,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@id/tv_login_goToRegister"
-            app:layout_constraintEnd_toEndOf="@id/guideline_main_start_vertical_2"
-            app:layout_constraintStart_toStartOf="@id/guideline_main_start_vertical_1"
+            app:layout_constraintEnd_toEndOf="@id/guideline_login_start_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_login_start_vertical_1"
             app:layout_constraintTop_toBottomOf="@id/img_login_text_logo">
 
             <EditText
