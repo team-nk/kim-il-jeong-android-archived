@@ -36,13 +36,12 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
             val email = binding.etLoginEmail.text.toString()
             val password = binding.etLoginPassword.text.toString()
 
-            if (email == "" || password == "") {
-                // TODO success message
-            } else {
+            if (email.isNotBlank() || password.isNotBlank()) {
                 val loginRequest = LoginRequest(email, password)
                 viewModel.postLogin(loginRequest)
-                // TODO remove test toast
+                // TODO remove test toast and intent to MainActivity
                 Toast.makeText(this, "...", Toast.LENGTH_SHORT).show()
+            } else {
             }
         }
     }
