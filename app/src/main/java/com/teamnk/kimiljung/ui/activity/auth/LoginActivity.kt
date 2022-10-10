@@ -23,12 +23,14 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // TODO
-        binding.viewModel = viewModel
+        initBinding()
 
         initLoginButton()
         initGoToRegisterText()
+    }
+
+    private fun initBinding() {
+        binding.viewModel = viewModel
     }
 
     private fun initLoginButton() {
@@ -36,15 +38,27 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
             val email = binding.etLoginEmail.text.toString()
             val password = binding.etLoginPassword.text.toString()
 
-            if (email == "" || password == "") {
-                // TODO success message
-            } else {
+            if (email.isNotBlank() && password.isNotBlank()) {
+                if (email == "admin" && password == "admin") {
+                    loginWithAdminAccount()
+                }
                 val loginRequest = LoginRequest(email, password)
                 viewModel.postLogin(loginRequest)
-                // TODO remove test toast
-                Toast.makeText(this, "...", Toast.LENGTH_SHORT).show()
+                // TODO remove test toast and implement intent to MainActivity
+                Toast.makeText(this, "viewModel working", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "failed", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    private fun loginWithAdminAccount() {
+        goToMainActivity()
+    }
+
+    private fun goToMainActivity() {
+        startIntent(this, MainActivity::class.java)
+        finish()
     }
 
     private fun initGoToRegisterText() {

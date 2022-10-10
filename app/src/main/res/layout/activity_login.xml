@@ -32,16 +32,16 @@
             android:id="@+id/layout_login_info"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@id/tv_login_goToRegister"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_login_start_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_login_start_vertical_1"
             app:layout_constraintTop_toBottomOf="@id/img_login_text_logo">
 
             <EditText
                 android:id="@+id/et_login_email"
                 style="@style/EditTextPrimary"
+                android:layout_width="match_parent"
                 android:autofillHints=""
                 android:hint="@string/login_email"
                 android:inputType="textEmailAddress" />
@@ -49,6 +49,7 @@
             <EditText
                 android:id="@+id/et_login_password"
                 style="@style/EditTextPrimary"
+                android:layout_width="match_parent"
                 android:autofillHints=""
                 android:hint="@string/login_password"
                 android:inputType="textPassword" />
@@ -56,6 +57,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_login_login"
                 style="@style/ButtonPrimary"
+                android:layout_width="match_parent"
                 android:text="@string/login" />
 
         </LinearLayout>
@@ -69,6 +71,20 @@
             app:layout_constraintStart_toStartOf="@id/layout_login_info"
             app:layout_constraintTop_toBottomOf="@id/layout_login_info"
             app:layout_constraintVertical_bias="0.8" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_login_start_vertical_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_login_start_vertical_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
