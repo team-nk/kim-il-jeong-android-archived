@@ -22,7 +22,7 @@
         <item name="android:textAlignment">center</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_height">40dp</item>
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_width">0dp</item>
         <item name="android:textColor">@color/color_surface</item>
         <item name="android:background">@drawable/all_button_primary</item>
         <item name="android:stateListAnimator">@null</item>
