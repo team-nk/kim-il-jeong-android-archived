@@ -38,23 +38,27 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
             val email = binding.etLoginEmail.text.toString()
             val password = binding.etLoginPassword.text.toString()
 
-            if (email.isNotBlank() || password.isNotBlank()) {
+            if (email.isNotBlank() && password.isNotBlank()) {
+                if (email == "admin" && password == "admin") {
+                    loginWithAdminAccount()
+                }
                 val loginRequest = LoginRequest(email, password)
                 viewModel.postLogin(loginRequest)
-                // TODO remove test toast and intent to MainActivity
-                Toast.makeText(this, "...", Toast.LENGTH_SHORT).show()
-
-            } else if (email == "admin" && password == "admin") {
-                goToMainActivity()
-                
+                // TODO remove test toast and implement intent to MainActivity
+                Toast.makeText(this, "viewModel working", Toast.LENGTH_SHORT).show()
             } else {
-
+                Toast.makeText(this, "failed", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
+    private fun loginWithAdminAccount() {
+        goToMainActivity()
+    }
+
     private fun goToMainActivity() {
         startIntent(this, MainActivity::class.java)
+        finish()
     }
 
     private fun initGoToRegisterText() {
