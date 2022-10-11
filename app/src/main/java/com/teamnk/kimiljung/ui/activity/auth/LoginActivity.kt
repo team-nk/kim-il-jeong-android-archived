@@ -2,6 +2,7 @@ package com.teamnk.kimiljung.ui.activity.auth
 
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
@@ -15,11 +16,7 @@ import com.teamnk.kimiljung.viewmodel.LoginViewModel
 class LoginActivity : BaseActivity<ActivityLoginBinding>(
     R.layout.activity_login
 ) {
-
-    // TODO MOVE to BaseActivity
-    private val viewModel by lazy {
-        ViewModelProvider(this)[LoginViewModel::class.java]
-    }
+    private val viewModel by viewModels<LoginViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
