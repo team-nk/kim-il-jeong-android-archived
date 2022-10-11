@@ -28,10 +28,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
         binding.btnRegisterVerifyEmail.setOnClickListener {
             val email = binding.etRegisterEmail.text.toString()
             if (email.isNotBlank()) {
-                // TODO Verify Logic
-                viewModel.run {
 
-                }
             } else {
 
             }
@@ -42,10 +39,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
         binding.btnRegisterCheckEmailVerified.setOnClickListener {
             val key = binding.etRegisterVerificationCode.text
             if (key.isNotBlank()) {
-                // TODO Verify Code Logic
-                viewModel.run {
 
-                }
             } else {
 
             }
