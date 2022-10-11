@@ -10,7 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class RegisterViewModel(
-    private val repository : RegisterRepository
+    private val repository : RegisterRepository = RegisterRepository()
 ) : ViewModel() {
 
     private var success : MutableLiveData<Boolean> = MutableLiveData()
