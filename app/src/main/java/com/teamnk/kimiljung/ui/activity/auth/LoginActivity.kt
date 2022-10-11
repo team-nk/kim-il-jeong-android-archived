@@ -3,7 +3,6 @@ package com.teamnk.kimiljung.ui.activity.auth
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.data.dto.LoginRequest
@@ -11,7 +10,7 @@ import com.teamnk.kimiljung.databinding.ActivityLoginBinding
 import com.teamnk.kimiljung.ui.activity.MainActivity
 import com.teamnk.kimiljung.util.startIntent
 import com.teamnk.kimiljung.util.startIntentClearTop
-import com.teamnk.kimiljung.viewmodel.LoginViewModel
+import com.teamnk.kimiljung.viewmodel.auth.LoginViewModel
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(
     R.layout.activity_login

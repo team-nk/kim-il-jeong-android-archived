@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.viewmodel
+package com.teamnk.kimiljung.viewmodel.introduction
 
 import androidx.lifecycle.ViewModel
 

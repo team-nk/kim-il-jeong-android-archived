@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.viewmodel
+package com.teamnk.kimiljung.viewmodel.auth
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

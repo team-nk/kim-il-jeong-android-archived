@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.teamnk.kimiljung.viewmodel.LoginViewModel" />
+            type="com.teamnk.kimiljung.viewmodel.auth.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

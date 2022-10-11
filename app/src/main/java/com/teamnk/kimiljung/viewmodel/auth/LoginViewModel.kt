@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.viewmodel
+package com.teamnk.kimiljung.viewmodel.auth
 
 import android.content.ContentValues.TAG
 import android.util.Log

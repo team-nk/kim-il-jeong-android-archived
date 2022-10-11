@@ -2,13 +2,12 @@ package com.teamnk.kimiljung.ui.activity.auth
 
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityRegisterBinding
 import com.teamnk.kimiljung.util.showDialogWithSingleButton
 import com.teamnk.kimiljung.util.startIntentClearTop
-import com.teamnk.kimiljung.viewmodel.RegisterViewModel
+import com.teamnk.kimiljung.viewmodel.auth.RegisterViewModel
 
 class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     R.layout.activity_register
