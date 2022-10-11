@@ -8,7 +8,7 @@ import com.teamnk.kimiljung.databinding.ActivityMainBinding
 import com.teamnk.kimiljung.ui.fragment.CalendarFragment
 import com.teamnk.kimiljung.ui.fragment.MapFragment
 import com.teamnk.kimiljung.ui.fragment.NotificationFragment
-import com.teamnk.kimiljung.ui.fragment.UserFragment
+import com.teamnk.kimiljung.ui.fragment.MyPageFragment
 
 class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
@@ -24,7 +24,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
         NotificationFragment()
     }
     private val userFragment by lazy {
-        UserFragment()
+        MyPageFragment()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
