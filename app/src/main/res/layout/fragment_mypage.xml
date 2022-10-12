@@ -12,12 +12,12 @@
             android:id="@+id/img_mypage_text_logo"
             android:layout_width="132dp"
             android:layout_height="73dp"
-            android:layout_marginVertical="20dp"
-            android:contentDescription="@string/logo_description"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/contentDescription_logo"
             android:src="@drawable/mypage_logo_mypage_title"
             app:layout_constraintBottom_toTopOf="@id/sc_mypage"
             app:layout_constraintEnd_toEndOf="@id/guideline_mypage_start_vertical_2"
-            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintHorizontal_bias="0.05"
             app:layout_constraintStart_toStartOf="@id/guideline_mypage_start_vertical_1"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed" />
@@ -36,12 +36,59 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!--TODO remove tools:layout_height -->
-                <LinearLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_mypage_userInfo"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="80dp"
                     android:orientation="vertical"
-                    tools:layout_height="250dp" />
+                    android:padding="15dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img_mypage_profile"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:contentDescription="@string/contentDescription_mypage_profile_image"
+                        android:src="@drawable/img_blank"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_mypage_userInfo_personal_information"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginHorizontal="12dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/img_mypage_edit_profile"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toEndOf="@id/img_mypage_profile"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/tv_mypage_userId"
+                            style="@style/TextViewMyPageUserId"
+                            android:layout_weight="1"
+                            tools:text="JungSeungHoon" />
+
+                        <TextView
+                            android:id="@+id/tv_mypage_userEmail"
+                            style="@style/TextViewMyPageUserEmail"
+                            android:layout_weight="1"
+                            tools:text="alwaysAwake@gmail.com" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/img_mypage_edit_profile"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/icon_edit"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
         </ScrollView>
 
