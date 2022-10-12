@@ -16,7 +16,7 @@
 
             <TextView
                 android:id="@+id/tv_dialog_single_title"
-                style="@style/DialogTextViewTitle"
+                style="@style/TextViewDialogTitle"
                 app:layout_constraintBottom_toTopOf="@id/btn_dialog_accept"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +26,7 @@
 
             <TextView
                 android:id="@+id/tv_dialog_single_description"
-                style="@style/DialogTextViewDescription"
+                style="@style/TextViewDialogDescription"
                 app:layout_constraintBottom_toTopOf="@id/btn_dialog_accept"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

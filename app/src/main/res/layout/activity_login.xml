@@ -64,7 +64,7 @@
 
         <TextView
             android:id="@+id/tv_login_goToRegister"
-            style="@style/AuthTextViewPrimary"
+            style="@style/TextViewAuthPrimary"
             android:text="@string/login_goToRegister"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/layout_login_info"

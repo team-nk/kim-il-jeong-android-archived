@@ -10,7 +10,7 @@
 
         <TextView
             android:id="@+id/tv_register_mainTitle"
-            style="@style/AuthTextViewMainTitle"
+            style="@style/TextViewAuthMainTitlte"
             android:text="@string/signUp"
             app:layout_constraintBottom_toTopOf="@id/tableLayout_register_info"
             app:layout_constraintEnd_toEndOf="@id/tableLayout_register_info"
@@ -44,7 +44,7 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_register_verifyEmail"
-                    style="@style/AuthButtonRegisterCheck"
+                    style="@style/ButtonAuthRegisterCheck"
                     android:text="@string/register_verifyEmail" />
             </TableRow>
 
@@ -64,7 +64,7 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_register_checkEmailVerified"
-                    style="@style/AuthButtonRegisterCheck"
+                    style="@style/ButtonAuthRegisterCheck"
                     android:text="@string/register_checkEmailVerified" />
             </TableRow>
 
@@ -84,7 +84,7 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_register_checkUserIdDuplicate"
-                    style="@style/AuthButtonRegisterCheck"
+                    style="@style/ButtonAuthRegisterCheck"
                     android:text="@string/register_checkUserIdDuplicate" />
             </TableRow>
 
@@ -117,7 +117,7 @@
 
         <TextView
             android:id="@+id/tv_register_hint"
-            style="@style/AuthTextViewRegisterHint"
+            style="@style/TextViewAuthRegisterHint"
             android:layout_marginTop="10dp"
             android:text="@string/register_passwordFormatHint"
             app:layout_constraintEnd_toEndOf="@id/tableLayout_register_info"
@@ -135,7 +135,7 @@
 
         <TextView
             android:id="@+id/tv_register_error"
-            style="@style/AuthTextViewRegisterError"
+            style="@style/TextViewAuthRegisterError"
             android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toTopOf="@id/btn_register_next"
             app:layout_constraintEnd_toEndOf="@id/btn_register_next"

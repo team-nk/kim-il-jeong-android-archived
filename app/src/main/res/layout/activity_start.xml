@@ -51,7 +51,7 @@
 
         <TextView
             android:id="@+id/tv_start_loginWithEmail"
-            style="@style/AuthTextViewStartWithEmail"
+            style="@style/TextViewAuthStartWithEmail"
             android:layout_marginTop="16dp"
             android:text="@string/start_loginWithEmail"
             app:layout_constraintEnd_toEndOf="parent"
