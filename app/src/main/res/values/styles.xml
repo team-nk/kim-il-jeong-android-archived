@@ -125,4 +125,14 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/color_description</item>
     </style>
+
+    <style name="ButtonMyPagePrimary" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+        <item name="background">@drawable/mypage_button_primary</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_text</item>
+    </style>
 </resources>
