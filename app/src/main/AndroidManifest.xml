@@ -32,7 +32,7 @@
             android:name=".ui.activity.auth.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.StartActivity"
+            android:name=".ui.activity.auth.StartActivity"
             android:exported="false"/>
         <activity
             android:name=".ui.activity.MainActivity"

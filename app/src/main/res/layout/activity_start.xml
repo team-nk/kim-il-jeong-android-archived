@@ -6,14 +6,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.activity.StartActivity">
+        tools:context=".ui.activity.auth.StartActivity">
 
         <ImageView
             android:id="@+id/img_start_text_logo"
             android:layout_width="260dp"
             android:layout_height="112dp"
-            android:contentDescription="@string/logo_description"
-            android:src="@drawable/all_logo_login"
+            android:contentDescription="@string/contentDescription_logo"
+            android:src="@drawable/login_logo_login"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.2"
@@ -38,20 +38,20 @@
                 android:layout_width="43dp"
                 android:layout_height="43dp"
                 android:layout_marginEnd="30dp"
-                android:contentDescription="@string/google_social_login"
+                android:contentDescription="@string/contentDescription_google_social_login"
                 android:src="@drawable/start_icon_google" />
 
             <ImageView
                 android:id="@+id/img_start_loginWithKakao"
                 android:layout_width="43dp"
                 android:layout_height="43dp"
-                android:contentDescription="@string/kakao_social_login"
+                android:contentDescription="@string/contentDescription_kakao_social_login"
                 android:src="@drawable/start_icon_kakao" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/tv_start_loginWithEmail"
-            style="@style/AuthTextViewStartWithEmail"
+            style="@style/TextViewAuthStartWithEmail"
             android:layout_marginTop="16dp"
             android:text="@string/start_loginWithEmail"
             app:layout_constraintEnd_toEndOf="parent"
