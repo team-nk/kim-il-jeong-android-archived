@@ -12,7 +12,7 @@
             android:id="@+id/img_mypage_text_logo"
             android:layout_width="132dp"
             android:layout_height="73dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginVertical="20dp"
             android:contentDescription="@string/contentDescription_logo"
             android:src="@drawable/mypage_logo_mypage_title"
             app:layout_constraintBottom_toTopOf="@id/sc_mypage"
