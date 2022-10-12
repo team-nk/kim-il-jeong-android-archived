@@ -38,14 +38,14 @@
                 android:layout_width="43dp"
                 android:layout_height="43dp"
                 android:layout_marginEnd="30dp"
-                android:contentDescription="@string/google_social_login"
+                android:contentDescription="@string/contentDescription_google_social_login"
                 android:src="@drawable/start_icon_google" />
 
             <ImageView
                 android:id="@+id/img_start_loginWithKakao"
                 android:layout_width="43dp"
                 android:layout_height="43dp"
-                android:contentDescription="@string/kakao_social_login"
+                android:contentDescription="@string/contentDescription_kakao_social_login"
                 android:src="@drawable/start_icon_kakao" />
         </LinearLayout>
 

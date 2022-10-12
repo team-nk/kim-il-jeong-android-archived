@@ -36,8 +36,8 @@
     <string name="register_error_passwordIncorrect">비밀번호가 다릅니다.</string>
 
     <string name="contentDescription_logo">Kim il jeong Logo</string>
-    <string name="google_social_login">Google Social Login</string>
-    <string name="kakao_social_login">Kakao Social Login</string>
+    <string name="contentDescription_google_social_login">Google Social Login</string>
+    <string name="contentDescription_kakao_social_login">Kakao Social Login</string>
 
     <string name="introduction_viewpager_next">다음</string>
     <string name="introduction_viewpager_image_introduction">Viewpager Image</string>
