@@ -126,13 +126,15 @@
         <item name="android:textColor">@color/color_description</item>
     </style>
 
-    <style name="ButtonMyPagePrimary" parent="Widget.AppCompat.TextView">
+    <style name="ButtonMyPagePrimary" parent="Widget.AppCompat.Button">
         <item name="android:textSize">14sp</item>
         <item name="android:gravity">center</item>
-        <item name="background">@drawable/mypage_button_primary</item>
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@drawable/mypage_button_primary</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:elevation">0dp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:layout_height">45dp</item>
         <item name="android:textColor">@color/color_text</item>
+        <item name="android:stateListAnimator">@null</item>
     </style>
 </resources>
