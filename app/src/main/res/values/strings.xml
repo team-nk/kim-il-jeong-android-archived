@@ -35,7 +35,7 @@
     <string name="register_error_missingEmailVerification">이메일 인증을 해 주세요.</string>
     <string name="register_error_passwordIncorrect">비밀번호가 다릅니다.</string>
 
-    <string name="logo_description">Kim il jeong Logo</string>
+    <string name="contentDescription_logo">Kim il jeong Logo</string>
     <string name="google_social_login">Google Social Login</string>
     <string name="kakao_social_login">Kakao Social Login</string>
 
