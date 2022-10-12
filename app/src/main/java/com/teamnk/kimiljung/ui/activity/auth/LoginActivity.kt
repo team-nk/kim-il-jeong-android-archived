@@ -35,7 +35,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
             val password = binding.etLoginPassword.text.toString()
 
             if (email.isNotBlank() && password.isNotBlank()) {
-                if (email == "admin" && password == "admin") {
+                if (email == "debug" && password == "debug") {
                     loginWithAdminAccount()
                 }
                 val loginRequest = LoginRequest(email, password)
