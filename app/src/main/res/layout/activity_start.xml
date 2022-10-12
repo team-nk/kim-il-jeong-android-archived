@@ -12,7 +12,7 @@
             android:id="@+id/img_start_text_logo"
             android:layout_width="260dp"
             android:layout_height="112dp"
-            android:contentDescription="@string/logo_description"
+            android:contentDescription="@string/contentDescription_logo"
             android:src="@drawable/login_logo_login"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
