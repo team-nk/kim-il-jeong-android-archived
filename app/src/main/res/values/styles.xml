@@ -28,7 +28,7 @@
         <item name="android:stateListAnimator">@null</item>
     </style>
 
-    <style name="AuthTextViewPrimary" parent="Widget.AppCompat.TextView">
+    <style name="TextViewAuthPrimary" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">14sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_width">wrap_content</item>
@@ -36,7 +36,7 @@
         <item name="android:textColor">@color/color_text</item>
     </style>
 
-    <style name="AuthTextViewStartWithEmail" parent="Widget.AppCompat.TextView">
+    <style name="TextViewAuthStartWithEmail" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">16sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_width">wrap_content</item>
@@ -44,7 +44,7 @@
         <item name="android:textColor">@color/color_text</item>
     </style>
 
-    <style name="AuthTextViewMainTitle" parent="Widget.AppCompat.TextView">
+    <style name="TextViewAuthMainTitlte" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">28sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_width">wrap_content</item>
@@ -53,7 +53,7 @@
         <item name="android:textColor">@color/color_text</item>
     </style>
 
-    <style name="AuthTextViewRegisterHint" parent="Widget.AppCompat.TextView">
+    <style name="TextViewAuthRegisterHint" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">10sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_height">wrap_content</item>
@@ -61,7 +61,7 @@
         <item name="android:textColor">@color/color_strong_explanation</item>
     </style>
 
-    <style name="AuthButtonRegisterCheck" parent="Widget.AppCompat.Button">
+    <style name="ButtonAuthRegisterCheck" parent="Widget.AppCompat.Button">
         <item name="android:textSize">15sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_height">40dp</item>
@@ -71,7 +71,7 @@
         <item name="android:stateListAnimator">@null</item>
     </style>
 
-    <style name="AuthTextViewRegisterError" parent="Widget.AppCompat.TextView">
+    <style name="TextViewAuthRegisterError" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">12sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_height">wrap_content</item>
@@ -79,7 +79,7 @@
         <item name="android:textColor">@color/color_error</item>
     </style>
 
-    <style name="DialogTextViewTitle" parent="Widget.AppCompat.TextView">
+    <style name="TextViewDialogTitle" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:gravity">center</item>
@@ -88,7 +88,7 @@
         <item name="android:textColor">@color/color_text</item>
     </style>
 
-    <style name="DialogTextViewDescription" parent="Widget.AppCompat.TextView">
+    <style name="TextViewDialogDescription" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">13sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_width">0dp</item>
@@ -96,7 +96,7 @@
         <item name="android:textColor">@color/color_description</item>
     </style>
 
-    <style name="MainBottomNavigationView">
+    <style name="BottomNavigationViewMain">
         <item name="android:background">@drawable/background_bn</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">72dp</item>
