@@ -54,4 +54,5 @@
     <string name="contentDescription_mypage_go_to_depth">Go To Depth</string>
     <string name="mypage_application_information">어플리케이션 정보</string>
     <string name="mypage_change_password">비밀번호 변경하기</string>
+    <string name="mypage_logout">로그아웃</string>
 </resources>
