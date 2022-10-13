@@ -142,4 +142,10 @@
         <item name="android:background">@color/color_description</item>
         <item name="android:layout_height">1dp</item>
     </style>
+
+    <style name="ImageMyPageDepth">
+        <item name="android:layout_height">18dp</item>
+        <item name="android:layout_width">18dp</item>
+        <item name="android:src">@drawable/icon_mypage_depth</item>
+    </style>
 </resources>
