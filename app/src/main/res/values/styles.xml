@@ -107,7 +107,7 @@
         <item name="itemIconTint">@drawable/bn_main_color_selector</item>
     </style>
 
-    <style name="TextViewMyPageUserId" parent="Widget.AppCompat.TextView">
+    <style name="TextViewMyPagePrimary" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">14sp</item>
         <item name="android:textStyle">bold</item>
         <item name="maxLines">1</item>
@@ -117,7 +117,7 @@
         <item name="android:textColor">@color/color_text</item>
     </style>
 
-    <style name="TextViewMyPageUserEmail" parent="Widget.AppCompat.TextView">
+    <style name="TextViewMyPageSecondary" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">12sp</item>
         <item name="android:gravity">start|center_vertical</item>
         <item name="android:layout_width">match_parent</item>
@@ -136,5 +136,16 @@
         <item name="android:layout_height">45dp</item>
         <item name="android:textColor">@color/color_text</item>
         <item name="android:stateListAnimator">@null</item>
+    </style>
+    
+    <style name="ViewMyPageLine">
+        <item name="android:background">@color/color_description</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+
+    <style name="ImageMyPageDepth">
+        <item name="android:layout_height">18dp</item>
+        <item name="android:layout_width">18dp</item>
+        <item name="android:src">@drawable/icon_mypage_depth</item>
     </style>
 </resources>

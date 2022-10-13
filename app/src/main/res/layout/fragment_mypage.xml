@@ -69,13 +69,13 @@
 
                         <TextView
                             android:id="@+id/tv_mypage_userId"
-                            style="@style/TextViewMyPageUserId"
+                            style="@style/TextViewMyPagePrimary"
                             android:layout_weight="1"
                             tools:text="JungSeungHoon" />
 
                         <TextView
                             android:id="@+id/tv_mypage_userEmail"
-                            style="@style/TextViewMyPageUserEmail"
+                            style="@style/TextViewMyPageSecondary"
                             android:layout_weight="1"
                             tools:text="alwaysAwake@gmail.com" />
                     </LinearLayout>
@@ -93,7 +93,8 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp">
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_mypage_check_my_schedule"
@@ -123,18 +124,122 @@
                     android:id="@+id/layout_mypage_edit_birthDay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/color_description">
+                    android:layout_marginHorizontal="16dp">
 
-
-                    <!--TODO Move To style -->
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="1dp"
-                        android:background="@color/color_description"
-                        app:layout_constraintBottom_toTopOf="parent"
+                    <TextView
+                        style="@style/TextViewMyPagePrimary"
+                        android:layout_marginVertical="12dp"
+                        android:text="@string/mypage_edit_birthDay"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        style="@style/ViewMyPageLine"
+                        android:layout_width="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <ImageView
+                        style="@style/ImageMyPageDepth"
+                        android:contentDescription="@string/contentDescription_mypage_go_to_depth"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_mypage_application_information"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp">
+
+                    <TextView
+                        style="@style/TextViewMyPagePrimary"
+                        android:layout_marginVertical="12dp"
+                        android:text="@string/mypage_application_information"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        style="@style/ViewMyPageLine"
+                        android:layout_width="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <ImageView
+                        style="@style/ImageMyPageDepth"
+                        android:contentDescription="@string/contentDescription_mypage_go_to_depth"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_mypage_change_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp">
+
+                    <TextView
+                        style="@style/TextViewMyPagePrimary"
+                        android:layout_marginVertical="12dp"
+                        android:text="@string/mypage_change_password"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        style="@style/ViewMyPageLine"
+                        android:layout_width="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <ImageView
+                        style="@style/ImageMyPageDepth"
+                        android:contentDescription="@string/contentDescription_mypage_go_to_depth"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_mypage_logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp">
+
+                    <TextView
+                        style="@style/TextViewMyPagePrimary"
+                        android:layout_marginVertical="12dp"
+                        android:text="@string/mypage_logout"
+                        android:textColor="@color/color_error"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        style="@style/ViewMyPageLine"
+                        android:layout_width="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <ImageView
+                        style="@style/ImageMyPageDepth"
+                        android:contentDescription="@string/contentDescription_mypage_go_to_depth"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/color_error" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </LinearLayout>
