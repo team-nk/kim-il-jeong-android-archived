@@ -144,9 +144,7 @@
 
                     <!--TODO Move To style -->
                     <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:src="@drawable/icon_mypage_depth"
+                        style="@style/ImageMyPageDepth"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
