@@ -5,6 +5,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/BackgroundAll"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -117,6 +118,25 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_mypage_edit_birthDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color_description">
+
+
+                    <!--TODO Move To style -->
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="@color/color_description"
+                        app:layout_constraintBottom_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
             </LinearLayout>
         </ScrollView>
 
