@@ -52,4 +52,5 @@
     <string name="mypage_show_my_posts">내가 쓴 게시물 보기</string>
     <string name="mypage_edit_birthDay">생년월일 입력하기/수정하기</string>
     <string name="contentDescription_mypage_go_to_depth">Go To Depth</string>
+    <string name="mypage_application_information">어플리케이션 정보</string>
 </resources>
