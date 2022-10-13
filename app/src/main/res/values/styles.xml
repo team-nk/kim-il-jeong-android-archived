@@ -137,4 +137,9 @@
         <item name="android:textColor">@color/color_text</item>
         <item name="android:stateListAnimator">@null</item>
     </style>
+    
+    <style name="ViewMyPageLine">
+        <item name="android:background">@color/color_description</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
 </resources>
