@@ -123,15 +123,15 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/layout_mypage_edit_birthDay"
                     android:layout_width="match_parent"
-
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp">
 
                     <TextView
                         style="@style/TextViewMyPagePrimary"
-                        android:layout_marginHorizontal="16dp"
                         android:layout_marginVertical="12dp"
-                        android:text="생년월일 입력하기/수정하기"
+                        android:text="@string/mypage_edit_birthDay"
                         app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -139,7 +139,6 @@
                     <View
                         android:layout_width="0dp"
                         android:layout_height="1dp"
-                        android:layout_marginHorizontal="16dp"
                         android:background="@color/color_description"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
