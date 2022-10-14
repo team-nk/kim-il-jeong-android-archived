@@ -7,8 +7,8 @@ import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityMainBinding
 import com.teamnk.kimiljung.ui.fragment.CalendarFragment
 import com.teamnk.kimiljung.ui.fragment.MapFragment
-import com.teamnk.kimiljung.ui.fragment.NotificationFragment
 import com.teamnk.kimiljung.ui.fragment.MyPageFragment
+import com.teamnk.kimiljung.ui.fragment.NotificationFragment
 
 class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
@@ -57,6 +57,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
                 }
                 true
             }
+            selectedItemId = R.id.bn_main_calendar
         }
     }
 
