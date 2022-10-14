@@ -27,6 +27,7 @@
             android:id="@+id/sc_mypage"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:scrollbars="none"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/guideline_mypage_start_vertical_2"
             app:layout_constraintStart_toStartOf="@id/guideline_mypage_start_vertical_1"
