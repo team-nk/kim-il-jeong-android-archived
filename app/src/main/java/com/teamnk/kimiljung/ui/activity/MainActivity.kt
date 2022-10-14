@@ -1,8 +1,6 @@
 package com.teamnk.kimiljung.ui.activity
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
@@ -105,7 +103,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
             selectedBottomNavigationMenuId
         )
     }
-    
+
     private fun getSelectedBottomNavigationMenuIdFromFragment(fragment: Fragment): Int {
         return when (fragment) {
             mapFragment -> BOTTOM_NAVIGATION_MAP_ID
