@@ -9,9 +9,14 @@ import com.teamnk.kimiljung.ui.fragment.CalendarFragment
 import com.teamnk.kimiljung.ui.fragment.MapFragment
 import com.teamnk.kimiljung.ui.fragment.MyPageFragment
 import com.teamnk.kimiljung.ui.fragment.NotificationFragment
-import com.teamnk.kimiljung.util.SharedPreferencesKey.MAIN_ACTIVITY_SAVED_FRAGMENT_ID
+import com.teamnk.kimiljung.util.SharedPreferencesKey.BOTTOM_NAVIGATION_CALENDAR_ID
+import com.teamnk.kimiljung.util.SharedPreferencesKey.BOTTOM_NAVIGATION_MAP_ID
+import com.teamnk.kimiljung.util.SharedPreferencesKey.BOTTOM_NAVIGATION_MY_PAGE_ID
+import com.teamnk.kimiljung.util.SharedPreferencesKey.BOTTOM_NAVIGATION_NOTIFICATION_ID
+import com.teamnk.kimiljung.util.SharedPreferencesKey.MAIN_ACTIVITY_SAVED_BOTTOM_NAVIGATION_ID
 import com.teamnk.kimiljung.util.SharedPreferencesName.MAIN_ACTIVITY
 import com.teamnk.kimiljung.util.initializeSharedPreferences
+import com.teamnk.kimiljung.util.putInSharedPreferences
 
 class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
@@ -33,24 +38,30 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     private val notificationFragment by lazy {
         NotificationFragment()
     }
-    private val userFragment by lazy {
+    private val myPageFragment by lazy {
         MyPageFragment()
     }
 
-    private var selectedFragmentId: Int? = null
+    private var selectedBottomNavigationMenuId: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        selectedFragmentId = sharedPreferences.getInt(MAIN_ACTIVITY_SAVED_FRAGMENT_ID, R.id.bn_main_calendar)
+        selectedBottomNavigationMenuId =
+            sharedPreferences.getInt(
+                MAIN_ACTIVITY_SAVED_BOTTOM_NAVIGATION_ID,
+                BOTTOM_NAVIGATION_CALENDAR_ID
+            )
 
         initBottomNavigationView()
-        //initFragment()
+        initFragment()
     }
 
-    /*private fun initFragment() {
-        changeFragment(calendarFragment)
-    }*/
+    private fun initFragment() {
+        changeFragment(
+            getFragmentFromBottomNavigationMenuId(selectedBottomNavigationMenuId)
+        )
+    }
 
     private fun initBottomNavigationView() {
         binding.bnMain.run {
@@ -65,15 +76,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
                     R.id.bn_main_notification -> {
                         changeFragment(notificationFragment)
                     }
-                    R.id.bn_main_user -> {
-                        changeFragment(userFragment)
+                    R.id.bn_main_mypage -> {
+                        changeFragment(myPageFragment)
                     }
                 }
 
                 true
             }
-
-            selectedItemId = selectedFragmentId!!
         }
     }
 
@@ -83,7 +92,34 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
             .replace(R.id.container_main, fragment)
             .commit()
 
-        selectedFragmentId = fragment.id
+        selectedBottomNavigationMenuId = getSelectedBottomNavigationMenuIdFromFragment(fragment)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        putInSharedPreferences(
+            sharedPreferencesEditor,
+            MAIN_ACTIVITY_SAVED_BOTTOM_NAVIGATION_ID,
+            selectedBottomNavigationMenuId
+        )
+    }
+
+    private fun getSelectedBottomNavigationMenuIdFromFragment(fragment: Fragment): Int {
+        return when (fragment.id) {
+            mapFragment.id -> BOTTOM_NAVIGATION_MAP_ID
+            notificationFragment.id -> BOTTOM_NAVIGATION_NOTIFICATION_ID
+            myPageFragment.id -> BOTTOM_NAVIGATION_MY_PAGE_ID
+            else -> BOTTOM_NAVIGATION_CALENDAR_ID
+        }
+    }
+
+    private fun getFragmentFromBottomNavigationMenuId(id: Int?): Fragment {
+        return when (id) {
+            BOTTOM_NAVIGATION_MAP_ID -> mapFragment
+            BOTTOM_NAVIGATION_NOTIFICATION_ID -> notificationFragment
+            BOTTOM_NAVIGATION_MY_PAGE_ID -> myPageFragment
+            else -> calendarFragment
+        }
     }
 
     override fun observeEvent() {}
