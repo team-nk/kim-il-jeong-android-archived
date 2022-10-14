@@ -81,6 +81,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
                 }
                 true
             }
+
+            selectedItemId = selectedBottomNavigationMenuId!!
         }
     }
 
