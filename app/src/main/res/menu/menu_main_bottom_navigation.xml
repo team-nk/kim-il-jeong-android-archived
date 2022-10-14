@@ -16,7 +16,7 @@
         android:icon="@drawable/icon_notification"
         android:title="@string/menu_nb_main_selected" />
     <item
-        android:id="@+id/bn_main_user"
+        android:id="@+id/bn_main_mypage"
         android:enabled="true"
         android:icon="@drawable/icon_user"
         android:title="@string/menu_nb_main_selected" />

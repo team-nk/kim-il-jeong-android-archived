@@ -3,14 +3,6 @@ package com.teamnk.kimiljung.util
 import android.content.Context
 import android.content.SharedPreferences
 
-enum class SharedPreferencesNames(val preferencesName: String) {
-    INTRODUCTION_PAGE("introductionPage")
-}
-
-enum class SharedPreferencesKeys(val key: String) {
-    IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN("isIntroductionPagerActivityShown")
-}
-
 fun initializeSharedPreferences(context: Context, name: String, mode: Int): SharedPreferences {
     return context.getSharedPreferences(name, mode)
 }

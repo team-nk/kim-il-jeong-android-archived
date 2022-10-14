@@ -7,12 +7,27 @@ import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityMainBinding
 import com.teamnk.kimiljung.ui.fragment.CalendarFragment
 import com.teamnk.kimiljung.ui.fragment.MapFragment
-import com.teamnk.kimiljung.ui.fragment.NotificationFragment
 import com.teamnk.kimiljung.ui.fragment.MyPageFragment
+import com.teamnk.kimiljung.ui.fragment.NotificationFragment
+import com.teamnk.kimiljung.util.SharedPreferencesKey.BOTTOM_NAVIGATION_CALENDAR_ID
+import com.teamnk.kimiljung.util.SharedPreferencesKey.BOTTOM_NAVIGATION_MAP_ID
+import com.teamnk.kimiljung.util.SharedPreferencesKey.BOTTOM_NAVIGATION_MY_PAGE_ID
+import com.teamnk.kimiljung.util.SharedPreferencesKey.BOTTOM_NAVIGATION_NOTIFICATION_ID
+import com.teamnk.kimiljung.util.SharedPreferencesKey.MAIN_ACTIVITY_SAVED_BOTTOM_NAVIGATION_ID
+import com.teamnk.kimiljung.util.SharedPreferencesName.MAIN_ACTIVITY
+import com.teamnk.kimiljung.util.initializeSharedPreferences
+import com.teamnk.kimiljung.util.putInSharedPreferences
 
 class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
 ) {
+
+    private val sharedPreferences by lazy {
+        initializeSharedPreferences(this, MAIN_ACTIVITY, MODE_PRIVATE)
+    }
+    private val sharedPreferencesEditor by lazy {
+        sharedPreferences.edit()
+    }
 
     private val calendarFragment by lazy {
         CalendarFragment()
@@ -23,19 +38,29 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     private val notificationFragment by lazy {
         NotificationFragment()
     }
-    private val userFragment by lazy {
+    private val myPageFragment by lazy {
         MyPageFragment()
     }
 
+    private var selectedBottomNavigationMenuId: Int? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        selectedBottomNavigationMenuId =
+            sharedPreferences.getInt(
+                MAIN_ACTIVITY_SAVED_BOTTOM_NAVIGATION_ID,
+                BOTTOM_NAVIGATION_CALENDAR_ID
+            )
 
         initBottomNavigationView()
         initFragment()
     }
 
     private fun initFragment() {
-        changeFragment(calendarFragment)
+        changeFragment(
+            getFragmentFromBottomNavigationMenuId(selectedBottomNavigationMenuId)
+        )
     }
 
     private fun initBottomNavigationView() {
@@ -51,10 +76,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
                     R.id.bn_main_notification -> {
                         changeFragment(notificationFragment)
                     }
-                    R.id.bn_main_user -> {
-                        changeFragment(userFragment)
+                    R.id.bn_main_mypage -> {
+                        changeFragment(myPageFragment)
                     }
                 }
+
                 true
             }
         }
@@ -65,6 +91,35 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
             .beginTransaction()
             .replace(R.id.container_main, fragment)
             .commit()
+
+        selectedBottomNavigationMenuId = getSelectedBottomNavigationMenuIdFromFragment(fragment)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        putInSharedPreferences(
+            sharedPreferencesEditor,
+            MAIN_ACTIVITY_SAVED_BOTTOM_NAVIGATION_ID,
+            selectedBottomNavigationMenuId
+        )
+    }
+
+    private fun getSelectedBottomNavigationMenuIdFromFragment(fragment: Fragment): Int {
+        return when (fragment.id) {
+            mapFragment.id -> BOTTOM_NAVIGATION_MAP_ID
+            notificationFragment.id -> BOTTOM_NAVIGATION_NOTIFICATION_ID
+            myPageFragment.id -> BOTTOM_NAVIGATION_MY_PAGE_ID
+            else -> BOTTOM_NAVIGATION_CALENDAR_ID
+        }
+    }
+
+    private fun getFragmentFromBottomNavigationMenuId(id: Int?): Fragment {
+        return when (id) {
+            BOTTOM_NAVIGATION_MAP_ID -> mapFragment
+            BOTTOM_NAVIGATION_NOTIFICATION_ID -> notificationFragment
+            BOTTOM_NAVIGATION_MY_PAGE_ID -> myPageFragment
+            else -> calendarFragment
+        }
     }
 
     override fun observeEvent() {}

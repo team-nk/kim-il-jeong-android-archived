@@ -6,8 +6,8 @@ import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityIntroductionPagerBinding
 import com.teamnk.kimiljung.ui.activity.auth.StartActivity
 import com.teamnk.kimiljung.ui.adapter.introduction.IntroductionPagerAdapter
-import com.teamnk.kimiljung.util.SharedPreferencesKeys.IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN
-import com.teamnk.kimiljung.util.SharedPreferencesNames.INTRODUCTION_PAGE
+import com.teamnk.kimiljung.util.SharedPreferencesKey.INTRODUCTION_PAGER_IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN
+import com.teamnk.kimiljung.util.SharedPreferencesName.INTRODUCTION_PAGER_ACTIVITY
 import com.teamnk.kimiljung.util.initializeSharedPreferences
 import com.teamnk.kimiljung.util.putInSharedPreferences
 import com.teamnk.kimiljung.util.startIntentClearTop
@@ -17,7 +17,7 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
 ) {
 
     private val sharedPreferences by lazy {
-        initializeSharedPreferences(this, INTRODUCTION_PAGE.preferencesName, MODE_PRIVATE)
+        initializeSharedPreferences(this, INTRODUCTION_PAGER_ACTIVITY, MODE_PRIVATE)
     }
     private val sharedPreferencesEditor by lazy {
         sharedPreferences.edit()
@@ -33,7 +33,7 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
     }
 
     private fun checkIntroductionPageShown() {
-        if (sharedPreferences.getBoolean(IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN.key, false)) {
+        if (sharedPreferences.getBoolean(INTRODUCTION_PAGER_IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN, false)) {
             moveToStartActivity()
         }
     }
@@ -50,7 +50,7 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
             if (current == 3) {
                 moveToStartActivity()
                 putInSharedPreferences(
-                    sharedPreferencesEditor, IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN.key, true
+                    sharedPreferencesEditor, INTRODUCTION_PAGER_IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN, true
                 )
             }
         }

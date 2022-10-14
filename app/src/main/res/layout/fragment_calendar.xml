@@ -4,6 +4,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         style="@style/BackgroundAll"
+        android:background="@color/black"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
