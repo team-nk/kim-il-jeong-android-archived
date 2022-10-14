@@ -9,10 +9,23 @@ import com.teamnk.kimiljung.ui.fragment.CalendarFragment
 import com.teamnk.kimiljung.ui.fragment.MapFragment
 import com.teamnk.kimiljung.ui.fragment.MyPageFragment
 import com.teamnk.kimiljung.ui.fragment.NotificationFragment
+import com.teamnk.kimiljung.util.SAVED_FRAGMENT_ID
+import com.teamnk.kimiljung.util.SharedPreferencesKey
+import com.teamnk.kimiljung.util.SharedPreferencesKey.MAIN_ACTIVITY_SAVED_FRAGMENT_ID
+import com.teamnk.kimiljung.util.SharedPreferencesName.INTRODUCTION_PAGER_ACTIVITY
+import com.teamnk.kimiljung.util.SharedPreferencesName.MAIN_ACTIVITY
+import com.teamnk.kimiljung.util.initializeSharedPreferences
 
 class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
 ) {
+
+    private val sharedPreferences by lazy {
+        initializeSharedPreferences(this, MAIN_ACTIVITY, MODE_PRIVATE)
+    }
+    private val sharedPreferencesEditor by lazy {
+        sharedPreferences.edit()
+    }
 
     private val calendarFragment by lazy {
         CalendarFragment()
@@ -26,6 +39,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     private val userFragment by lazy {
         MyPageFragment()
     }
+
+    private lateinit var selectedFragment: Fragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,9 +70,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
                         changeFragment(userFragment)
                     }
                 }
+
                 true
             }
-            selectedItemId = R.id.bn_main_calendar
+
+            selectedItemId = sharedPreferences.getInt(MAIN_ACTIVITY_SAVED_FRAGMENT_ID, R.id.bn_main_calendar)
         }
     }
 
@@ -66,6 +83,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
             .beginTransaction()
             .replace(R.id.container_main, fragment)
             .commit()
+
+        selectedFragment = fragment ?: calendarFragment
     }
 
     override fun observeEvent() {}
