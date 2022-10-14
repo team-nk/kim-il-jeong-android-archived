@@ -21,7 +21,6 @@ import com.teamnk.kimiljung.util.putInSharedPreferences
 class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
 ) {
-
     private val sharedPreferences by lazy {
         initializeSharedPreferences(this, MAIN_ACTIVITY, MODE_PRIVATE)
     }
@@ -80,7 +79,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
                         changeFragment(myPageFragment)
                     }
                 }
-
                 true
             }
         }
