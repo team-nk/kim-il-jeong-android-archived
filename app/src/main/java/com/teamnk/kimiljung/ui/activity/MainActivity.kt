@@ -68,18 +68,23 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
                 when (it.itemId) {
                     R.id.bn_main_calendar -> {
                         changeFragment(calendarFragment)
+                        return@setOnItemSelectedListener true
                     }
                     R.id.bn_main_map -> {
                         changeFragment(mapFragment)
+                        return@setOnItemSelectedListener true
                     }
                     R.id.bn_main_notification -> {
                         changeFragment(notificationFragment)
+                        return@setOnItemSelectedListener true
                     }
                     R.id.bn_main_mypage -> {
                         changeFragment(myPageFragment)
+                        return@setOnItemSelectedListener true
                     }
                 }
-                true
+
+                false
             }
 
             selectedItemId = selectedBottomNavigationMenuId!!
