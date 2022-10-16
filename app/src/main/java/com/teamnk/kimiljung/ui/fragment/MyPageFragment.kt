@@ -10,6 +10,7 @@ class MyPageFragment : BaseFragment<FragmentCalendarBinding>(
     R.layout.fragment_mypage
 ) {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
