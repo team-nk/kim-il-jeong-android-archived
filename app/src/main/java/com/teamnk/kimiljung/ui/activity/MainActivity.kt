@@ -99,7 +99,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.container_main, fragment)
-            .commit()
+            .commitAllowingStateLoss()
 
         selectedBottomNavigationMenuId = getSelectedBottomNavigationMenuIdFromFragment(fragment)
     }
