@@ -1,6 +1,7 @@
 package com.teamnk.kimiljung.ui.activity
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
@@ -17,10 +18,13 @@ import com.teamnk.kimiljung.util.SharedPreferencesKey.MAIN_ACTIVITY_SAVED_BOTTOM
 import com.teamnk.kimiljung.util.SharedPreferencesName.MAIN_ACTIVITY
 import com.teamnk.kimiljung.util.initializeSharedPreferences
 import com.teamnk.kimiljung.util.putInSharedPreferences
+import com.teamnk.kimiljung.viewmodel.MainViewModel
 
 class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
 ) {
+    private val viewModel by viewModels<MainViewModel>()
+
     private val sharedPreferences by lazy {
         initializeSharedPreferences(this, MAIN_ACTIVITY, MODE_PRIVATE)
     }

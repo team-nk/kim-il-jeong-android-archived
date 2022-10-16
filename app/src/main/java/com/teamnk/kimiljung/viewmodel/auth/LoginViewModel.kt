@@ -17,7 +17,6 @@ class LoginViewModel(
     var failure: MutableLiveData<Boolean> = MutableLiveData()
 
     fun postLogin(loginRequest: LoginRequest) {
-        Log.d(TAG, "postLogin: ")
         viewModelScope.launch {
             kotlin.runCatching {
                 repository.login(loginRequest)
