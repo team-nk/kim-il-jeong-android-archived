@@ -8,6 +8,7 @@ import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.data.dto.LoginRequest
 import com.teamnk.kimiljung.databinding.ActivityLoginBinding
 import com.teamnk.kimiljung.ui.activity.MainActivity
+import com.teamnk.kimiljung.util.showShortToast
 import com.teamnk.kimiljung.util.startIntent
 import com.teamnk.kimiljung.util.startIntentClearTop
 import com.teamnk.kimiljung.viewmodel.auth.LoginViewModel
@@ -41,9 +42,9 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
                 val loginRequest = LoginRequest(email, password)
                 viewModel.postLogin(loginRequest)
                 // TODO remove test toast and implement intent to MainActivity
-                Toast.makeText(this, "viewModel working", Toast.LENGTH_SHORT).show()
+                showShortToast(this, "viewModel working")
             } else {
-                Toast.makeText(this, "failed", Toast.LENGTH_SHORT).show()
+                showShortToast(this, "failed")
             }
         }
     }
@@ -67,14 +68,14 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
         viewModel.run {
             success.observe(this@LoginActivity) {
                 it.run {
-                    Toast.makeText(baseContext, "로그인 성공!", Toast.LENGTH_SHORT).show()
+                    showShortToast(baseContext, "로그인 성공!")
                     startIntentClearTop(baseContext, MainActivity::class.java)
                 }
             }
             failure.observe(this@LoginActivity) {
                 it.run {
-                    // TODO toast
-                    Toast.makeText(baseContext, "로그인 실패", Toast.LENGTH_SHORT).show()
+                    // TODO remove toast
+                    showShortToast(baseContext, "로그인 실패")
                 }
             }
         }
