@@ -11,12 +11,6 @@ import com.teamnk.kimiljung.databinding.FragmentCalendarBinding
 class MyPageFragment : BaseFragment<FragmentCalendarBinding>(
     R.layout.fragment_mypage
 ) {
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -42,18 +36,15 @@ class MyPageFragment : BaseFragment<FragmentCalendarBinding>(
     }
 
     private fun initLogOutButton() {
-        TODO("Not yet implemented")
+
     }
 
     private fun initChangePasswordButton() {
-        TODO("Not yet implemented")
     }
 
     private fun initApplicationInformationButton() {
-        TODO("Not yet implemented")
     }
 
     private fun initEditBirthDayButton() {
-        TODO("Not yet implemented")
     }
 }
