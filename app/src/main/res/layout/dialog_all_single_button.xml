@@ -17,7 +17,7 @@
             <TextView
                 android:id="@+id/tv_dialog_single_title"
                 style="@style/TextViewDialogTitle"
-                app:layout_constraintBottom_toTopOf="@id/btn_dialog_accept"
+                app:layout_constraintBottom_toTopOf="@id/btn_dialog_single_accept"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -27,7 +27,7 @@
             <TextView
                 android:id="@+id/tv_dialog_single_description"
                 style="@style/TextViewDialogDescription"
-                app:layout_constraintBottom_toTopOf="@id/btn_dialog_accept"
+                app:layout_constraintBottom_toTopOf="@id/btn_dialog_single_accept"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_dialog_single_title"
@@ -35,7 +35,7 @@
                 tools:text="@string/dialog_register_success_description" />
 
             <Button
-                android:id="@+id/btn_dialog_accept"
+                android:id="@+id/btn_dialog_single_accept"
                 style="@style/ButtonPrimary"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
