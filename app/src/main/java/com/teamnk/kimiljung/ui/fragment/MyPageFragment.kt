@@ -8,14 +8,24 @@ import com.teamnk.kimiljung.base.BaseFragment
 import com.teamnk.kimiljung.databinding.FragmentMypageBinding
 import com.teamnk.kimiljung.ui.activity.MainActivity
 import com.teamnk.kimiljung.ui.activity.auth.StartActivity
-import com.teamnk.kimiljung.util.showDialogWithDoubleButton
-import com.teamnk.kimiljung.util.startIntentClearTop
+import com.teamnk.kimiljung.util.*
+import com.teamnk.kimiljung.util.SharedPreferencesName.INTRODUCTION_PAGER_ACTIVITY
+import com.teamnk.kimiljung.util.SharedPreferencesName.MAIN_ACTIVITY
+import com.teamnk.kimiljung.util.SharedPreferencesName.USER_AUTH
 
 class MyPageFragment : BaseFragment<FragmentMypageBinding>(
     R.layout.fragment_mypage
 ) {
 
     private lateinit var mainActivity: MainActivity
+
+    private val sharedPreferences by lazy {
+        getPrivateSharedPreferences(mainActivity, USER_AUTH)
+    }
+
+    private val sharedPreferencesEditor by lazy {
+        getSharedPreferencesEditor(sharedPreferences)
+    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -47,6 +57,11 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
                 getString(R.string.mypage_logout_confirm),
                 getString(R.string.mypage_logout)
             ) { startIntentClearTop(mainActivity, StartActivity::class.java) }
+
+            // TODO 리팩토링 하기
+            clearSharedPreferences(mainActivity, USER_AUTH)
+            clearSharedPreferences(mainActivity, MAIN_ACTIVITY)
+            clearSharedPreferences(mainActivity, INTRODUCTION_PAGER_ACTIVITY)
         }
     }
 
