@@ -1,7 +1,6 @@
 package com.teamnk.kimiljung.ui.activity.auth
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.viewModels
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
@@ -35,6 +34,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
             val email = binding.etLoginEmail.text.toString()
             val password = binding.etLoginPassword.text.toString()
 
+            // TODO 로그인 정보 저장
             if (email.isNotBlank() && password.isNotBlank()) {
                 if (email == "local" && password == "local") {
                     loginWithAdminAccount()
