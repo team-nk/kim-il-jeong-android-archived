@@ -7,20 +7,29 @@ import android.view.View
 import android.view.ViewGroup
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseFragment
-import com.teamnk.kimiljung.databinding.FragmentCalendarBinding
+import com.teamnk.kimiljung.databinding.FragmentMypageBinding
+import com.teamnk.kimiljung.ui.activity.MainActivity
+import com.teamnk.kimiljung.ui.activity.auth.StartActivity
 import com.teamnk.kimiljung.util.showDialogWithDoubleButton
+import com.teamnk.kimiljung.util.startIntentClearTop
 
-class MyPageFragment : BaseFragment<FragmentCalendarBinding>(
+class MyPageFragment : BaseFragment<FragmentMypageBinding>(
     R.layout.fragment_mypage
 ) {
+
+    lateinit var mainActivity: MainActivity
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        mainActivity = context as MainActivity
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        val context = container?.context
 
         initPersonalInformationButtons()
         initInteractButtons()
@@ -41,7 +50,13 @@ class MyPageFragment : BaseFragment<FragmentCalendarBinding>(
     }
 
     private fun initLogOutButton() {
-        //showDialogWithDoubleButton()
+        binding.btnMypageLogout.setOnClickListener {
+            showDialogWithDoubleButton(
+                mainActivity,
+                getString(R.string.mypage_logout_confirm),
+                getString(R.string.mypage_logout)
+            ) { startIntentClearTop(mainActivity, StartActivity::class.java) }
+        }
     }
 
     private fun initChangePasswordButton() {
