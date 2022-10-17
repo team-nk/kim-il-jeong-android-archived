@@ -10,14 +10,6 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(
     R.layout.fragment_calendar
 ) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
-
     override fun observeEvent() {
     }
 }
