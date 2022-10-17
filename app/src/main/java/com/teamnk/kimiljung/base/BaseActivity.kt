@@ -18,6 +18,7 @@ abstract class BaseActivity<B : ViewDataBinding>(
         super.onCreate(savedInstanceState)
 
         binding.lifecycleOwner = this
+        observeEvent()
     }
 
     abstract fun observeEvent()
