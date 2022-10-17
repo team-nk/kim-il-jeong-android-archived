@@ -23,7 +23,7 @@ fun showDialogWithSingleButton(context: Context, title: String, description: Str
     with(binding) {
         tvDialogSingleTitle.text = title
         tvDialogSingleDescription.text = description
-        btnDialogAccept.setOnClickListener {
+        btnDialogSingleAccept.setOnClickListener {
             functionWhenAcceptButtonClicked()
 
             dialog.dismiss()
