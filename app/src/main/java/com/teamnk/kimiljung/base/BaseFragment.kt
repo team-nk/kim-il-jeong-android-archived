@@ -13,6 +13,7 @@ abstract class BaseFragment<B : ViewDataBinding>(
     @LayoutRes private val layoutId: Int
 ) : Fragment() {
 
+    // todo
     protected lateinit var binding: B
 
     override fun onCreateView(
@@ -20,6 +21,7 @@ abstract class BaseFragment<B : ViewDataBinding>(
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
 
         return binding.root
