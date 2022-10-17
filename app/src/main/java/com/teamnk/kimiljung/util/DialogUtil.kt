@@ -62,10 +62,14 @@ fun showDialogWithDoubleButton(
         btnDialogDoublePrimary.text = primaryText
         btnDialogDoublePrimary.setOnClickListener {
             //todo
+
+            dialog.dismiss()
         }
         btnDialogDoubleSecondary.text = secondaryText
         btnDialogDoubleSecondary.setOnClickListener {
             //todo
+
+            dialog.dismiss()
         }
     }
 }
