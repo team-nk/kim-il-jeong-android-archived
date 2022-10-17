@@ -1,5 +1,6 @@
 package com.teamnk.kimiljung.ui.fragment
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,15 +8,19 @@ import android.view.ViewGroup
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseFragment
 import com.teamnk.kimiljung.databinding.FragmentCalendarBinding
+import com.teamnk.kimiljung.util.showDialogWithDoubleButton
 
 class MyPageFragment : BaseFragment<FragmentCalendarBinding>(
     R.layout.fragment_mypage
 ) {
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        val context = container?.context
 
         initPersonalInformationButtons()
         initInteractButtons()
@@ -36,7 +41,7 @@ class MyPageFragment : BaseFragment<FragmentCalendarBinding>(
     }
 
     private fun initLogOutButton() {
-
+        //showDialogWithDoubleButton()
     }
 
     private fun initChangePasswordButton() {
