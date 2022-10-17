@@ -16,7 +16,7 @@
             <TextView
                 android:id="@+id/tv_dialog_double_title"
                 style="@style/TextViewDialogTitle"
-                app:layout_constraintBottom_toTopOf="@id/btn_dialog_double_secondary"
+                app:layout_constraintBottom_toTopOf="@id/btn_dialog_double_cancel"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -24,26 +24,28 @@
                 tools:text="제목을 지정해주세요" />
 
             <TextView
-                android:id="@+id/btn_dialog_double_secondary"
+                android:id="@+id/btn_dialog_double_cancel"
                 style="@style/TextViewPrimary"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
+                android:layout_marginEnd="5dp"
+                android:text="@string/do_cancel"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/btn_dialog_double_primary"
+                app:layout_constraintEnd_toStartOf="@id/btn_dialog_double_action"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1"
-                tools:text="@string/do_cancel" />
+                app:layout_constraintVertical_bias="1" />
 
             <Button
-                android:id="@+id/btn_dialog_double_primary"
+                android:id="@+id/btn_dialog_double_action"
                 style="@style/ButtonPrimary"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                app:layout_constraintBottom_toBottomOf="@id/btn_dialog_double_secondary"
+                android:layout_marginStart="5dp"
+                app:layout_constraintBottom_toBottomOf="@id/btn_dialog_double_cancel"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/btn_dialog_double_secondary"
-                app:layout_constraintTop_toTopOf="@id/btn_dialog_double_secondary"
+                app:layout_constraintStart_toEndOf="@id/btn_dialog_double_cancel"
+                app:layout_constraintTop_toTopOf="@id/btn_dialog_double_cancel"
                 app:layout_constraintVertical_bias="1"
                 tools:text="@string/do_accept" />
         </androidx.constraintlayout.widget.ConstraintLayout>
