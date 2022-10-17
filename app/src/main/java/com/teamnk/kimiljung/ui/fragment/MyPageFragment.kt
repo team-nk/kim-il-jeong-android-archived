@@ -17,7 +17,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
     R.layout.fragment_mypage
 ) {
 
-    lateinit var mainActivity: MainActivity
+    private lateinit var mainActivity: MainActivity
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
