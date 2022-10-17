@@ -26,4 +26,13 @@ abstract class BaseFragment<B : ViewDataBinding>(
 
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.lifecycleOwner = this
+        observeEvent()
+    }
+
+    abstract fun observeEvent()
 }
