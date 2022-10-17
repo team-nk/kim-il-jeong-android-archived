@@ -29,7 +29,7 @@ fun showDialogWithSingleButton(
     with(binding) {
         tvDialogSingleTitle.text = title
         tvDialogSingleDescription.text = description
-        btnDialogSingleAccept.setOnClickListener {
+        btnDialogSingleAction.setOnClickListener {
             functionWhenAcceptButtonClicked()
 
             dialog.dismiss()
@@ -41,9 +41,7 @@ fun showDialogWithDoubleButton(
     context: Context,
     title: String,
     primaryText: String,
-    secondaryText: String,
-    functionWhenPrimaryButtonClicked: () -> Unit,
-    functionWhenSecondaryButtonClicked: () -> Unit
+    functionWhenPrimaryButtonClicked: () -> Unit
 ) {
 
     val binding: DialogAllDoubleButtonBinding by lazy {
@@ -59,16 +57,13 @@ fun showDialogWithDoubleButton(
     }
     with(binding) {
         tvDialogDoubleTitle.text = title
-        btnDialogDoublePrimary.text = primaryText
-        btnDialogDoublePrimary.setOnClickListener {
+        btnDialogDoubleAction.text = primaryText
+        btnDialogDoubleAction.setOnClickListener {
             functionWhenPrimaryButtonClicked()
 
             dialog.dismiss()
         }
-        btnDialogDoubleSecondary.text = secondaryText
-        btnDialogDoubleSecondary.setOnClickListener {
-            functionWhenSecondaryButtonClicked()
-
+        btnDialogDoubleCancel.setOnClickListener {
             dialog.dismiss()
         }
     }
