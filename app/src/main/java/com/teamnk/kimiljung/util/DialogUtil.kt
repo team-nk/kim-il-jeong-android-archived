@@ -61,13 +61,13 @@ fun showDialogWithDoubleButton(
         tvDialogDoubleTitle.text = title
         btnDialogDoublePrimary.text = primaryText
         btnDialogDoublePrimary.setOnClickListener {
-            //todo
+            functionWhenPrimaryButtonClicked()
 
             dialog.dismiss()
         }
         btnDialogDoubleSecondary.text = secondaryText
         btnDialogDoubleSecondary.setOnClickListener {
-            //todo
+            functionWhenSecondaryButtonClicked()
 
             dialog.dismiss()
         }
