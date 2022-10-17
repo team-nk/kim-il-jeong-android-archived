@@ -28,24 +28,24 @@
                 style="@style/TextViewPrimary"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:text="@string/do_cancel"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/btn_dialog_double_accept"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1" />
+                app:layout_constraintVertical_bias="1"
+                tools:text="@string/do_cancel" />
 
             <Button
                 android:id="@+id/btn_dialog_double_accept"
                 style="@style/ButtonPrimary"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:text="@string/mypage_logout"
                 app:layout_constraintBottom_toBottomOf="@id/btn_dialog_double_cancel"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/btn_dialog_double_cancel"
                 app:layout_constraintTop_toTopOf="@id/btn_dialog_double_cancel"
-                app:layout_constraintVertical_bias="1" />
+                app:layout_constraintVertical_bias="1"
+                tools:text="@string/do_accept" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </layout>
