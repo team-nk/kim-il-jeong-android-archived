@@ -57,10 +57,9 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
     }
 
     private fun logOut() {
-        // TODO 리팩토링 하기
+
         clearSharedPreferences(mainActivity, USER_AUTH)
         clearSharedPreferences(mainActivity, MAIN_ACTIVITY)
-        clearSharedPreferences(mainActivity, INTRODUCTION_PAGER_ACTIVITY)
     }
 
     private fun initChangePasswordButton() {
