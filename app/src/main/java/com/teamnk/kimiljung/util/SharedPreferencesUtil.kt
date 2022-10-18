@@ -23,11 +23,7 @@ fun putInSharedPreferences(
 }
 
 fun clearSharedPreferences(context: Context, name: String) {
-    with(context) { getSharedPreferences(name, MODE_PRIVATE).edit().clear() }
-}
-
-fun getPrivateSharedPreferences(context: Context, name: String): SharedPreferences {
-    return context.getSharedPreferences(name, MODE_PRIVATE)
+    with(context) { getSharedPreferences(name, MODE_PRIVATE).edit().clear().commit() }
 }
 
 fun getSharedPreferencesEditor(sharedPreferences: SharedPreferences): SharedPreferences.Editor {

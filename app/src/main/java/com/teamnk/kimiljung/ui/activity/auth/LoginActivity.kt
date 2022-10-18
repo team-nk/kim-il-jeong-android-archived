@@ -7,15 +7,22 @@ import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.data.dto.LoginRequest
 import com.teamnk.kimiljung.databinding.ActivityLoginBinding
 import com.teamnk.kimiljung.ui.activity.MainActivity
-import com.teamnk.kimiljung.util.showShortToast
-import com.teamnk.kimiljung.util.startIntent
-import com.teamnk.kimiljung.util.startIntentClearTop
+import com.teamnk.kimiljung.util.*
+import com.teamnk.kimiljung.util.SharedPreferencesName.USER_AUTH
 import com.teamnk.kimiljung.viewmodel.auth.LoginViewModel
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(
     R.layout.activity_login
 ) {
     private val viewModel by viewModels<LoginViewModel>()
+
+    private val sharedPreferences by lazy {
+        initializeSharedPreferences(this, USER_AUTH, MODE_PRIVATE)
+    }
+
+    private val sharedPreferencesEditor by lazy {
+        getSharedPreferencesEditor(sharedPreferences)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +50,12 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
                 viewModel.postLogin(loginRequest)
                 // TODO remove test toast and implement intent to MainActivity
                 showShortToast(this, "viewModel working")
+
+                putInSharedPreferences(
+                    sharedPreferencesEditor,
+                    SharedPreferencesKey.INTRODUCTION_PAGER_IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN,
+                    true
+                )
             } else {
                 showShortToast(this, "failed")
             }

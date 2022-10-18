@@ -4,6 +4,8 @@ import android.os.Bundle
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityStartBinding
+import com.teamnk.kimiljung.util.SharedPreferencesKey
+import com.teamnk.kimiljung.util.putInSharedPreferences
 import com.teamnk.kimiljung.util.startIntent
 
 class StartActivity : BaseActivity<ActivityStartBinding>(
