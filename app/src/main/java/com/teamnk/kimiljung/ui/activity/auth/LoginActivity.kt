@@ -54,7 +54,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
     }
 
     private fun goToMainActivity() {
-        startIntent(this, MainActivity::class.java)
+        startIntentClearTop(this, MainActivity::class.java)
         finish()
     }
 
