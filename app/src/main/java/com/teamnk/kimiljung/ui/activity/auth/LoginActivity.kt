@@ -38,30 +38,39 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
 
     private fun initLoginButton() {
         binding.btnLoginLogin.setOnClickListener {
+
             val email = binding.etLoginEmail.text.toString()
             val password = binding.etLoginPassword.text.toString()
 
             // TODO 로그인 정보 저장
             if (email.isNotBlank() && password.isNotBlank()) {
-                if (email == "local" && password == "local") {
-                    loginWithAdminAccount()
-                }
-                val loginRequest = LoginRequest(email, password)
-                viewModel.postLogin(loginRequest)
+
+                startLogin(email, password)
                 // TODO remove test toast and implement intent to MainActivity
                 showShortToast(this, "viewModel working")
-
-                putInSharedPreferences(
-                    sharedPreferencesEditor,
-                    SharedPreferencesKey.INTRODUCTION_PAGER_IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN,
-                    true
-                )
             } else {
-                showShortToast(this, "failed")
+                showShortToast(this, "로그인 실패")
             }
         }
     }
 
+    private fun startLogin(email: String, password: String) {
+        if (email == "local" && password == "local") {
+            loginWithAdminAccount()
+        } else {
+            loginWithUserAccount(email, password)
+        }
+    }
+
+    // TODO USER ACCOUNT LOGIN
+    private fun loginWithUserAccount(email: String, password: String) {
+        val loginRequest = LoginRequest(email, password)
+        viewModel.postLogin(loginRequest).runCatching {
+            showShortToast(baseContext, "일반 로그인 시도")
+        }
+    }
+
+    // TODO ADMIN ACCOUNT LOGIN
     private fun loginWithAdminAccount() {
         goToMainActivity()
     }
