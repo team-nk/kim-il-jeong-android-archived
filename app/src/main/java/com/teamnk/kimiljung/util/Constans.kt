@@ -11,7 +11,7 @@ object SharedPreferencesName {
 }
 
 object SharedPreferencesKey {
-    const val INTRODUCTION_PAGER_IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN =
+    const val IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN =
         "isIntroductionPagerActivityShown"
 
     const val MAIN_ACTIVITY_SAVED_BOTTOM_NAVIGATION_ID = "savedBottomNavigationId"

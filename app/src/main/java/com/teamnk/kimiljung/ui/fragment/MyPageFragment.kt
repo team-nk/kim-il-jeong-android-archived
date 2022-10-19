@@ -1,6 +1,7 @@
 package com.teamnk.kimiljung.ui.fragment
 
 import android.content.Context
+import android.content.Context.MODE_PRIVATE
 import android.os.Bundle
 import android.view.View
 import com.teamnk.kimiljung.R
@@ -8,7 +9,6 @@ import com.teamnk.kimiljung.base.BaseFragment
 import com.teamnk.kimiljung.databinding.FragmentMypageBinding
 import com.teamnk.kimiljung.ui.activity.MainActivity
 import com.teamnk.kimiljung.ui.activity.auth.StartActivity
-import com.teamnk.kimiljung.util.SharedPreferencesName.INTRODUCTION_PAGER_ACTIVITY
 import com.teamnk.kimiljung.util.SharedPreferencesName.MAIN_ACTIVITY
 import com.teamnk.kimiljung.util.SharedPreferencesName.USER_AUTH
 import com.teamnk.kimiljung.util.clearSharedPreferences
@@ -18,7 +18,6 @@ import com.teamnk.kimiljung.util.startIntentClearTop
 class MyPageFragment : BaseFragment<FragmentMypageBinding>(
     R.layout.fragment_mypage
 ) {
-
     private lateinit var mainActivity: MainActivity
 
     override fun onAttach(context: Context) {
@@ -50,17 +49,16 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
                 mainActivity,
                 getString(R.string.mypage_logout_confirm),
                 getString(R.string.mypage_logout)
-            ) { startIntentClearTop(mainActivity, StartActivity::class.java) }
-
-            logOut()
+            ) {
+                logOut()
+            }
         }
     }
 
     private fun logOut() {
-        // TODO 리팩토링 하기
-        clearSharedPreferences(mainActivity, USER_AUTH)
-        clearSharedPreferences(mainActivity, MAIN_ACTIVITY)
-        clearSharedPreferences(mainActivity, INTRODUCTION_PAGER_ACTIVITY)
+        clearSharedPreferences(mainActivity, MAIN_ACTIVITY, MODE_PRIVATE)
+        clearSharedPreferences(mainActivity, USER_AUTH, MODE_PRIVATE)
+        startIntentClearTop(mainActivity, StartActivity::class.java)
     }
 
     private fun initChangePasswordButton() {

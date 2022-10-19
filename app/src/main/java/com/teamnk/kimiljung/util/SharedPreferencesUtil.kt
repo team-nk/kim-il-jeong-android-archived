@@ -1,7 +1,6 @@
 package com.teamnk.kimiljung.util
 
 import android.content.Context
-import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
 
 fun initializeSharedPreferences(context: Context, name: String, mode: Int): SharedPreferences {
@@ -22,12 +21,11 @@ fun putInSharedPreferences(
     }
 }
 
-fun clearSharedPreferences(context: Context, name: String) {
-    with(context) { getSharedPreferences(name, MODE_PRIVATE).edit().clear() }
-}
-
-fun getPrivateSharedPreferences(context: Context, name: String): SharedPreferences {
-    return context.getSharedPreferences(name, MODE_PRIVATE)
+fun clearSharedPreferences(context: Context, name: String, mode: Int) {
+    val sharedPreferences = initializeSharedPreferences(context, name, mode)
+    val sharedPreferencesEditor = getSharedPreferencesEditor(sharedPreferences)
+    sharedPreferencesEditor.clear()
+    sharedPreferencesEditor.commit()
 }
 
 fun getSharedPreferencesEditor(sharedPreferences: SharedPreferences): SharedPreferences.Editor {
