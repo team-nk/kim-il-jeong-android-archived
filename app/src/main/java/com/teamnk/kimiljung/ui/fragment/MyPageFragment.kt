@@ -56,7 +56,6 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
     }
 
     private fun logOut() {
-        clearSharedPreferences(mainActivity, MAIN_ACTIVITY, MODE_PRIVATE)
         clearSharedPreferences(mainActivity, USER_AUTH, MODE_PRIVATE)
         startIntentClearTop(mainActivity, StartActivity::class.java)
     }

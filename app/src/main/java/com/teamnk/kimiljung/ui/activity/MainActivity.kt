@@ -17,6 +17,7 @@ import com.teamnk.kimiljung.util.SharedPreferencesKey.BOTTOM_NAVIGATION_MY_PAGE_
 import com.teamnk.kimiljung.util.SharedPreferencesKey.BOTTOM_NAVIGATION_NOTIFICATION_ID
 import com.teamnk.kimiljung.util.SharedPreferencesKey.MAIN_ACTIVITY_SAVED_BOTTOM_NAVIGATION_ID
 import com.teamnk.kimiljung.util.SharedPreferencesName.MAIN_ACTIVITY
+import com.teamnk.kimiljung.util.clearSharedPreferences
 import com.teamnk.kimiljung.util.getSharedPreferencesEditor
 import com.teamnk.kimiljung.util.initializeSharedPreferences
 import com.teamnk.kimiljung.util.putInSharedPreferences
@@ -112,11 +113,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
 
     override fun onDestroy() {
         super.onDestroy()
-        putInSharedPreferences(
+        /*putInSharedPreferences(
             sharedPreferencesEditor,
             MAIN_ACTIVITY_SAVED_BOTTOM_NAVIGATION_ID,
             selectedBottomNavigationMenuId
-        )
+        )*/
+        clearSharedPreferences(this, MAIN_ACTIVITY, MODE_PRIVATE)
     }
 
     private fun getSelectedBottomNavigationMenuIdFromFragment(fragment: Fragment): Int {
