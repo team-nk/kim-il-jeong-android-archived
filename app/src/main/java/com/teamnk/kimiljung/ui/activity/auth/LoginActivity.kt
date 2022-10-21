@@ -1,20 +1,27 @@
 package com.teamnk.kimiljung.ui.activity.auth
 
 import android.os.Bundle
-import androidx.activity.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.data.dto.LoginRequest
+import com.teamnk.kimiljung.data.repository.auth.LoginRepository
 import com.teamnk.kimiljung.databinding.ActivityLoginBinding
 import com.teamnk.kimiljung.ui.activity.MainActivity
 import com.teamnk.kimiljung.util.*
 import com.teamnk.kimiljung.util.SharedPreferencesName.USER_AUTH
 import com.teamnk.kimiljung.viewmodel.auth.LoginViewModel
+import com.teamnk.kimiljung.viewmodel.auth.LoginViewModelFactory
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(
     R.layout.activity_login
 ) {
-    private val viewModel by viewModels<LoginViewModel>()
+    private val viewModel by lazy {
+        ViewModelProvider(
+            this, LoginViewModelFactory(LoginRepository())
+        )[LoginViewModel::class.java]
+    }
+
 
     private val sharedPreferences by lazy {
         initializeSharedPreferences(this, USER_AUTH, MODE_PRIVATE)

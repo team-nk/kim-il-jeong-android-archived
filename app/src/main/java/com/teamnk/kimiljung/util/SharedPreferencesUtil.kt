@@ -28,6 +28,9 @@ fun clearSharedPreferences(context: Context, name: String, mode: Int) {
     sharedPreferencesEditor.commit()
 }
 
+// 다른 클래스에게 주는 의존성 제거
 fun getSharedPreferencesEditor(sharedPreferences: SharedPreferences): SharedPreferences.Editor {
     return sharedPreferences.edit()
 }
+
+// SharedPreferences 초기화 클래스

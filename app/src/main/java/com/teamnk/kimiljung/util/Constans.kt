@@ -3,8 +3,6 @@ package com.teamnk.kimiljung.util
 import com.teamnk.kimiljung.R
 
 object SharedPreferencesName {
-    const val INTRODUCTION_PAGER_ACTIVITY = "introductionPagerActivity"
-
     const val MAIN_ACTIVITY = "mainActivity"
 
     const val USER_AUTH = "userAuth"

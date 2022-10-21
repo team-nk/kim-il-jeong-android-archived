@@ -7,7 +7,6 @@ import com.teamnk.kimiljung.databinding.ActivityIntroductionPagerBinding
 import com.teamnk.kimiljung.ui.activity.auth.StartActivity
 import com.teamnk.kimiljung.ui.adapter.introduction.IntroductionPagerAdapter
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN
-import com.teamnk.kimiljung.util.SharedPreferencesName.INTRODUCTION_PAGER_ACTIVITY
 import com.teamnk.kimiljung.util.SharedPreferencesName.USER_AUTH
 import com.teamnk.kimiljung.util.getSharedPreferencesEditor
 import com.teamnk.kimiljung.util.initializeSharedPreferences
