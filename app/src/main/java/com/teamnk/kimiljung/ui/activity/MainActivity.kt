@@ -1,10 +1,11 @@
 package com.teamnk.kimiljung.ui.activity
 
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
+import com.teamnk.kimiljung.data.repository.MainRepository
 import com.teamnk.kimiljung.databinding.ActivityMainBinding
 import com.teamnk.kimiljung.ui.fragment.CalendarFragment
 import com.teamnk.kimiljung.ui.fragment.MapFragment
@@ -20,11 +21,15 @@ import com.teamnk.kimiljung.util.getSharedPreferencesEditor
 import com.teamnk.kimiljung.util.initializeSharedPreferences
 import com.teamnk.kimiljung.util.putInSharedPreferences
 import com.teamnk.kimiljung.viewmodel.MainViewModel
+import com.teamnk.kimiljung.viewmodel.MainViewModelFactory
 
 class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
 ) {
-    private val viewModel by viewModels<MainViewModel>()
+
+    private val viewModel by lazy {
+        ViewModelProvider(this, MainViewModelFactory(MainRepository()))[MainViewModel::class.java]
+    }
 
     private val sharedPreferences by lazy {
         initializeSharedPreferences(this, MAIN_ACTIVITY, MODE_PRIVATE)
