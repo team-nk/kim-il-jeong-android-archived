@@ -31,3 +31,5 @@ fun clearSharedPreferences(context: Context, name: String, mode: Int) {
 fun getSharedPreferencesEditor(sharedPreferences: SharedPreferences): SharedPreferences.Editor {
     return sharedPreferences.edit()
 }
+
+// SharedPreferences 초기화 클래스

@@ -16,6 +16,7 @@ import com.teamnk.kimiljung.util.SharedPreferencesKey.BOTTOM_NAVIGATION_MY_PAGE_
 import com.teamnk.kimiljung.util.SharedPreferencesKey.BOTTOM_NAVIGATION_NOTIFICATION_ID
 import com.teamnk.kimiljung.util.SharedPreferencesKey.MAIN_ACTIVITY_SAVED_BOTTOM_NAVIGATION_ID
 import com.teamnk.kimiljung.util.SharedPreferencesName.MAIN_ACTIVITY
+import com.teamnk.kimiljung.util.getSharedPreferencesEditor
 import com.teamnk.kimiljung.util.initializeSharedPreferences
 import com.teamnk.kimiljung.util.putInSharedPreferences
 import com.teamnk.kimiljung.viewmodel.MainViewModel
@@ -29,7 +30,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
         initializeSharedPreferences(this, MAIN_ACTIVITY, MODE_PRIVATE)
     }
     private val sharedPreferencesEditor by lazy {
-        sharedPreferences.edit()
+        getSharedPreferencesEditor(sharedPreferences)
     }
 
     private val calendarFragment by lazy {
