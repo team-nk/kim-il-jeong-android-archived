@@ -8,7 +8,7 @@ import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseFragment
 import com.teamnk.kimiljung.databinding.FragmentCalendarBinding
-import com.teamnk.kimiljung.ui.DecorateCalendarView
+import com.teamnk.kimiljung.ui.MainCalendarViewManager
 import com.teamnk.kimiljung.ui.activity.MainActivity
 
 class CalendarFragment : BaseFragment<FragmentCalendarBinding>(
@@ -34,14 +34,14 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(
 
     private fun initCalendarView() {
         with(binding.calendarCalendarView) {
-            addDecorator(DecorateCalendarView(mainActivity))
+            addDecorator(MainCalendarViewManager(mainActivity))
             setOnDateChangedListener { _, date, _ ->
                 Log.d("TEST", date.toString())
                 if (date == today) {
-                    removeDecorator(DecorateCalendarView(mainActivity))
+                    removeDecorator(MainCalendarViewManager(mainActivity))
                     Log.d("TEST", "today")
                 } else {
-                    addDecorator(DecorateCalendarView(mainActivity))
+                    addDecorator(MainCalendarViewManager(mainActivity))
                 }
             }
         }

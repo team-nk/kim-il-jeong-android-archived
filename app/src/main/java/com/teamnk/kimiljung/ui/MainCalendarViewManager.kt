@@ -7,7 +7,7 @@ import com.prolificinteractive.materialcalendarview.DayViewDecorator
 import com.prolificinteractive.materialcalendarview.DayViewFacade
 import com.teamnk.kimiljung.R
 
-class DecorateCalendarView(context : Context):DayViewDecorator {
+class MainCalendarViewManager(context: Context) : DayViewDecorator {
     private var date = CalendarDay.today()
 
     val drawable = AppCompatResources.getDrawable(context, R.drawable.background_selected_date)
