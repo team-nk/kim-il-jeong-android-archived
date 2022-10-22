@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.presentation.base
+package com.teamnk.kimiljung.presentation.main.fragment.base
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -3,7 +3,7 @@ package com.teamnk.kimiljung.presentation.login.view
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.teamnk.kimiljung.R
-import com.teamnk.kimiljung.presentation.base.BaseActivity
+import com.teamnk.kimiljung.presentation.main.fragment.base.BaseActivity
 import com.teamnk.kimiljung.data.model.login.LoginRequest
 import com.teamnk.kimiljung.databinding.ActivityLoginBinding
 import com.teamnk.kimiljung.presentation.login.viewmodel.LoginViewModel
@@ -49,6 +49,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
             }
         }
     }
+
+    
 
     private fun loginWithAdminAccount() {
         goToMainActivity()

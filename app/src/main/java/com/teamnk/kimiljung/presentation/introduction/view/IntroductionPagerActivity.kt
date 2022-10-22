@@ -2,10 +2,10 @@ package com.teamnk.kimiljung.presentation.introduction.view
 
 import android.os.Bundle
 import com.teamnk.kimiljung.R
-import com.teamnk.kimiljung.presentation.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityIntroductionPagerBinding
-import com.teamnk.kimiljung.presentation.start.view.StartActivity
 import com.teamnk.kimiljung.presentation.introduction.adapter.IntroductionPagerAdapter
+import com.teamnk.kimiljung.presentation.main.fragment.base.BaseActivity
+import com.teamnk.kimiljung.presentation.start.view.StartActivity
 import com.teamnk.kimiljung.util.*
 
 class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>(
@@ -15,7 +15,7 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
     private val sharedPreferences by lazy {
         initializeSharedPreferences(
             this,
-            SharedPreferencesName.INTRODUCTION_PAGER_ACTIVITY,
+            SharedPreferencesName.MAIN_ACTIVITY,
             MODE_PRIVATE
         )
     }
@@ -33,7 +33,11 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
     }
 
     private fun checkIntroductionPageShown() {
-        if (sharedPreferences.getBoolean(SharedPreferencesKey.INTRODUCTION_PAGER_IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN, false)) {
+        if (sharedPreferences.getBoolean(
+                SharedPreferencesKey.IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN,
+                false
+            )
+        ) {
             moveToStartActivity()
         }
     }
@@ -49,11 +53,6 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
             binding.vpIntroduction.setCurrentItem(current + 1, true)
             if (current == 3) {
                 moveToStartActivity()
-                putInSharedPreferences(
-                    sharedPreferencesEditor,
-                    SharedPreferencesKey.INTRODUCTION_PAGER_IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN,
-                    true
-                )
             }
         }
     }

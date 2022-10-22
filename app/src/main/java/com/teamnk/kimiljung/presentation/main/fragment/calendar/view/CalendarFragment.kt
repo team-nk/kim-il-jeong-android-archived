@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.presentation.calendar.view
+package com.teamnk.kimiljung.presentation.main.fragment.calendar.view
 
 import android.content.Context
 import android.os.Bundle
@@ -6,9 +6,9 @@ import android.util.Log
 import android.view.View
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.teamnk.kimiljung.R
-import com.teamnk.kimiljung.presentation.base.BaseFragment
+import com.teamnk.kimiljung.presentation.main.fragment.base.BaseFragment
 import com.teamnk.kimiljung.databinding.FragmentCalendarBinding
-import com.teamnk.kimiljung.presentation.calendar.CalendarViewManager
+import com.teamnk.kimiljung.presentation.main.fragment.calendar.CalendarViewManager
 import com.teamnk.kimiljung.presentation.main.view.MainActivity
 
 class CalendarFragment : BaseFragment<FragmentCalendarBinding>(

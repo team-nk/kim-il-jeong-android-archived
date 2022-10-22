@@ -2,7 +2,7 @@ package com.teamnk.kimiljung.presentation.start.view
 
 import android.os.Bundle
 import com.teamnk.kimiljung.R
-import com.teamnk.kimiljung.presentation.base.BaseActivity
+import com.teamnk.kimiljung.presentation.main.fragment.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityStartBinding
 import com.teamnk.kimiljung.presentation.login.view.LoginActivity
 import com.teamnk.kimiljung.util.startIntent
