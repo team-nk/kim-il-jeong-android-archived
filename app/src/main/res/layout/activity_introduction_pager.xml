@@ -3,17 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+<<<<<<< Updated upstream
+=======
     <data>
 
         <variable
             name="viewModel"
-            type="com.teamnk.kimiljung.viewmodel.introduction.IntroductionPagerViewModel" />
+            type="com.teamnk.kimiljung.presentation.introduction.viewmodel.IntroductionPagerViewModel" />
     </data>
 
+>>>>>>> Stashed changes
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.activity.introduction.IntroductionPagerActivity">
+        tools:context=".presentation.introduction.view.IntroductionPagerActivity">
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/vp_introduction"
