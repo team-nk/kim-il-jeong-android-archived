@@ -53,7 +53,7 @@
         </com.google.android.material.tabs.TabLayout>
 
         <LinearLayout
-            android:id="@+id/viewGroup_introduction_next"
+            android:id="@+id/btn_introduction_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"

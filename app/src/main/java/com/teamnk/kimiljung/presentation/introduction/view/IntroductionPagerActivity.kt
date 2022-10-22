@@ -6,9 +6,10 @@ import com.teamnk.kimiljung.databinding.ActivityIntroductionPagerBinding
 import com.teamnk.kimiljung.presentation.introduction.adapter.IntroductionPagerAdapter
 import com.teamnk.kimiljung.presentation.main.fragment.base.BaseActivity
 import com.teamnk.kimiljung.presentation.start.view.StartActivity
-import com.teamnk.kimiljung.util.*
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN
 import com.teamnk.kimiljung.util.SharedPreferencesName.MAIN_ACTIVITY
+import com.teamnk.kimiljung.util.initializeSharedPreferences
+import com.teamnk.kimiljung.util.startIntentClearTop
 
 class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>(
     R.layout.activity_introduction_pager
@@ -21,16 +22,17 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
             MODE_PRIVATE
         )
     }
+
     private val sharedPreferencesEditor by lazy {
         sharedPreferences.edit()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         checkIntroductionPageShown()
+
         initViewPager()
-        initNextLinearLayout()
+        initNextButton()
         initTabLayout()
     }
 
@@ -49,8 +51,8 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
         binding.tabLayoutIntroductionViewPager.setupWithViewPager(binding.vpIntroduction)
     }
 
-    private fun initNextLinearLayout() {
-        binding.viewGroupIntroductionNext.setOnClickListener {
+    private fun initNextButton() {
+        binding.btnIntroductionNext.setOnClickListener {
             val current = binding.vpIntroduction.currentItem
             binding.vpIntroduction.setCurrentItem(current + 1, true)
             if (current == 3) {
@@ -66,7 +68,7 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
 
     private fun initTabLayout() {
         with(binding.tabLayoutIntroductionViewPager) {
-            when (this.id) {
+            when (id) {
                 0 -> getTabAt(0)?.select()
                 1 -> getTabAt(1)?.select()
                 2 -> getTabAt(2)?.select()
