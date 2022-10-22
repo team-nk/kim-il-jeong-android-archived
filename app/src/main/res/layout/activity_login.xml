@@ -6,13 +6,13 @@
 
         <variable
             name="viewModel"
-            type="com.teamnk.kimiljung.viewmodel.auth.LoginViewModel" />
+            type="com.teamnk.kimiljung.presentation.login.viewmodel.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.activity.auth.LoginActivity">
+        tools:context=".presentation.login.view.LoginActivity">
 
         <ImageView
             android:id="@+id/img_login_text_logo"
