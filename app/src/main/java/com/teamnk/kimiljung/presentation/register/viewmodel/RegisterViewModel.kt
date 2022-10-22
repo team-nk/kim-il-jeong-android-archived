@@ -10,12 +10,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class RegisterViewModel(
-    private val repository : RegisterRepository = RegisterRepository()
+    private val repository: RegisterRepository
 ) : ViewModel() {
-    private var success : MutableLiveData<Boolean> = MutableLiveData()
-    private var failed : MutableLiveData<Boolean> = MutableLiveData()
 
-    suspend fun verifyEmail(EmailVerificationRequest: RegisterEmailVerificationRequest){
+    // TODO 캡슐화
+    private var success: MutableLiveData<Boolean> = MutableLiveData()
+    private var failed: MutableLiveData<Boolean> = MutableLiveData()
+
+    suspend fun verifyEmail(EmailVerificationRequest: RegisterEmailVerificationRequest) {
         kotlin.runCatching {
             withContext(Dispatchers.Default) {
                 repository.verifyEmail(EmailVerificationRequest)
@@ -27,7 +29,7 @@ class RegisterViewModel(
         }
     }
 
-    suspend fun checkEmailVerificationCode(emailVerificationCodeRequest: RegisterEmailVerificationCodeRequest){
+    suspend fun checkEmailVerificationCode(emailVerificationCodeRequest: RegisterEmailVerificationCodeRequest) {
         kotlin.runCatching {
             withContext(Dispatchers.Default) {
                 repository.checkEmailVerificationCode(emailVerificationCodeRequest)
@@ -39,7 +41,7 @@ class RegisterViewModel(
         }
     }
 
-    suspend fun checkUserIdDuplication(userIdDuplicationRequest: RegisterUserIdDuplicationRequest){
+    suspend fun checkUserIdDuplication(userIdDuplicationRequest: RegisterUserIdDuplicationRequest) {
         kotlin.runCatching {
             withContext(Dispatchers.Default) {
                 repository.checkUserIdDuplication(userIdDuplicationRequest)

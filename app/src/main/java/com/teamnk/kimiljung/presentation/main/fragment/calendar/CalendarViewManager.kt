@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.presentation.calendar
+package com.teamnk.kimiljung.presentation.main.fragment.calendar
 
 import android.content.Context
 import androidx.appcompat.content.res.AppCompatResources
