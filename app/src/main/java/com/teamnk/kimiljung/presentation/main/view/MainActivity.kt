@@ -27,7 +27,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
 ) {
 
     private val viewModel by lazy {
-        ViewModelProvider(this, MainViewModelFactory(MainRepository()))[MainViewModel::class.java]
+        ViewModelProvider(
+            this, MainViewModelFactory(MainRepository())
+        )[MainViewModel::class.java]
     }
 
     private val sharedPreferences by lazy {
@@ -55,11 +57,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        selectedBottomNavigationMenuId =
-            sharedPreferences.getInt(
-                MAIN_ACTIVITY_SAVED_BOTTOM_NAVIGATION_ID,
-                BOTTOM_NAVIGATION_CALENDAR_ID
-            )
+        selectedBottomNavigationMenuId = sharedPreferences.getInt(
+            MAIN_ACTIVITY_SAVED_BOTTOM_NAVIGATION_ID, BOTTOM_NAVIGATION_CALENDAR_ID
+        )
 
         initBottomNavigationView()
         initFragment()
@@ -101,9 +101,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     }
 
     private fun changeFragment(fragment: Fragment) {
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.container_main, fragment)
+        supportFragmentManager.beginTransaction().replace(R.id.container_main, fragment)
             .commitAllowingStateLoss()
 
         selectedBottomNavigationMenuId = getSelectedBottomNavigationMenuIdFromFragment(fragment)
