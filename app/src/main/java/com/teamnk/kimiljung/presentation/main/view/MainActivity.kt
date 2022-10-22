@@ -1,16 +1,18 @@
 package com.teamnk.kimiljung.presentation.main.view
 
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
-import com.teamnk.kimiljung.presentation.base.BaseActivity
+import com.teamnk.kimiljung.data.repository.main.MainRepository
 import com.teamnk.kimiljung.databinding.ActivityMainBinding
+import com.teamnk.kimiljung.presentation.base.BaseActivity
 import com.teamnk.kimiljung.presentation.main.fragment.calendar.view.CalendarFragment
 import com.teamnk.kimiljung.presentation.main.fragment.map.view.MapFragment
 import com.teamnk.kimiljung.presentation.main.fragment.mypage.view.MyPageFragment
 import com.teamnk.kimiljung.presentation.main.fragment.notification.view.NotificationFragment
 import com.teamnk.kimiljung.presentation.main.viewmodel.MainViewModel
+import com.teamnk.kimiljung.presentation.main.viewmodel.MainViewModelFactory
 import com.teamnk.kimiljung.util.SharedPreferencesKey.BOTTOM_NAVIGATION_CALENDAR_ID
 import com.teamnk.kimiljung.util.SharedPreferencesKey.BOTTOM_NAVIGATION_MAP_ID
 import com.teamnk.kimiljung.util.SharedPreferencesKey.BOTTOM_NAVIGATION_MY_PAGE_ID
@@ -23,7 +25,10 @@ import com.teamnk.kimiljung.util.putInSharedPreferences
 class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
 ) {
-    private val viewModel by viewModels<MainViewModel>()
+
+    private val viewModel by lazy {
+        ViewModelProvider(this, MainViewModelFactory(MainRepository()))[MainViewModel::class.java]
+    }
 
     private val sharedPreferences by lazy {
         initializeSharedPreferences(this, MAIN_ACTIVITY, MODE_PRIVATE)
