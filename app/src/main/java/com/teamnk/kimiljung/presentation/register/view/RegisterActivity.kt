@@ -1,19 +1,26 @@
 package com.teamnk.kimiljung.presentation.register.view
 
 import android.os.Bundle
-import androidx.activity.viewModels
+import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
-import com.teamnk.kimiljung.presentation.base.BaseActivity
+import com.teamnk.kimiljung.data.repository.register.RegisterRepository
 import com.teamnk.kimiljung.databinding.ActivityRegisterBinding
+import com.teamnk.kimiljung.presentation.base.BaseActivity
 import com.teamnk.kimiljung.presentation.login.view.LoginActivity
+import com.teamnk.kimiljung.presentation.register.viewmodel.RegisterViewModel
+import com.teamnk.kimiljung.presentation.register.viewmodel.RegisterViewModelFactory
 import com.teamnk.kimiljung.util.showDialogWithSingleButton
 import com.teamnk.kimiljung.util.startIntentClearTop
-import com.teamnk.kimiljung.presentation.register.viewmodel.RegisterViewModel
 
 class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     R.layout.activity_register
 ) {
-    private val viewModel by viewModels<RegisterViewModel>()
+
+    private val viewModel by lazy {
+        ViewModelProvider(
+            this, RegisterViewModelFactory(RegisterRepository())
+        )[RegisterViewModel::class.java]
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
