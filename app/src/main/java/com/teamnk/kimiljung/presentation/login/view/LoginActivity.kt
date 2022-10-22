@@ -6,9 +6,9 @@ import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.data.model.login.LoginRequest
 import com.teamnk.kimiljung.data.repository.login.LoginRepository
 import com.teamnk.kimiljung.databinding.ActivityLoginBinding
+import com.teamnk.kimiljung.presentation.base.BaseActivity
 import com.teamnk.kimiljung.presentation.login.viewmodel.LoginViewModel
 import com.teamnk.kimiljung.presentation.login.viewmodel.LoginViewModelFactory
-import com.teamnk.kimiljung.presentation.base.BaseActivity
 import com.teamnk.kimiljung.presentation.main.view.MainActivity
 import com.teamnk.kimiljung.presentation.register.view.RegisterActivity
 import com.teamnk.kimiljung.util.showShortToast
@@ -82,7 +82,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
                     startIntentClearTop(baseContext, MainActivity::class.java)
                 }
             }
-            failure.observe(this@LoginActivity) {
+            success.observe(this@LoginActivity) {
                 it.run {
                     // TODO remove toast
                     showShortToast(baseContext, "로그인 실패")
