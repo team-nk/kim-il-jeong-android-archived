@@ -1,9 +1,8 @@
-package com.teamnk.kimiljung.viewmodel.auth
+package com.teamnk.kimiljung.presentation.register.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.data.repository.register.RegisterRepository
-import com.teamnk.kimiljung.presentation.register.viewmodel.RegisterViewModel
 
 class RegisterViewModelFactory(private val registerRepository: RegisterRepository) :
     ViewModelProvider.Factory {
