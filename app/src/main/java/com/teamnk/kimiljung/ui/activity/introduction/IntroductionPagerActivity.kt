@@ -6,10 +6,10 @@ import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityIntroductionPagerBinding
 import com.teamnk.kimiljung.ui.activity.auth.StartActivity
 import com.teamnk.kimiljung.ui.adapter.introduction.IntroductionPagerAdapter
-import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN
-import com.teamnk.kimiljung.util.SharedPreferencesName.USER_AUTH
-import com.teamnk.kimiljung.util.getSharedPreferencesEditor
+import com.teamnk.kimiljung.util.SharedPreferencesKey.INTRODUCTION_PAGER_IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN
+import com.teamnk.kimiljung.util.SharedPreferencesName.INTRODUCTION_PAGER_ACTIVITY
 import com.teamnk.kimiljung.util.initializeSharedPreferences
+import com.teamnk.kimiljung.util.putInSharedPreferences
 import com.teamnk.kimiljung.util.startIntentClearTop
 
 class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>(
@@ -17,10 +17,10 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
 ) {
 
     private val sharedPreferences by lazy {
-        initializeSharedPreferences(this, USER_AUTH, MODE_PRIVATE)
+        initializeSharedPreferences(this, INTRODUCTION_PAGER_ACTIVITY, MODE_PRIVATE)
     }
     private val sharedPreferencesEditor by lazy {
-        getSharedPreferencesEditor(sharedPreferences)
+        sharedPreferences.edit()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,11 +33,7 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
     }
 
     private fun checkIntroductionPageShown() {
-        if (sharedPreferences.getBoolean(
-                IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN,
-                false
-            )
-        ) {
+        if (sharedPreferences.getBoolean(INTRODUCTION_PAGER_IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN, false)) {
             moveToStartActivity()
         }
     }
@@ -53,6 +49,9 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
             binding.vpIntroduction.setCurrentItem(current + 1, true)
             if (current == 3) {
                 moveToStartActivity()
+                putInSharedPreferences(
+                    sharedPreferencesEditor, INTRODUCTION_PAGER_IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN, true
+                )
             }
         }
     }
