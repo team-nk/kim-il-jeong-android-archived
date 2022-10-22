@@ -3,8 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-<<<<<<< Updated upstream
-=======
     <data>
 
         <variable
@@ -12,7 +10,6 @@
             type="com.teamnk.kimiljung.presentation.introduction.viewmodel.IntroductionPagerViewModel" />
     </data>
 
->>>>>>> Stashed changes
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

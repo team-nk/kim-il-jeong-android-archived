@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.presentation.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityMainBinding
-import com.teamnk.kimiljung.presentation.main.calendar.view.CalendarFragment
-import com.teamnk.kimiljung.presentation.main.map.view.MapFragment
+import com.teamnk.kimiljung.presentation.calendar.view.CalendarFragment
+import com.teamnk.kimiljung.presentation.map.view.MapFragment
 import com.teamnk.kimiljung.presentation.main.mypage.view.MyPageFragment
 import com.teamnk.kimiljung.presentation.notification.view.NotificationFragment
 import com.teamnk.kimiljung.presentation.main.viewmodel.MainViewModel
