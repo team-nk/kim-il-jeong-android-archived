@@ -4,7 +4,7 @@ import android.os.Bundle
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.databinding.ActivityIntroductionPagerBinding
 import com.teamnk.kimiljung.presentation.introduction.adapter.IntroductionPagerAdapter
-import com.teamnk.kimiljung.presentation.main.fragment.base.BaseActivity
+import com.teamnk.kimiljung.presentation.base.BaseActivity
 import com.teamnk.kimiljung.presentation.start.view.StartActivity
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN
 import com.teamnk.kimiljung.util.SharedPreferencesName.MAIN_ACTIVITY

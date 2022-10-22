@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.presentation.main.mypage.view
+package com.teamnk.kimiljung.presentation.main.fragment.mypage.view
 
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.databinding.FragmentMypageBinding
-import com.teamnk.kimiljung.presentation.main.fragment.base.BaseFragment
+import com.teamnk.kimiljung.presentation.base.BaseFragment
 import com.teamnk.kimiljung.presentation.main.view.MainActivity
 import com.teamnk.kimiljung.presentation.start.view.StartActivity
 import com.teamnk.kimiljung.util.SharedPreferencesName

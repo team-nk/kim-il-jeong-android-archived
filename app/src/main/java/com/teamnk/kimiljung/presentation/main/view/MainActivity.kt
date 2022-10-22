@@ -4,11 +4,11 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import com.teamnk.kimiljung.R
-import com.teamnk.kimiljung.presentation.main.fragment.base.BaseActivity
+import com.teamnk.kimiljung.presentation.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityMainBinding
 import com.teamnk.kimiljung.presentation.main.fragment.calendar.view.CalendarFragment
 import com.teamnk.kimiljung.presentation.main.fragment.map.view.MapFragment
-import com.teamnk.kimiljung.presentation.main.mypage.view.MyPageFragment
+import com.teamnk.kimiljung.presentation.main.fragment.mypage.view.MyPageFragment
 import com.teamnk.kimiljung.presentation.main.fragment.notification.view.NotificationFragment
 import com.teamnk.kimiljung.presentation.main.viewmodel.MainViewModel
 import com.teamnk.kimiljung.util.SharedPreferencesKey.BOTTOM_NAVIGATION_CALENDAR_ID

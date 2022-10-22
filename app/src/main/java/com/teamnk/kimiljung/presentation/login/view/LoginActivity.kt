@@ -8,7 +8,7 @@ import com.teamnk.kimiljung.data.repository.login.LoginRepository
 import com.teamnk.kimiljung.databinding.ActivityLoginBinding
 import com.teamnk.kimiljung.presentation.login.viewmodel.LoginViewModel
 import com.teamnk.kimiljung.presentation.login.viewmodel.LoginViewModelFactory
-import com.teamnk.kimiljung.presentation.main.fragment.base.BaseActivity
+import com.teamnk.kimiljung.presentation.base.BaseActivity
 import com.teamnk.kimiljung.presentation.main.view.MainActivity
 import com.teamnk.kimiljung.presentation.register.view.RegisterActivity
 import com.teamnk.kimiljung.util.showShortToast
