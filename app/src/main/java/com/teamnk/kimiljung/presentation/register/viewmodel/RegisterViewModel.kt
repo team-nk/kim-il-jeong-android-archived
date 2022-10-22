@@ -1,5 +1,6 @@
 package com.teamnk.kimiljung.presentation.register.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.teamnk.kimiljung.data.model.register.RegisterEmailVerificationCodeRequest
@@ -13,9 +14,13 @@ class RegisterViewModel(
     private val repository: RegisterRepository
 ) : ViewModel() {
 
-    // TODO 캡슐화
-    private var success: MutableLiveData<Boolean> = MutableLiveData()
-    private var failed: MutableLiveData<Boolean> = MutableLiveData()
+    private var _success = MutableLiveData<Boolean>()
+    private var _failure = MutableLiveData<Boolean>()
+
+    val success: LiveData<Boolean>
+        get() = _success
+    val failure: LiveData<Boolean>
+        get() = _failure
 
     suspend fun verifyEmail(EmailVerificationRequest: RegisterEmailVerificationRequest) {
         kotlin.runCatching {
@@ -23,9 +28,9 @@ class RegisterViewModel(
                 repository.verifyEmail(EmailVerificationRequest)
             }
         }.onSuccess {
-            success
+            _success
         }.onFailure {
-            failed
+            _failure
         }
     }
 
@@ -35,9 +40,9 @@ class RegisterViewModel(
                 repository.checkEmailVerificationCode(emailVerificationCodeRequest)
             }
         }.onSuccess {
-            success
+            _success
         }.onFailure {
-            failed
+            _failure
         }
     }
 
@@ -47,9 +52,9 @@ class RegisterViewModel(
                 repository.checkUserIdDuplication(userIdDuplicationRequest)
             }
         }.onSuccess {
-            success
+            _success
         }.onFailure {
-            failed
+            _failure
         }
     }
 }
