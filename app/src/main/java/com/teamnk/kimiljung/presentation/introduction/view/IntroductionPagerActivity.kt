@@ -7,6 +7,8 @@ import com.teamnk.kimiljung.presentation.introduction.adapter.IntroductionPagerA
 import com.teamnk.kimiljung.presentation.main.fragment.base.BaseActivity
 import com.teamnk.kimiljung.presentation.start.view.StartActivity
 import com.teamnk.kimiljung.util.*
+import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN
+import com.teamnk.kimiljung.util.SharedPreferencesName.MAIN_ACTIVITY
 
 class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>(
     R.layout.activity_introduction_pager
@@ -15,7 +17,7 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
     private val sharedPreferences by lazy {
         initializeSharedPreferences(
             this,
-            SharedPreferencesName.MAIN_ACTIVITY,
+            MAIN_ACTIVITY,
             MODE_PRIVATE
         )
     }
@@ -34,7 +36,7 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
 
     private fun checkIntroductionPageShown() {
         if (sharedPreferences.getBoolean(
-                SharedPreferencesKey.IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN,
+                IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN,
                 false
             )
         ) {
