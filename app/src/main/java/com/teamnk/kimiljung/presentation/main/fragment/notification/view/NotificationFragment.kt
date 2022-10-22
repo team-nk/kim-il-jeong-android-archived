@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.presentation.notification.view
+package com.teamnk.kimiljung.presentation.main.fragment.notification.view
 
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.presentation.base.BaseFragment
