@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.presentation.main.fragment.mypage.view
+package com.teamnk.kimiljung.presentation.fragment.mypage.view
 
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
