@@ -31,6 +31,9 @@ android {
     buildFeatures {
         dataBinding true
     }
+    defaultConfig {
+        buildConfigField("String", "BASE_URL", BASE_URL)
+    }
 }
 
 dependencies {
