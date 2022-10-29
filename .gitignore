@@ -14,4 +14,4 @@
 .cxx
 local.properties
 .DS_STORE
-.properties
+*.properties
