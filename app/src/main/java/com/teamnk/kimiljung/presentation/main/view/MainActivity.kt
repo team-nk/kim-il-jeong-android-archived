@@ -7,10 +7,10 @@ import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.data.repository.main.MainRepository
 import com.teamnk.kimiljung.databinding.ActivityMainBinding
 import com.teamnk.kimiljung.presentation.base.BaseActivity
-import com.teamnk.kimiljung.presentation.main.fragment.calendar.view.CalendarFragment
-import com.teamnk.kimiljung.presentation.main.fragment.map.view.MapFragment
-import com.teamnk.kimiljung.presentation.main.fragment.mypage.view.MyPageFragment
-import com.teamnk.kimiljung.presentation.main.fragment.notification.view.NotificationFragment
+import com.teamnk.kimiljung.presentation.fragment.calendar.view.CalendarFragment
+import com.teamnk.kimiljung.presentation.fragment.map.view.MapFragment
+import com.teamnk.kimiljung.presentation.fragment.mypage.view.MyPageFragment
+import com.teamnk.kimiljung.presentation.fragment.notification.view.NotificationFragment
 import com.teamnk.kimiljung.presentation.main.viewmodel.MainViewModel
 import com.teamnk.kimiljung.presentation.main.viewmodel.MainViewModelFactory
 import com.teamnk.kimiljung.util.SharedPreferencesKey.BOTTOM_NAVIGATION_CALENDAR_ID
@@ -92,7 +92,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
                         return@setOnItemSelectedListener true
                     }
                 }
-
                 false
             }
 
