@@ -57,4 +57,6 @@
 
     <string name="mypage_logout_confirm">로그아웃 하시겠습니까?</string>
     <string name="mypage_logout">로그아웃</string>
+    <string name="contentDescription_calendar_kim_il_jeong_calendar_title">Kim il jeong calendar title</string>
+    <string name="contentDescription_calendar_add_button">Add Button</string>
 </resources>
