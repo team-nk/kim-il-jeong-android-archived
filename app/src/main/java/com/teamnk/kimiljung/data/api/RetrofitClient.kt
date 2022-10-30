@@ -10,7 +10,6 @@ object RetrofitClient {
     private var retrofit: Retrofit? = null
 
     fun getRetrofit(): Retrofit? {
-
         return retrofit ?: Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
