@@ -12,36 +12,59 @@
 
         <ImageView
             android:id="@+id/img_calendar_text_logo"
-            android:layout_width="278dp"
-            android:layout_height="72dp"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="156dp"
+            android:layout_height="73dp"
+            android:layout_marginVertical="20dp"
             android:src="@drawable/calendar_logo_calendar_title"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/sc_calendar"
+            app:layout_constraintEnd_toEndOf="@id/guideline_calendar_start_vertical_2"
+            app:layout_constraintHorizontal_bias="0.05"
+            app:layout_constraintStart_toStartOf="@id/guideline_calendar_start_vertical_1"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="296dp"
-            android:layout_height="300dp"
-            android:layout_marginTop="20dp"
-            app:cardCornerRadius="32dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+        <ScrollView
+            android:id="@+id/sc_calendar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_calendar_start_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_calendar_start_vertical_1"
             app:layout_constraintTop_toBottomOf="@id/img_calendar_text_logo">
 
-            <com.prolificinteractive.materialcalendarview.MaterialCalendarView
-                android:id="@+id/calendar_calendarView"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:paddingHorizontal="16dp"
-                android:paddingTop="16dp"
-                android:paddingBottom="8dp"
-                app:mcv_selectionColor="@color/color_main"
-                app:mcv_showOtherDates="other_months" />
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
 
-        </androidx.cardview.widget.CardView>
+                <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                    android:id="@+id/calendar_calendarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_selected_date"
+                    android:paddingHorizontal="16dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="8dp"
+                    app:mcv_selectionColor="@color/color_main"
+                    app:mcv_showOtherDates="other_months" />
 
+            </LinearLayout>
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_calendar_start_vertical_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_calendar_start_vertical_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
     
