@@ -10,7 +10,7 @@ import com.teamnk.kimiljung.R
 class CalendarViewManager(context: Context) : DayViewDecorator {
     private var date = CalendarDay.today()
 
-    val drawable = AppCompatResources.getDrawable(context, R.drawable.background_selected_date)
+    val drawable = AppCompatResources.getDrawable(context, R.drawable.background_calendar)
 
     override fun shouldDecorate(day: CalendarDay?): Boolean {
         return day?.equals(date)!!
