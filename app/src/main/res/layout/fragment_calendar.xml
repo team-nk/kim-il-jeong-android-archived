@@ -15,6 +15,7 @@
             android:layout_width="156dp"
             android:layout_height="73dp"
             android:layout_marginVertical="20dp"
+            android:contentDescription="@string/contentDescription_calendar_kim_il_jeong_calendar_title"
             android:src="@drawable/calendar_logo_calendar_title"
             app:layout_constraintBottom_toTopOf="@id/sc_calendar"
             app:layout_constraintEnd_toEndOf="@id/guideline_calendar_start_vertical_2"
@@ -42,13 +43,43 @@
                     android:id="@+id/calendar_calendarView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/background_selected_date"
+                    android:background="@drawable/background_calendar"
                     android:paddingHorizontal="16dp"
                     android:paddingTop="16dp"
                     android:paddingBottom="8dp"
                     app:mcv_selectionColor="@color/color_main"
                     app:mcv_showOtherDates="other_months" />
 
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/btn_mypage_edit_birthDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="32dp">
+
+                    <TextView
+                        style="@style/TextViewCalendarTitle"
+                        android:layout_marginVertical="12dp"
+                        android:text="오늘 일정"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        style="@style/ViewMyPageLine"
+                        android:layout_width="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <ImageView
+                        style="@style/ImageCalendarAdd"
+                        android:contentDescription="@string/contentDescription_calendar_add_button"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
         </ScrollView>
 
