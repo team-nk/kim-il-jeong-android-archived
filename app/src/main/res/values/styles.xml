@@ -158,4 +158,21 @@
         <item name="android:layout_width">18dp</item>
         <item name="android:src">@drawable/icon_mypage_depth</item>
     </style>
+
+    <style name="ImageCalendarAdd">
+        <item name="android:layout_height">16dp</item>
+        <item name="android:layout_width">16dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:src">@drawable/icon_add</item>
+    </style>
+
+    <style name="TextViewCalendarTitle" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="maxLines">1</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_text</item>
+    </style>
 </resources>
