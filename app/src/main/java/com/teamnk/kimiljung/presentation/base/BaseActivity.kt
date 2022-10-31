@@ -1,5 +1,6 @@
 package com.teamnk.kimiljung.presentation.base
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
@@ -16,7 +17,7 @@ abstract class BaseActivity<B : ViewDataBinding>(
         initializeSharedPreferences(this, SharedPreferencesName.DEFAULT, MODE_PRIVATE)
     }
 
-    protected val defaultSharedPreferencesEditor by lazy {
+    protected val defaultSharedPreferencesEditor: SharedPreferences.Editor by lazy {
         defaultSharedPreferences.edit()
     }
 
@@ -24,7 +25,7 @@ abstract class BaseActivity<B : ViewDataBinding>(
         initializeSharedPreferences(this, SharedPreferencesName.USER_AUTH, MODE_PRIVATE)
     }
 
-    protected val userAuthSharedPreferencesEditor by lazy {
+    protected val userAuthSharedPreferencesEditor: SharedPreferences.Editor by lazy {
         userAuthSharedPreferences.edit()
     }
 
