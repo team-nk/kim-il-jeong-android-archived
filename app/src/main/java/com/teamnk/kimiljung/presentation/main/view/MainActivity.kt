@@ -12,9 +12,9 @@ import com.teamnk.kimiljung.presentation.fragment.calendar.view.CalendarFragment
 import com.teamnk.kimiljung.presentation.fragment.map.view.MapFragment
 import com.teamnk.kimiljung.presentation.fragment.mypage.view.MyPageFragment
 import com.teamnk.kimiljung.presentation.fragment.notification.view.NotificationFragment
-import com.teamnk.kimiljung.presentation.login.view.LoginActivity
 import com.teamnk.kimiljung.presentation.main.viewmodel.MainViewModel
 import com.teamnk.kimiljung.presentation.main.viewmodel.MainViewModelFactory
+import com.teamnk.kimiljung.presentation.start.view.StartActivity
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_LOGGED_IN
 import com.teamnk.kimiljung.util.SharedPreferencesName.DEFAULT
 import com.teamnk.kimiljung.util.SharedPreferencesName.USER_AUTH
@@ -75,7 +75,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
         if (userAuthSharedPreferences.getBoolean(IS_LOGGED_IN, false)) {
 
         } else {
-            startActivity(Intent(this, LoginActivity::class.java))
+            startActivity(Intent(this, StartActivity::class.java))
         }
     }
 
