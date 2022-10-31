@@ -13,7 +13,7 @@ import com.teamnk.kimiljung.presentation.main.view.MainActivity
 import com.teamnk.kimiljung.presentation.register.view.RegisterActivity
 import com.teamnk.kimiljung.util.showShortToast
 import com.teamnk.kimiljung.util.startIntent
-import com.teamnk.kimiljung.util.startIntentClearTop
+import com.teamnk.kimiljung.util.startIntentWithRemovingActivityStack
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(
     R.layout.activity_login
@@ -79,7 +79,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
             success.observe(this@LoginActivity) {
                 it.run {
                     showShortToast(baseContext, "로그인 성공!")
-                    startIntentClearTop(baseContext, MainActivity::class.java)
+                    startIntentWithRemovingActivityStack(baseContext, MainActivity::class.java)
                 }
             }
             success.observe(this@LoginActivity) {
