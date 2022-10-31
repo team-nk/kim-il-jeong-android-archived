@@ -1,5 +1,6 @@
 package com.teamnk.kimiljung.presentation.base
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -24,7 +25,7 @@ abstract class BaseFragment<B : ViewDataBinding>(
         )
     }
 
-    protected val defaultSharedPreferencesEditor by lazy {
+    protected val defaultSharedPreferencesEditor: SharedPreferences.Editor by lazy {
         defaultSharedPreferences.edit()
     }
 
@@ -36,7 +37,7 @@ abstract class BaseFragment<B : ViewDataBinding>(
         )
     }
 
-    protected val userAuthSharedPreferencesEditor by lazy {
+    protected val userAuthSharedPreferencesEditor: SharedPreferences.Editor by lazy {
         userAuthSharedPreferences.edit()
     }
 
