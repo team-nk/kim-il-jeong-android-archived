@@ -16,9 +16,6 @@ import com.teamnk.kimiljung.presentation.main.viewmodel.MainViewModel
 import com.teamnk.kimiljung.presentation.main.viewmodel.MainViewModelFactory
 import com.teamnk.kimiljung.presentation.start.view.StartActivity
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_LOGGED_IN
-import com.teamnk.kimiljung.util.SharedPreferencesName.DEFAULT
-import com.teamnk.kimiljung.util.SharedPreferencesName.USER_AUTH
-import com.teamnk.kimiljung.util.initializeSharedPreferences
 
 class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
@@ -30,22 +27,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
         ViewModelProvider(
             this, MainViewModelFactory(MainRepository())
         )[MainViewModel::class.java]
-    }
-
-    private val defaultSharedPreferences by lazy {
-        initializeSharedPreferences(this, DEFAULT, MODE_PRIVATE)
-    }
-
-    private val defaultSharedPreferencesEditor by lazy {
-        defaultSharedPreferences.edit()
-    }
-
-    private val userAuthSharedPreferences by lazy {
-        initializeSharedPreferences(this, USER_AUTH, MODE_PRIVATE)
-    }
-
-    private val userAuthSharedPreferencesEditor by lazy {
-        userAuthSharedPreferences.edit()
     }
 
     private val calendarFragment by lazy {
@@ -61,7 +42,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
         MyPageFragment()
     }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         checkLoggedIn()
@@ -73,7 +53,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
 
     private fun checkLoggedIn() {
         if (userAuthSharedPreferences.getBoolean(IS_LOGGED_IN, false)) {
-
+            // TODO Login Succeess SnackBar
         } else {
             startActivity(Intent(this, StartActivity::class.java))
         }
