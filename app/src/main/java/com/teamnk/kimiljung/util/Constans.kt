@@ -11,7 +11,5 @@ object SharedPreferencesName {
 }
 
 object SharedPreferencesKey {
-    const val IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN =
-        "isIntroductionPagerActivityShown"
+    const val IS_LOGGED_IN = "isLoggedIn"
 }
-
