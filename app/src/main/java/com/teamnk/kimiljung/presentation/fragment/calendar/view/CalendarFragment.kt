@@ -6,8 +6,8 @@ import android.util.Log
 import android.view.View
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.teamnk.kimiljung.R
-import com.teamnk.kimiljung.presentation.base.BaseFragment
 import com.teamnk.kimiljung.databinding.FragmentCalendarBinding
+import com.teamnk.kimiljung.presentation.base.BaseFragment
 import com.teamnk.kimiljung.presentation.fragment.calendar.CalendarViewManager
 import com.teamnk.kimiljung.presentation.main.view.MainActivity
 
@@ -47,7 +47,5 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(
         }
     }
 
-
-    override fun observeEvent() {
-    }
+    override fun observeEvent() {}
 }

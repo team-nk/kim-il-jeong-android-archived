@@ -3,47 +3,22 @@ package com.teamnk.kimiljung.presentation.introduction.view
 import android.os.Bundle
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.databinding.ActivityIntroductionPagerBinding
-import com.teamnk.kimiljung.presentation.introduction.adapter.IntroductionPagerAdapter
 import com.teamnk.kimiljung.presentation.base.BaseActivity
+import com.teamnk.kimiljung.presentation.introduction.adapter.IntroductionPagerAdapter
 import com.teamnk.kimiljung.presentation.start.view.StartActivity
-import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN
-import com.teamnk.kimiljung.util.SharedPreferencesName.MAIN_ACTIVITY
-import com.teamnk.kimiljung.util.initializeSharedPreferences
-import com.teamnk.kimiljung.util.startIntentClearTop
+import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_INTRODUCTION_PAGER_SHOWN
+import com.teamnk.kimiljung.util.startIntentWithRemovingActivityStack
 
 class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>(
     R.layout.activity_introduction_pager
 ) {
 
-    private val sharedPreferences by lazy {
-        initializeSharedPreferences(
-            this,
-            MAIN_ACTIVITY,
-            MODE_PRIVATE
-        )
-    }
-
-    private val sharedPreferencesEditor by lazy {
-        sharedPreferences.edit()
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        checkIntroductionPageShown()
 
         initViewPager()
         initNextButton()
         initTabLayout()
-    }
-
-    private fun checkIntroductionPageShown() {
-        if (sharedPreferences.getBoolean(
-                IS_INTRODUCTION_PAGER_ACTIVITY_SHOWN,
-                false
-            )
-        ) {
-            moveToStartActivity()
-        }
     }
 
     private fun initViewPager() {
@@ -61,11 +36,6 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
         }
     }
 
-    private fun moveToStartActivity() {
-        startIntentClearTop(this, StartActivity::class.java)
-        finish()
-    }
-
     private fun initTabLayout() {
         with(binding.tabLayoutIntroductionViewPager) {
             when (id) {
@@ -77,6 +47,13 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
                 else -> {}
             }
         }
+    }
+
+    private fun moveToStartActivity() {
+        defaultSharedPreferencesEditor.putBoolean(IS_INTRODUCTION_PAGER_SHOWN, true)
+            .apply()
+        startIntentWithRemovingActivityStack(this, StartActivity::class.java)
+        finish()
     }
 
     override fun observeEvent() {}

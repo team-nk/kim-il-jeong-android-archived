@@ -20,7 +20,7 @@ class IntroductionPagerAdapter(private val context: Context) : PagerAdapter() {
         R.drawable.introduction_pager_image_1,
         R.drawable.introduction_pager_image_2,
         R.drawable.introduction_pager_image_3,
-        R.drawable.introduction_pager_image_4
+        R.drawable.introduction_pager_image_4,
     )
 
     override fun getCount(): Int {

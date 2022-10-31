@@ -10,7 +10,7 @@ import com.teamnk.kimiljung.presentation.login.view.LoginActivity
 import com.teamnk.kimiljung.presentation.register.viewmodel.RegisterViewModel
 import com.teamnk.kimiljung.presentation.register.viewmodel.RegisterViewModelFactory
 import com.teamnk.kimiljung.util.showDialogWithSingleButton
-import com.teamnk.kimiljung.util.startIntentClearTop
+import com.teamnk.kimiljung.util.startIntentWithRemovingActivityStack
 
 class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     R.layout.activity_register
@@ -74,7 +74,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
                 getString(R.string.dialog_register_success_title),
                 getString(R.string.dialog_register_success_description)
             ) {
-                startIntentClearTop(this, LoginActivity::class.java)
+                startIntentWithRemovingActivityStack(this, LoginActivity::class.java)
             }
         }
     }

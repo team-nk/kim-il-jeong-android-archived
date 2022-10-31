@@ -9,6 +9,6 @@ fun <T> startIntent(context: Context, to: Class<T>) {
     context.startActivity(Intent(context, to))
 }
 
-fun <T> startIntentClearTop(context: Context, to: Class<T>) {
+fun <T> startIntentWithRemovingActivityStack(context: Context, to: Class<T>) {
     context.startActivity(Intent(context, to).addFlags(FLAG_ACTIVITY_NEW_TASK or FLAG_ACTIVITY_CLEAR_TASK))
 }
