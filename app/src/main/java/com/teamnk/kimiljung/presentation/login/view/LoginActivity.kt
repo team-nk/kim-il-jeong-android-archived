@@ -11,9 +11,8 @@ import com.teamnk.kimiljung.presentation.login.viewmodel.LoginViewModel
 import com.teamnk.kimiljung.presentation.login.viewmodel.LoginViewModelFactory
 import com.teamnk.kimiljung.presentation.main.view.MainActivity
 import com.teamnk.kimiljung.presentation.register.view.RegisterActivity
+import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_INTRODUCTION_PAGER_SHOWN
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_LOGGED_IN
-import com.teamnk.kimiljung.util.SharedPreferencesName
-import com.teamnk.kimiljung.util.initializeSharedPreferences
 import com.teamnk.kimiljung.util.showShortToast
 import com.teamnk.kimiljung.util.startIntent
 
@@ -27,24 +26,9 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
         )[LoginViewModel::class.java]
     }
 
-    private val defaultSharedPreferences by lazy {
-        initializeSharedPreferences(this, SharedPreferencesName.DEFAULT, MODE_PRIVATE)
-    }
-
-    private val defaultSharedPreferencesEditor by lazy {
-        defaultSharedPreferences.edit()
-    }
-
-    private val userAuthSharedPreferences by lazy {
-        initializeSharedPreferences(this, SharedPreferencesName.USER_AUTH, MODE_PRIVATE)
-    }
-
-    private val userAuthSharedPreferencesEditor by lazy {
-        userAuthSharedPreferences.edit()
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         initBinding()
 
         initLoginButton()
@@ -83,6 +67,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
 
     private fun goToMainActivity() {
         userAuthSharedPreferencesEditor.putBoolean(IS_LOGGED_IN, true)
+            .apply()
+        defaultSharedPreferencesEditor.putBoolean(IS_INTRODUCTION_PAGER_SHOWN, true)
             .apply()
         startIntent(this, MainActivity::class.java)
         finish()
