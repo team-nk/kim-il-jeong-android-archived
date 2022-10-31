@@ -10,6 +10,7 @@ import com.teamnk.kimiljung.presentation.base.BaseFragment
 import com.teamnk.kimiljung.presentation.main.view.MainActivity
 import com.teamnk.kimiljung.presentation.start.view.StartActivity
 import com.teamnk.kimiljung.util.SharedPreferencesName
+import com.teamnk.kimiljung.util.SharedPreferencesName.USER_AUTH
 import com.teamnk.kimiljung.util.clearSharedPreferences
 import com.teamnk.kimiljung.util.showDialogWithDoubleButton
 import com.teamnk.kimiljung.util.startIntentWithRemovingActivityStack
@@ -57,7 +58,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
 
     private fun logOut() {
         // TODO 리팩토링 하기
-        clearSharedPreferences(mainActivity, SharedPreferencesName.USER_AUTH, MODE_PRIVATE)
+        clearSharedPreferences(mainActivity, USER_AUTH, MODE_PRIVATE)
         clearSharedPreferences(mainActivity, SharedPreferencesName.MAIN_ACTIVITY, MODE_PRIVATE)
     }
 
