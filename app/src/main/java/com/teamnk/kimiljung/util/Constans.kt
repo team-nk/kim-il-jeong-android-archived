@@ -1,8 +1,7 @@
 package com.teamnk.kimiljung.util
 
-import com.teamnk.kimiljung.R
-
 object SharedPreferencesName {
+
     const val DEFAULT = "default"
 
     const val MAIN_ACTIVITY = "mainActivity"
@@ -11,5 +10,8 @@ object SharedPreferencesName {
 }
 
 object SharedPreferencesKey {
+
     const val IS_LOGGED_IN = "isLoggedIn"
+
+    const val IS_INTRODUCTION_PAGER_SHOWN = "isIntroductionPagerShown"
 }
