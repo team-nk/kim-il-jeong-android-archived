@@ -11,9 +11,11 @@ import com.teamnk.kimiljung.presentation.login.viewmodel.LoginViewModel
 import com.teamnk.kimiljung.presentation.login.viewmodel.LoginViewModelFactory
 import com.teamnk.kimiljung.presentation.main.view.MainActivity
 import com.teamnk.kimiljung.presentation.register.view.RegisterActivity
+import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_LOGGED_IN
+import com.teamnk.kimiljung.util.SharedPreferencesName
+import com.teamnk.kimiljung.util.initializeSharedPreferences
 import com.teamnk.kimiljung.util.showShortToast
 import com.teamnk.kimiljung.util.startIntent
-import com.teamnk.kimiljung.util.startIntentWithRemovingActivityStack
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(
     R.layout.activity_login
@@ -23,6 +25,22 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
         ViewModelProvider(
             this, LoginViewModelFactory(LoginRepository())
         )[LoginViewModel::class.java]
+    }
+
+    private val defaultSharedPreferences by lazy {
+        initializeSharedPreferences(this, SharedPreferencesName.DEFAULT, MODE_PRIVATE)
+    }
+
+    private val defaultSharedPreferencesEditor by lazy {
+        defaultSharedPreferences.edit()
+    }
+
+    private val userAuthSharedPreferences by lazy {
+        initializeSharedPreferences(this, SharedPreferencesName.USER_AUTH, MODE_PRIVATE)
+    }
+
+    private val userAuthSharedPreferencesEditor by lazy {
+        userAuthSharedPreferences.edit()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,31 +57,33 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
 
     private fun initLoginButton() {
         binding.btnLoginLogin.setOnClickListener {
+
             val email = binding.etLoginEmail.text.toString()
             val password = binding.etLoginPassword.text.toString()
 
-            // TODO 로그인 함수 구현, local 계정 필터링
-            // TODO 로그인 정보 저장
             if (email.isNotBlank() && password.isNotBlank()) {
-                if (email == "local" && password == "local") {
-                    loginWithAdminAccount()
-                }
-                val loginRequest = LoginRequest(email, password)
-                viewModel.postLogin(loginRequest)
-                // TODO remove test toast and implement intent to MainActivity
-                showShortToast(this, "viewModel working")
+                postLogin(email, password)
             } else {
-                showShortToast(this, "failed")
+                showShortToast(this, "Please Check Format")
             }
         }
     }
 
+    private fun postLogin(email: String, password: String) {
+        if (email == "local" && password == "local") {
+            loginWithAdminAccount()
+        } else {
+            viewModel.postLogin(LoginRequest(email, password))
+        }
+    }
 
     private fun loginWithAdminAccount() {
         goToMainActivity()
     }
 
     private fun goToMainActivity() {
+        userAuthSharedPreferencesEditor.putBoolean(IS_LOGGED_IN, true)
+            .apply()
         startIntent(this, MainActivity::class.java)
         finish()
     }
@@ -74,20 +94,5 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
         }
     }
 
-    override fun observeEvent() {
-        viewModel.run {
-            success.observe(this@LoginActivity) {
-                it.run {
-                    showShortToast(baseContext, "로그인 성공!")
-                    startIntentWithRemovingActivityStack(baseContext, MainActivity::class.java)
-                }
-            }
-            success.observe(this@LoginActivity) {
-                it.run {
-                    // TODO remove toast
-                    showShortToast(baseContext, "로그인 실패")
-                }
-            }
-        }
-    }
+    override fun observeEvent() {}
 }
