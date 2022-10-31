@@ -59,4 +59,5 @@
     <string name="mypage_logout">로그아웃</string>
     <string name="contentDescription_calendar_kim_il_jeong_calendar_title">Kim il jeong calendar title</string>
     <string name="contentDescription_calendar_add_button">Add Button</string>
+    <string name="calendar_todays_schedule">오늘 일정</string>
 </resources>
