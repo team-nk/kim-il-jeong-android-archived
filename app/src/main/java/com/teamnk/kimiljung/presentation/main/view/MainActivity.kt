@@ -1,5 +1,6 @@
 package com.teamnk.kimiljung.presentation.main.view
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -11,18 +12,40 @@ import com.teamnk.kimiljung.presentation.fragment.calendar.view.CalendarFragment
 import com.teamnk.kimiljung.presentation.fragment.map.view.MapFragment
 import com.teamnk.kimiljung.presentation.fragment.mypage.view.MyPageFragment
 import com.teamnk.kimiljung.presentation.fragment.notification.view.NotificationFragment
+import com.teamnk.kimiljung.presentation.login.view.LoginActivity
 import com.teamnk.kimiljung.presentation.main.viewmodel.MainViewModel
 import com.teamnk.kimiljung.presentation.main.viewmodel.MainViewModelFactory
+import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_LOGGED_IN
+import com.teamnk.kimiljung.util.SharedPreferencesName.DEFAULT
+import com.teamnk.kimiljung.util.SharedPreferencesName.USER_AUTH
+import com.teamnk.kimiljung.util.initializeSharedPreferences
 
 class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
 ) {
+
     private var savedFragmentId: Int? = null
 
     private val viewModel by lazy {
         ViewModelProvider(
             this, MainViewModelFactory(MainRepository())
         )[MainViewModel::class.java]
+    }
+
+    private val defaultSharedPreferences by lazy {
+        initializeSharedPreferences(this, DEFAULT, MODE_PRIVATE)
+    }
+
+    private val defaultSharedPreferencesEditor by lazy {
+        defaultSharedPreferences.edit()
+    }
+
+    private val userAuthSharedPreferences by lazy {
+        initializeSharedPreferences(this, USER_AUTH, MODE_PRIVATE)
+    }
+
+    private val userAuthSharedPreferencesEditor by lazy {
+        userAuthSharedPreferences.edit()
     }
 
     private val calendarFragment by lazy {
@@ -38,10 +61,22 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
         MyPageFragment()
     }
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        checkLoggedIn()
+
         initBottomNavigationView()
 
+        savedFragmentId = savedInstanceState?.getInt(SAVED_FRAGMENT_ID)
+    }
+
+    private fun checkLoggedIn() {
+        if (userAuthSharedPreferences.getBoolean(IS_LOGGED_IN, false)) {
+
+        } else {
+            startActivity(Intent(this, LoginActivity::class.java))
+        }
     }
 
     private fun initBottomNavigationView() {
@@ -67,7 +102,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
                 }
                 false
             }
-            selectedItemId = R.id.bn_main_calendar
         }
     }
 
@@ -78,3 +112,5 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
 
     override fun observeEvent() {}
 }
+
+const val SAVED_FRAGMENT_ID = "SAVED_FRAGMENT"
