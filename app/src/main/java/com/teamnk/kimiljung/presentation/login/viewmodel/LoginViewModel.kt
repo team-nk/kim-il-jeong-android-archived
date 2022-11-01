@@ -7,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.teamnk.kimiljung.data.model.login.LoginRequest
 import com.teamnk.kimiljung.data.model.login.LoginResponse
 import com.teamnk.kimiljung.data.repository.login.LoginRepository
-import com.teamnk.kimiljung.util.showShortSnackBar
 import kotlinx.coroutines.launch
 
 class LoginViewModel(
@@ -17,6 +16,12 @@ class LoginViewModel(
     private var _loginResponse = MutableLiveData<LoginResponse>()
     val loginResponse: LiveData<LoginResponse> = _loginResponse
 
+    private var _loginResponseCode = MutableLiveData<Int>()
+    val loginResponseCode: LiveData<Int> = _loginResponseCode
+
+    private var _isLoggedInSuccessfully = MutableLiveData<Boolean>()
+    val isLoggedInSuccessfully: LiveData<Boolean> = _isLoggedInSuccessfully
+
     fun postLogin(loginRequest: LoginRequest) {
         viewModelScope.launch {
             kotlin.runCatching {
@@ -24,16 +29,21 @@ class LoginViewModel(
             }.onSuccess {
                 if (it.isSuccessful) {
                     _loginResponse.postValue(it.body())
+
+                    _isLoggedInSuccessfully.postValue(true)
                 } else {
-                    println("login error = ${it.code()}")
+                    _loginResponseCode.postValue(it.code())
+
+                    _isLoggedInSuccessfully.postValue(false)
                 }
             }.onFailure {
-                println("login failure")
+                _loginResponseCode.postValue(FAILED_TO_CONNECT)
+
+                _isLoggedInSuccessfully.postValue(false)
             }
         }
     }
 }
 
 // todo 리소스 위치 질문
-const val LOGIN_SUCCESS = "Login Success"
-const val LOGIN_FAILURE = "Login Failure"
+const val FAILED_TO_CONNECT = -1
