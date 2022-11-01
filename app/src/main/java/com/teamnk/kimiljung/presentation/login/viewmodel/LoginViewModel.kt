@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.teamnk.kimiljung.data.model.login.LoginRequest
 import com.teamnk.kimiljung.data.model.login.LoginResponse
 import com.teamnk.kimiljung.data.repository.login.LoginRepository
+import com.teamnk.kimiljung.util.showShortSnackBar
 import kotlinx.coroutines.launch
 
 class LoginViewModel(
@@ -24,7 +25,7 @@ class LoginViewModel(
                 if (it.isSuccessful) {
                     _loginResponse.postValue(it.body())
                 } else {
-                    println("login error = ${it.errorBody()}")
+                    println("login error = ${it.code()}")
                 }
             }.onFailure {
                 println("login failure")
@@ -32,3 +33,7 @@ class LoginViewModel(
         }
     }
 }
+
+// todo 리소스 위치 질문
+const val LOGIN_SUCCESS = "Login Success"
+const val LOGIN_FAILURE = "Login Failure"
