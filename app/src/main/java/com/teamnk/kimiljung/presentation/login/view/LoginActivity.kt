@@ -7,12 +7,13 @@ import com.teamnk.kimiljung.data.model.login.LoginRequest
 import com.teamnk.kimiljung.data.repository.login.LoginRepository
 import com.teamnk.kimiljung.databinding.ActivityLoginBinding
 import com.teamnk.kimiljung.presentation.base.BaseActivity
+import com.teamnk.kimiljung.presentation.login.viewmodel.FAILED_TO_CONNECT
 import com.teamnk.kimiljung.presentation.login.viewmodel.LoginViewModel
 import com.teamnk.kimiljung.presentation.login.viewmodel.LoginViewModelFactory
 import com.teamnk.kimiljung.presentation.main.view.MainActivity
 import com.teamnk.kimiljung.presentation.register.view.RegisterActivity
-import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_INTRODUCTION_PAGER_SHOWN
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_LOGGED_IN
+import com.teamnk.kimiljung.util.showShortSnackBar
 import com.teamnk.kimiljung.util.showShortToast
 import com.teamnk.kimiljung.util.startIntent
 
@@ -62,13 +63,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
     }
 
     private fun loginWithAdminAccount() {
-        goToMainActivity()
+        moveToMainActivity()
     }
 
-    private fun goToMainActivity() {
+    private fun moveToMainActivity() {
         userAuthSharedPreferencesEditor.putBoolean(IS_LOGGED_IN, true)
-            .apply()
-        defaultSharedPreferencesEditor.putBoolean(IS_INTRODUCTION_PAGER_SHOWN, true)
             .apply()
         startIntent(this, MainActivity::class.java)
         finish()
@@ -80,5 +79,26 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
         }
     }
 
-    override fun observeEvent() {}
+    override fun observeEvent() {
+        viewModel.isLoggedInSuccessfully.observe(
+            this
+        ) { isLoggedInSuccessfully ->
+
+            val loginResponseCode = viewModel.loginResponseCode.value
+
+            if (loginResponseCode == FAILED_TO_CONNECT) {
+                showShortSnackBar(
+                    binding.root,
+                    getString(R.string.login_error_failed_to_connect_to_server)
+                )
+            } else if (isLoggedInSuccessfully) {
+                moveToMainActivity()
+            } else {
+                showShortSnackBar(
+                    binding.root,
+                    "${getString(R.string.login_error_failed)} $loginResponseCode"
+                )
+            }
+        }
+    }
 }
