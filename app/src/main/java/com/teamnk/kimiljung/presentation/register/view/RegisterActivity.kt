@@ -6,11 +6,9 @@ import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.data.repository.register.RegisterRepository
 import com.teamnk.kimiljung.databinding.ActivityRegisterBinding
 import com.teamnk.kimiljung.presentation.base.BaseActivity
-import com.teamnk.kimiljung.presentation.login.view.LoginActivity
 import com.teamnk.kimiljung.presentation.register.viewmodel.RegisterViewModel
 import com.teamnk.kimiljung.presentation.register.viewmodel.RegisterViewModelFactory
 import com.teamnk.kimiljung.util.showDialogWithSingleButton
-import com.teamnk.kimiljung.util.startIntentWithRemovingActivityStack
 
 class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     R.layout.activity_register
@@ -74,7 +72,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
                 getString(R.string.dialog_register_success_title),
                 getString(R.string.dialog_register_success_description)
             ) {
-                startIntentWithRemovingActivityStack(this, LoginActivity::class.java)
+                finish()
             }
         }
     }
