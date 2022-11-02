@@ -5,11 +5,14 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import com.prolificinteractive.materialcalendarview.CalendarDay
+import com.prolificinteractive.materialcalendarview.format.ArrayWeekDayFormatter
+import com.prolificinteractive.materialcalendarview.format.TitleFormatter
 import com.teamnk.kimiljung.R
-import com.teamnk.kimiljung.presentation.base.BaseFragment
 import com.teamnk.kimiljung.databinding.FragmentCalendarBinding
+import com.teamnk.kimiljung.presentation.base.BaseFragment
 import com.teamnk.kimiljung.presentation.fragment.calendar.CalendarViewManager
 import com.teamnk.kimiljung.presentation.main.view.MainActivity
+import java.util.*
 
 class CalendarFragment : BaseFragment<FragmentCalendarBinding>(
     R.layout.fragment_calendar
@@ -33,20 +36,32 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(
     }
 
     private fun initCalendarView() {
+
+        binding.calendarCalendarView.setWeekDayFormatter(ArrayWeekDayFormatter(resources.getStringArray(R.array.calendar_week)))
+        binding.calendarCalendarView.addDecorator(CalendarViewManager(mainActivity))
+
+        binding.calendarCalendarView.setTitleFormatter(object : TitleFormatter{
+            override fun format(day: CalendarDay): CharSequence {
+                val date = day.date
+                var month = day.month
+                var calendarHeaderElements = date.toString().split(" ")
+                month = month + 1
+                if(month == 13) month = 1
+                val calendarHeaderBuilder = StringBuilder().append("${calendarHeaderElements[5]} ${month}월")
+                return calendarHeaderBuilder.toString()
+            }
+        })
+
         with(binding.calendarCalendarView) {
-            addDecorator(CalendarViewManager(mainActivity))
             setOnDateChangedListener { _, date, _ ->
-                Log.d("TEST", date.toString())
                 if (date == today) {
                     removeDecorator(CalendarViewManager(mainActivity))
-                    Log.d("TEST", "today")
                 } else {
                     addDecorator(CalendarViewManager(mainActivity))
                 }
             }
         }
     }
-
 
     override fun observeEvent() {
     }
