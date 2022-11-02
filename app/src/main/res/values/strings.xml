@@ -59,4 +59,14 @@
     <string name="mypage_logout">로그아웃</string>
     <string name="contentDescription_calendar_kim_il_jeong_calendar_title">Kim il jeong calendar title</string>
     <string name="contentDescription_calendar_add_button">Add Button</string>
+
+    <string-array name="calendar_week">
+        <item>SUN</item>
+        <item>MON</item>
+        <item>TUE</item>
+        <item>WED</item>
+        <item>THU</item>
+        <item>FRI</item>
+        <item>SAT</item>
+    </string-array>
 </resources>
