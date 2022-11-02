@@ -84,6 +84,9 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
         ) {
             when (it.code()) {
                 200 -> moveToMainActivity()
+
+                // TODO 서버 상태 코드 핸들링 로직 추가
+
                 else -> {
                     showShortSnackBar(
                         binding.root,
