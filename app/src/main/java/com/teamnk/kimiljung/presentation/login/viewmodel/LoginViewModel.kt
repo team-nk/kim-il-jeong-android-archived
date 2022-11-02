@@ -26,7 +26,6 @@ class LoginViewModel(
                     repository.login(loginRequest)
                 }
             }.onSuccess {
-
                 _loginResponse.postValue(it)
             }
         }

@@ -82,13 +82,14 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
         viewModel.loginResponse.observe(
             this
         ) {
-            if (it.isSuccessful) {
-                moveToMainActivity()
-            } else {
-                showShortSnackBar(
-                    binding.root,
-                    "${getString(R.string.login_error_failed)} ${it.code()}"
-                )
+            when (it.code()) {
+                200 -> moveToMainActivity()
+                else -> {
+                    showShortSnackBar(
+                        binding.root,
+                        "${getString(R.string.login_error_failed)} ${it.code()}"
+                    )
+                }
             }
         }
     }
