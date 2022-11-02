@@ -7,7 +7,6 @@ import com.teamnk.kimiljung.data.model.login.LoginRequest
 import com.teamnk.kimiljung.data.repository.login.LoginRepository
 import com.teamnk.kimiljung.databinding.ActivityLoginBinding
 import com.teamnk.kimiljung.presentation.base.BaseActivity
-import com.teamnk.kimiljung.presentation.login.viewmodel.FAILED_TO_CONNECT
 import com.teamnk.kimiljung.presentation.login.viewmodel.LoginViewModel
 import com.teamnk.kimiljung.presentation.login.viewmodel.LoginViewModelFactory
 import com.teamnk.kimiljung.presentation.main.view.MainActivity
@@ -80,23 +79,15 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
     }
 
     override fun observeEvent() {
-        viewModel.isLoggedInSuccessfully.observe(
+        viewModel.loginResponse.observe(
             this
-        ) { isLoggedInSuccessfully ->
-
-            val loginResponseCode = viewModel.loginResponseCode.value
-
-            if (loginResponseCode == FAILED_TO_CONNECT) {
-                showShortSnackBar(
-                    binding.root,
-                    getString(R.string.login_error_failed_to_connect_to_server)
-                )
-            } else if (isLoggedInSuccessfully) {
+        ) {
+            if (it.isSuccessful) {
                 moveToMainActivity()
             } else {
                 showShortSnackBar(
                     binding.root,
-                    "${getString(R.string.login_error_failed)} $loginResponseCode"
+                    "${getString(R.string.login_error_failed)} ${it.code()}"
                 )
             }
         }

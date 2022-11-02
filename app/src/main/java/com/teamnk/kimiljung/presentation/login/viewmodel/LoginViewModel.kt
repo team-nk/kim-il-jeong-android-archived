@@ -7,44 +7,28 @@ import androidx.lifecycle.viewModelScope
 import com.teamnk.kimiljung.data.model.login.LoginRequest
 import com.teamnk.kimiljung.data.model.login.LoginResponse
 import com.teamnk.kimiljung.data.repository.login.LoginRepository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import retrofit2.Response
 
 class LoginViewModel(
     private val repository: LoginRepository
 ) : ViewModel() {
 
-    private var _loginResponse = MutableLiveData<LoginResponse>()
-    val loginResponse: LiveData<LoginResponse> = _loginResponse
-
-    private var _loginResponseCode = MutableLiveData<Int>()
-    val loginResponseCode: LiveData<Int> = _loginResponseCode
-
-    private var _isLoggedInSuccessfully = MutableLiveData<Boolean>()
-    val isLoggedInSuccessfully: LiveData<Boolean> = _isLoggedInSuccessfully
+    private var _loginResponse = MutableLiveData<Response<LoginResponse>>()
+    val loginResponse: LiveData<Response<LoginResponse>> = _loginResponse
 
     fun postLogin(loginRequest: LoginRequest) {
         viewModelScope.launch {
             kotlin.runCatching {
-                repository.login(loginRequest)
-            }.onSuccess {
-                if (it.isSuccessful) {
-                    
-                    _loginResponse.postValue(it.body())
-
-                    _isLoggedInSuccessfully.postValue(true)
-                } else {
-                    _loginResponseCode.postValue(it.code())
-
-                    _isLoggedInSuccessfully.postValue(false)
+                withContext(Dispatchers.IO) {
+                    repository.login(loginRequest)
                 }
-            }.onFailure {
-                _loginResponseCode.postValue(FAILED_TO_CONNECT)
+            }.onSuccess {
 
-                _isLoggedInSuccessfully.postValue(false)
+                _loginResponse.postValue(it)
             }
         }
     }
 }
-
-// todo 리소스 위치 질문
-const val FAILED_TO_CONNECT = -1
