@@ -2,8 +2,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO Refactor -->
-
     <androidx.constraintlayout.widget.ConstraintLayout
         style="@style/BackgroundAll"
         android:layout_width="match_parent"
@@ -80,6 +78,7 @@
                         app:layout_constraintStart_toStartOf="parent" />
 
                     <ImageView
+                        android:id="@+id/img_calendar_schedule_create"
                         style="@style/ImageCalendarAdd"
                         android:contentDescription="@string/contentDescription_calendar_add_button"
                         app:layout_constraintBottom_toBottomOf="parent"

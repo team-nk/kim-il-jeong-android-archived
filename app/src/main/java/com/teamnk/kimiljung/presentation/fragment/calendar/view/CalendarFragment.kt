@@ -33,6 +33,7 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(
         mainActivity = context as MainActivity
 
         initCalendarView()
+        initCreateScheduleImage()
     }
 
     private fun initCalendarView() {
@@ -60,6 +61,12 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(
                     addDecorator(CalendarViewManager(mainActivity))
                 }
             }
+        }
+    }
+
+    private fun initCreateScheduleImage(){
+        binding.imgCalendarScheduleCreate.setOnClickListener {
+            ScheduleFragment().show(parentFragmentManager, ScheduleFragment().tag)
         }
     }
 
