@@ -60,6 +60,16 @@
     <string name="contentDescription_calendar_kim_il_jeong_calendar_title">Kim il jeong calendar title</string>
     <string name="contentDescription_calendar_add_button">Add Button</string>
 
+    <string name="schedule_create_new_schedule">새로운 일정 생성하기</string>
+    <string name="schedule_input_new_schedule">일정을 입력하세요</string>
+    <string name="schedule_input_location">위치를 입력하세요</string>
+    <string name="schedule_search_location">위치 검색</string>
+    <string name="schedule_color">색상 설정</string>
+    <string name="schedule_always">일정이 하루 종일 인가요?</string>
+    <string name="schedule_start_time">시작 시간</string>
+    <string name="schedule_end_time">종료 시간</string>
+    <string name="schedule_create">생성하기</string>
+
     <string-array name="calendar_week">
         <item>SUN</item>
         <item>MON</item>
@@ -69,4 +79,5 @@
         <item>FRI</item>
         <item>SAT</item>
     </string-array>
+
 </resources>
