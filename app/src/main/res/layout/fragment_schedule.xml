@@ -76,7 +76,7 @@
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="@id/tv_schedule_location"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tv_schedule_location" />
+                        app:layout_constraintTop_toTopOf="@+id/tv_schedule_location" />
 
                     <TextView
                         android:id="@+id/tv_schedule_color"
