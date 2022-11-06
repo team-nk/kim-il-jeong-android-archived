@@ -18,8 +18,6 @@ class CalendarViewManager(context: Context) : DayViewDecorator {
     }
 
     override fun decorate(view: DayViewFacade?) {
-          if(todayDrawable != null){
-            view?.setSelectionDrawable(todayDrawable)
-        }
+        view?.setSelectionDrawable(todayDrawable!!)
     }
 }
