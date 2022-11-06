@@ -10,10 +10,10 @@ class ScheduleFragment : BaseBottomSheetDialogFragment<FragmentScheduleBinding>(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initCreateSchedule()
+        initCreateSchduleBottomSheetDialog()
     }
 
-    private fun initCreateSchedule(){
+    private fun initCreateSchduleBottomSheetDialog(){
         binding.tvScheduleDoCancel.setOnClickListener {
             dismiss()
         }
