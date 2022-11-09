@@ -5,6 +5,7 @@ import android.view.View
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.databinding.FragmentScheduleBinding
 import com.teamnk.kimiljung.presentation.base.BaseBottomSheetDialogFragment
+import com.teamnk.kimiljung.presentation.base.BaseFragment
 
 class ScheduleFragment : BaseBottomSheetDialogFragment<FragmentScheduleBinding>(R.layout.fragment_schedule) {
 
