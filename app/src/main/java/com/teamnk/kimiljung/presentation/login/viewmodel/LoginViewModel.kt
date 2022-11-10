@@ -16,7 +16,7 @@ class LoginViewModel(
     private val repository: LoginRepository
 ) : ViewModel() {
 
-    private var _loginResponse = MutableLiveData<Response<LoginResponse>>()
+    private val _loginResponse = MutableLiveData<Response<LoginResponse>>()
     val loginResponse: LiveData<Response<LoginResponse>> = _loginResponse
 
     fun postLogin(loginRequest: LoginRequest) {
