@@ -1,37 +1,32 @@
 package com.teamnk.kimiljung.presentation.login.viewmodel
 
-import android.content.ContentValues.TAG
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.teamnk.kimiljung.data.model.login.LoginRequest
+import com.teamnk.kimiljung.data.model.login.LoginResponse
 import com.teamnk.kimiljung.data.repository.login.LoginRepository
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import retrofit2.Response
 
 class LoginViewModel(
     private val repository: LoginRepository
 ) : ViewModel() {
 
-    var _success = MutableLiveData<Boolean>()
-    var _failure = MutableLiveData<Boolean>()
-
-    val success: LiveData<Boolean>
-        get() = _success
-    val failure: LiveData<Boolean>
-        get() = _failure
+    private val _loginResponse = MutableLiveData<Response<LoginResponse>>()
+    val loginResponse: LiveData<Response<LoginResponse>> = _loginResponse
 
     fun postLogin(loginRequest: LoginRequest) {
         viewModelScope.launch {
             kotlin.runCatching {
-                repository.login(loginRequest)
+                withContext(Dispatchers.IO) {
+                    repository.login(loginRequest)
+                }
             }.onSuccess {
-                _success
-            }.onFailure {
-                _failure
-            }.also {
-                Log.d(TAG, "$_success, $_failure")
+                _loginResponse.postValue(it)
             }
         }
     }

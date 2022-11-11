@@ -11,8 +11,8 @@ import com.teamnk.kimiljung.presentation.login.viewmodel.LoginViewModel
 import com.teamnk.kimiljung.presentation.login.viewmodel.LoginViewModelFactory
 import com.teamnk.kimiljung.presentation.main.view.MainActivity
 import com.teamnk.kimiljung.presentation.register.view.RegisterActivity
-import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_INTRODUCTION_PAGER_SHOWN
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_LOGGED_IN
+import com.teamnk.kimiljung.util.showShortSnackBar
 import com.teamnk.kimiljung.util.showShortToast
 import com.teamnk.kimiljung.util.startIntent
 
@@ -62,13 +62,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
     }
 
     private fun loginWithAdminAccount() {
-        goToMainActivity()
+        moveToMainActivity()
     }
 
-    private fun goToMainActivity() {
+    private fun moveToMainActivity() {
         userAuthSharedPreferencesEditor.putBoolean(IS_LOGGED_IN, true)
-            .apply()
-        defaultSharedPreferencesEditor.putBoolean(IS_INTRODUCTION_PAGER_SHOWN, true)
             .apply()
         startIntent(this, MainActivity::class.java)
         finish()
@@ -80,5 +78,22 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
         }
     }
 
-    override fun observeEvent() {}
+    override fun observeEvent() {
+        viewModel.loginResponse.observe(
+            this
+        ) {
+            when (it.code()) {
+                200 -> moveToMainActivity()
+
+                // TODO 서버 상태 코드 핸들링 로직 추가
+
+                else -> {
+                    showShortSnackBar(
+                        binding.root,
+                        "${getString(R.string.login_error_failed)} ${it.code()}"
+                    )
+                }
+            }
+        }
+    }
 }
