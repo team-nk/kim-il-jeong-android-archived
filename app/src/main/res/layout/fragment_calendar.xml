@@ -2,8 +2,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO Refactor -->
-
     <androidx.constraintlayout.widget.ConstraintLayout
         style="@style/BackgroundAll"
         android:layout_width="match_parent"
@@ -52,6 +50,18 @@
                     app:mcv_selectionColor="@color/color_main"
                     app:mcv_showOtherDates="other_months" />
 
+                    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+                        android:id="@+id/calendar_calendarView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="16dp"
+                        android:paddingTop="16dp"
+                        android:paddingBottom="8dp"
+                        app:mcv_selectionColor="@color/color_main"
+                        app:mcv_showOtherDates="other_months" />
+
+                </androidx.cardview.widget.CardView>
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/btn_mypage_edit_birthDay"
                     android:layout_width="match_parent"
@@ -76,13 +86,16 @@
                         app:layout_constraintStart_toStartOf="parent" />
 
                     <ImageView
+                        android:id="@+id/img_calendar_schedule_create"
                         style="@style/ImageCalendarAdd"
                         android:contentDescription="@string/contentDescription_calendar_add_button"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
             </LinearLayout>
+
         </ScrollView>
 
         <androidx.constraintlayout.widget.Guideline
