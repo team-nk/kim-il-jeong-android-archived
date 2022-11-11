@@ -50,17 +50,6 @@
                     app:mcv_selectionColor="@color/color_main"
                     app:mcv_showOtherDates="other_months" />
 
-                    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
-                        android:id="@+id/calendar_calendarView"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingHorizontal="16dp"
-                        android:paddingTop="16dp"
-                        android:paddingBottom="8dp"
-                        app:mcv_selectionColor="@color/color_main"
-                        app:mcv_showOtherDates="other_months" />
-
-                </androidx.cardview.widget.CardView>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/btn_mypage_edit_birthDay"

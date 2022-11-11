@@ -71,6 +71,7 @@
     <string name="schedule_start_time">시작 시간</string>
     <string name="schedule_end_time">종료 시간</string>
     <string name="schedule_create">생성하기</string>
+    <string name="calendar_todays_schedule">오늘의 일정</string>
 
     <string-array name="calendar_week">
         <item>SUN</item>
