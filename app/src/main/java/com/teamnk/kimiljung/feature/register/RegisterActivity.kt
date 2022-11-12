@@ -5,6 +5,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityRegisterBinding
+import com.teamnk.kimiljung.util.showDialogWithSingleButton
+import com.teamnk.kimiljung.util.showShortSnackBar
 
 class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     R.layout.activity_register
@@ -30,7 +32,17 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     }
 
     private fun initNextButton() {
-        // TODO 다음 버튼
+        binding.btnRegisterNext.setOnClickListener {
+            viewModel.register(
+                RegisterRequest(
+                    binding.etRegisterUserId.text.toString(),
+                    binding.etRegisterVerificationCode.text.toString().toInt(),
+                    binding.etRegisterEmail.text.toString(),
+                    binding.etRegisterPassword.text.toString(),
+                    binding.etRegisterRepeatPassword.text.toString(),
+                )
+            )
+        }
     }
 
     private fun initCheckIdDuplicationButton() {
@@ -45,5 +57,23 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
         // TODO 이메일 인증
     }
 
-    override fun observeEvent() {}
+    override fun observeEvent() {
+        viewModel.registerResponse.observe(
+            this,
+        ) {
+            if (it.isSuccessful) {
+                showDialogWithSingleButton(
+                    this,
+                    getString(R.string.dialog_register_success_title),
+                    getString(R.string.dialog_register_success_description),
+                ) {
+                    finish()
+                }
+            } else {
+                showShortSnackBar(
+                    binding.root, "${getString(R.string.register_error_failed)} ${it.code()}"
+                )
+            }
+        }
+    }
 }
