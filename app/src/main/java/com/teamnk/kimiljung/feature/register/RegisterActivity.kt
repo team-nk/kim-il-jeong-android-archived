@@ -26,6 +26,11 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
         initVerifyEmailButton()
         initCheckVerificationCodeButton()
         initCheckIdDuplicationButton()
+        initNextButton()
+    }
+
+    private fun initNextButton() {
+        // TODO 다음 버튼
     }
 
     private fun initCheckIdDuplicationButton() {
