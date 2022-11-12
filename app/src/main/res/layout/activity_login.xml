@@ -5,13 +5,13 @@
     <data>
         <variable
             name="viewModel"
-            type="com.teamnk.kimiljung.presentation.login.viewmodel.LoginViewModel" />
+            type="com.teamnk.kimiljung.feature.login.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.login.view.LoginActivity">
+        tools:context=".feature.login.LoginActivity">
 
         <ImageView
             android:id="@+id/img_login_text_logo"

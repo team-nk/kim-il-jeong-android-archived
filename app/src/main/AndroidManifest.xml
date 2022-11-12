@@ -17,19 +17,19 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.introduction.view.IntroductionPagerActivity"
+            android:name=".feature.introduction.IntroductionPagerActivity"
             android:exported="false" />
         <activity
-            android:name=".presentation.register.view.RegisterActivity"
+            android:name=".feature.register.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".presentation.login.view.LoginActivity"
+            android:name=".feature.login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".presentation.start.view.StartActivity"
+            android:name=".feature.start.StartActivity"
             android:exported="false" />
         <activity
-            android:name=".presentation.main.view.MainActivity"
+            android:name=".feature.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
