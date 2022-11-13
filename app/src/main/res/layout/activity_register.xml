@@ -63,7 +63,7 @@
                     android:inputType="number" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_register_checkVerificationCode"
+                    android:id="@+id/btn_register_checkEmailVerified"
                     style="@style/ButtonAuthRegisterCheck"
                     android:text="@string/register_checkEmailVerified" />
             </TableRow>
@@ -83,7 +83,7 @@
                     android:inputType="text" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_register_checkUserIdDuplicatation"
+                    android:id="@+id/btn_register_checkUserIdDuplicate"
                     style="@style/ButtonAuthRegisterCheck"
                     android:text="@string/register_checkUserIdDuplicate" />
             </TableRow>

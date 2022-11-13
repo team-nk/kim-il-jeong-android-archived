@@ -33,7 +33,6 @@
     <string name="register_repeatPassword">Password를 한번 더 입력하세요</string>
     <string name="register_passwordFormatHint">비밀번호는 숫자 + 문자를 사용하여 8글자 이상 15글자 이하로 만들어 주세요.</string>
     <string name="register_next">다음</string>
-    <string name="register_error_failed">회원가입에 실패하였습니다.</string>
     <string name="register_error_missingIdDuplicationCheck">아이디 중복 확인을 해 주세요.</string>
     <string name="register_error_missingEmailVerification">이메일 인증을 해 주세요.</string>
     <string name="register_error_passwordIncorrect">비밀번호가 다릅니다.</string>
