@@ -11,7 +11,7 @@ class TodayDecorator(context: Context) : DayViewDecorator {
 
     private val date = CalendarDay.today()
 
-    private val drawable = AppCompatResources.getDrawable(context, R.drawable.calendar_select)
+    private val drawable = AppCompatResources.getDrawable(context, R.drawable.background_calendar_date_today)
 
     override fun shouldDecorate(day: CalendarDay?): Boolean {
         return day?.equals(date)!!

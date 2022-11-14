@@ -12,9 +12,6 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(
     R.layout.fragment_calendar
 ) {
 
-    private var today = CalendarDay.today()
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -24,23 +21,21 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(
 
     private fun initCalendarView() {
 
-        binding.calendarCalendarView.setWeekDayFormatter(
-            ArrayWeekDayFormatter(
-                resources.getStringArray(
-                    R.array.calendar_week
+        with(binding.calendarCalendarView) {
+            addDecorator(TodayDecorator(requireActivity()))
+            setWeekDayFormatter(
+                ArrayWeekDayFormatter(
+                    resources.getStringArray(
+                        R.array.calendar_week
+                    )
                 )
             )
-        )
-        binding.calendarCalendarView.addDecorator(TodayDecorator(requireActivity()))
-
-        binding.calendarCalendarView.setTitleFormatter {
-            return@setTitleFormatter "${it.year}년 ${it.month + 1}월"
-        }
-
-        with(binding.calendarCalendarView) {
+            setTitleFormatter {
+                return@setTitleFormatter "${it.year}년 ${it.month + 1}월"
+            }
             setOnDateChangedListener { _, date, _ ->
-                if (date == today) {
-                    removeDecorator(TodayDecorator(requireActivity()))
+                if (date == CalendarDay.today()) {
+                    removeDecorators()
                 } else {
                     addDecorator(TodayDecorator(requireActivity()))
                 }
@@ -54,6 +49,5 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(
         }
     }
 
-    override fun observeEvent() {
-    }
+    override fun observeEvent() {}
 }
