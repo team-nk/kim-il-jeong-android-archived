@@ -16,6 +16,11 @@
         android:theme="@style/Theme.KimIlJung"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAqTuaxDZVxAnqeapLgIyDJrBSgh5O7EsE" />
+
         <activity
             android:name=".feature.introduction.IntroductionPagerActivity"
             android:exported="false" />
