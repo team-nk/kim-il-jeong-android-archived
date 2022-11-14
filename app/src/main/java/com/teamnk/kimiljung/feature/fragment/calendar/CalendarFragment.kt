@@ -20,7 +20,6 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(
     }
 
     private fun initCalendarView() {
-
         with(binding.calendarCalendarView) {
             addDecorator(TodayDecorator(requireActivity()))
             setWeekDayFormatter(
