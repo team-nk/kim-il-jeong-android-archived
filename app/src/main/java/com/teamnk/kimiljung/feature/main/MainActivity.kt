@@ -5,8 +5,8 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
-import com.teamnk.kimiljung.databinding.ActivityMainBinding
 import com.teamnk.kimiljung.base.BaseActivity
+import com.teamnk.kimiljung.databinding.ActivityMainBinding
 import com.teamnk.kimiljung.feature.fragment.calendar.CalendarFragment
 import com.teamnk.kimiljung.feature.fragment.map.MapFragment
 import com.teamnk.kimiljung.feature.fragment.mypage.MyPageFragment
@@ -79,6 +79,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
                 }
                 false
             }
+            selectedItemId = R.id.bn_main_calendar
         }
     }
 
