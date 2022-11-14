@@ -7,16 +7,17 @@ import com.prolificinteractive.materialcalendarview.DayViewDecorator
 import com.prolificinteractive.materialcalendarview.DayViewFacade
 import com.teamnk.kimiljung.R
 
-class CalendarViewManager(context: Context) : DayViewDecorator {
-    private var date = CalendarDay.today()
+class TodayDecorator(context: Context) : DayViewDecorator {
 
-    private val todayDrawable = AppCompatResources.getDrawable(context, R.drawable.calendar_select)
+    private val date = CalendarDay.today()
+
+    private val drawable = AppCompatResources.getDrawable(context, R.drawable.calendar_select)
 
     override fun shouldDecorate(day: CalendarDay?): Boolean {
         return day?.equals(date)!!
     }
 
     override fun decorate(view: DayViewFacade?) {
-        view?.setSelectionDrawable(todayDrawable!!)
+        view?.setSelectionDrawable(drawable!!)
     }
 }
