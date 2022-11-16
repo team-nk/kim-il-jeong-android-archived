@@ -86,9 +86,3 @@ class MapFragment : BaseFragment<FragmentMapBinding>(
     override fun observeEvent() {
     }
 }
-
-class Main{
-
-}
-
-class Main2
