@@ -18,7 +18,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
 ) {
 
-    private var savedFragmentId: Int? = null
 
     private val viewModel by lazy {
         ViewModelProvider(
@@ -44,14 +43,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
         checkLoggedIn()
 
         initBottomNavigationView()
-
-        savedFragmentId = savedInstanceState?.getInt(SAVED_FRAGMENT_ID)
     }
 
     private fun checkLoggedIn() {
-        if (userAuthSharedPreferences.getBoolean(IS_LOGGED_IN, false)) {
-            // TODO Login Succeess SnackBar
-        } else {
+        if (!userAuthSharedPreferences.getBoolean(IS_LOGGED_IN, false)) {
             startActivity(Intent(this, StartActivity::class.java))
         }
     }
@@ -90,5 +85,3 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
 
     override fun observeEvent() {}
 }
-
-const val SAVED_FRAGMENT_ID = "SAVED_FRAGMENT"
