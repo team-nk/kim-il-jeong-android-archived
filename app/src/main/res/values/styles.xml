@@ -210,9 +210,9 @@
     </style>
 
     <style name="RadioButtonDialogScheduleAddictionBackground" parent="Widget.AppCompat.CompoundButton.RadioButton">
-        <item name="android:layout_width">20dp</item>
-        <item name="android:layout_height">20dp</item>
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
         <item name="android:button">@null</item>
-        <item name="android:layout_marginHorizontal" tools:targetApi="o">2dp</item>
+        <item name="android:layout_marginHorizontal" tools:targetApi="o">4dp</item>
     </style>
 </resources>
