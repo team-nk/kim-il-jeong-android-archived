@@ -65,7 +65,7 @@
 
                         <TextView
                             android:id="@+id/tv_schedule_location"
-                            style="@style/TextViewScheduleItem"
+                            style="@style/TextViewScheduleItemTitle"
                             android:layout_gravity="start|center_vertical"
                             android:text="@string/schedule_input_location"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -74,7 +74,7 @@
 
                         <TextView
                             android:id="@+id/tv_schedule_search_location"
-                            style="@style/TextViewScheduleItem"
+                            style="@style/TextViewScheduleItemTitle"
                             android:layout_gravity="end|center_vertical"
                             android:text="@string/schedule_search_location"
                             android:textColor="@color/color_text"
@@ -92,7 +92,7 @@
 
                         <TextView
                             android:id="@+id/tv_schedule_color"
-                            style="@style/TextViewScheduleItem"
+                            style="@style/TextViewScheduleItemTitle"
                             android:text="@string/schedule_color"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -111,28 +111,28 @@
 
                             <RadioButton
                                 android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_red"
-                                style="@style/RadioButtonDialogScheduleAddictionBackground"
+                                style="@style/RadioButtonDialogScheduleAddiction"
                                 android:background="@drawable/background_radio_button_dialog_schedule_addiction_red_selector" />
 
                             <RadioButton
                                 android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_blue"
-                                style="@style/RadioButtonDialogScheduleAddictionBackground"
+                                style="@style/RadioButtonDialogScheduleAddiction"
                                 android:background="@drawable/background_radio_button_dialog_schedule_addiction_blue_selector" />
 
 
                             <RadioButton
                                 android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_yellow"
-                                style="@style/RadioButtonDialogScheduleAddictionBackground"
+                                style="@style/RadioButtonDialogScheduleAddiction"
                                 android:background="@drawable/background_radio_button_dialog_schedule_addiction_yellow_selector" />
 
                             <RadioButton
                                 android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_green"
-                                style="@style/RadioButtonDialogScheduleAddictionBackground"
+                                style="@style/RadioButtonDialogScheduleAddiction"
                                 android:background="@drawable/background_radio_button_dialog_schedule_addiction_green_selector" />
 
                             <RadioButton
                                 android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_purple"
-                                style="@style/RadioButtonDialogScheduleAddictionBackground"
+                                style="@style/RadioButtonDialogScheduleAddiction"
                                 android:background="@drawable/background_radio_button_dialog_schedule_addiction_purple_selector" />
 
                         </RadioGroup>
@@ -145,7 +145,7 @@
                         android:minHeight="48dp">
 
                         <TextView
-                            style="@style/TextViewScheduleItem"
+                            style="@style/TextViewScheduleItemTitle"
                             android:text="@string/schedule_always"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -168,7 +168,7 @@
                         android:minHeight="48dp">
 
                         <TextView
-                            style="@style/TextViewScheduleItem"
+                            style="@style/TextViewScheduleItemTitle"
                             android:text="@string/schedule_start_time"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -184,15 +184,13 @@
 
                             <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btn_dialog_schedule_addiction_start_date"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                tools:text="시작 날짜" />
+                                style="@style/ButtonDialogScheduleAddictionTime"
+                                tools:text="2006-05-08" />
 
                             <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btn_dialog_schedule_addiction_start_time"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                tools:text="시작 시간" />
+                                style="@style/ButtonDialogScheduleAddictionTime"
+                                tools:text="오전 6:00" />
                         </LinearLayout>
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -203,7 +201,7 @@
                         android:minHeight="48dp">
 
                         <TextView
-                            style="@style/TextViewScheduleItem"
+                            style="@style/TextViewScheduleItemTitle"
                             android:text="@string/schedule_end_time"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
