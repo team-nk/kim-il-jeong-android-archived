@@ -203,10 +203,26 @@
         <item name="android:textColor">@color/color_text</item>
     </style>
 
-    <style name="RadioButtonDialogScheduleAddictionBackground" parent="Widget.AppCompat.CompoundButton.RadioButton">
+    <style name="RadioButtonDialogScheduleAddiction" parent="Widget.AppCompat.CompoundButton.RadioButton">
         <item name="android:layout_width">24dp</item>
         <item name="android:layout_height">24dp</item>
         <item name="android:button">@null</item>
         <item name="android:layout_marginHorizontal" tools:targetApi="o">4dp</item>
+    </style>
+
+    <style name="ButtonDialogScheduleAddictionTime" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/color_text</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:background">@drawable/background_dialog_schedule_addiction_time</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:stateListAnimator">@null</item>
     </style>
 </resources>
