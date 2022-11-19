@@ -39,7 +39,7 @@
                     android:id="@+id/layout_dialog_schedule_addiction_information"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginVertical="16dp"
+                    android:layout_marginVertical="32dp"
                     android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -217,14 +217,12 @@
 
                             <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btn_dialog_schedule_addiction_end_date"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                style="@style/ButtonDialogScheduleAddictionTime"
                                 tools:text="종료 날짜" />
 
                             <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btn_dialog_schedule_addiction_end_time"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                style="@style/ButtonDialogScheduleAddictionTime"
                                 tools:text="종료 시간" />
                         </LinearLayout>
                     </androidx.constraintlayout.widget.ConstraintLayout>
