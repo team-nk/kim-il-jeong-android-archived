@@ -175,7 +175,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/color_text</item>
     </style>
-    
+
     <style name="TextViewBottomSheetTitle" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">22sp</item>
         <item name="android:textStyle">bold</item>
@@ -207,5 +207,12 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">40dp</item>
         <item name="android:textColor">@color/color_text</item>
+    </style>
+
+    <style name="RadioButtonDialogScheduleAddictionBackground" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_marginHorizontal" tools:targetApi="o">2dp</item>
     </style>
 </resources>
