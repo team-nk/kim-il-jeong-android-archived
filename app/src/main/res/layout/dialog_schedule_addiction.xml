@@ -103,7 +103,7 @@
                             android:id="@+id/radio_group_dialog_schedule_addiction_color_pallet"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:checkedButton=""
+                            android:gravity="center"
                             android:orientation="horizontal"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -111,61 +111,31 @@
 
                             <RadioButton
                                 android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_pallet_red"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
+                                style="@style/RadioButtonDialogScheduleAddictionBackground"
+                                android:background="@drawable/background_radio_button_dialog_schedule_addiction_red_selector" />
 
                             <RadioButton
                                 android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_pallet_blue"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
+                                style="@style/RadioButtonDialogScheduleAddictionBackground"
+                                android:background="@drawable/background_radio_button_dialog_schedule_addiction_blue_selector" />
+
 
                             <RadioButton
                                 android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_pallet_yellow"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
+                                style="@style/RadioButtonDialogScheduleAddictionBackground"
+                                android:background="@drawable/background_radio_button_dialog_schedule_addiction_yellow_selector" />
 
                             <RadioButton
                                 android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_pallet_green"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
+                                style="@style/RadioButtonDialogScheduleAddictionBackground"
+                                android:background="@drawable/background_radio_button_dialog_schedule_addiction_green_selector" />
 
                             <RadioButton
                                 android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_pallet_purple"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
+                                style="@style/RadioButtonDialogScheduleAddictionBackground"
+                                android:background="@drawable/background_radio_button_dialog_schedule_addiction_purple_selector" />
 
                         </RadioGroup>
-
-                        <!--LinearLayout
-                            android:layout_width="128dp"
-                            android:layout_height="20dp"
-                            app:layout_constraintBottom_toBottomOf="@id/tv_schedule_color"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="@id/tv_schedule_color">
-
-                            <View
-                                style="@style/ViewScheduleColor"
-                                android:background="@drawable/background_schedule_error" />
-
-                            <View
-                                style="@style/ViewScheduleColor"
-                                android:layout_marginHorizontal="8dp"
-                                android:background="@drawable/background_schedule_main" />
-
-                            <View
-                                style="@style/ViewScheduleColor"
-                                android:background="@drawable/background_schedule_yellow" />
-
-                            <View
-                                style="@style/ViewScheduleColor"
-                                android:layout_marginHorizontal="8dp"
-                                android:background="@drawable/background_schedule_green" />
-
-                            <View
-                                style="@style/ViewScheduleColor"
-                                android:background="@drawable/background_schedule_pink" />
-
-                        </LinearLayout-->
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
