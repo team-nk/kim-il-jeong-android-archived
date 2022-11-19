@@ -98,11 +98,11 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
-
                         <RadioGroup
                             android:id="@+id/radio_group_dialog_schedule_addiction_color_pallet"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:checkedButton="@id/radio_btn_radio_group_dialog_schedule_addiction_color_red"
                             android:gravity="center"
                             android:orientation="horizontal"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -110,28 +110,28 @@
                             app:layout_constraintTop_toTopOf="parent">
 
                             <RadioButton
-                                android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_pallet_red"
+                                android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_red"
                                 style="@style/RadioButtonDialogScheduleAddictionBackground"
                                 android:background="@drawable/background_radio_button_dialog_schedule_addiction_red_selector" />
 
                             <RadioButton
-                                android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_pallet_blue"
+                                android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_blue"
                                 style="@style/RadioButtonDialogScheduleAddictionBackground"
                                 android:background="@drawable/background_radio_button_dialog_schedule_addiction_blue_selector" />
 
 
                             <RadioButton
-                                android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_pallet_yellow"
+                                android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_yellow"
                                 style="@style/RadioButtonDialogScheduleAddictionBackground"
                                 android:background="@drawable/background_radio_button_dialog_schedule_addiction_yellow_selector" />
 
                             <RadioButton
-                                android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_pallet_green"
+                                android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_green"
                                 style="@style/RadioButtonDialogScheduleAddictionBackground"
                                 android:background="@drawable/background_radio_button_dialog_schedule_addiction_green_selector" />
 
                             <RadioButton
-                                android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_pallet_purple"
+                                android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_purple"
                                 style="@style/RadioButtonDialogScheduleAddictionBackground"
                                 android:background="@drawable/background_radio_button_dialog_schedule_addiction_purple_selector" />
 
