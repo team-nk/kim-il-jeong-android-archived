@@ -225,4 +225,18 @@
         <item name="android:paddingEnd">12dp</item>
         <item name="android:stateListAnimator">@null</item>
     </style>
+
+    <style name="TextViewUserInformationPageTitle" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_text</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="TextViewUserInformationSubTitle" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_text</item>
+        <item name="android:textSize">13sp</item>
+    </style>
 </resources>

@@ -31,7 +31,7 @@
     <string name="register_checkUserIdDuplicate">중복 확인</string>
     <string name="register_password">Password를 입력하세요</string>
     <string name="register_repeatPassword">Password를 한번 더 입력하세요</string>
-    <string name="register_passwordFormatHint">비밀번호는 숫자 + 문자를 사용하여 8글자 이상 15글자 이하로 만들어 주세요.</string>
+    <string name="register_passwordFormatHint">비밀번호는 숫자 + 영문자 + 특수 기호를 사용하여 8~15글자로 만들어 주세요.</string>
     <string name="register_next">다음</string>
     <string name="register_error_missingIdDuplicationCheck">아이디 중복 확인을 해 주세요.</string>
     <string name="register_error_missingEmailVerification">이메일 인증을 해 주세요.</string>
@@ -74,6 +74,12 @@
     <string name="calendar_todays_schedule">오늘의 일정</string>
     <string name="dialog_schedule_addiction_create_new_schedule">새로운 일정 생성하기</string>
     <string name="dialog_schedule_addiction_type_schedule">일정을 입력하세요</string>
+    <string name="email">Email</string>
+    <string name="id">id</string>
+    <string name="do_change">변경하기</string>
+    <string name="change_user_information_change_information">정보 변경하기</string>
+    <string name="change_user_information_change_image">이미지 변경하기</string>
+    <string name="change_user_information_change_password"> <u>비밀번호 변경하기</u> </string>
 
     <string-array name="calendar_week">
         <item>SUN</item>
