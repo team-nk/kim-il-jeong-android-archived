@@ -76,6 +76,10 @@
     <string name="dialog_schedule_addiction_type_schedule">일정을 입력하세요</string>
     <string name="email">Email</string>
     <string name="id">id</string>
+    <string name="do_change">변경하기</string>
+    <string name="change_user_information_change_information">정보 변경하기</string>
+    <string name="change_user_information_change_image">이미지 변경하기</string>
+    <string name="change_user_information_change_password"> <u>비밀번호 변경하기</u> </string>
 
     <string-array name="calendar_week">
         <item>SUN</item>
