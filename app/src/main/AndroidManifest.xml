@@ -19,7 +19,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ChangeUserInformationActivity"
+            android:name=".feature.changeuserinformation.ChangeUserInformationActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
