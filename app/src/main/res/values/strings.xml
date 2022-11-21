@@ -74,6 +74,8 @@
     <string name="calendar_todays_schedule">오늘의 일정</string>
     <string name="dialog_schedule_addiction_create_new_schedule">새로운 일정 생성하기</string>
     <string name="dialog_schedule_addiction_type_schedule">일정을 입력하세요</string>
+    <string name="email">Email</string>
+    <string name="id">id</string>
 
     <string-array name="calendar_week">
         <item>SUN</item>
