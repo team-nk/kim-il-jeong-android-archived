@@ -13,7 +13,7 @@
             android:layout_marginVertical="20dp"
             android:contentDescription="@string/contentDescription_logo"
             android:src="@drawable/mypage_logo_mypage_title"
-            app:layout_constraintBottom_toTopOf="@id/sc_mypage"
+            app:layout_constraintBottom_toTopOf="@id/rv_notification"
             app:layout_constraintEnd_toEndOf="@id/guideline_notification_vertical_2"
             app:layout_constraintHorizontal_bias="0.05"
             app:layout_constraintStart_toStartOf="@id/guideline_notification_vertical_1"
@@ -21,7 +21,7 @@
             app:layout_constraintVertical_chainStyle="packed" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/sc_mypage"
+            android:id="@+id/rv_notification"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scrollbars="none"
