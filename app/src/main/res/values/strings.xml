@@ -84,6 +84,7 @@
     <string name="change_password_change_password">기존 Password를 입력하세요</string>
     <string name="change_password_enter_new_password">새로운 Password를 입력하세요</string>
     <string name="change_password_repeat_new_password">새로운 Password를 한 번 더 입력하세요</string>
+    <string name="notification_text_logo">Notification Text Logo</string>
 
     <string-array name="calendar_week">
         <item>SUN</item>
