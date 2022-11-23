@@ -10,7 +10,7 @@ import com.teamnk.kimiljung.databinding.ActivityMainBinding
 import com.teamnk.kimiljung.feature.fragment.calendar.CalendarFragment
 import com.teamnk.kimiljung.feature.fragment.map.MapFragment
 import com.teamnk.kimiljung.feature.fragment.mypage.MyPageFragment
-import com.teamnk.kimiljung.feature.fragment.notification.NotificationFragment
+import com.teamnk.kimiljung.feature.fragment.post.PostFragment
 import com.teamnk.kimiljung.feature.start.StartActivity
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_LOGGED_IN
 
@@ -31,8 +31,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     private val mapFragment by lazy {
         MapFragment()
     }
-    private val notificationFragment by lazy {
-        NotificationFragment()
+    private val postFragment by lazy {
+        PostFragment()
     }
     private val myPageFragment by lazy {
         MyPageFragment()
@@ -64,7 +64,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
                         return@setOnItemSelectedListener true
                     }
                     R.id.bn_main_notification -> {
-                        changeFragment(notificationFragment)
+                        changeFragment(postFragment)
                         return@setOnItemSelectedListener true
                     }
                     R.id.bn_main_mypage -> {

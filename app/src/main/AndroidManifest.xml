@@ -33,7 +33,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".PostActivity"
+            android:name=".PostInspectActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
