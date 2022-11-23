@@ -84,6 +84,13 @@
     <string name="change_password_change_password">기존 Password를 입력하세요</string>
     <string name="change_password_enter_new_password">새로운 Password를 입력하세요</string>
     <string name="change_password_repeat_new_password">새로운 Password를 한 번 더 입력하세요</string>
+    <string name="notification_text_logo">Notification Text Logo</string>
+    <string name="create_new_post">새 글 작성</string>
+    <string name="create_new_post_type_content">내용을 입력하세요 (첫 줄은 제목입니다)</string>
+    <string name="create_new_post_please_select_schedule">일정을 선택해 주세요</string>
+    <string name="tv_create_new_post_select_schedule">일정 선택</string>
+    <string name="post_post_comment">댓글 작성하기</string>
+    <string name="post_comment">댓글 작성</string>
 
     <string-array name="calendar_week">
         <item>SUN</item>
