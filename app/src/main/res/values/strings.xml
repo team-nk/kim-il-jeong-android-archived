@@ -94,6 +94,10 @@
     <string name="post_post_comment">댓글 작성하기</string>
     <string name="post_comment">댓글 작성</string>
     <string name="check_my_post">내 글 확인하기</string>
+    <string name="dialog_enter_birthday_please_enter_birthday">생년월일을 입력해 주세요.</string>
+    <string name="dialog_enter_birthday_description">생년월일은 게시판 이용시 사용됩니다. 그 외에는 사용하지 않으며 생일 당일에 자동으로 생일 게시물이 생성됩니다.</string>
+    <string name="dialog_enter_birthday_select_birthday">생년월일을 선택하세요</string>
+    <string name="do_enter">입력하기</string>
 
     <string-array name="calendar_week">
         <item>SUN</item>
