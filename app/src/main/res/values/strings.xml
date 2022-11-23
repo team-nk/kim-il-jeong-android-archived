@@ -89,6 +89,7 @@
     <string name="create_new_post_type_content">내용을 입력하세요 (첫 줄은 제목입니다)</string>
     <string name="create_new_post_please_select_schedule">일정을 선택해 주세요</string>
     <string name="tv_create_new_post_select_schedule">일정 선택</string>
+    <string name="post_post_comment">댓글 작성하기</string>
 
     <string-array name="calendar_week">
         <item>SUN</item>
