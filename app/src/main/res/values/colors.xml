@@ -18,6 +18,7 @@
     <color name="color_yellow">#EDEF76</color>
     <color name="color_green">#50DF44</color>
     <color name="color_pink">#DB76FF</color>
+    <color name="color_cancel">#FFF0F0</color>
 
     <color name="color_text_deactivation">#C1C3CA</color>
     <color name="color_description">#A7B8CA</color>
