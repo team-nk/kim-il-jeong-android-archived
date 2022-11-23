@@ -246,4 +246,11 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/color_strong_explanation</item>
     </style>
+    
+    <style name="TextViewPostPrimary" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_text</item>
+    </style>
 </resources>
