@@ -246,11 +246,36 @@
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/color_strong_explanation</item>
     </style>
-    
+
     <style name="TextViewPostPrimary" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">16sp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/color_text</item>
+    </style>
+
+    <style name="TextViewDialogTitleSecondary" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_text</item>
+    </style>
+
+    <style name="TextViewDialogContentSecondary" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">11sp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_description</item>
+    </style>
+
+    <style name="TextViewDialogHintPrimary" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_strong_explanation</item>
     </style>
 </resources>
