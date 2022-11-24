@@ -1,12 +1,11 @@
 package com.teamnk.kimiljung.feature.createnewpost
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import com.teamnk.kimiljung.R
+import com.teamnk.kimiljung.base.BaseActivity
+import com.teamnk.kimiljung.databinding.ActivityCreateNewPostBinding
 
-class CreateNewPostActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_create_new_post)
-    }
+class CreateNewPostActivity : BaseActivity<ActivityCreateNewPostBinding>(
+    R.layout.activity_create_new_post
+) {
+    override fun observeEvent() {}
 }
