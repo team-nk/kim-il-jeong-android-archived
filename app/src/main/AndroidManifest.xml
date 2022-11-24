@@ -66,7 +66,8 @@
             android:exported="false" />
         <activity
             android:name=".feature.login.LoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTop" />
         <activity
             android:name=".feature.start.StartActivity"
             android:exported="false" />

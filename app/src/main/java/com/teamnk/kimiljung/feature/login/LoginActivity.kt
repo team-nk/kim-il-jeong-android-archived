@@ -1,6 +1,5 @@
 package com.teamnk.kimiljung.feature.login
 
-import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
@@ -8,20 +7,13 @@ import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityLoginBinding
 import com.teamnk.kimiljung.feature.main.MainActivity
 import com.teamnk.kimiljung.feature.register.RegisterActivity
-import com.teamnk.kimiljung.util.*
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_LOGGED_IN
+import com.teamnk.kimiljung.util.showShortSnackBar
+import com.teamnk.kimiljung.util.startIntent
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(
     R.layout.activity_login
 ) {
-
-    private val userAuthSharedPreferences by lazy {
-        initializeSharedPreferences(this, SharedPreferencesName.USER_AUTH, MODE_PRIVATE)
-    }
-
-    private val userAuthSharedPreferencesEditor: SharedPreferences.Editor by lazy {
-        userAuthSharedPreferences.edit()
-    }
 
     private val viewModel by lazy {
         ViewModelProvider(
@@ -31,15 +23,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        initBinding()
-
         initLoginButton()
         initGoToRegisterText()
-    }
-
-    private fun initBinding() {
-        binding.viewModel = viewModel
     }
 
     private fun initLoginButton() {
@@ -49,9 +34,15 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
             val password = binding.etLoginPassword.text.toString()
 
             if (email.isNotBlank() && password.isNotBlank()) {
-                postLogin(email, password)
+                postLogin(
+                    email = email,
+                    password = password,
+                )
             } else {
-                showShortToast(this, "Please Check Format")
+                showShortSnackBar(
+                    view = binding.root,
+                    text = "Please Check Format",
+                )
             }
         }
     }
@@ -60,7 +51,12 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
         if (email == "local" && password == "local") {
             loginWithAdminAccount()
         } else {
-            viewModel.postLogin(LoginRequest(email, password))
+            viewModel.postLogin(
+                LoginRequest(
+                    email = email,
+                    password = password,
+                )
+            )
         }
     }
 
@@ -69,14 +65,20 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
     }
 
     private fun moveToMainActivity() {
-        userAuthSharedPreferencesEditor.putBoolean(IS_LOGGED_IN, true).apply()
-        startIntent(this, MainActivity::class.java)
+        defaultSharedPreferencesEditor.putBoolean(IS_LOGGED_IN, true).apply()
+        startIntent(
+            context = this,
+            to = MainActivity::class.java,
+        )
         finish()
     }
 
     private fun initGoToRegisterText() {
         binding.tvLoginGoToRegister.setOnClickListener {
-            startIntent(this, RegisterActivity::class.java)
+            startIntent(
+                context = this,
+                to = RegisterActivity::class.java,
+            )
         }
     }
 
