@@ -20,6 +20,6 @@
     </style>
 
     <style name="BottomSheetDialogCorner" parent="Widget.Design.BottomSheet.Modal">
-        <item name="android:background">@drawable/background_corner</item>
+        <item name="android:background">@drawable/background_dialog_bottom_sheet</item>
     </style>
 </resources>
