@@ -1,5 +1,6 @@
 package com.teamnk.kimiljung.feature.login
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
@@ -7,14 +8,20 @@ import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityLoginBinding
 import com.teamnk.kimiljung.feature.main.MainActivity
 import com.teamnk.kimiljung.feature.register.RegisterActivity
+import com.teamnk.kimiljung.util.*
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_LOGGED_IN
-import com.teamnk.kimiljung.util.showShortSnackBar
-import com.teamnk.kimiljung.util.showShortToast
-import com.teamnk.kimiljung.util.startIntent
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(
     R.layout.activity_login
 ) {
+
+    private val userAuthSharedPreferences by lazy {
+        initializeSharedPreferences(this, SharedPreferencesName.USER_AUTH, MODE_PRIVATE)
+    }
+
+    private val userAuthSharedPreferencesEditor: SharedPreferences.Editor by lazy {
+        userAuthSharedPreferences.edit()
+    }
 
     private val viewModel by lazy {
         ViewModelProvider(

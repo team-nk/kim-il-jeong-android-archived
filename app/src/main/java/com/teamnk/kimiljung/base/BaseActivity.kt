@@ -21,14 +21,6 @@ abstract class BaseActivity<B : ViewDataBinding>(
         defaultSharedPreferences.edit()
     }
 
-    protected val userAuthSharedPreferences by lazy {
-        initializeSharedPreferences(this, SharedPreferencesName.USER_AUTH, MODE_PRIVATE)
-    }
-
-    protected val userAuthSharedPreferencesEditor: SharedPreferences.Editor by lazy {
-        userAuthSharedPreferences.edit()
-    }
-
     protected val binding: B by lazy {
         DataBindingUtil.setContentView(this, layoutId)
     }
