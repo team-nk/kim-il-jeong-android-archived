@@ -139,7 +139,7 @@
     <style name="ButtonMyPagePrimary" parent="Widget.AppCompat.Button">
         <item name="android:textSize">14sp</item>
         <item name="android:gravity">center</item>
-        <item name="android:background">@drawable/mypage_button_primary</item>
+        <item name="android:background">@drawable/background_button_secondary</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:elevation">0dp</item>
         <item name="android:textStyle">bold</item>

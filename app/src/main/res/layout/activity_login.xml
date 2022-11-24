@@ -13,7 +13,7 @@
             android:layout_height="112dp"
             android:layout_marginBottom="20dp"
             android:contentDescription="@string/contentDescription_logo"
-            android:src="@drawable/login_logo_login"
+            android:src="@drawable/image_text_logo_login"
             app:layout_constraintBottom_toTopOf="@id/layout_login_info"
             app:layout_constraintEnd_toEndOf="@id/layout_login_info"
             app:layout_constraintHorizontal_bias="0.1"
