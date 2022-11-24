@@ -17,10 +17,10 @@ class IntroductionPagerAdapter(private val context: Context) : PagerAdapter() {
     }
 
     private val images = intArrayOf(
-        R.drawable.introduction_pager_image_1,
-        R.drawable.introduction_pager_image_2,
-        R.drawable.introduction_pager_image_3,
-        R.drawable.introduction_pager_image_4,
+        R.drawable.image_introduction_pager_1,
+        R.drawable.image_introduction_pager_2,
+        R.drawable.image_introduction_pager_3,
+        R.drawable.image_introduction_pager_4,
     )
 
     override fun getCount(): Int {
