@@ -112,9 +112,9 @@
         <item name="android:layout_height">72dp</item>
         <item name="android:paddingHorizontal" tools:targetApi="o">48dp</item>
         <item name="labelVisibilityMode">selected</item>
-        <item name="itemTextColor">@drawable/bn_main_color_selector</item>
+        <item name="itemTextColor">@drawable/background_bottom_navigation_icon_color_selector</item>
         <item name="itemIconSize">32dp</item>
-        <item name="itemIconTint">@drawable/bn_main_color_selector</item>
+        <item name="itemIconTint">@drawable/background_bottom_navigation_icon_color_selector</item>
     </style>
 
     <style name="TextViewMyPagePrimary" parent="Widget.AppCompat.TextView">
