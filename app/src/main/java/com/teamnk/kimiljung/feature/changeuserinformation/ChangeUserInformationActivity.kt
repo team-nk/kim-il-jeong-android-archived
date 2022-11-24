@@ -7,7 +7,5 @@ import com.teamnk.kimiljung.databinding.ActivityChangeUserInformationBinding
 class ChangeUserInformationActivity : BaseActivity<ActivityChangeUserInformationBinding>(
     R.layout.activity_change_user_information
 ) {
-
-    override fun observeEvent() {
-    }
+    override fun observeEvent() {}
 }
