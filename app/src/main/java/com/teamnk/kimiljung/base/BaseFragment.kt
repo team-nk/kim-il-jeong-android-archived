@@ -29,18 +29,6 @@ abstract class BaseFragment<B : ViewDataBinding>(
         defaultSharedPreferences.edit()
     }
 
-    protected val userAuthSharedPreferences by lazy {
-        initializeSharedPreferences(
-            this.requireActivity(),
-            SharedPreferencesName.USER_AUTH,
-            AppCompatActivity.MODE_PRIVATE
-        )
-    }
-
-    protected val userAuthSharedPreferencesEditor: SharedPreferences.Editor by lazy {
-        userAuthSharedPreferences.edit()
-    }
-
     protected lateinit var binding: B
 
     override fun onCreateView(
