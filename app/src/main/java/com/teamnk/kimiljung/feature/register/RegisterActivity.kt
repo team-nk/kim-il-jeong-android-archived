@@ -3,8 +3,8 @@ package com.teamnk.kimiljung.feature.register
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
-import com.teamnk.kimiljung.databinding.ActivityRegisterBinding
 import com.teamnk.kimiljung.base.BaseActivity
+import com.teamnk.kimiljung.databinding.ActivityRegisterBinding
 import com.teamnk.kimiljung.feature.login.LoginActivity
 import com.teamnk.kimiljung.util.showDialogWithSingleButton
 import com.teamnk.kimiljung.util.startIntent
@@ -29,37 +29,43 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     }
 
     private fun initEmailVerifyButton() {
-        binding.btnRegisterVerifyEmail.setOnClickListener {
-            val email = binding.etRegisterEmail.text.toString()
-            if (email.isNotBlank()) {
+        with(binding) {
+            btnRegisterVerifyEmail.setOnClickListener {
+                val email = etRegisterEmail.text.toString()
+                if (email.isNotBlank()) {
 
-            } else {
+                } else {
 
+                }
             }
         }
     }
 
     private fun initCheckEmailVerifyButton() {
-        binding.btnRegisterCheckEmailVerified.setOnClickListener {
-            val key = binding.etRegisterVerificationCode.text
-            if (key.isNotBlank()) {
+        with(binding) {
+            btnRegisterCheckEmailVerified.setOnClickListener {
+                val key = etRegisterVerificationCode.text
+                if (key.isNotBlank()) {
 
-            } else {
+                } else {
 
+                }
             }
         }
     }
 
     private fun initCheckUserIdDuplicate() {
-        binding.btnRegisterCheckUserIdDuplicate.setOnClickListener {
-            val userId = binding.etRegisterUserId.text.toString()
-            if (userId.isNotBlank()) {
-                // TODO UserIdDuplicate Logic
-                viewModel.run {
+        with(binding) {
+            btnRegisterCheckUserIdDuplicate.setOnClickListener {
+                val userId = etRegisterUserId.text.toString()
+                if (userId.isNotBlank()) {
+                    // TODO UserIdDuplicate Logic
+                    viewModel.run {
+
+                    }
+                } else {
 
                 }
-            } else {
-
             }
         }
     }
