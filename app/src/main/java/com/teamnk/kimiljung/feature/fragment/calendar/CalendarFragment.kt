@@ -107,7 +107,7 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(
 
     private fun initCreateScheduleImage() {
         binding.imgCalendarScheduleCreate.setOnClickListener {
-            ScheduleFragment().show(parentFragmentManager, ScheduleFragment().tag)
+            //Todo
         }
     }
 
