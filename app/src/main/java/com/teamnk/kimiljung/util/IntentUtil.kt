@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK
 import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
 
+//todo startIntent -> startActivity
 fun <T> startIntent(context: Context, to: Class<T>) {
     context.startActivity(Intent(context, to))
 }
