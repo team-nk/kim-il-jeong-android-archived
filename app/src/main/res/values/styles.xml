@@ -156,7 +156,7 @@
     <style name="ImageMyPageDepth">
         <item name="android:layout_height">18dp</item>
         <item name="android:layout_width">18dp</item>
-        <item name="android:src">@drawable/icon_mypage_depth</item>
+        <item name="android:src">@drawable/icon_depth</item>
     </style>
 
     <style name="ImageCalendarAdd">
