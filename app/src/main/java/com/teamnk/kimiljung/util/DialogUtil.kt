@@ -58,7 +58,7 @@ fun showDialogWithDoubleButton(
         window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         show()
     }
-    
+
     with(binding) {
         tvDialogDoubleTitle.text = title
         btnDialogDoubleAction.text = primaryText

@@ -6,7 +6,7 @@ import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityIntroductionPagerBinding
 import com.teamnk.kimiljung.feature.start.StartActivity
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_INTRODUCTION_PAGER_SHOWN
-import com.teamnk.kimiljung.util.startIntentWithRemovingActivityStack
+import com.teamnk.kimiljung.util.startActivityRemovingBackStack
 
 class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>(
     R.layout.activity_introduction_pager
@@ -51,7 +51,7 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
 
     private fun moveToStartActivity() {
         defaultSharedPreferencesEditor.putBoolean(IS_INTRODUCTION_PAGER_SHOWN, true).apply()
-        startIntentWithRemovingActivityStack(
+        startActivityRemovingBackStack(
             context = this,
             to = StartActivity::class.java,
         )

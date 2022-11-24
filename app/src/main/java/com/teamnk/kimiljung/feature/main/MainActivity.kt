@@ -12,7 +12,7 @@ import com.teamnk.kimiljung.feature.fragment.mypage.MyPageFragment
 import com.teamnk.kimiljung.feature.fragment.post.PostFragment
 import com.teamnk.kimiljung.feature.start.StartActivity
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_LOGGED_IN
-import com.teamnk.kimiljung.util.startIntent
+import com.teamnk.kimiljung.util.startActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
@@ -46,7 +46,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
 
     private fun checkLoggedIn() {
         if (defaultSharedPreferences.getBoolean(IS_LOGGED_IN, false).not()) {
-            startIntent(
+            startActivity(
                 context = this,
                 to = StartActivity::class.java,
             )

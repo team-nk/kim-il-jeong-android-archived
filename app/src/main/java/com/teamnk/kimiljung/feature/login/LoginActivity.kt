@@ -9,7 +9,7 @@ import com.teamnk.kimiljung.feature.main.MainActivity
 import com.teamnk.kimiljung.feature.register.RegisterActivity
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_LOGGED_IN
 import com.teamnk.kimiljung.util.showShortSnackBar
-import com.teamnk.kimiljung.util.startIntent
+import com.teamnk.kimiljung.util.startActivity
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(
     R.layout.activity_login
@@ -66,7 +66,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
 
     private fun moveToMainActivity() {
         defaultSharedPreferencesEditor.putBoolean(IS_LOGGED_IN, true).apply()
-        startIntent(
+        startActivity(
             context = this,
             to = MainActivity::class.java,
         )
@@ -75,7 +75,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
 
     private fun initGoToRegisterText() {
         binding.tvLoginGoToRegister.setOnClickListener {
-            startIntent(
+            startActivity(
                 context = this,
                 to = RegisterActivity::class.java,
             )

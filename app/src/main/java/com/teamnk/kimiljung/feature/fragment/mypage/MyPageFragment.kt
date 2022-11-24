@@ -15,7 +15,7 @@ import com.teamnk.kimiljung.feature.start.StartActivity
 import com.teamnk.kimiljung.util.SharedPreferencesName.DEFAULT
 import com.teamnk.kimiljung.util.clearSharedPreferences
 import com.teamnk.kimiljung.util.showDialogWithDoubleButton
-import com.teamnk.kimiljung.util.startIntentWithRemovingActivityStack
+import com.teamnk.kimiljung.util.startActivityRemovingBackStack
 
 class MyPageFragment : BaseFragment<FragmentMypageBinding>(
     R.layout.fragment_mypage
@@ -65,7 +65,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
                 title = getString(R.string.mypage_logout_confirm),
                 primaryText = getString(R.string.mypage_logout),
             ) {
-                startIntentWithRemovingActivityStack(requireActivity(), StartActivity::class.java)
+                startActivityRemovingBackStack(requireActivity(), StartActivity::class.java)
             }
             logOut()
         }
