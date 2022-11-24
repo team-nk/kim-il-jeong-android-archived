@@ -1,7 +1,6 @@
 package com.teamnk.kimiljung.feature.fragment.mypage
 
 import android.app.Activity
-import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -12,8 +11,6 @@ import com.teamnk.kimiljung.base.BaseFragment
 import com.teamnk.kimiljung.databinding.FragmentMypageBinding
 import com.teamnk.kimiljung.feature.changeuserinformation.ChangeUserInformationActivity
 import com.teamnk.kimiljung.feature.start.StartActivity
-import com.teamnk.kimiljung.util.SharedPreferencesName.DEFAULT
-import com.teamnk.kimiljung.util.clearSharedPreferences
 import com.teamnk.kimiljung.util.showDialogWithDoubleButton
 import com.teamnk.kimiljung.util.startActivityRemovingBackStack
 
@@ -72,7 +69,10 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
     }
 
     private fun logOut() {
-        clearSharedPreferences(requireActivity(), DEFAULT, MODE_PRIVATE)
+        with(defaultSharedPreferencesEditor) {
+            clear()
+            apply()
+        }
     }
 
     private fun initChangePasswordButton() {}

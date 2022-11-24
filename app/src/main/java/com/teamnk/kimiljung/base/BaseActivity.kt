@@ -7,14 +7,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.teamnk.kimiljung.util.SharedPreferencesName
-import com.teamnk.kimiljung.util.initializeSharedPreferences
 
 abstract class BaseActivity<B : ViewDataBinding>(
     @LayoutRes private val layoutId: Int,
 ) : AppCompatActivity() {
 
-    protected val defaultSharedPreferences by lazy {
-        initializeSharedPreferences(this, SharedPreferencesName.DEFAULT, MODE_PRIVATE)
+    protected val defaultSharedPreferences: SharedPreferences by lazy {
+        getSharedPreferences(
+            SharedPreferencesName.DEFAULT,
+            MODE_PRIVATE,
+        )
     }
 
     protected val defaultSharedPreferencesEditor: SharedPreferences.Editor by lazy {
