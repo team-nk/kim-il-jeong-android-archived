@@ -70,7 +70,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_dialog_enter_birthday_enter"
                     style="@style/ButtonPrimary"
                     android:layout_marginStart="8dp"

@@ -34,7 +34,7 @@
                 app:layout_constraintVertical_chainStyle="packed"
                 tools:text="설명을 지정해주세요" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_dialog_single_action"
                 style="@style/ButtonPrimary"
                 android:layout_width="0dp"

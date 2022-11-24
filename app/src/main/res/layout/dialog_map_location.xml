@@ -81,7 +81,7 @@
                     android:orientation="horizontal"
                     android:layout_marginBottom="34dp">
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_map_delete"
                         style="@style/ButtonPrimary"
                         android:layout_marginEnd="10dp"
@@ -91,7 +91,7 @@
                         android:textColor="@color/color_error"
                         android:text="@string/delete" />
 
-                    <Button
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_dialog_map_addiction_create"
                         style="@style/ButtonPrimary"
                         android:layout_marginStart="10dp"
