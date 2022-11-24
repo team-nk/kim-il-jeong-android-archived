@@ -12,7 +12,7 @@
             android:layout_height="73dp"
             android:layout_marginVertical="20dp"
             android:contentDescription="@string/notification_text_logo"
-            android:src="@drawable/img_logo_post"
+            android:src="@drawable/image_text_logo_post"
             app:layout_constraintBottom_toTopOf="@id/rv_notification"
             app:layout_constraintEnd_toEndOf="@id/guideline_notification_vertical_2"
             app:layout_constraintHorizontal_bias="0.05"
