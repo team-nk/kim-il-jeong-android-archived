@@ -155,7 +155,7 @@
                             android:id="@+id/switch_schedule_always"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:thumb="@drawable/background_thumb_selector"
+                            android:thumb="@drawable/background_switch_primary_thumb_selector"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
