@@ -1,11 +1,11 @@
 package com.teamnk.kimiljung.feature.fragment.calendar
 
 import android.os.Bundle
-import android.text.Layout
 import android.view.View
 import android.widget.Button
-import androidx.coordinatorlayout.widget.CoordinatorLayout
-import com.google.android.gms.maps.*
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -36,14 +36,6 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(
     ) {
         binding.btnCalendarTest.setOnClickListener {
             BottomSheetDialog(requireActivity()).run {
-                setOnShowListener {
-                    window?.run {
-                        findViewById<View>(R.id.touch_outside)
-                            ?.setOnClickListener(null)
-                        (findViewById<View>(R.id.design_bottom_sheet)
-                            ?.layoutParams as CoordinatorLayout.LayoutParams).behavior = null
-                    }
-                }
                 setContentView(
                     layoutInflater.inflate(R.layout.dialog_map_location, null)
                 )
