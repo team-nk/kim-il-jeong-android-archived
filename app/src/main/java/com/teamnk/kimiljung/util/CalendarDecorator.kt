@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.feature.fragment.calendar
+package com.teamnk.kimiljung.util
 
 import android.content.Context
 import androidx.appcompat.content.res.AppCompatResources
@@ -10,11 +10,11 @@ import com.teamnk.kimiljung.R
 class TodayDecorator(context: Context) : DayViewDecorator {
 
     private val date = CalendarDay.today()
+    private val drawable =
+        AppCompatResources.getDrawable(context, R.drawable.background_calendar_date_today)
 
-    private val drawable = AppCompatResources.getDrawable(context, R.drawable.background_calendar_date_today)
-
-    override fun shouldDecorate(day: CalendarDay?): Boolean {
-        return day?.equals(date)!!
+    override fun shouldDecorate(day: CalendarDay): Boolean {
+        return day == date
     }
 
     override fun decorate(view: DayViewFacade?) {

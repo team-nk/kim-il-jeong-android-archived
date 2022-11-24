@@ -14,6 +14,7 @@ import com.prolificinteractive.materialcalendarview.format.ArrayWeekDayFormatter
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseFragment
 import com.teamnk.kimiljung.databinding.FragmentCalendarBinding
+import com.teamnk.kimiljung.util.TodayDecorator
 
 class CalendarFragment : BaseFragment<FragmentCalendarBinding>(
     R.layout.fragment_calendar
