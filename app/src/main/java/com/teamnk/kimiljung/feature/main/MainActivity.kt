@@ -1,7 +1,5 @@
 package com.teamnk.kimiljung.feature.main
 
-import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -14,20 +12,11 @@ import com.teamnk.kimiljung.feature.fragment.mypage.MyPageFragment
 import com.teamnk.kimiljung.feature.fragment.post.PostFragment
 import com.teamnk.kimiljung.feature.start.StartActivity
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_LOGGED_IN
-import com.teamnk.kimiljung.util.SharedPreferencesName
-import com.teamnk.kimiljung.util.initializeSharedPreferences
+import com.teamnk.kimiljung.util.startIntent
 
 class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
 ) {
-
-    private val userAuthSharedPreferences by lazy {
-        initializeSharedPreferences(this, SharedPreferencesName.USER_AUTH, MODE_PRIVATE)
-    }
-
-    private val userAuthSharedPreferencesEditor: SharedPreferences.Editor by lazy {
-        userAuthSharedPreferences.edit()
-    }
 
     private val viewModel by lazy {
         ViewModelProvider(
@@ -56,13 +45,16 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     }
 
     private fun checkLoggedIn() {
-        if (!userAuthSharedPreferences.getBoolean(IS_LOGGED_IN, false)) {
-            startActivity(Intent(this, StartActivity::class.java))
+        if (defaultSharedPreferences.getBoolean(IS_LOGGED_IN, false).not()) {
+            startIntent(
+                context = this,
+                to = StartActivity::class.java,
+            )
         }
     }
 
     private fun initBottomNavigationView() {
-        binding.bnMain.run {
+        with(binding.bnMain) {
             setOnItemSelectedListener {
                 when (it.itemId) {
                     R.id.bn_main_calendar -> {
