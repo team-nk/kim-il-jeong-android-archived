@@ -20,12 +20,14 @@ fun showDialogWithSingleButton(
             LayoutInflater.from(context)
         )
     }
+
     val dialog = Dialog(context).apply {
         setContentView(binding.root)
         setCancelable(false)
         window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         show()
     }
+
     with(binding) {
         tvDialogSingleTitle.text = title
         tvDialogSingleDescription.text = description
@@ -49,12 +51,14 @@ fun showDialogWithDoubleButton(
             LayoutInflater.from(context)
         )
     }
+
     val dialog = Dialog(context).apply {
         setContentView(binding.root)
         setCancelable(false)
         window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         show()
     }
+    
     with(binding) {
         tvDialogDoubleTitle.text = title
         btnDialogDoubleAction.text = primaryText
