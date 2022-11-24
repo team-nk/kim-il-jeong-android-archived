@@ -8,6 +8,5 @@ class PostFragment : BaseFragment<FragmentCalendarBinding>(
     R.layout.fragment_post
 ) {
 
-    override fun observeEvent() {
-    }
+    override fun observeEvent() {}
 }
