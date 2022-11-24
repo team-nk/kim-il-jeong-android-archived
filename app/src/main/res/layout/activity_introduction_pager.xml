@@ -77,7 +77,7 @@
                 android:layout_width="24dp"
                 android:layout_height="22dp"
                 android:contentDescription="@string/introduction_next_page_icon"
-                android:src="@drawable/introduction_icon_next" />
+                android:src="@drawable/icon_next" />
 
         </LinearLayout>
 
