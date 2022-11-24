@@ -46,8 +46,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
         binding.imgMypageEditProfile.setOnClickListener {
             changeUserInformationActivityResultLauncher.launch(
                 Intent(
-                    requireActivity(),
-                    ChangeUserInformationActivity::class.java
+                    requireActivity(), ChangeUserInformationActivity::class.java
                 )
             )
         }
@@ -63,9 +62,9 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
     private fun initLogOutButton() {
         binding.btnMypageLogout.setOnClickListener {
             showDialogWithDoubleButton(
-                requireActivity(),
-                getString(R.string.mypage_logout_confirm),
-                getString(R.string.mypage_logout)
+                context = requireActivity(),
+                title = getString(R.string.mypage_logout_confirm),
+                primaryText = getString(R.string.mypage_logout),
             ) {
                 startIntentWithRemovingActivityStack(requireActivity(), StartActivity::class.java)
             }
@@ -78,15 +77,11 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
         clearSharedPreferences(requireActivity(), DEFAULT, MODE_PRIVATE)
     }
 
-    private fun initChangePasswordButton() {
-    }
+    private fun initChangePasswordButton() {}
 
-    private fun initApplicationInformationButton() {
-    }
+    private fun initApplicationInformationButton() {}
 
-    private fun initEditBirthDayButton() {
-    }
+    private fun initEditBirthDayButton() {}
 
-    override fun observeEvent() {
-    }
+    override fun observeEvent() {}
 }
