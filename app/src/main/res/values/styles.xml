@@ -14,7 +14,7 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:textColor">@color/color_text</item>
         <item name="android:textColorHint">@color/color_text_deactivation</item>
-        <item name="android:background">@drawable/background_text_primary</item>
+        <item name="android:background">@drawable/background_text_input_primary</item>
     </style>
 
     <style name="ButtonPrimary" parent="Widget.AppCompat.Button">
