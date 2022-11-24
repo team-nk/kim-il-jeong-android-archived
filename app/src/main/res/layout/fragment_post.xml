@@ -30,6 +30,19 @@
             app:layout_constraintStart_toStartOf="@id/guideline_notification_vertical_1"
             app:layout_constraintTop_toBottomOf="@id/img_notification_text_logo" />
 
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/btn_fragment_post_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:backgroundTint="@color/color_surface2"
+            android:text="@string/fragment_post_post"
+            android:textColor="@color/color_text"
+            app:icon="@drawable/icon_pencil"
+            app:iconTint="@color/color_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_notification_vertical_1"
             android:layout_width="wrap_content"
