@@ -86,7 +86,7 @@
                         style="@style/ButtonPrimary"
                         android:layout_marginEnd="10dp"
                         android:layout_weight="1"
-                        android:background="@drawable/all_button_delete"
+                        android:background="@drawable/background_button_delete"
                         android:textAllCaps="false"
                         android:textColor="@color/color_error"
                         android:text="@string/delete" />
