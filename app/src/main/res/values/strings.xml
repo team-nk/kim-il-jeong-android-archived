@@ -101,6 +101,7 @@
     <string name="dialog_select_schedule_please_select_schedule">일정을 선택해 주세요</string>
     <string name="ping">Ping</string>
     <string name="do_select">선택하기</string>
+    <string name="fragment_post_post">글 작성하기</string>
 
     <string-array name="calendar_week">
         <item>SUN</item>
