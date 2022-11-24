@@ -42,7 +42,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
-                    android:background="@drawable/background_calendar"
+                    android:background="@drawable/background_calendar_fragment_calendar"
                     android:elevation="20dp"
                     android:paddingHorizontal="16dp"
                     android:paddingTop="16dp"
