@@ -1,12 +1,11 @@
 package com.teamnk.kimiljung.feature.posthistory
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import com.teamnk.kimiljung.R
+import com.teamnk.kimiljung.base.BaseActivity
+import com.teamnk.kimiljung.databinding.ActivityPostHistoryBinding
 
-class PostHistoryActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_post_history)
-    }
+class PostHistoryActivity : BaseActivity<ActivityPostHistoryBinding>(
+    R.layout.activity_post_history
+) {
+    override fun observeEvent() {}
 }
