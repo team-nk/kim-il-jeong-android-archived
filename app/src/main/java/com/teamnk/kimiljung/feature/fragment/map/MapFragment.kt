@@ -1,12 +1,11 @@
 package com.teamnk.kimiljung.feature.fragment.map
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.core.view.get
-import androidx.databinding.DataBindingUtil
-import com.google.android.gms.maps.*
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.MapView
+import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.teamnk.kimiljung.R
@@ -17,11 +16,11 @@ class MapFragment : BaseFragment<FragmentMapBinding>(
     R.layout.fragment_map,
 ), OnMapReadyCallback {
 
-    private val mapView : MapView by lazy {
+    private val mapView: MapView by lazy {
         binding.mvMap
     }
 
-    private val seoul : LatLng by lazy {
+    private val latLngSeoul: LatLng by lazy {
         LatLng(37.554891, 126.970814)
     }
 
@@ -36,15 +35,12 @@ class MapFragment : BaseFragment<FragmentMapBinding>(
     override fun onMapReady(googleMap: GoogleMap) {
         googleMap.run {
             addMarker(
-                MarkerOptions()
-                    .title("서울")
-                    .snippet("한국의 수도")
-                    .position(seoul)
+                MarkerOptions().title("서울").snippet("한국의 수도").position(latLngSeoul)
             )
             setMinZoomPreference(10F)
             setMaxZoomPreference(18F)
             moveCamera(
-                CameraUpdateFactory.newLatLng(seoul)
+                CameraUpdateFactory.newLatLng(latLngSeoul)
             )
             animateCamera(
                 CameraUpdateFactory.zoomTo(500F)
@@ -83,6 +79,5 @@ class MapFragment : BaseFragment<FragmentMapBinding>(
         mapView.onDestroy()
     }
 
-    override fun observeEvent() {
-    }
+    override fun observeEvent() {}
 }
