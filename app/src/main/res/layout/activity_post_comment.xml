@@ -35,7 +35,7 @@
             android:id="@+id/toolbar_post_comment_text_input"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/background_text_input"
+            android:background="@drawable/background_activity_post_comment_text_input"
             android:padding="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
