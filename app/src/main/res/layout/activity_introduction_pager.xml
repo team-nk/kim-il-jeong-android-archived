@@ -20,8 +20,8 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout_introduction_viewPager"
-            android:layout_width="112dp"
-            android:layout_height="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/vp_introduction"
             app:layout_constraintStart_toStartOf="@id/vp_introduction"
@@ -56,14 +56,12 @@
             android:id="@+id/btn_introduction_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/vp_introduction"
             app:layout_constraintHorizontal_bias="0.9"
             app:layout_constraintStart_toStartOf="@id/vp_introduction"
-            app:layout_constraintTop_toBottomOf="@id/tabLayout_introduction_viewPager"
-            tools:ignore="UseCompoundDrawables">
+            app:layout_constraintTop_toBottomOf="@id/tabLayout_introduction_viewPager">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -75,7 +73,7 @@
 
             <ImageView
                 android:layout_width="24dp"
-                android:layout_height="22dp"
+                android:layout_height="24dp"
                 android:contentDescription="@string/introduction_next_page_icon"
                 android:src="@drawable/icon_next" />
 
