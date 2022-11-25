@@ -53,7 +53,7 @@
 
                 <TextView
                     android:id="@+id/tv_post_comments_count"
-                    style="@style/TextViewCreateNewPostSelectSchedule"
+                    style="@style/TextViewDialogHintPrimary"
                     android:layout_width="0dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/tv_post_post_comment"
