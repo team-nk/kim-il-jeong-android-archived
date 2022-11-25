@@ -23,15 +23,15 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
         super.onCreate(savedInstanceState)
 
         initNextButton()
-        initEmailVerifyButton()
-        initCheckEmailVerifyButton()
-        initCheckUserIdDuplicate()
+        initVerifyEmailButton()
+        initCheckVerificationCodeButton()
+        initCheckIdDuplicationButton()
     }
 
-    private fun initEmailVerifyButton() {
+    private fun initVerifyEmailButton() {
         with(binding) {
-            btnRegisterVerifyEmail.setOnClickListener {
-                val email = etRegisterEmail.text.toString()
+            btnActivityRegisterVerifyEmail.setOnClickListener {
+                val email = etActivityRegisterEmail.text.toString()
                 if (email.isNotBlank()) {
 
                 } else {
@@ -41,10 +41,10 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
         }
     }
 
-    private fun initCheckEmailVerifyButton() {
+    private fun initCheckVerificationCodeButton() {
         with(binding) {
-            btnRegisterCheckEmailVerified.setOnClickListener {
-                val key = etRegisterVerificationCode.text
+            btnActivityRegisterCheckVerificationCode.setOnClickListener {
+                val key = etActivityRegisterVerificationCode.text
                 if (key.isNotBlank()) {
 
                 } else {
@@ -54,10 +54,10 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
         }
     }
 
-    private fun initCheckUserIdDuplicate() {
+    private fun initCheckIdDuplicationButton() {
         with(binding) {
-            btnRegisterCheckUserIdDuplicate.setOnClickListener {
-                val userId = etRegisterUserId.text.toString()
+            btnActivityRegisterCheckIdDuplication.setOnClickListener {
+                val userId = etActivityRegisterId.text.toString()
                 if (userId.isNotBlank()) {
                     // TODO UserIdDuplicate Logic
                     viewModel.run {
@@ -71,7 +71,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     }
 
     private fun initNextButton() {
-        binding.btnRegisterNext.setOnClickListener {
+        binding.btnActivityRegisterNext.setOnClickListener {
             showDialogWithSingleButton(
                 this,
                 getString(R.string.dialog_register_success_title),

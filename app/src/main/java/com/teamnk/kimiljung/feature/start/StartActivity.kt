@@ -17,7 +17,7 @@ class StartActivity : BaseActivity<ActivityStartBinding>(
         super.onCreate(savedInstanceState)
         checkIntroductionPageShown()
 
-        initStartLoginText()
+        initLoginEmailButton()
     }
 
     private fun checkIntroductionPageShown() {
@@ -32,8 +32,8 @@ class StartActivity : BaseActivity<ActivityStartBinding>(
         }
     }
 
-    private fun initStartLoginText() {
-        binding.tvStartLoginWithEmail.setOnClickListener {
+    private fun initLoginEmailButton() {
+        binding.tvActivityStartLoginEmail.setOnClickListener {
             startActivity(
                 context = this,
                 to = LoginActivity::class.java,

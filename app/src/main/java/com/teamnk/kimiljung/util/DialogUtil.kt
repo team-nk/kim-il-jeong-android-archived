@@ -5,8 +5,8 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
-import com.teamnk.kimiljung.databinding.DialogAllDoubleButtonBinding
-import com.teamnk.kimiljung.databinding.DialogAllSingleButtonBinding
+import com.teamnk.kimiljung.databinding.DialogDoubleButtonBinding
+import com.teamnk.kimiljung.databinding.DialogSingleButtonBinding
 
 fun showDialogWithSingleButton(
     context: Context,
@@ -15,8 +15,8 @@ fun showDialogWithSingleButton(
     functionWhenAcceptButtonClicked: () -> Unit
 ) {
 
-    val binding: DialogAllSingleButtonBinding by lazy {
-        DialogAllSingleButtonBinding.inflate(
+    val binding: DialogSingleButtonBinding by lazy {
+        DialogSingleButtonBinding.inflate(
             LayoutInflater.from(context)
         )
     }
@@ -29,9 +29,9 @@ fun showDialogWithSingleButton(
     }
 
     with(binding) {
-        tvDialogSingleTitle.text = title
-        tvDialogSingleDescription.text = description
-        btnDialogSingleAction.setOnClickListener {
+        tvDialogSingleButtonTitle.text = title
+        tvDialogSingleButtonContent.text = description
+        btnDialogSingleButtonAction.setOnClickListener {
             functionWhenAcceptButtonClicked()
 
             dialog.dismiss()
@@ -42,12 +42,12 @@ fun showDialogWithSingleButton(
 fun showDialogWithDoubleButton(
     context: Context,
     title: String,
-    primaryText: String,
+    actionText: String,
     functionWhenPrimaryButtonClicked: () -> Unit
 ) {
 
-    val binding: DialogAllDoubleButtonBinding by lazy {
-        DialogAllDoubleButtonBinding.inflate(
+    val binding: DialogDoubleButtonBinding by lazy {
+        DialogDoubleButtonBinding.inflate(
             LayoutInflater.from(context)
         )
     }
@@ -60,14 +60,16 @@ fun showDialogWithDoubleButton(
     }
 
     with(binding) {
-        tvDialogDoubleTitle.text = title
-        btnDialogDoubleAction.text = primaryText
-        btnDialogDoubleAction.setOnClickListener {
-            functionWhenPrimaryButtonClicked()
+        tvDialogDoubleButtonTitle.text = title
+        btnDialogDoubleButtonAction.apply {
+            text = actionText
+            setOnClickListener {
+                functionWhenPrimaryButtonClicked()
 
-            dialog.dismiss()
+                dialog.dismiss()
+            }
         }
-        btnDialogDoubleCancel.setOnClickListener {
+        btnDialogDoubleButtonCancel.setOnClickListener {
             dialog.dismiss()
         }
     }

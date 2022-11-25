@@ -59,7 +59,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
             showDialogWithDoubleButton(
                 context = requireActivity(),
                 title = getString(R.string.mypage_logout_confirm),
-                primaryText = getString(R.string.mypage_logout),
+                actionText = getString(R.string.mypage_logout),
             ) {
                 startActivityRemovingBackStack(requireActivity(), StartActivity::class.java)
             }
