@@ -81,7 +81,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     }
 
     private fun changeFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction().replace(R.id.container_main, fragment)
+        supportFragmentManager.beginTransaction().replace(R.id.container_activity_main, fragment)
             .commitAllowingStateLoss()
     }
 
