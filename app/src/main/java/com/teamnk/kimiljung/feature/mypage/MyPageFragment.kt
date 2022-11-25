@@ -38,7 +38,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
     }
 
     private fun initEditProfileButton() {
-        binding.imgMypageEditProfile.setOnClickListener {
+        binding.btnFragmentMypageEditProfile.setOnClickListener {
             changeUserInformationActivityResultLauncher.launch(
                 Intent(
                     requireActivity(), ChangeUserInformationActivity::class.java
@@ -55,7 +55,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
     }
 
     private fun initLogOutButton() {
-        binding.btnMypageLogout.setOnClickListener {
+        binding.btnFragmentMypageLogout.setOnClickListener {
             showDialogWithDoubleButton(
                 context = requireActivity(),
                 title = getString(R.string.mypage_logout_confirm),

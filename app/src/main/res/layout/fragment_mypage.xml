@@ -9,28 +9,28 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/img_mypage_text_logo"
+            android:id="@+id/image_fragment_mypage_text_logo"
             android:layout_width="132dp"
             android:layout_height="73dp"
             android:layout_marginVertical="20dp"
             android:contentDescription="@string/contentDescription_logo"
             android:src="@drawable/image_text_logo_mypage"
-            app:layout_constraintBottom_toTopOf="@id/sc_mypage"
-            app:layout_constraintEnd_toEndOf="@id/guideline_mypage_start_vertical_2"
+            app:layout_constraintBottom_toTopOf="@id/scroll_view_fragment_mypage_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_fragment_mypage_vertical_2"
             app:layout_constraintHorizontal_bias="0.05"
-            app:layout_constraintStart_toStartOf="@id/guideline_mypage_start_vertical_1"
+            app:layout_constraintStart_toStartOf="@id/guideline_fragment_mypage_vertical_1"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <ScrollView
-            android:id="@+id/sc_mypage"
+            android:id="@+id/scroll_view_fragment_mypage_main"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scrollbars="none"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/guideline_mypage_start_vertical_2"
-            app:layout_constraintStart_toStartOf="@id/guideline_mypage_start_vertical_1"
-            app:layout_constraintTop_toBottomOf="@id/img_mypage_text_logo">
+            app:layout_constraintEnd_toEndOf="@id/guideline_fragment_mypage_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_fragment_mypage_vertical_1"
+            app:layout_constraintTop_toBottomOf="@id/image_fragment_mypage_text_logo">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -38,53 +38,53 @@
                 android:orientation="vertical">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/layout_mypage_userInfo"
+                    android:id="@+id/layout_fragment_mypage_user_information"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:orientation="vertical"
                     android:padding="15dp">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/img_mypage_profile"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:id="@+id/image_fragment_mypage_user_profile"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
                         android:contentDescription="@string/contentDescription_mypage_profile_image"
                         android:src="@drawable/image_temp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/layout_mypage_userInfo_personal_information"
+                        app:layout_constraintEnd_toStartOf="@id/layout_fragment_mypage_personal_information"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <LinearLayout
-                        android:id="@+id/layout_mypage_userInfo_personal_information"
+                        android:id="@+id/layout_fragment_mypage_personal_information"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="12dp"
                         android:orientation="vertical"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/img_mypage_edit_profile"
+                        app:layout_constraintEnd_toStartOf="@id/btn_fragment_mypage_edit_profile"
                         app:layout_constraintHorizontal_bias="0"
-                        app:layout_constraintStart_toEndOf="@id/img_mypage_profile"
+                        app:layout_constraintStart_toEndOf="@id/image_fragment_mypage_user_profile"
                         app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
-                            android:id="@+id/tv_mypage_userId"
+                            android:id="@+id/tv_fragment_mypage_id"
                             style="@style/TextViewMyPagePrimary"
                             android:layout_weight="1"
                             tools:text="JungSeungHoon" />
 
                         <TextView
-                            android:id="@+id/tv_mypage_userEmail"
+                            android:id="@+id/tv_fragment_mypage_email"
                             style="@style/TextViewMyPageSecondary"
                             android:layout_weight="1"
                             tools:text="alwaysAwake@gmail.com" />
                     </LinearLayout>
 
-                    <ImageView
-                        android:id="@+id/img_mypage_edit_profile"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/icon_edit"
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_fragment_mypage_edit_profile"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:background="@drawable/icon_edit"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -97,31 +97,30 @@
                     android:layout_marginBottom="20dp">
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_mypage_check_my_schedule"
+                        android:id="@+id/btn_fragment_mypage_check_my_schedule"
                         style="@style/ButtonMyPagePrimary"
-                        android:layout_marginEnd="5dp"
+                        android:layout_marginEnd="8dp"
                         android:text="@string/mypage_check_my_schedule"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/btn_mypage_show_my_posts"
+                        app:layout_constraintEnd_toStartOf="@id/btn_fragment_mypage_show_my_post"
                         app:layout_constraintHorizontal_weight="1"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_mypage_show_my_posts"
+                        android:id="@+id/btn_fragment_mypage_show_my_post"
                         style="@style/ButtonMyPagePrimary"
-                        android:layout_marginStart="5dp"
+                        android:layout_marginStart="8dp"
                         android:text="@string/mypage_show_my_posts"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_weight="1"
-                        app:layout_constraintStart_toEndOf="@id/btn_mypage_check_my_schedule"
+                        app:layout_constraintStart_toEndOf="@id/btn_fragment_mypage_check_my_schedule"
                         app:layout_constraintTop_toTopOf="parent" />
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/btn_mypage_edit_birthDay"
+                    android:id="@+id/btn_frgament_mypage_edit_birthday"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp">
@@ -151,7 +150,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/btn_mypage_application_information"
+                    android:id="@+id/btn_fragment_mypage_application_information"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp">
@@ -181,7 +180,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/btn_mypage_change_password"
+                    android:id="@+id/btn_fragment_mypage_change_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp">
@@ -211,7 +210,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/btn_mypage_logout"
+                    android:id="@+id/btn_fragment_mypage_logout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp">
@@ -241,19 +240,18 @@
                         app:layout_constraintTop_toTopOf="parent"
                         app:tint="@color/color_error" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
             </LinearLayout>
         </ScrollView>
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_mypage_start_vertical_1"
+            android:id="@+id/guideline_fragment_mypage_vertical_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.05" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_mypage_start_vertical_2"
+            android:id="@+id/guideline_fragment_mypage_vertical_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
