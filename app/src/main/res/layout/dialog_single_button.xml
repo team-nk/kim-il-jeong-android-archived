@@ -3,42 +3,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="20dp">
+    <androidx.cardview.widget.CardView style="@style/CardViewAlertDialog">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="260dp"
+            android:layout_width="320dp"
             android:layout_height="200dp"
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/tv_dialog_single_title"
+                android:id="@+id/tv_dialog_single_button_title"
                 style="@style/TextViewDialogTitle"
-                app:layout_constraintBottom_toTopOf="@id/btn_dialog_single_action"
+                app:layout_constraintBottom_toTopOf="@id/btn_dialog_single_button_action"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.2"
-                tools:text="제목을 지정해주세요" />
+                tools:text="(다이얼로그 제목)" />
 
             <TextView
-                android:id="@+id/tv_dialog_single_description"
+                android:id="@+id/tv_dialog_single_button_content"
                 style="@style/TextViewDialogDescription"
-                app:layout_constraintBottom_toTopOf="@id/btn_dialog_single_action"
+                app:layout_constraintBottom_toTopOf="@id/btn_dialog_single_button_action"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_dialog_single_title"
-                app:layout_constraintVertical_chainStyle="packed"
-                tools:text="설명을 지정해주세요" />
+                app:layout_constraintTop_toBottomOf="@id/tv_dialog_single_button_title"
+                tools:text="(설명)" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_dialog_single_action"
+                android:id="@+id/btn_dialog_single_button_action"
                 style="@style/ButtonPrimary"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="48dp"
                 android:text="@string/accept"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

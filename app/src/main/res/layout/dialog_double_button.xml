@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.cardview.widget.CardView style="@style/CardViewAlertDialog">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="320dp"
             android:layout_height="160dp"
