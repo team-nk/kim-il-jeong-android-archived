@@ -5,31 +5,30 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         style="@style/BackgroundAll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/color_background">
+        android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/img_calendar_text_logo"
+            android:id="@+id/image_activity_calendar_text_logo"
             android:layout_width="156dp"
             android:layout_height="73dp"
             android:layout_marginVertical="20dp"
             android:contentDescription="@string/contentDescription_calendar_kim_il_jeong_calendar_title"
             android:src="@drawable/image_text_logo_calendar"
-            app:layout_constraintBottom_toTopOf="@id/sc_calendar"
-            app:layout_constraintEnd_toEndOf="@id/guideline_calendar_start_vertical_2"
+            app:layout_constraintBottom_toTopOf="@id/scroll_view_fragment_calendar_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_fragment_calendar_vertical_2"
             app:layout_constraintHorizontal_bias="0.05"
-            app:layout_constraintStart_toStartOf="@id/guideline_calendar_start_vertical_1"
+            app:layout_constraintStart_toStartOf="@id/guideline_fragment_calendar_vertical_1"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ScrollView
-            android:id="@+id/sc_calendar"
+            android:id="@+id/scroll_view_fragment_calendar_main"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scrollbars="none"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/guideline_calendar_start_vertical_2"
-            app:layout_constraintStart_toStartOf="@id/guideline_calendar_start_vertical_1"
-            app:layout_constraintTop_toBottomOf="@id/img_calendar_text_logo">
+            app:layout_constraintEnd_toEndOf="@id/guideline_fragment_calendar_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_fragment_calendar_vertical_1"
+            app:layout_constraintTop_toBottomOf="@id/image_activity_calendar_text_logo">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -38,28 +37,23 @@
                 android:orientation="vertical">
 
                 <com.prolificinteractive.materialcalendarview.MaterialCalendarView
-                    android:id="@+id/calendar_calendarView"
+                    android:id="@+id/calendar_view_fragment_calendar_main"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
                     android:background="@drawable/background_calendar_fragment_calendar"
                     android:elevation="20dp"
-                    android:paddingHorizontal="16dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="8dp"
+                    android:padding="16dp"
                     app:mcv_selectionColor="@color/color_main"
                     app:mcv_showOtherDates="other_months" />
 
-
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/btn_mypage_edit_birthDay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginTop="32dp">
 
                     <TextView
-                        android:id="@+id/textView"
                         style="@style/TextViewCalendarTitle"
                         android:layout_marginVertical="12dp"
                         android:text="@string/calendar_todays_schedule"
@@ -69,44 +63,34 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        android:id="@+id/view"
                         style="@style/ViewMyPageLine"
                         android:layout_width="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent" />
 
-                    <ImageView
-                        android:id="@+id/img_calendar_schedule_create"
-                        style="@style/ImageCalendarAdd"
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_fragment_calendar_add_schedule"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:background="@drawable/icon_add"
                         android:contentDescription="@string/contentDescription_calendar_add_button"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
-
-                    <Button
-                        android:id="@+id/btn_calendar_test"
-                        style="@style/ButtonPrimary"
-                        android:layout_width="40dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/view"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
             </LinearLayout>
-
         </ScrollView>
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_calendar_start_vertical_1"
+            android:id="@+id/guideline_fragment_calendar_vertical_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.05" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_calendar_start_vertical_2"
+            android:id="@+id/guideline_fragment_calendar_vertical_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
