@@ -34,7 +34,7 @@ class IntroductionPagerAdapter(private val context: Context) : PagerAdapter() {
     @SuppressLint("MissingInflatedId", "InflateParams")
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val view = layoutInflater.inflate(R.layout.item_introduction_pager, null)
-        val image = view.findViewById<ImageView>(R.id.img_item_viewpager)
+        val image = view.findViewById<ImageView>(R.id.image_item_introduction_pager_item)
         val viewpager = container as ViewPager
 
         image.setImageResource(this.images[position])
