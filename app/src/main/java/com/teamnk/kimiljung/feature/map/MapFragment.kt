@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.feature.fragment.map
+package com.teamnk.kimiljung.feature.map
 
 import android.os.Bundle
 import android.view.View

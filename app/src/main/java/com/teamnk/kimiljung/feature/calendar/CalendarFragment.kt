@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.feature.fragment.calendar
+package com.teamnk.kimiljung.feature.calendar
 
 import android.os.Bundle
 import android.view.View

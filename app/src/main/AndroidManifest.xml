@@ -40,14 +40,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".feature.createnewpost.CreateNewPostActivity"
+            android:name=".feature.post.CreateNewPostActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".feature.changeuserinformation.ChangeUserInformationActivity"
+            android:name=".feature.mypage.ChangeUserInformationActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

@@ -28,10 +28,10 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
     }
 
     private fun initLoginButton() {
-        binding.btnLoginLogin.setOnClickListener {
+        binding.btnActivityLoginLogin.setOnClickListener {
 
-            val email = binding.etLoginEmail.text.toString()
-            val password = binding.etLoginPassword.text.toString()
+            val email = binding.etActivityLoginEmail.text.toString()
+            val password = binding.etActivityLoginPassword.text.toString()
 
             if (email.isNotBlank() && password.isNotBlank()) {
                 postLogin(
@@ -74,7 +74,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
     }
 
     private fun initGoToRegisterText() {
-        binding.tvLoginGoToRegister.setOnClickListener {
+        binding.tvActivityLoginGoToRegister.setOnClickListener {
             startActivity(
                 context = this,
                 to = RegisterActivity::class.java,

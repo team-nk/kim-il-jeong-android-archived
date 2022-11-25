@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.feature.createnewpost
+package com.teamnk.kimiljung.feature.post
 
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity

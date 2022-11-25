@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.feature.changepassword
+package com.teamnk.kimiljung.feature.mypage
 
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity

@@ -6,10 +6,10 @@ import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityMainBinding
-import com.teamnk.kimiljung.feature.fragment.calendar.CalendarFragment
-import com.teamnk.kimiljung.feature.fragment.map.MapFragment
-import com.teamnk.kimiljung.feature.fragment.mypage.MyPageFragment
-import com.teamnk.kimiljung.feature.fragment.post.PostFragment
+import com.teamnk.kimiljung.feature.calendar.CalendarFragment
+import com.teamnk.kimiljung.feature.map.MapFragment
+import com.teamnk.kimiljung.feature.mypage.MyPageFragment
+import com.teamnk.kimiljung.feature.post.PostFragment
 import com.teamnk.kimiljung.feature.start.StartActivity
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_LOGGED_IN
 import com.teamnk.kimiljung.util.startActivity
@@ -54,7 +54,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     }
 
     private fun initBottomNavigationView() {
-        with(binding.bnMain) {
+        with(binding.bottomNavigationViewActivityMain) {
             setOnItemSelectedListener {
                 when (it.itemId) {
                     R.id.bn_main_calendar -> {

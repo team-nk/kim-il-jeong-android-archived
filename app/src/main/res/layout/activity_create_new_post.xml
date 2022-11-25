@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".feature.createnewpost.CreateNewPostActivity">
+        tools:context=".feature.post.CreateNewPostActivity">
 
         <LinearLayout
             android:id="@+id/layout_activity_create_new_post_text_input"

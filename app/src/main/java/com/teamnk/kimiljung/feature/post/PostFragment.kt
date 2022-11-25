@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.feature.fragment.post
+package com.teamnk.kimiljung.feature.post
 
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseFragment
