@@ -287,4 +287,11 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/color_text</item>
     </style>
+
+    <style name="CardViewAlertDialog" parent="Widget.MaterialComponents.CardView">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="cardCornerRadius">20dp</item>
+    </style>
 </resources>
