@@ -9,14 +9,14 @@
         tools:context=".feature.createnewpost.CreateNewPostActivity">
 
         <LinearLayout
-            android:id="@+id/layout_create_new_post_user_information"
+            android:id="@+id/layout_activity_create_new_post_text_input"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@id/layout_create_new_post_buttons"
-            app:layout_constraintEnd_toEndOf="@id/guideline_create_new_post_vertical_2"
-            app:layout_constraintStart_toStartOf="@id/guideline_create_new_post_vertical_1"
+            app:layout_constraintBottom_toTopOf="@id/layout_activity_create_new_post_buttons"
+            app:layout_constraintEnd_toEndOf="@id/guideline_activity_create_new_post_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_activity_create_new_post_vertical_1"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
@@ -29,23 +29,24 @@
                 android:id="@+id/et_create_new_post_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:autofillHints=""
                 android:background="@null"
                 android:hint="@string/create_new_post_type_content"
+                android:importantForAutofill="no"
                 android:inputType="text"
                 android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/layout_create_new_post_buttons"
+            android:id="@+id/layout_activity_create_new_post_buttons"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/guideline_create_new_post_vertical_2"
-            app:layout_constraintStart_toStartOf="@id/guideline_create_new_post_vertical_1"
-            app:layout_constraintTop_toBottomOf="@id/layout_create_new_post_user_information">
+            app:layout_constraintEnd_toEndOf="@id/guideline_activity_create_new_post_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_activity_create_new_post_vertical_1"
+            app:layout_constraintTop_toBottomOf="@id/layout_activity_create_new_post_text_input">
 
+            <!-- TODO Make this cardView as a Fragment -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -60,16 +61,16 @@
 
                     <TextView
                         android:id="@+id/tv_create_new_post_select_schedule"
-                        style="@style/TextViewCreateNewPostSelectSchedule"
+                        style="@style/TextViewDialogHintPrimary"
                         android:layout_width="0dp"
                         android:text="@string/create_new_post_please_select_schedule"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@id/tv_create_new_post_select_schedule_select"
+                        app:layout_constraintEnd_toStartOf="@id/tv_activity_create_new_post_select_schedule_select"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/tv_create_new_post_select_schedule_select"
+                        android:id="@+id/tv_activity_create_new_post_select_schedule_select"
                         style="@style/TextViewMyPagePrimary"
                         android:layout_width="wrap_content"
                         android:text="@string/tv_create_new_post_select_schedule"
@@ -89,36 +90,36 @@
                 android:minHeight="48dp">
 
                 <TextView
-                    android:id="@+id/btn_create_new_post_cancel"
+                    android:id="@+id/btn_activity_create_new_post_cancel"
                     style="@style/TextViewPrimary"
                     android:layout_marginEnd="8dp"
                     android:text="@string/do_cancel"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_create_new_post_create"
+                    app:layout_constraintEnd_toStartOf="@id/btn_activity_create_new_post_create"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_create_new_post_create"
+                    android:id="@+id/btn_activity_create_new_post_create"
                     style="@style/ButtonPrimary"
                     android:layout_marginStart="8dp"
                     android:text="@string/do_create"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/btn_create_new_post_cancel"
+                    app:layout_constraintStart_toEndOf="@id/btn_activity_create_new_post_cancel"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_create_new_post_vertical_1"
+            android:id="@+id/guideline_activity_create_new_post_vertical_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.05" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_create_new_post_vertical_2"
+            android:id="@+id/guideline_activity_create_new_post_vertical_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
