@@ -6,11 +6,10 @@
         android:layout_height="match_parent">
 
         <com.google.android.gms.maps.MapView
-            android:id="@+id/mv_map"
+            android:id="@+id/map_fragment_map_main"
             android:name="com.teamnk.kimiljung.feature.fragment.map.MapFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
     

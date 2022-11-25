@@ -23,12 +23,12 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(
         super.onViewCreated(view, savedInstanceState)
 
         initCalendarView()
-        initCreateScheduleButton()
+        initAddScheduleButton()
     }
 
 
     private fun initCalendarView() {
-        binding.calendarCalendarView.apply {
+        binding.calendarViewFragmentCalendarMain.apply {
             addDecorator(TodayDecorator(requireActivity()))
             setWeekDayFormatter(
                 ArrayWeekDayFormatter(
@@ -50,8 +50,8 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(
         }
     }
 
-    private fun initCreateScheduleButton() {
-        binding.imgCalendarScheduleCreate.setOnClickListener {
+    private fun initAddScheduleButton() {
+        binding.btnFragmentCalendarAddSchedule.setOnClickListener {
             //TODO When Create Button Clicked
         }
     }

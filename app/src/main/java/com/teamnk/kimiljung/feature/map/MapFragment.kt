@@ -17,7 +17,7 @@ class MapFragment : BaseFragment<FragmentMapBinding>(
 ), OnMapReadyCallback {
 
     private val mapView: MapView by lazy {
-        binding.mvMap
+        binding.mapFragmentMapMain
     }
 
     private val latLngSeoul: LatLng by lazy {
