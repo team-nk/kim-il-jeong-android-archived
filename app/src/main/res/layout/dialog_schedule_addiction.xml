@@ -235,23 +235,23 @@
                         android:minHeight="48dp">
 
                         <TextView
-                            android:id="@+id/btn_dialog_schedule_addiction_cancel"
+                            android:id="@+id/btn_activity_change_password_cancel"
                             style="@style/TextViewPrimary"
                             android:layout_marginEnd="8dp"
                             android:text="@string/do_cancel"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@id/btn_dialog_schedule_addiction_create"
+                            app:layout_constraintEnd_toStartOf="@id/btn_activity_change_password_change"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <Button
-                            android:id="@+id/btn_dialog_schedule_addiction_create"
+                            android:id="@+id/btn_activity_change_password_change"
                             style="@style/ButtonPrimary"
                             android:layout_marginStart="8dp"
                             android:text="@string/do_create"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/btn_dialog_schedule_addiction_cancel"
+                            app:layout_constraintStart_toEndOf="@id/btn_activity_change_password_cancel"
                             app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </LinearLayout>

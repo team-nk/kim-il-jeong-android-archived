@@ -9,7 +9,7 @@
         tools:context=".feature.changeuserinformation.ChangeUserInformationActivity">
 
         <LinearLayout
-            android:id="@+id/layout_change_user_information_user_information"
+            android:id="@+id/layout_activity_change_password_text_inputs"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:gravity="center_horizontal"
@@ -63,7 +63,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/guideline_change_user_information_vertical_2"
             app:layout_constraintStart_toStartOf="@id/guideline_change_user_information_vertical_1"
-            app:layout_constraintTop_toBottomOf="@id/layout_change_user_information_user_information">
+            app:layout_constraintTop_toBottomOf="@id/layout_activity_change_password_text_inputs">
 
             <TextView
                 style="@style/TextViewAuthRegisterHint"
@@ -79,23 +79,23 @@
                 android:minHeight="48dp">
 
                 <TextView
-                    android:id="@+id/btn_dialog_schedule_addiction_cancel"
+                    android:id="@+id/btn_activity_change_password_cancel"
                     style="@style/TextViewPrimary"
                     android:layout_marginEnd="8dp"
                     android:text="@string/do_cancel"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_dialog_schedule_addiction_create"
+                    app:layout_constraintEnd_toStartOf="@id/btn_activity_change_password_change"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_dialog_schedule_addiction_create"
+                    android:id="@+id/btn_activity_change_password_change"
                     style="@style/ButtonPrimary"
                     android:layout_marginStart="8dp"
                     android:text="@string/do_change"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/btn_dialog_schedule_addiction_cancel"
+                    app:layout_constraintStart_toEndOf="@id/btn_activity_change_password_cancel"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
