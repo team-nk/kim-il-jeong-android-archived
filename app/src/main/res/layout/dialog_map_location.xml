@@ -6,105 +6,109 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/layout_map_location_main">
+        android:layout_height="wrap_content">
 
-        <ScrollView
+        <LinearLayout
+            android:id="@+id/layout_dialog_map_location_contents"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:scrollbars="none"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/card_view_dialog_map_location_map"
+            app:layout_constraintEnd_toEndOf="@id/guideline_dialog_map_location_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_dialog_map_location_vertical_1"
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <View
-                        android:id="@+id/view_map_color_blue"
-                        android:layout_width="10dp"
-                        android:layout_height="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginStart="20dp"
-                        android:background="@drawable/background_radio_button_dialog_schedule_addiction_blue_unchecked"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        style="@style/TextViewDialogScheduleAddictionTitle"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/view_map_color_blue"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:text="대덕대학교 자습" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                <View
+                    android:id="@+id/view_dialog_map_location_color_indicator"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginEnd="12dp"
+                    tools:background="@drawable/background_color_indicator_blue_unchecked" />
 
                 <TextView
-                    android:id="@+id/tv_map_date_range"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="46dp"
-                    tools:text="2022-05-02 16:30 ~ 2022-05-02 20:00" />
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="0dp"
-                    android:layout_marginHorizontal="20dp"
-                    android:layout_marginTop="16dp">
-
-                    <com.google.android.gms.maps.MapView
-                        android:id="@+id/mv_map_location"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-
-                </androidx.cardview.widget.CardView>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="18dp"
-                    android:layout_marginTop="20dp"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="34dp">
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_map_delete"
-                        style="@style/ButtonPrimary"
-                        android:layout_marginEnd="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/all_button_delete"
-                        android:textAllCaps="false"
-                        android:textColor="@color/color_error"
-                        android:text="@string/delete" />
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_dialog_map_addiction_create"
-                        style="@style/ButtonPrimary"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
-                        android:text="@string/modify"
-                        android:textAllCaps="false" />
-
-                </LinearLayout>
-
+                    android:id="@+id/tv_dialog_map_location_title"
+                    style="@style/TextViewDialogTitleSecondary"
+                    tools:text="대덕대학교 자습" />
             </LinearLayout>
 
-        </ScrollView>
+            <TextView
+                android:id="@+id/tv_dialog_map_location_schedule"
+                style="@style/TextViewDialogDescriptionPrimary"
+                android:layout_marginTop="4dp"
+                tools:text="2022-05-02 16:30 ~ 2022-05-02 20:00" />
+        </LinearLayout>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_dialog_map_location_map"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/layout_dialog_map_location_buttons"
+            app:layout_constraintEnd_toEndOf="@id/guideline_dialog_map_location_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_dialog_map_location_vertical_1"
+            app:layout_constraintTop_toBottomOf="@id/layout_dialog_map_location_contents">
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/map_dialog_map_location_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_dialog_map_location_buttons"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="32dp"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_dialog_map_location_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_dialog_map_location_vertical_1"
+            app:layout_constraintTop_toBottomOf="@id/card_view_dialog_map_location_map">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_dialog_map_location_delete"
+                style="@style/ButtonPrimary"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/background_button_delete"
+                android:text="@string/do_delete"
+                android:textColor="@color/color_error"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_dialog_map_location_modify"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_dialog_map_location_modify"
+                style="@style/ButtonPrimary"
+                android:layout_marginStart="8dp"
+                android:text="@string/do_change"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_dialog_map_location_delete"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_dialog_map_location_vertical_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_dialog_map_location_vertical_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </layout>

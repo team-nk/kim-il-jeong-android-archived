@@ -4,4 +4,4 @@ import androidx.lifecycle.ViewModel
 
 class RegisterViewModel(
     private val repository: RegisterRepository
-) : ViewModel() {}
+) : ViewModel()

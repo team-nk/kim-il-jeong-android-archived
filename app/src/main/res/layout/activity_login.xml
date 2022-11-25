@@ -2,89 +2,77 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-        <variable
-            name="viewModel"
-            type="com.teamnk.kimiljung.feature.login.LoginViewModel" />
-    </data>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".feature.login.LoginActivity">
 
         <ImageView
-            android:id="@+id/img_login_text_logo"
+            android:id="@+id/image_activity_login_text_logo"
             android:layout_width="260dp"
             android:layout_height="112dp"
-            android:layout_marginBottom="20dp"
             android:contentDescription="@string/contentDescription_logo"
-            android:src="@drawable/login_logo_login"
-            app:layout_constraintBottom_toTopOf="@id/layout_login_info"
-            app:layout_constraintEnd_toEndOf="@id/layout_login_info"
+            android:src="@drawable/image_text_logo_login"
+            app:layout_constraintBottom_toTopOf="@id/layout_activity_login_information"
+            app:layout_constraintEnd_toEndOf="@id/layout_activity_login_information"
             app:layout_constraintHorizontal_bias="0.1"
-            app:layout_constraintStart_toStartOf="@id/layout_login_info"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.8" />
+            app:layout_constraintStart_toStartOf="@id/layout_activity_login_information"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
-            android:id="@+id/layout_login_info"
+            android:id="@+id/layout_activity_login_information"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@id/tv_login_goToRegister"
-            app:layout_constraintEnd_toEndOf="@id/guideline_login_start_vertical_2"
-            app:layout_constraintStart_toStartOf="@id/guideline_login_start_vertical_1"
-            app:layout_constraintTop_toBottomOf="@id/img_login_text_logo">
+            app:layout_constraintBottom_toTopOf="@id/tv_activity_login_go_to_register"
+            app:layout_constraintEnd_toEndOf="@id/guideline_activity_login_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_activity_login_vertical_1"
+            app:layout_constraintTop_toBottomOf="@id/image_activity_login_text_logo">
 
             <EditText
-                android:id="@+id/et_login_email"
+                android:id="@+id/et_activity_login_email"
                 style="@style/EditTextPrimary"
                 android:layout_width="match_parent"
-                android:autofillHints=""
                 android:hint="@string/login_email"
+                android:importantForAutofill="no"
                 android:inputType="textEmailAddress" />
 
             <EditText
-                android:id="@+id/et_login_password"
+                android:id="@+id/et_activity_login_password"
                 style="@style/EditTextPrimary"
                 android:layout_width="match_parent"
-                android:autofillHints=""
                 android:hint="@string/login_password"
+                android:importantForAutofill="no"
                 android:inputType="textPassword" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_login_login"
+                android:id="@+id/btn_activity_login_login"
                 style="@style/ButtonPrimary"
                 android:layout_width="match_parent"
                 android:text="@string/login" />
-
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tv_login_goToRegister"
+            android:id="@+id/tv_activity_login_go_to_register"
             style="@style/TextViewAuthPrimary"
             android:text="@string/login_goToRegister"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/layout_login_info"
-            app:layout_constraintStart_toStartOf="@id/layout_login_info"
-            app:layout_constraintTop_toBottomOf="@id/layout_login_info"
-            app:layout_constraintVertical_bias="0.8" />
+            app:layout_constraintEnd_toEndOf="@id/layout_activity_login_information"
+            app:layout_constraintStart_toStartOf="@id/layout_activity_login_information"
+            app:layout_constraintTop_toBottomOf="@id/layout_activity_login_information" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_login_start_vertical_1"
+            android:id="@+id/guideline_activity_login_vertical_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.05" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_login_start_vertical_2"
+            android:id="@+id/guideline_activity_login_vertical_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.95" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

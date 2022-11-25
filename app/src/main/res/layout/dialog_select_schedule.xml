@@ -11,13 +11,13 @@
             style="@style/TextViewDialogScheduleAddictionTitle"
             android:layout_marginVertical="32dp"
             android:text="@string/dialog_select_schedule_please_select_schedule"
-            app:layout_constraintBottom_toTopOf="@id/rv_dialog_select_schedule"
+            app:layout_constraintBottom_toTopOf="@id/rv_dialog_select_schedule_main"
             app:layout_constraintEnd_toEndOf="@id/guideline_dialog_select_schedule_vertical_2"
             app:layout_constraintStart_toStartOf="@id/guideline_dialog_select_schedule_vertical_1"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_dialog_select_schedule"
+            android:id="@+id/rv_dialog_select_schedule_main"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"

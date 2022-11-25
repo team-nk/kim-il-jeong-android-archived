@@ -17,10 +17,10 @@ class IntroductionPagerAdapter(private val context: Context) : PagerAdapter() {
     }
 
     private val images = intArrayOf(
-        R.drawable.introduction_pager_image_1,
-        R.drawable.introduction_pager_image_2,
-        R.drawable.introduction_pager_image_3,
-        R.drawable.introduction_pager_image_4,
+        R.drawable.image_introduction_pager_1,
+        R.drawable.image_introduction_pager_2,
+        R.drawable.image_introduction_pager_3,
+        R.drawable.image_introduction_pager_4,
     )
 
     override fun getCount(): Int {
@@ -34,7 +34,7 @@ class IntroductionPagerAdapter(private val context: Context) : PagerAdapter() {
     @SuppressLint("MissingInflatedId", "InflateParams")
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val view = layoutInflater.inflate(R.layout.item_introduction_pager, null)
-        val image = view.findViewById<ImageView>(R.id.img_item_viewpager)
+        val image = view.findViewById<ImageView>(R.id.image_item_introduction_pager_item)
         val viewpager = container as ViewPager
 
         image.setImageResource(this.images[position])

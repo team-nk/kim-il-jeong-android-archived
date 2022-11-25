@@ -7,28 +7,28 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/img_notification_text_logo"
+            android:id="@+id/image_fragment_post_text_logo"
             android:layout_width="132dp"
             android:layout_height="73dp"
             android:layout_marginVertical="20dp"
             android:contentDescription="@string/notification_text_logo"
-            android:src="@drawable/img_logo_post"
-            app:layout_constraintBottom_toTopOf="@id/rv_notification"
-            app:layout_constraintEnd_toEndOf="@id/guideline_notification_vertical_2"
+            android:src="@drawable/image_text_logo_post"
+            app:layout_constraintBottom_toTopOf="@id/rv_fragment_post_main"
+            app:layout_constraintEnd_toEndOf="@id/guideline_fragment_post_vertical_2"
             app:layout_constraintHorizontal_bias="0.05"
-            app:layout_constraintStart_toStartOf="@id/guideline_notification_vertical_1"
+            app:layout_constraintStart_toStartOf="@id/guideline_fragment_post_vertical_1"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_notification"
+            android:id="@+id/rv_fragment_post_main"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scrollbars="none"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/guideline_notification_vertical_2"
-            app:layout_constraintStart_toStartOf="@id/guideline_notification_vertical_1"
-            app:layout_constraintTop_toBottomOf="@id/img_notification_text_logo" />
+            app:layout_constraintEnd_toEndOf="@id/guideline_fragment_post_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_fragment_post_vertical_1"
+            app:layout_constraintTop_toBottomOf="@id/image_fragment_post_text_logo" />
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/btn_fragment_post_post"
@@ -44,14 +44,14 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_notification_vertical_1"
+            android:id="@+id/guideline_fragment_post_vertical_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.05" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_notification_vertical_2"
+            android:id="@+id/guideline_fragment_post_vertical_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"

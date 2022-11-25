@@ -19,35 +19,35 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".PostHistoryActivity"
+            android:name=".feature.posthistory.PostHistoryActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".PostCommentActivity"
+            android:name=".feature.postcomment.PostCommentActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".PostInspectActivity"
+            android:name=".feature.postinspect.PostInspectActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".CreateNewPostActivity"
+            android:name=".feature.post.CreateNewPostActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".feature.changeuserinformation.ChangeUserInformationActivity"
+            android:name=".feature.mypage.ChangeUserInformationActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -66,7 +66,8 @@
             android:exported="false" />
         <activity
             android:name=".feature.login.LoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleTop" />
         <activity
             android:name=".feature.start.StartActivity"
             android:exported="false" />

@@ -3,9 +3,11 @@ package com.teamnk.kimiljung.feature.register
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
-import com.teamnk.kimiljung.databinding.ActivityRegisterBinding
 import com.teamnk.kimiljung.base.BaseActivity
+import com.teamnk.kimiljung.databinding.ActivityRegisterBinding
+import com.teamnk.kimiljung.feature.login.LoginActivity
 import com.teamnk.kimiljung.util.showDialogWithSingleButton
+import com.teamnk.kimiljung.util.startActivity
 
 class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     R.layout.activity_register
@@ -21,55 +23,61 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
         super.onCreate(savedInstanceState)
 
         initNextButton()
-        initEmailVerifyButton()
-        initCheckEmailVerifyButton()
-        initCheckUserIdDuplicate()
+        initVerifyEmailButton()
+        initCheckVerificationCodeButton()
+        initCheckIdDuplicationButton()
     }
 
-    private fun initEmailVerifyButton() {
-        binding.btnRegisterVerifyEmail.setOnClickListener {
-            val email = binding.etRegisterEmail.text.toString()
-            if (email.isNotBlank()) {
+    private fun initVerifyEmailButton() {
+        with(binding) {
+            btnActivityRegisterVerifyEmail.setOnClickListener {
+                val email = etActivityRegisterEmail.text.toString()
+                if (email.isNotBlank()) {
 
-            } else {
-
-            }
-        }
-    }
-
-    private fun initCheckEmailVerifyButton() {
-        binding.btnRegisterCheckEmailVerified.setOnClickListener {
-            val key = binding.etRegisterVerificationCode.text
-            if (key.isNotBlank()) {
-
-            } else {
-
-            }
-        }
-    }
-
-    private fun initCheckUserIdDuplicate() {
-        binding.btnRegisterCheckUserIdDuplicate.setOnClickListener {
-            val userId = binding.etRegisterUserId.text.toString()
-            if (userId.isNotBlank()) {
-                // TODO UserIdDuplicate Logic
-                viewModel.run {
+                } else {
 
                 }
-            } else {
+            }
+        }
+    }
 
+    private fun initCheckVerificationCodeButton() {
+        with(binding) {
+            btnActivityRegisterCheckVerificationCode.setOnClickListener {
+                val key = etActivityRegisterVerificationCode.text
+                if (key.isNotBlank()) {
+
+                } else {
+
+                }
+            }
+        }
+    }
+
+    private fun initCheckIdDuplicationButton() {
+        with(binding) {
+            btnActivityRegisterCheckIdDuplication.setOnClickListener {
+                val userId = etActivityRegisterId.text.toString()
+                if (userId.isNotBlank()) {
+                    // TODO UserIdDuplicate Logic
+                    viewModel.run {
+
+                    }
+                } else {
+
+                }
             }
         }
     }
 
     private fun initNextButton() {
-        binding.btnRegisterNext.setOnClickListener {
+        binding.btnActivityRegisterNext.setOnClickListener {
             showDialogWithSingleButton(
                 this,
                 getString(R.string.dialog_register_success_title),
                 getString(R.string.dialog_register_success_description)
             ) {
-                finish()
+                startActivity(this, LoginActivity::class.java)
             }
         }
     }

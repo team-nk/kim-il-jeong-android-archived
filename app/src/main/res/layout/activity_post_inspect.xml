@@ -7,44 +7,44 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingVertical="32dp"
-        tools:context=".PostInspectActivity">
+        tools:context=".feature.postinspect.PostInspectActivity">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@id/card_post_comment"
-            app:layout_constraintEnd_toEndOf="@id/guideline_post_vertical_2"
-            app:layout_constraintStart_toStartOf="@id/guideline_post_vertical_1"
+            app:layout_constraintBottom_toTopOf="@id/card_view_activity_post_inspect_comment"
+            app:layout_constraintEnd_toEndOf="@id/guideline_activity_post_inspect_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_activity_post_inspect_vertical_1"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/tv_post_title"
+                android:id="@+id/tv_activity_post_inspect_title"
                 style="@style/TextViewPostPrimary"
                 tools:text="제목이 여기에!!" />
 
             <FrameLayout
-                android:id="@+id/layout_post_schedule"
+                android:id="@+id/layout_activity_post_schedule_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="60dp" />
 
             <TextView
-                android:id="@+id/tv_post_content"
+                android:id="@+id/tv_activity_post_inspect_content"
                 style="@style/TextViewPostPrimary"
                 tools:text="내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!" />
         </LinearLayout>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_post_comment"
+            android:id="@+id/card_view_activity_post_inspect_comment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/color_surface2"
             app:cardCornerRadius="10dp"
             app:cardElevation="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/guideline_post_vertical_2"
-            app:layout_constraintStart_toStartOf="@id/guideline_post_vertical_1">
+            app:layout_constraintEnd_toEndOf="@id/guideline_activity_post_inspect_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_activity_post_inspect_vertical_1">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -52,36 +52,36 @@
                 android:layout_margin="12dp">
 
                 <TextView
-                    android:id="@+id/tv_post_comments_count"
-                    style="@style/TextViewCreateNewPostSelectSchedule"
+                    android:id="@+id/tv_activity_post_inspect_comments_count"
+                    style="@style/TextViewDialogHintPrimary"
                     android:layout_width="0dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/tv_post_post_comment"
+                    app:layout_constraintEnd_toStartOf="@id/tv_activity_post_inspect_post_comment"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="댓글 개수 요기" />
 
                 <TextView
-                    android:id="@+id/tv_post_post_comment"
+                    android:id="@+id/tv_activity_post_inspect_post_comment"
                     style="@style/TextViewMyPagePrimary"
                     android:layout_width="wrap_content"
                     android:text="@string/post_post_comment"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/tv_post_comments_count"
+                    app:layout_constraintStart_toEndOf="@id/tv_activity_post_inspect_comments_count"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_post_vertical_1"
+            android:id="@+id/guideline_activity_post_inspect_vertical_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.05" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_post_vertical_2"
+            android:id="@+id/guideline_activity_post_inspect_vertical_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"

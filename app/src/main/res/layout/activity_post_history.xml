@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".PostHistoryActivity">
+        tools:context=".feature.posthistory.PostHistoryActivity">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -14,8 +14,8 @@
             android:gravity="center_horizontal"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/guideline_post_history_vertical_2"
-            app:layout_constraintStart_toStartOf="@id/guideline_post_history_vertical_1"
+            app:layout_constraintEnd_toEndOf="@id/guideline_activity_post_history_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_activity_post_history_vertical_1"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
@@ -25,20 +25,20 @@
                 android:text="@string/check_my_post" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_post_history"
+                android:id="@+id/rv_activity_post_history_main"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_post_history_vertical_1"
+            android:id="@+id/guideline_activity_post_history_vertical_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.05" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_post_history_vertical_2"
+            android:id="@+id/guideline_activity_post_history_vertical_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"

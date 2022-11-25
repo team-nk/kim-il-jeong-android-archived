@@ -9,11 +9,11 @@
         tools:context=".feature.start.StartActivity">
 
         <ImageView
-            android:id="@+id/img_start_text_logo"
+            android:id="@+id/image_activity_start_text_logo"
             android:layout_width="260dp"
             android:layout_height="112dp"
             android:contentDescription="@string/contentDescription_logo"
-            android:src="@drawable/login_logo_login"
+            android:src="@drawable/image_text_logo_login"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.2"
@@ -22,40 +22,40 @@
             app:layout_constraintVertical_bias="0.2" />
 
         <LinearLayout
-            android:id="@+id/layout_start_socialLogin"
+            android:id="@+id/layout_activity_start_social_login_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="25dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/tv_start_loginWithEmail"
-            app:layout_constraintStart_toStartOf="@id/tv_start_loginWithEmail"
-            app:layout_constraintTop_toBottomOf="@id/img_start_text_logo"
+            app:layout_constraintEnd_toEndOf="@id/tv_activity_start_login_email"
+            app:layout_constraintStart_toStartOf="@id/tv_activity_start_login_email"
+            app:layout_constraintTop_toBottomOf="@id/image_activity_start_text_logo"
             app:layout_constraintVertical_bias="0.8">
 
             <ImageView
-                android:id="@+id/img_start_loginWithGoogle"
-                android:layout_width="43dp"
-                android:layout_height="43dp"
-                android:layout_marginEnd="30dp"
+                android:id="@+id/button_activity_start_login_google"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
                 android:contentDescription="@string/contentDescription_google_social_login"
-                android:src="@drawable/start_icon_google" />
+                android:src="@drawable/icon_activity_start_google" />
 
             <ImageView
-                android:id="@+id/img_start_loginWithKakao"
-                android:layout_width="43dp"
-                android:layout_height="43dp"
+                android:id="@+id/button_activity_start_login_kakao"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
                 android:contentDescription="@string/contentDescription_kakao_social_login"
-                android:src="@drawable/start_icon_kakao" />
+                android:src="@drawable/icon_activity_start_kakao" />
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tv_start_loginWithEmail"
+            android:id="@+id/tv_activity_start_login_email"
             style="@style/TextViewAuthStartWithEmail"
             android:layout_marginTop="16dp"
             android:text="@string/start_loginWithEmail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/layout_start_socialLogin" />
+            app:layout_constraintTop_toBottomOf="@id/layout_activity_start_social_login_button" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
