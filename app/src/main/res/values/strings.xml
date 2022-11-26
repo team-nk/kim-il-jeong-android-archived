@@ -12,6 +12,8 @@
     <string name="next">다음</string>
 
     <string name="activity_start_login_with_email"><u>이메일로 로그인하기</u></string>
+    <string name="activity_start_content_description_google_social_login">Google Social Login</string>
+    <string name="activity_start_content_description_kakao_social_login">Kakao Social Login</string>
 
     <string name="activity_login_please_enter_email">Email을 입력하세요</string>
     <string name="activity_login_please_enter_password">Password를 입력하세요</string>
@@ -30,7 +32,6 @@
     <string name="activity_register_error_please_check_id_duplication">아이디 중복 확인을 해 주세요.</string>
     <string name="activity_register_error_please_verify_email">이메일 인증을 해 주세요.</string>
 
-    <string name="content_description_activity_introduction_pager_image">ViewPager Image</string>
     <string name="introduction_next_page_icon">Introduction Next Page Icon</string>
 
     <string name="dialog_register_success_title">회원가입이 완료되었습니다!</string>
@@ -96,9 +97,10 @@
 
 
     <string name="content_description_kim_il_jeong_logo">Kim il jeong Logo</string>
-    <string name="content_description_google_social_login">Google Social Login</string>
-    <string name="content_description_kakao_social_login">Kakao Social Login</string>
     <string name="content_description_profile_image">Profile Image</string>
+
+
+    <string name="content_description_activity_introduction_pager_image">ViewPager Image</string>
 
     <string-array name="calendar_week">
         <item>SUN</item>

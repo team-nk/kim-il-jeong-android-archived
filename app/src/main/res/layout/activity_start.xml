@@ -37,7 +37,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="16dp"
-                android:contentDescription="@string/content_description_google_social_login"
+                android:contentDescription="@string/activity_start_content_description_google_social_login"
                 android:src="@drawable/icon_activity_start_google" />
 
             <ImageView
@@ -45,7 +45,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="16dp"
-                android:contentDescription="@string/content_description_kakao_social_login"
+                android:contentDescription="@string/activity_start_content_description_kakao_social_login"
                 android:src="@drawable/icon_activity_start_kakao" />
         </LinearLayout>
 
