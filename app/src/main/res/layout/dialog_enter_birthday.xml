@@ -42,7 +42,7 @@
                     android:id="@+id/btn_dialog_enter_birthday_birthday"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/color_surface2"
+                    android:backgroundTint="@color/color_surface_secondary"
                     app:cardCornerRadius="8dp">
 
                     <TextView
