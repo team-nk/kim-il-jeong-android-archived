@@ -103,14 +103,10 @@
     <string name="error_login_failed">로그인에 실패하였습니다.</string>
     <string name="error_password_incorrect">비밀번호가 다릅니다.</string>
 
-
     <string name="content_description_kim_il_jeong_logo">Kim il jeong Logo</string>
-
     <string name="content_description_profile_image">Profile Image</string>
 
-
-
-    <string-array name="calendar_week">
+    <string-array name="fragment_calendar_string_array_calendar_week">
         <item>SUN</item>
         <item>MON</item>
         <item>TUE</item>
@@ -119,5 +115,4 @@
         <item>FRI</item>
         <item>SAT</item>
     </string-array>
-
 </resources>

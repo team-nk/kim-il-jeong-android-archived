@@ -33,7 +33,7 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(
             setWeekDayFormatter(
                 ArrayWeekDayFormatter(
                     resources.getStringArray(
-                        R.array.calendar_week
+                        R.array.fragment_calendar_string_array_calendar_week
                     )
                 )
             )
