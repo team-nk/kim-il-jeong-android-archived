@@ -96,8 +96,8 @@
     <string name="dialog_select_schedule_please_select_schedule">일정을 선택해 주세요</string>
 
     <string name="dialog_select_specific_schedule_content_description_ping">Ping</string>
-    <string name="activity_post_comment_enter_comment">댓글을 입력하세요…</string>
 
+    <string name="activity_post_comment_please_enter_comment">댓글을 입력하세요…</string>
 
     <string name="error_failed_to_connect_to_server">서버와 연결할 수 없습니다.</string>
     <string name="error_login_failed">로그인에 실패하였습니다.</string>

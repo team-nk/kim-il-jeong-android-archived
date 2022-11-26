@@ -77,7 +77,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:background="@null"
-                            android:hint="@string/activity_post_comment_enter_comment"
+                            android:hint="@string/activity_post_comment_please_enter_comment"
                             android:importantForAutofill="no"
                             android:maxLines="1"
                             android:paddingHorizontal="12dp"
