@@ -66,7 +66,7 @@
                         <TextView
                             style="@style/TextViewScheduleItemTitle"
                             android:layout_gravity="start|center_vertical"
-                            android:text="@string/schedule_input_location"
+                            android:text="@string/dialog_create_schedule_enter_location"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
