@@ -15,7 +15,7 @@
 
     <string name="login_please_enter_email">Email을 입력하세요</string>
     <string name="login_please_enter_password">Password를 입력하세요</string>
-    <string name="login_goToRegister">김일정이 처음이신가요? <u>회원가입</u></string>
+    <string name="login_is_kim_il_jeong_first_time">김일정이 처음이신가요? <u>회원가입</u></string>
     <string name="login_error_failed_to_connect_to_server">서버와 연결할 수 없습니다.</string>
     <string name="login_error_failed">로그인에 실패하였습니다.</string>
 
