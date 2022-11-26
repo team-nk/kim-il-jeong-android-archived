@@ -79,7 +79,7 @@
     <string name="activity_change_password_please_enter_new_password">새로운 Password를 입력하세요</string>
     <string name="activity_change_password_please_enter_new_password_again">새로운 Password를 한 번 더 입력하세요</string>
 
-    <string name="create_new_post">새 글 작성</string>
+    <string name="activity_create_new_post_create_new_post">새 글 작성</string>
     <string name="create_new_post_type_content">내용을 입력하세요 (첫 줄은 제목입니다)</string>
     <string name="create_new_post_please_select_schedule">일정을 선택해 주세요</string>
     <string name="tv_create_new_post_select_schedule">일정 선택</string>

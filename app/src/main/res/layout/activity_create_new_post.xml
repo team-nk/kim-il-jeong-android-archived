@@ -23,7 +23,7 @@
                 style="@style/TextViewUserInformationPageTitle"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="40dp"
-                android:text="@string/create_new_post" />
+                android:text="@string/activity_create_new_post_create_new_post" />
 
             <EditText
                 android:id="@+id/et_create_new_post_content"
