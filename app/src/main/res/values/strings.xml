@@ -9,8 +9,7 @@
     <string name="do_cancel">취소하기</string>
     <string name="do_delete">삭제하기</string>
 
-
-    <string name="start_loginWithEmail"><u>이메일로 로그인하기</u></string>
+    <string name="activity_start_login_with_email"><u>이메일로 로그인하기</u></string>
 
     <string name="login_please_enter_email">Email을 입력하세요</string>
     <string name="login_please_enter_password">Password를 입력하세요</string>
