@@ -11,7 +11,7 @@
         <TextView
             android:id="@+id/tv_activity_register_title"
             style="@style/TextViewHeader"
-            android:text="@string/register_sign_up"
+            android:text="@string/activity_register_sign_up"
             app:layout_constraintBottom_toTopOf="@id/layout_activity_register_information"
             app:layout_constraintEnd_toEndOf="@id/layout_activity_register_information"
             app:layout_constraintStart_toStartOf="@id/layout_activity_register_information"
