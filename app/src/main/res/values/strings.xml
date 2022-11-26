@@ -9,6 +9,8 @@
     <string name="do_cancel">취소하기</string>
     <string name="do_delete">삭제하기</string>
 
+    <string name="next">다음</string>
+
     <string name="activity_start_login_with_email"><u>이메일로 로그인하기</u></string>
 
     <string name="activity_login_please_enter_email">Email을 입력하세요</string>
@@ -25,7 +27,6 @@
     <string name="activity_register_please_enter_password">Password를 입력하세요</string>
     <string name="activity_register_please_enter_password_again">Password를 한번 더 입력하세요</string>
     <string name="activity_register_password_format_hint">비밀번호는 숫자 + 영문자 + 특수 기호를 사용하여 8~15글자로 만들어 주세요.</string>
-    <string name="register_next">다음</string>
     <string name="register_error_missingIdDuplicationCheck">아이디 중복 확인을 해 주세요.</string>
     <string name="register_error_missingEmailVerification">이메일 인증을 해 주세요.</string>
     <string name="register_error_passwordIncorrect">비밀번호가 다릅니다.</string>
@@ -35,7 +36,6 @@
     <string name="contentDescription_kakao_social_login">Kakao Social Login</string>
     <string name="contentDescription_mypage_profile_image">Mypage Profile Image</string>
 
-    <string name="introduction_viewpager_next">다음</string>
     <string name="introduction_viewpager_image_introduction">Viewpager Image</string>
     <string name="introduction_next_page_icon">Introduction Next Page Icon</string>
 

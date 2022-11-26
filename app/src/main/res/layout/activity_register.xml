@@ -124,7 +124,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_activity_register_next"
             style="@style/ButtonPrimary"
-            android:text="@string/register_next"
+            android:text="@string/next"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/layout_activity_register_information"
             app:layout_constraintStart_toStartOf="@id/layout_activity_register_information"
