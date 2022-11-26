@@ -32,12 +32,12 @@
     <string name="activity_register_error_please_check_id_duplication">아이디 중복 확인을 해 주세요.</string>
     <string name="activity_register_error_please_verify_email">이메일 인증을 해 주세요.</string>
     <string name="activity_register_dialog_title_register_success">회원가입이 완료되었습니다!</string>
+    <string name="activity_register_dialog_content_register_success">확인 버튼을 누르면 로그인 화면으로 이동합니다. 다시 로그인 해 주세요.</string>
 
 
     <string name="activity_introduction_pager_content_description_next_icon">Introduction Next Page Icon</string>
     <string name="activity_introduction_pager_content_description_view_pager_image">ViewPager Image</string>
 
-    <string name="dialog_register_success_description">확인 버튼을 누르면 로그인 화면으로 이동합니다. 다시 로그인 해 주세요.</string>
     <string name="menu_nb_main_selected">●</string>
 
     <string name="mypage_check_my_schedule">내 일정 확인하기</string>
