@@ -75,9 +75,10 @@
     <string name="activity_change_user_information_change_password"> <u>비밀번호 변경하기</u> </string>
 
     <string name="activity_change_password_change_password">비밀번호 변경</string>
-    <string name="change_password_change_password">기존 Password를 입력하세요</string>
+    <string name="activity_change_password_enter_old_password">기존 Password를 입력하세요</string>
     <string name="change_password_enter_new_password">새로운 Password를 입력하세요</string>
     <string name="change_password_repeat_new_password">새로운 Password를 한 번 더 입력하세요</string>
+
     <string name="notification_text_logo">Notification Text Logo</string>
     <string name="create_new_post">새 글 작성</string>
     <string name="create_new_post_type_content">내용을 입력하세요 (첫 줄은 제목입니다)</string>
