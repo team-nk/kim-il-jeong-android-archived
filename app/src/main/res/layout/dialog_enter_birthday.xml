@@ -36,7 +36,7 @@
                     style="@style/TextViewDialogHintPrimary"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:text="@string/dialog_enter_birthday_select_birthday" />
+                    android:text="@string/dialog_enter_birthday_please_select_birthday" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/btn_dialog_enter_birthday_birthday"
