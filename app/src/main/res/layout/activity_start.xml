@@ -12,7 +12,7 @@
             android:id="@+id/image_activity_start_text_logo"
             android:layout_width="260dp"
             android:layout_height="112dp"
-            android:contentDescription="@string/contentDescription_logo"
+            android:contentDescription="@string/content_description_kim_il_jeong_logo"
             android:src="@drawable/image_text_logo_login"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +37,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="16dp"
-                android:contentDescription="@string/contentDescription_google_social_login"
+                android:contentDescription="@string/content_description_google_social_login"
                 android:src="@drawable/icon_activity_start_google" />
 
             <ImageView
@@ -45,7 +45,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="16dp"
-                android:contentDescription="@string/contentDescription_kakao_social_login"
+                android:contentDescription="@string/content_description_kakao_social_login"
                 android:src="@drawable/icon_activity_start_kakao" />
         </LinearLayout>
 
