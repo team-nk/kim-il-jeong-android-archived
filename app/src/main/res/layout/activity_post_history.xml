@@ -22,7 +22,7 @@
                 style="@style/TextViewUserInformationPageTitle"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="40dp"
-                android:text="@string/check_my_post" />
+                android:text="@string/activity_post_history_check_my_post" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_activity_post_history_main"
