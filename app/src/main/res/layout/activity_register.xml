@@ -76,7 +76,7 @@
                     android:layout_marginEnd="12dp"
                     android:layout_marginBottom="0dp"
                     android:layout_weight="1"
-                    android:hint="@string/register_userId"
+                    android:hint="@string/activity_register_please_enter_id"
                     android:importantForAutofill="no"
                     android:inputType="text" />
 
