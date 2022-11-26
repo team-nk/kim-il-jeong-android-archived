@@ -63,7 +63,7 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_activity_register_check_verification_code"
                     style="@style/ButtonAuthRegisterCheck"
-                    android:text="@string/register_checkEmailVerified" />
+                    android:text="@string/activity_register_check_verification_code" />
             </TableRow>
 
             <TableRow
