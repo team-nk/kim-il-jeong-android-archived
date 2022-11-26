@@ -200,7 +200,7 @@
 
                         <TextView
                             style="@style/TextViewScheduleItemTitle"
-                            android:text="@string/schedule_end_time"
+                            android:text="@string/dialog_create_schedule_time_end"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
