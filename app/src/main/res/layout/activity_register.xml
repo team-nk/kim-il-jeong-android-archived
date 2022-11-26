@@ -95,7 +95,7 @@
                     style="@style/EditTextPrimary"
                     android:layout_marginBottom="0dp"
                     android:layout_weight="1"
-                    android:hint="@string/register_password"
+                    android:hint="@string/activity_register_please_enter_password"
                     android:importantForAutofill="no"
                     android:inputType="textPassword" />
             </TableRow>
