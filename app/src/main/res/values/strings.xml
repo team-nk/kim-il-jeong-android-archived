@@ -16,7 +16,7 @@
     <string name="activity_login_is_kim_il_jeong_first_time">김일정이 처음이신가요? <u>회원가입</u></string>
 
     <string name="activity_register_sign_up">Sign Up</string>
-    <string name="register_email">이메일을 입력해 주세요</string>
+    <string name="activity_register_please_enter_email">이메일을 입력해 주세요</string>
     <string name="register_verifyEmail">이메일 인증</string>
     <string name="register_verificationCode">인증번호를 입력해 주세요</string>
     <string name="register_checkEmailVerified">확인하기</string>

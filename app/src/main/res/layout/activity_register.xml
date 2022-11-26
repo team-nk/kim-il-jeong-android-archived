@@ -36,7 +36,7 @@
                     android:layout_marginEnd="12dp"
                     android:layout_marginBottom="0dp"
                     android:layout_weight="1"
-                    android:hint="@string/register_email"
+                    android:hint="@string/activity_register_please_enter_email"
                     android:importantForAutofill="no"
                     android:inputType="textEmailAddress" />
 
