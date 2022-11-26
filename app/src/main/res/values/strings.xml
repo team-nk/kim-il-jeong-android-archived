@@ -13,7 +13,9 @@
     <string name="cancel">취소</string>
     <string name="do_cancel">취소하기</string>
 
-    <string name="signUp">Sign Up</string>
+    <string name="do_delete">삭제하기</string>
+
+    <string name="sign_up">Sign Up</string>
 
     <string name="start_loginWithEmail"><u>이메일로 로그인하기</u></string>
 
@@ -101,7 +103,6 @@
     <string name="do_select">선택하기</string>
     <string name="fragment_post_post">글 작성하기</string>
     <string name="activity_post_comment_enter_comment">댓글을 입력하세요…</string>
-    <string name="do_delete">삭제하기</string>
 
     <string-array name="calendar_week">
         <item>SUN</item>
