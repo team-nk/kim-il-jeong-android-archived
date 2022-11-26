@@ -64,7 +64,7 @@
                         android:id="@+id/tv_create_new_post_select_schedule"
                         style="@style/TextViewDialogHintPrimary"
                         android:layout_width="0dp"
-                        android:text="@string/create_new_post_please_select_schedule"
+                        android:text="@string/activity_create_new_post_please_select_schedule"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@id/tv_activity_create_new_post_select_schedule_select"
                         app:layout_constraintStart_toStartOf="parent"
