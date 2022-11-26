@@ -23,7 +23,7 @@
     <string name="activity_register_please_enter_id">아이디를 입력해 주세요</string>
     <string name="activity_register_check_id_duplication">중복 확인</string>
     <string name="activity_register_please_enter_password">Password를 입력하세요</string>
-    <string name="register_repeatPassword">Password를 한번 더 입력하세요</string>
+    <string name="activity_register_please_enter_password_again">Password를 한번 더 입력하세요</string>
     <string name="register_passwordFormatHint">비밀번호는 숫자 + 영문자 + 특수 기호를 사용하여 8~15글자로 만들어 주세요.</string>
     <string name="register_next">다음</string>
     <string name="register_error_missingIdDuplicationCheck">아이디 중복 확인을 해 주세요.</string>
