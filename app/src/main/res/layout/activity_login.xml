@@ -33,7 +33,7 @@
                 android:id="@+id/et_activity_login_email"
                 style="@style/EditTextPrimary"
                 android:layout_width="match_parent"
-                android:hint="@string/login_please_enter_email"
+                android:hint="@string/activity_login_please_enter_email"
                 android:importantForAutofill="no"
                 android:inputType="textEmailAddress" />
 
