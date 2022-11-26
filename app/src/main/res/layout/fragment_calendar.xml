@@ -12,7 +12,6 @@
             android:layout_width="156dp"
             android:layout_height="73dp"
             android:layout_marginVertical="20dp"
-            android:contentDescription="@string/contentDescription_calendar_kim_il_jeong_calendar_title"
             android:src="@drawable/image_text_logo_calendar"
             app:layout_constraintBottom_toTopOf="@id/scroll_view_fragment_calendar_main"
             app:layout_constraintEnd_toEndOf="@id/guideline_fragment_calendar_vertical_2"
