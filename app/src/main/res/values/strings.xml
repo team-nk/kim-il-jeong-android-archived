@@ -13,7 +13,7 @@
 
     <string name="activity_login_please_enter_email">Email을 입력하세요</string>
     <string name="activity_login_please_enter_password">Password를 입력하세요</string>
-    <string name="login_is_kim_il_jeong_first_time">김일정이 처음이신가요? <u>회원가입</u></string>
+    <string name="activity_login_is_kim_il_jeong_first_time">김일정이 처음이신가요? <u>회원가입</u></string>
 
     <string name="register_sign_up">Sign Up</string>
     <string name="register_email">이메일을 입력해 주세요</string>
