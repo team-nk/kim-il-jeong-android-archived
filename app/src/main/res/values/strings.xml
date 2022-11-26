@@ -43,7 +43,7 @@
     <string name="activity_mypage_enter_or_edit_birthday">생년월일 입력하기/수정하기</string>
     <string name="activity_mypage_content_description_go_to_depth_icon">Go To Depth Icon</string>
     <string name="activity_mypage_application_information">어플리케이션 정보</string>
-    <string name="mypage_change_password">비밀번호 변경하기</string>
+    <string name="activity_mypage_change_password">비밀번호 변경하기</string>
 
     <string name="mypage_logout_confirm">로그아웃 하시겠습니까?</string>
     <string name="mypage_logout">로그아웃</string>

@@ -188,7 +188,7 @@
                     <TextView
                         style="@style/TextViewMyPagePrimary"
                         android:layout_marginVertical="12dp"
-                        android:text="@string/mypage_change_password"
+                        android:text="@string/activity_mypage_change_password"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
