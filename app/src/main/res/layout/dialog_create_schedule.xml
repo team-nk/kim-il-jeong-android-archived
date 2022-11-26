@@ -75,7 +75,7 @@
                             android:id="@+id/tv_dialog_create_schedule_search_location"
                             style="@style/TextViewScheduleItemTitle"
                             android:layout_gravity="end|center_vertical"
-                            android:text="@string/schedule_search_location"
+                            android:text="@string/dialog_create_schedule_search_location"
                             android:textColor="@color/color_text"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
