@@ -65,7 +65,7 @@
                     android:id="@+id/tv_activity_post_inspect_post_comment"
                     style="@style/TextViewMyPagePrimary"
                     android:layout_width="wrap_content"
-                    android:text="@string/post_post_comment"
+                    android:text="@string/activity_post_inspect_post_comment"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/tv_activity_post_inspect_comments_count"
