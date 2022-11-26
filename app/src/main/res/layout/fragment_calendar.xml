@@ -73,7 +73,7 @@
                         android:layout_width="16dp"
                         android:layout_height="16dp"
                         android:background="@drawable/icon_add"
-                        android:contentDescription="@string/contentDescription_calendar_add_button"
+                        android:contentDescription="@string/activity_calendar_content_description_add_button"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />

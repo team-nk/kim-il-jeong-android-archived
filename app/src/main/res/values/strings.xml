@@ -48,9 +48,9 @@
     <string name="activity_mypage_application_information">어플리케이션 정보</string>
     <string name="activity_mypage_change_password">비밀번호 변경하기</string>
     <string name="activity_mypage_dialog_are_you_sure_you_log_out">로그아웃 하시겠습니까?</string>
-    <string name="contentDescription_calendar_add_button">Add Button</string>
 
-    <string name="schedule_create_new_schedule">새로운 일정 생성하기</string>
+    <string name="activity_calendar_content_description_add_button">Add Button</string>
+
     <string name="schedule_input_new_schedule">일정을 입력하세요</string>
     <string name="schedule_input_location">위치를 입력하세요</string>
     <string name="schedule_search_location">위치 검색</string>
