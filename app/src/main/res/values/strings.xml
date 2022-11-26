@@ -38,7 +38,7 @@
     <string name="activity_register_dialog_title_register_success">회원가입이 완료되었습니다!</string>
     <string name="activity_register_dialog_content_register_success">확인 버튼을 누르면 로그인 화면으로 이동합니다. 다시 로그인 해 주세요.</string>
 
-    <string name="mypage_check_my_schedule">내 일정 확인하기</string>
+    <string name="activity_mypage_check_my_schedule">내 일정 확인하기</string>
     <string name="mypage_show_my_posts">내가 쓴 게시물 보기</string>
     <string name="mypage_edit_birthDay">생년월일 입력하기/수정하기</string>
     <string name="contentDescription_mypage_go_to_depth">Go To Depth</string>

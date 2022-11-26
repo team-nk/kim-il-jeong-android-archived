@@ -100,7 +100,7 @@
                         android:id="@+id/btn_fragment_mypage_check_my_schedule"
                         style="@style/ButtonMyPagePrimary"
                         android:layout_marginEnd="8dp"
-                        android:text="@string/mypage_check_my_schedule"
+                        android:text="@string/activity_mypage_check_my_schedule"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@id/btn_fragment_mypage_show_my_post"
                         app:layout_constraintHorizontal_weight="1"
