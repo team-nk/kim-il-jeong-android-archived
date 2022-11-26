@@ -11,7 +11,6 @@
             android:layout_width="132dp"
             android:layout_height="73dp"
             android:layout_marginVertical="20dp"
-            android:contentDescription="@string/notification_text_logo"
             android:src="@drawable/image_text_logo_post"
             app:layout_constraintBottom_toTopOf="@id/rv_fragment_post_main"
             app:layout_constraintEnd_toEndOf="@id/guideline_fragment_post_vertical_2"
