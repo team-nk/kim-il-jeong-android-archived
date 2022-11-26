@@ -7,5 +7,5 @@
         android:id="@+id/image_item_introduction_pager_item"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="@string/content_description_activity_introduction_pager_image" />
+        android:contentDescription="@string/activity_introduction_pager_content_description_view_pager_image" />
 </LinearLayout>
