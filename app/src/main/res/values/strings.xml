@@ -28,7 +28,7 @@
     <string name="activity_register_please_enter_password_again">Password를 한번 더 입력하세요</string>
     <string name="activity_register_password_format_hint">비밀번호는 숫자 + 영문자 + 특수 기호를 사용하여 8~15글자로 만들어 주세요.</string>
     <string name="activity_register_error_please_check_id_duplication">아이디 중복 확인을 해 주세요.</string>
-    <string name="register_error_missingEmailVerification">이메일 인증을 해 주세요.</string>
+    <string name="activity_register_error_please_verify_email">이메일 인증을 해 주세요.</string>
     <string name="register_error_passwordIncorrect">비밀번호가 다릅니다.</string>
 
     <string name="contentDescription_logo">Kim il jeong Logo</string>
