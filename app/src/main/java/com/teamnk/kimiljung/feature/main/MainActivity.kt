@@ -57,26 +57,26 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
         with(binding.bottomNavigationViewActivityMain) {
             setOnItemSelectedListener {
                 when (it.itemId) {
-                    R.id.bn_main_calendar -> {
+                    R.id.item_bottom_navigation_main_calendar -> {
                         changeFragment(calendarFragment)
                         return@setOnItemSelectedListener true
                     }
-                    R.id.bn_main_map -> {
+                    R.id.item_bottom_navigation_main_map -> {
                         changeFragment(mapFragment)
                         return@setOnItemSelectedListener true
                     }
-                    R.id.bn_main_notification -> {
+                    R.id.item_bottom_navigation_main_post -> {
                         changeFragment(postFragment)
                         return@setOnItemSelectedListener true
                     }
-                    R.id.bn_main_mypage -> {
+                    R.id.item_bottom_navigation_main_mypage -> {
                         changeFragment(myPageFragment)
                         return@setOnItemSelectedListener true
                     }
                 }
                 false
             }
-            selectedItemId = R.id.bn_main_calendar
+            selectedItemId = R.id.item_bottom_navigation_main_calendar
         }
     }
 
