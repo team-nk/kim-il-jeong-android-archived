@@ -11,12 +11,11 @@
     <string name="do_delete">삭제하기</string>
     <string name="do_change">변경하기</string>
     <string name="do_enter">입력하기</string>
+    <string name="do_select">선택하기</string>
 
     <string name="dot_selected">●</string>
     <string name="email">Email</string>
     <string name="id">id</string>
-
-
 
     <string name="accept">확인</string>
     <string name="cancel">취소</string>
@@ -51,6 +50,7 @@
     <string name="fragment_calendar_content_description_add_button">Add Button</string>
     <string name="fragment_calendar_todays_schedule">오늘의 일정</string>
 
+    <string name="fragment_post_create_new_post">글 작성하기</string>
 
     <string name="fragment_mypage_check_my_schedule">내 일정 확인하기</string>
     <string name="fragment_mypage_show_my_post">내가 쓴 게시물 보기</string>
@@ -96,8 +96,6 @@
     <string name="dialog_select_schedule_please_select_schedule">일정을 선택해 주세요</string>
 
     <string name="dialog_select_specific_schedule_content_description_ping">Ping</string>
-    <string name="do_select">선택하기</string>
-    <string name="fragment_post_post">글 작성하기</string>
     <string name="activity_post_comment_enter_comment">댓글을 입력하세요…</string>
 
 

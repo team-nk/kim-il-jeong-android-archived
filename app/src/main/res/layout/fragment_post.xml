@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="32dp"
             android:backgroundTint="@color/color_surface_secondary"
-            android:text="@string/fragment_post_post"
+            android:text="@string/fragment_post_create_new_post"
             android:textColor="@color/color_text"
             app:icon="@drawable/icon_pencil"
             app:iconTint="@color/color_text"
