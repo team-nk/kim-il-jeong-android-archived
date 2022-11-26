@@ -41,7 +41,7 @@
                 android:id="@+id/et_activity_login_password"
                 style="@style/EditTextPrimary"
                 android:layout_width="match_parent"
-                android:hint="@string/login_please_enter_password"
+                android:hint="@string/activity_login_please_enter_password"
                 android:importantForAutofill="no"
                 android:inputType="textPassword" />
 
