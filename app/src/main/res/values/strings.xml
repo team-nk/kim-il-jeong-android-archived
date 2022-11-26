@@ -32,7 +32,8 @@
     <string name="activity_register_error_please_check_id_duplication">아이디 중복 확인을 해 주세요.</string>
     <string name="activity_register_error_please_verify_email">이메일 인증을 해 주세요.</string>
 
-    <string name="introduction_next_page_icon">Introduction Next Page Icon</string>
+    <string name="activity_introduction_pager_content_description_next_icon">Introduction Next Page Icon</string>
+    <string name="content_description_activity_introduction_pager_image">ViewPager Image</string>
 
     <string name="dialog_register_success_title">회원가입이 완료되었습니다!</string>
     <string name="dialog_register_success_description">확인 버튼을 누르면 로그인 화면으로 이동합니다. 다시 로그인 해 주세요.</string>
@@ -97,10 +98,10 @@
 
 
     <string name="content_description_kim_il_jeong_logo">Kim il jeong Logo</string>
+
     <string name="content_description_profile_image">Profile Image</string>
 
 
-    <string name="content_description_activity_introduction_pager_image">ViewPager Image</string>
 
     <string-array name="calendar_week">
         <item>SUN</item>

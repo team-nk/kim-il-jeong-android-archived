@@ -74,7 +74,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:contentDescription="@string/introduction_next_page_icon"
+                android:contentDescription="@string/activity_introduction_pager_content_description_next_icon"
                 android:src="@drawable/icon_next" />
 
         </LinearLayout>
