@@ -9,8 +9,14 @@
     <string name="do_cancel">취소하기</string>
     <string name="do_create">생성하기</string>
     <string name="do_delete">삭제하기</string>
+    <string name="do_change">변경하기</string>
+
 
     <string name="dot_selected">●</string>
+    <string name="email">Email</string>
+    <string name="id">id</string>
+
+
 
     <string name="accept">확인</string>
     <string name="cancel">취소</string>
@@ -63,12 +69,11 @@
 
     <string name="dialog_schedule_addiction_create_new_schedule">새로운 일정 생성하기</string>
     <string name="dialog_schedule_addiction_type_schedule">일정을 입력하세요</string>
-    <string name="email">Email</string>
-    <string name="id">id</string>
-    <string name="do_change">변경하기</string>
-    <string name="change_user_information_change_information">정보 변경하기</string>
-    <string name="change_user_information_change_image">이미지 변경하기</string>
-    <string name="change_user_information_change_password"> <u>비밀번호 변경하기</u> </string>
+
+    <string name="activity_change_user_information_change_information">정보 변경하기</string>
+    <string name="activity_change_user_information_change_profile">이미지 변경하기</string>
+    <string name="activity_change_user_information_change_password"> <u>비밀번호 변경하기</u> </string>
+
     <string name="change_password">비밀번호 변경</string>
     <string name="change_password_change_password">기존 Password를 입력하세요</string>
     <string name="change_password_enter_new_password">새로운 Password를 입력하세요</string>
