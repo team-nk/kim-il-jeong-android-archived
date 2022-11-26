@@ -3,13 +3,16 @@
 
     <string name="login">로그인</string>
     <string name="register">회원가입</string>
-    <string name="accept">확인</string>
+    <string name="log_out">로그아웃</string>
+
     <string name="do_accept">확인하기</string>
-    <string name="cancel">취소</string>
     <string name="do_cancel">취소하기</string>
     <string name="do_delete">삭제하기</string>
+    
     <string name="dot_selected">●</string>
 
+    <string name="accept">확인</string>
+    <string name="cancel">취소</string>
     <string name="next">다음</string>
 
     <string name="activity_introduction_pager_content_description_next_icon">Introduction Next Page Icon</string>
@@ -45,7 +48,6 @@
     <string name="activity_mypage_application_information">어플리케이션 정보</string>
     <string name="activity_mypage_change_password">비밀번호 변경하기</string>
     <string name="activity_mypage_dialog_are_you_sure_you_log_out">로그아웃 하시겠습니까?</string>
-    <string name="mypage_logout">로그아웃</string>
     <string name="contentDescription_calendar_kim_il_jeong_calendar_title">Kim il jeong calendar title</string>
     <string name="contentDescription_calendar_add_button">Add Button</string>
 
