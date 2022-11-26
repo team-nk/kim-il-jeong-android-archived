@@ -82,7 +82,7 @@
     <string name="activity_create_new_post_create_new_post">새 글 작성</string>
     <string name="activity_create_new_post_please_enter_content_first_line_is_title">내용을 입력하세요 (첫 줄은 제목입니다)</string>
     <string name="activity_create_new_post_please_select_schedule">일정을 선택해 주세요</string>
-    <string name="tv_create_new_post_select_schedule">일정 선택</string>
+    <string name="activity_create_new_post_select_schedule">일정 선택</string>
     <string name="post_post_comment">댓글 작성하기</string>
     <string name="post_comment">댓글 작성</string>
     <string name="check_my_post">내 글 확인하기</string>

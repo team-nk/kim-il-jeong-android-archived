@@ -74,7 +74,7 @@
                         android:id="@+id/tv_activity_create_new_post_select_schedule_select"
                         style="@style/TextViewMyPagePrimary"
                         android:layout_width="wrap_content"
-                        android:text="@string/tv_create_new_post_select_schedule"
+                        android:text="@string/activity_create_new_post_select_schedule"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/tv_create_new_post_select_schedule"
