@@ -41,7 +41,7 @@
     <string name="activity_mypage_check_my_schedule">내 일정 확인하기</string>
     <string name="activity_mypage_show_my_post">내가 쓴 게시물 보기</string>
     <string name="activity_mypage_enter_or_edit_birthday">생년월일 입력하기/수정하기</string>
-    <string name="contentDescription_mypage_go_to_depth">Go To Depth</string>
+    <string name="activity_mypage_content_description_go_to_depth_icon">Go To Depth Icon</string>
     <string name="mypage_application_information">어플리케이션 정보</string>
     <string name="mypage_change_password">비밀번호 변경하기</string>
 
