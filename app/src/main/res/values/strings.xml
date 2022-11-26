@@ -55,7 +55,7 @@
     <string name="dialog_create_schedule_search_location">위치 검색</string>
     <string name="dialog_create_schedule_select_color">색상 설정</string>
     <string name="dialog_create_schedule_is_schedule_all_day">일정이 하루 종일 인가요?</string>
-    <string name="schedule_start_time">시작 시간</string>
+    <string name="dialog_create_schedule_time_start">시작 시간</string>
     <string name="schedule_end_time">종료 시간</string>
     <string name="do_create">생성하기</string>
     <string name="calendar_todays_schedule">오늘의 일정</string>
