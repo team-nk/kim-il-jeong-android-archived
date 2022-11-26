@@ -9,7 +9,6 @@
     <string name="do_cancel">취소하기</string>
     <string name="do_delete">삭제하기</string>
 
-    <string name="sign_up">Sign Up</string>
 
     <string name="start_loginWithEmail"><u>이메일로 로그인하기</u></string>
 
@@ -17,9 +16,7 @@
     <string name="login_please_enter_password">Password를 입력하세요</string>
     <string name="login_is_kim_il_jeong_first_time">김일정이 처음이신가요? <u>회원가입</u></string>
 
-    <string name="error_failed_to_connect_to_server">서버와 연결할 수 없습니다.</string>
-    <string name="error_login_failed">로그인에 실패하였습니다.</string>
-
+    <string name="register_sign_up">Sign Up</string>
     <string name="register_email">이메일을 입력해 주세요</string>
     <string name="register_verifyEmail">이메일 인증</string>
     <string name="register_verificationCode">인증번호를 입력해 주세요</string>
@@ -98,6 +95,10 @@
     <string name="do_select">선택하기</string>
     <string name="fragment_post_post">글 작성하기</string>
     <string name="activity_post_comment_enter_comment">댓글을 입력하세요…</string>
+
+
+    <string name="error_failed_to_connect_to_server">서버와 연결할 수 없습니다.</string>
+    <string name="error_login_failed">로그인에 실패하였습니다.</string>
 
     <string-array name="calendar_week">
         <item>SUN</item>
