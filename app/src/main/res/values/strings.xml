@@ -7,6 +7,7 @@
 
     <string name="do_accept">확인하기</string>
     <string name="do_cancel">취소하기</string>
+    <string name="do_create">생성하기</string>
     <string name="do_delete">삭제하기</string>
 
     <string name="dot_selected">●</string>
@@ -41,13 +42,13 @@
     <string name="activity_register_dialog_title_register_success">회원가입이 완료되었습니다!</string>
     <string name="activity_register_dialog_content_register_success">확인 버튼을 누르면 로그인 화면으로 이동합니다. 다시 로그인 해 주세요.</string>
 
-    <string name="activity_mypage_check_my_schedule">내 일정 확인하기</string>
-    <string name="activity_mypage_show_my_post">내가 쓴 게시물 보기</string>
-    <string name="activity_mypage_enter_or_edit_birthday">생년월일 입력하기/수정하기</string>
-    <string name="activity_mypage_content_description_go_to_depth_icon">Go To Depth Icon</string>
-    <string name="activity_mypage_application_information">어플리케이션 정보</string>
-    <string name="activity_mypage_change_password">비밀번호 변경하기</string>
-    <string name="activity_mypage_dialog_are_you_sure_you_log_out">로그아웃 하시겠습니까?</string>
+    <string name="fragment_mypage_check_my_schedule">내 일정 확인하기</string>
+    <string name="fragment_mypage_show_my_post">내가 쓴 게시물 보기</string>
+    <string name="fragment_mypage_enter_or_edit_birthday">생년월일 입력하기/수정하기</string>
+    <string name="fragment_mypage_content_description_go_to_depth_icon">Go To Depth Icon</string>
+    <string name="fragment_mypage_application_information">어플리케이션 정보</string>
+    <string name="fragment_mypage_change_password">비밀번호 변경하기</string>
+    <string name="fragment_mypage_dialog_are_you_sure_you_log_out">로그아웃 하시겠습니까?</string>
 
     <string name="activity_calendar_content_description_add_button">Add Button</string>
 
@@ -57,7 +58,6 @@
     <string name="dialog_create_schedule_is_schedule_all_day">일정이 하루 종일 인가요?</string>
     <string name="dialog_create_schedule_time_start">시작 시간</string>
     <string name="dialog_create_schedule_time_end">종료 시간</string>
-    <string name="do_create">생성하기</string>
     <string name="calendar_todays_schedule">오늘의 일정</string>
     <string name="dialog_schedule_addiction_create_new_schedule">새로운 일정 생성하기</string>
     <string name="dialog_schedule_addiction_type_schedule">일정을 입력하세요</string>
