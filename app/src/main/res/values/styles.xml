@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="BackgroundAll">
+    <style name="BackgroundPrimary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/color_background</item>
     </style>
 
@@ -281,10 +283,17 @@
         <item name="android:textColor">@color/color_text</item>
     </style>
 
-    <style name="CardViewAlertDialog" parent="Widget.MaterialComponents.CardView">
+    <style name="BackgroundAlertDialogPrimary" parent="Widget.MaterialComponents.CardView">
         <item name="android:backgroundTint">@color/white</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="cardCornerRadius">20dp</item>
+    </style>
+
+    <style name="BackgroundBottomSheetDialogPrimary" parent="BottomSheetDialog">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:backgroundTint">@color/color_background</item>
+        <item name="android:paddingVertical" tools:targetApi="o">32dp</item>
     </style>
 </resources>

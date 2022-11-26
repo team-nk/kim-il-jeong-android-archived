@@ -3,10 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingVertical="32dp">
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/BackgroundBottomSheetDialogPrimary">
 
         <LinearLayout
             android:layout_width="0dp"
@@ -36,13 +33,13 @@
                     style="@style/TextViewDialogHintPrimary"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:text="@string/dialog_enter_birthday_select_birthday" />
+                    android:text="@string/dialog_enter_birthday_please_select_birthday" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/btn_dialog_enter_birthday_birthday"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/color_surface2"
+                    android:backgroundTint="@color/color_surface_secondary"
                     app:cardCornerRadius="8dp">
 
                     <TextView

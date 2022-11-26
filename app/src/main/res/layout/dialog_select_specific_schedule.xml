@@ -3,15 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/BackgroundBottomSheetDialogPrimary">
 
         <LinearLayout
             android:id="@+id/layout_dialog_select_specific_schedule_contents"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@id/layout_dialog_select_specific_schedule_buttons"
             app:layout_constraintEnd_toEndOf="@id/guideline_dialog_select_specific_schedule_vertical_2"
@@ -48,7 +45,7 @@
                     android:layout_width="12dp"
                     android:layout_height="12dp"
                     android:layout_marginEnd="8dp"
-                    android:contentDescription="@string/ping"
+                    android:contentDescription="@string/dialog_select_specific_schedule_content_description_ping"
                     android:src="@drawable/icon_ping" />
 
                 <TextView
@@ -71,7 +68,7 @@
             android:id="@+id/layout_dialog_select_specific_schedule_buttons"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="32dp"
+            android:layout_marginTop="32dp"
             android:minHeight="48dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/guideline_dialog_select_specific_schedule_vertical_2"

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.cardview.widget.CardView style="@style/CardViewAlertDialog">
+    <androidx.cardview.widget.CardView style="@style/BackgroundAlertDialogPrimary">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="320dp"

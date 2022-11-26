@@ -2,16 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/BackgroundPrimary">
 
         <ImageView
             android:id="@+id/image_fragment_post_text_logo"
             android:layout_width="132dp"
             android:layout_height="73dp"
             android:layout_marginVertical="20dp"
-            android:contentDescription="@string/notification_text_logo"
             android:src="@drawable/image_text_logo_post"
             app:layout_constraintBottom_toTopOf="@id/rv_fragment_post_main"
             app:layout_constraintEnd_toEndOf="@id/guideline_fragment_post_vertical_2"
@@ -35,8 +32,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="32dp"
-            android:backgroundTint="@color/color_surface2"
-            android:text="@string/fragment_post_post"
+            android:backgroundTint="@color/color_surface_secondary"
+            android:text="@string/fragment_post_create_new_post"
             android:textColor="@color/color_text"
             app:icon="@drawable/icon_pencil"
             app:iconTint="@color/color_text"

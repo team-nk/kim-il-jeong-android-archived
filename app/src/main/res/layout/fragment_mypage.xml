@@ -3,17 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        style="@style/BackgroundAll"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/BackgroundPrimary">
 
         <ImageView
             android:id="@+id/image_fragment_mypage_text_logo"
             android:layout_width="132dp"
             android:layout_height="73dp"
             android:layout_marginVertical="20dp"
-            android:contentDescription="@string/contentDescription_logo"
+            android:contentDescription="@string/content_description_kim_il_jeong_logo"
             android:src="@drawable/image_text_logo_mypage"
             app:layout_constraintBottom_toTopOf="@id/scroll_view_fragment_mypage_main"
             app:layout_constraintEnd_toEndOf="@id/guideline_fragment_mypage_vertical_2"
@@ -48,7 +45,7 @@
                         android:id="@+id/image_fragment_mypage_user_profile"
                         android:layout_width="52dp"
                         android:layout_height="52dp"
-                        android:contentDescription="@string/contentDescription_mypage_profile_image"
+                        android:contentDescription="@string/content_description_profile_image"
                         android:src="@drawable/image_temp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@id/layout_fragment_mypage_personal_information"
@@ -100,7 +97,7 @@
                         android:id="@+id/btn_fragment_mypage_check_my_schedule"
                         style="@style/ButtonMyPagePrimary"
                         android:layout_marginEnd="8dp"
-                        android:text="@string/mypage_check_my_schedule"
+                        android:text="@string/fragment_mypage_check_my_schedule"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@id/btn_fragment_mypage_show_my_post"
                         app:layout_constraintHorizontal_weight="1"
@@ -111,7 +108,7 @@
                         android:id="@+id/btn_fragment_mypage_show_my_post"
                         style="@style/ButtonMyPagePrimary"
                         android:layout_marginStart="8dp"
-                        android:text="@string/mypage_show_my_posts"
+                        android:text="@string/fragment_mypage_show_my_post"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_weight="1"
@@ -128,7 +125,7 @@
                     <TextView
                         style="@style/TextViewMyPagePrimary"
                         android:layout_marginVertical="12dp"
-                        android:text="@string/mypage_edit_birthDay"
+                        android:text="@string/fragment_mypage_enter_or_edit_birthday"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -143,7 +140,7 @@
 
                     <ImageView
                         style="@style/ImageMyPageDepth"
-                        android:contentDescription="@string/contentDescription_mypage_go_to_depth"
+                        android:contentDescription="@string/fragment_mypage_content_description_go_to_depth_icon"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -158,7 +155,7 @@
                     <TextView
                         style="@style/TextViewMyPagePrimary"
                         android:layout_marginVertical="12dp"
-                        android:text="@string/mypage_application_information"
+                        android:text="@string/fragment_mypage_application_information"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -173,7 +170,7 @@
 
                     <ImageView
                         style="@style/ImageMyPageDepth"
-                        android:contentDescription="@string/contentDescription_mypage_go_to_depth"
+                        android:contentDescription="@string/fragment_mypage_content_description_go_to_depth_icon"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -188,7 +185,7 @@
                     <TextView
                         style="@style/TextViewMyPagePrimary"
                         android:layout_marginVertical="12dp"
-                        android:text="@string/mypage_change_password"
+                        android:text="@string/fragment_mypage_change_password"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -203,7 +200,7 @@
 
                     <ImageView
                         style="@style/ImageMyPageDepth"
-                        android:contentDescription="@string/contentDescription_mypage_go_to_depth"
+                        android:contentDescription="@string/fragment_mypage_content_description_go_to_depth_icon"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -218,7 +215,7 @@
                     <TextView
                         style="@style/TextViewMyPagePrimary"
                         android:layout_marginVertical="12dp"
-                        android:text="@string/mypage_logout"
+                        android:text="@string/log_out"
                         android:textColor="@color/color_error"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -234,7 +231,7 @@
 
                     <ImageView
                         style="@style/ImageMyPageDepth"
-                        android:contentDescription="@string/contentDescription_mypage_go_to_depth"
+                        android:contentDescription="@string/fragment_mypage_content_description_go_to_depth_icon"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"

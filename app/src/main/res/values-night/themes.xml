@@ -13,4 +13,12 @@
         <item name="android:statusBarColor">@color/color_text</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetDialogCorner</item>
+    </style>
+
+    <style name="BottomSheetDialogCorner" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/background_dialog_bottom_sheet</item>
+    </style>
 </resources>

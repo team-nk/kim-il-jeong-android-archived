@@ -74,8 +74,8 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
         binding.btnActivityRegisterNext.setOnClickListener {
             showDialogWithSingleButton(
                 this,
-                getString(R.string.dialog_register_success_title),
-                getString(R.string.dialog_register_success_description)
+                getString(R.string.activity_register_dialog_title_register_success),
+                getString(R.string.activity_register_dialog_content_register_success)
             ) {
                 startActivity(this, LoginActivity::class.java)
             }

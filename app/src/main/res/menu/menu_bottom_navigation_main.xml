@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/bn_main_calendar"
+        android:id="@+id/item_bottom_navigation_main_calendar"
         android:enabled="true"
         android:icon="@drawable/icon_calendar"
-        android:title="@string/menu_nb_main_selected" />
+        android:title="@string/dot_selected" />
     <item
-        android:id="@+id/bn_main_map"
+        android:id="@+id/item_bottom_navigation_main_map"
         android:enabled="true"
         android:icon="@drawable/icon_map"
-        android:title="@string/menu_nb_main_selected" />
+        android:title="@string/dot_selected" />
     <item
-        android:id="@+id/bn_main_notification"
+        android:id="@+id/item_bottom_navigation_main_post"
         android:enabled="true"
         android:icon="@drawable/icon_notification"
-        android:title="@string/menu_nb_main_selected" />
+        android:title="@string/dot_selected" />
     <item
-        android:id="@+id/bn_main_mypage"
+        android:id="@+id/item_bottom_navigation_main_mypage"
         android:enabled="true"
         android:icon="@drawable/icon_user"
-        android:title="@string/menu_nb_main_selected" />
+        android:title="@string/dot_selected" />
 </menu>

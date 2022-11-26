@@ -93,7 +93,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
 
                 else -> {
                     showShortSnackBar(
-                        binding.root, "${getString(R.string.login_error_failed)} ${it.code()}"
+                        binding.root, "${getString(R.string.error_login_failed)} ${it.code()}"
                     )
                 }
             }
