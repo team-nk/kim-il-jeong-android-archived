@@ -7,14 +7,13 @@
     <string name="do_accept">확인하기</string>
     <string name="cancel">취소</string>
     <string name="do_cancel">취소하기</string>
-
     <string name="do_delete">삭제하기</string>
 
     <string name="sign_up">Sign Up</string>
 
     <string name="start_loginWithEmail"><u>이메일로 로그인하기</u></string>
 
-    <string name="login_email">Email을 입력하세요</string>
+    <string name="login_please_enter_email">Email을 입력하세요</string>
     <string name="login_password">Password를 입력하세요</string>
     <string name="login_goToRegister">김일정이 처음이신가요? <u>회원가입</u></string>
     <string name="login_error_failed_to_connect_to_server">서버와 연결할 수 없습니다.</string>
