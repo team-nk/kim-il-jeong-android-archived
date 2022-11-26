@@ -17,7 +17,7 @@
 
     <string name="activity_register_sign_up">Sign Up</string>
     <string name="activity_register_please_enter_email">이메일을 입력해 주세요</string>
-    <string name="register_verifyEmail">이메일 인증</string>
+    <string name="activity_register_verify_email">이메일 인증</string>
     <string name="register_verificationCode">인증번호를 입력해 주세요</string>
     <string name="register_checkEmailVerified">확인하기</string>
     <string name="register_userId">아이디를 입력해 주세요</string>
