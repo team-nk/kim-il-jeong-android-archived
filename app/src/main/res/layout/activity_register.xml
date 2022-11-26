@@ -83,7 +83,7 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_activity_register_check_id_duplication"
                     style="@style/ButtonAuthRegisterCheck"
-                    android:text="@string/register_checkUserIdDuplicate" />
+                    android:text="@string/activity_register_check_id_duplication" />
             </TableRow>
 
             <TableRow
