@@ -12,7 +12,7 @@
 
             <TextView
                 android:id="@+id/tv_dialog_single_button_title"
-                style="@style/TextViewDialogTitle"
+                style="@style/TextViewDialogTitlePrimary"
                 app:layout_constraintBottom_toTopOf="@id/btn_dialog_single_button_action"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
