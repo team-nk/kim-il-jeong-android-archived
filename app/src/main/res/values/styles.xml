@@ -75,7 +75,7 @@
         <item name="android:stateListAnimator">@null</item>
     </style>
 
-    <style name="TextViewError" parent="Widget.AppCompat.TextView">
+    <style name="TextViewErrorPrimary" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">12sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_height">wrap_content</item>
