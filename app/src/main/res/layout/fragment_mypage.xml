@@ -135,7 +135,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        style="@style/ViewMyPageLine"
+                        style="@style/SectionLinePrimary"
                         android:layout_width="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -165,7 +165,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        style="@style/ViewMyPageLine"
+                        style="@style/SectionLinePrimary"
                         android:layout_width="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -195,7 +195,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        style="@style/ViewMyPageLine"
+                        style="@style/SectionLinePrimary"
                         android:layout_width="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -226,7 +226,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        style="@style/ViewMyPageLine"
+                        style="@style/SectionLinePrimary"
                         android:layout_width="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
