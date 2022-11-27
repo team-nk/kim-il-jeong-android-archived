@@ -19,7 +19,9 @@
                 android:text="@string/dialog_enter_birthday_please_enter_birthday" />
 
             <TextView
-                style="@style/TextViewDialogContentSecondary"
+                style="@style/TextViewDialogContentPrimaryAlignStart"
+                android:layout_width="match_parent"
+                android:gravity="start"
                 android:text="@string/dialog_enter_birthday_description" />
 
             <LinearLayout
