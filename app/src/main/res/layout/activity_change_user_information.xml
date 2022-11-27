@@ -5,7 +5,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout style="@style/BackgroundPrimary">
 
         <LinearLayout
-            android:id="@+id/layout_activity_change_user_information_informatinos"
+            android:id="@+id/layout_activity_change_user_information_informations"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:gravity="center_horizontal"
@@ -59,7 +59,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/guideline_activity_change_user_information_vertical_2"
             app:layout_constraintStart_toStartOf="@id/guideline_activity_change_user_information_vertical_1"
-            app:layout_constraintTop_toBottomOf="@id/layout_activity_change_user_information_informatinos">
+            app:layout_constraintTop_toBottomOf="@id/layout_activity_change_user_information_informations">
 
             <TextView
                 style="@style/TextViewAuthRegisterHint"
