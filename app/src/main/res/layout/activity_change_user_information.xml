@@ -28,7 +28,7 @@
                 android:src="@drawable/image_temp" />
 
             <TextView
-                style="@style/TextViewUserInformationSubTitle"
+                style="@style/TextViewHintPrimary"
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="48dp"
                 android:text="@string/activity_change_user_information_change_profile" />

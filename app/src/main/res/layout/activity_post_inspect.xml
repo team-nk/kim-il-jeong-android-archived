@@ -16,7 +16,7 @@
 
             <TextView
                 android:id="@+id/tv_activity_post_inspect_title"
-                style="@style/TextViewPostPrimary"
+                style="@style/TextViewPrimary"
                 tools:text="제목이 여기에!!" />
 
             <FrameLayout
@@ -27,7 +27,7 @@
 
             <TextView
                 android:id="@+id/tv_activity_post_inspect_content"
-                style="@style/TextViewPostPrimary"
+                style="@style/TextViewPrimary"
                 tools:text="내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!내용이 여기에!!" />
         </LinearLayout>
 
