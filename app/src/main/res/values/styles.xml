@@ -153,7 +153,7 @@
         <item name="android:textColor">@color/color_strong_explanation</item>
     </style>
 
-    <style name="RadioButtonDialogScheduleAddiction" parent="Widget.AppCompat.CompoundButton.RadioButton">
+    <style name="RadioButtonDialogCreateScheduleColorIndicator" parent="Widget.AppCompat.CompoundButton.RadioButton">
         <item name="android:layout_width">24dp</item>
         <item name="android:layout_height">24dp</item>
         <item name="android:button">@null</item>

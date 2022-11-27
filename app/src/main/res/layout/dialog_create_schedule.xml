@@ -102,28 +102,28 @@
 
                             <RadioButton
                                 android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_red"
-                                style="@style/RadioButtonDialogScheduleAddiction"
+                                style="@style/RadioButtonDialogCreateScheduleColorIndicator"
                                 android:background="@drawable/background_color_indicator_red_selector" />
 
                             <RadioButton
                                 android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_blue"
-                                style="@style/RadioButtonDialogScheduleAddiction"
+                                style="@style/RadioButtonDialogCreateScheduleColorIndicator"
                                 android:background="@drawable/background_color_indicator_blue_selector" />
 
 
                             <RadioButton
                                 android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_yellow"
-                                style="@style/RadioButtonDialogScheduleAddiction"
+                                style="@style/RadioButtonDialogCreateScheduleColorIndicator"
                                 android:background="@drawable/background_color_indicator_yellow_selector" />
 
                             <RadioButton
                                 android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_green"
-                                style="@style/RadioButtonDialogScheduleAddiction"
+                                style="@style/RadioButtonDialogCreateScheduleColorIndicator"
                                 android:background="@drawable/background_color_indicator_green_selector" />
 
                             <RadioButton
                                 android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_purple"
-                                style="@style/RadioButtonDialogScheduleAddiction"
+                                style="@style/RadioButtonDialogCreateScheduleColorIndicator"
                                 android:background="@drawable/background_color_indicator_purple_selector" />
 
                         </RadioGroup>
