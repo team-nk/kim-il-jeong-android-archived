@@ -47,7 +47,7 @@
 
         <TextView
             android:id="@+id/tv_activity_start_login_email"
-            style="@style/TextViewAuthStartWithEmail"
+            style="@style/TextViewHintPrimary"
             android:layout_marginTop="16dp"
             android:text="@string/activity_start_login_with_email"
             app:layout_constraintEnd_toEndOf="parent"
