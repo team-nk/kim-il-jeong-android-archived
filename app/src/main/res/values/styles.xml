@@ -104,16 +104,6 @@
         <item name="android:textColor">@color/color_description</item>
     </style>
 
-
-    <style name="TextViewDialogTitleSecondary" parent="Widget.AppCompat.TextView">
-        <item name="android:textSize">20sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/color_text</item>
-    </style>
-
     <style name="TextViewDialogContentPrimaryAlignStart" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">12sp</item>
         <item name="android:gravity">start</item>
@@ -121,7 +111,6 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/color_description</item>
     </style>
-
 
     <style name="BottomNavigationViewMain">
         <item name="android:background">@drawable/background_bottom_navigation</item>

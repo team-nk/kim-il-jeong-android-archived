@@ -31,7 +31,7 @@
 
                 <TextView
                     android:id="@+id/tv_dialog_map_location_title"
-                    style="@style/TextViewDialogTitleSecondary"
+                    style="@style/TextViewTitlePrimary"
                     tools:text="대덕대학교 자습" />
             </LinearLayout>
 

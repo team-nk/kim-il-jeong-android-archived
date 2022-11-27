@@ -15,7 +15,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                style="@style/TextViewDialogTitleSecondary"
+                style="@style/TextViewTitlePrimary"
                 android:text="@string/dialog_enter_birthday_please_enter_birthday" />
 
             <TextView

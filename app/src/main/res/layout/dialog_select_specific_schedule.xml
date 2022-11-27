@@ -30,7 +30,7 @@
 
                 <TextView
                     android:id="@+id/tv_dialog_select_specific_schedule_title"
-                    style="@style/TextViewDialogTitleSecondary"
+                    style="@style/TextViewTitlePrimary"
                     tools:text="대마고 자습" />
             </LinearLayout>
 
