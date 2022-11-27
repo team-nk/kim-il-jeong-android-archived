@@ -12,7 +12,7 @@
 
             <TextView
                 android:id="@+id/tv_dialog_double_button_title"
-                style="@style/TextViewDialogTitle"
+                style="@style/TextViewDialogTitlePrimary"
                 app:layout_constraintBottom_toTopOf="@id/btn_dialog_double_button_cancel"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
 
             <TextView
                 android:id="@+id/btn_dialog_double_button_cancel"
-                style="@style/TextViewPrimary"
+                style="@style/TextViewCancelButtonPrimary"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_marginEnd="4dp"

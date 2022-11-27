@@ -15,11 +15,13 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                style="@style/TextViewDialogTitleSecondary"
+                style="@style/TextViewTitlePrimary"
                 android:text="@string/dialog_enter_birthday_please_enter_birthday" />
 
             <TextView
-                style="@style/TextViewDialogContentSecondary"
+                style="@style/TextViewDialogContentPrimaryAlignStart"
+                android:layout_width="match_parent"
+                android:gravity="start"
                 android:text="@string/dialog_enter_birthday_description" />
 
             <LinearLayout
@@ -59,7 +61,7 @@
 
                 <TextView
                     android:id="@+id/btn_dialog_enter_birthday_cancel"
-                    style="@style/TextViewPrimary"
+                    style="@style/TextViewCancelButtonPrimary"
                     android:layout_marginEnd="8dp"
                     android:minHeight="48dp"
                     android:text="@string/do_cancel"

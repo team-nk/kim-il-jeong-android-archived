@@ -50,7 +50,7 @@
 
         <TextView
             android:id="@+id/tv_activity_login_go_to_register"
-            style="@style/TextViewAuthPrimary"
+            style="@style/TextViewHintPrimary"
             android:text="@string/activity_login_is_kim_il_jeong_first_time"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/layout_activity_login_information"

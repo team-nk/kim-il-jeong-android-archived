@@ -66,14 +66,15 @@
 
                         <TextView
                             android:id="@+id/tv_fragment_mypage_id"
-                            style="@style/TextViewMyPagePrimary"
+                            style="@style/TextViewTitleSecondary"
                             android:layout_weight="1"
                             tools:text="JungSeungHoon" />
 
                         <TextView
                             android:id="@+id/tv_fragment_mypage_email"
-                            style="@style/TextViewMyPageSecondary"
+                            style="@style/TextViewHintSecondary"
                             android:layout_weight="1"
+                            android:textColor="@color/color_description"
                             tools:text="alwaysAwake@gmail.com" />
                     </LinearLayout>
 
@@ -95,7 +96,8 @@
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_fragment_mypage_check_my_schedule"
-                        style="@style/ButtonMyPagePrimary"
+                        style="@style/ButtonSecondary"
+                        android:layout_width="0dp"
                         android:layout_marginEnd="8dp"
                         android:text="@string/fragment_mypage_check_my_schedule"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -106,7 +108,8 @@
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_fragment_mypage_show_my_post"
-                        style="@style/ButtonMyPagePrimary"
+                        style="@style/ButtonSecondary"
+                        android:layout_width="0dp"
                         android:layout_marginStart="8dp"
                         android:text="@string/fragment_mypage_show_my_post"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -123,7 +126,7 @@
                     android:layout_marginHorizontal="16dp">
 
                     <TextView
-                        style="@style/TextViewMyPagePrimary"
+                        style="@style/TextViewTitleSecondary"
                         android:layout_marginVertical="12dp"
                         android:text="@string/fragment_mypage_enter_or_edit_birthday"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -132,7 +135,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        style="@style/ViewMyPageLine"
+                        style="@style/SectionLinePrimary"
                         android:layout_width="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -153,7 +156,7 @@
                     android:layout_marginHorizontal="16dp">
 
                     <TextView
-                        style="@style/TextViewMyPagePrimary"
+                        style="@style/TextViewTitleSecondary"
                         android:layout_marginVertical="12dp"
                         android:text="@string/fragment_mypage_application_information"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -162,7 +165,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        style="@style/ViewMyPageLine"
+                        style="@style/SectionLinePrimary"
                         android:layout_width="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -183,7 +186,7 @@
                     android:layout_marginHorizontal="16dp">
 
                     <TextView
-                        style="@style/TextViewMyPagePrimary"
+                        style="@style/TextViewTitleSecondary"
                         android:layout_marginVertical="12dp"
                         android:text="@string/fragment_mypage_change_password"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -192,7 +195,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        style="@style/ViewMyPageLine"
+                        style="@style/SectionLinePrimary"
                         android:layout_width="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -213,7 +216,7 @@
                     android:layout_marginHorizontal="16dp">
 
                     <TextView
-                        style="@style/TextViewMyPagePrimary"
+                        style="@style/TextViewTitleSecondary"
                         android:layout_marginVertical="12dp"
                         android:text="@string/log_out"
                         android:textColor="@color/color_error"
@@ -223,7 +226,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <View
-                        style="@style/ViewMyPageLine"
+                        style="@style/SectionLinePrimary"
                         android:layout_width="0dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"

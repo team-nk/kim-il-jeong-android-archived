@@ -16,7 +16,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                style="@style/TextViewUserInformationPageTitle"
+                style="@style/TextViewHeaderSecondary"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="40dp"
                 android:text="@string/activity_create_new_post_create_new_post" />
@@ -68,7 +68,7 @@
 
                     <TextView
                         android:id="@+id/tv_activity_create_new_post_select_schedule_select"
-                        style="@style/TextViewMyPagePrimary"
+                        style="@style/TextViewTitleSecondary"
                         android:layout_width="wrap_content"
                         android:text="@string/activity_create_new_post_select_schedule"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -88,7 +88,7 @@
 
                 <TextView
                     android:id="@+id/btn_activity_create_new_post_cancel"
-                    style="@style/TextViewPrimary"
+                    style="@style/TextViewCancelButtonPrimary"
                     android:layout_marginEnd="8dp"
                     android:text="@string/do_cancel"
                     app:layout_constraintBottom_toBottomOf="parent"

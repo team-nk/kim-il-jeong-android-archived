@@ -7,7 +7,7 @@
 
         <TextView
             android:id="@+id/tv_activity_register_title"
-            style="@style/TextViewHeader"
+            style="@style/TextViewHeaderPrimary"
             android:text="@string/activity_register_sign_up"
             app:layout_constraintBottom_toTopOf="@id/layout_activity_register_information"
             app:layout_constraintEnd_toEndOf="@id/layout_activity_register_information"
@@ -39,7 +39,7 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_activity_register_verify_email"
-                    style="@style/ButtonAuthRegisterCheck"
+                    style="@style/ButtonSecondary"
                     android:text="@string/activity_register_verify_email" />
             </TableRow>
 
@@ -59,7 +59,7 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_activity_register_check_verification_code"
-                    style="@style/ButtonAuthRegisterCheck"
+                    style="@style/ButtonSecondary"
                     android:text="@string/activity_register_check_verification_code" />
             </TableRow>
 
@@ -79,7 +79,7 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_activity_register_check_id_duplication"
-                    style="@style/ButtonAuthRegisterCheck"
+                    style="@style/ButtonSecondary"
                     android:text="@string/activity_register_check_id_duplication" />
             </TableRow>
 
@@ -111,7 +111,7 @@
         </TableLayout>
 
         <TextView
-            style="@style/TextViewAuthRegisterHint"
+            style="@style/TextViewHintSecondary"
             android:layout_marginTop="12dp"
             android:text="@string/activity_register_password_format_hint"
             app:layout_constraintEnd_toEndOf="@id/layout_activity_register_information"
@@ -129,7 +129,7 @@
 
         <TextView
             android:id="@+id/tv_activity_register_error"
-            style="@style/TextViewError"
+            style="@style/TextViewErrorPrimary"
             android:layout_marginBottom="12dp"
             app:layout_constraintBottom_toTopOf="@id/btn_activity_register_next"
             app:layout_constraintEnd_toEndOf="@id/btn_activity_register_next"
