@@ -16,7 +16,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                style="@style/TextViewUserInformationPageTitle"
+                style="@style/TextViewHeaderSecondary"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="40dp"
                 android:text="@string/activity_create_new_post_create_new_post" />
