@@ -96,7 +96,7 @@
         <item name="android:textColor">@color/color_text</item>
     </style>
 
-    <style name="TextViewDialogDescription" parent="Widget.AppCompat.TextView">
+    <style name="TextViewDialogContent" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">13sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_width">0dp</item>
