@@ -6,7 +6,8 @@
 
         <TextView
             android:id="@+id/tv_dialog_select_schedule_please_select_schedule"
-            style="@style/TextViewDialogScheduleAddictionTitle"
+            style="@style/TextViewTitlePrimary"
+            android:layout_width="0dp"
             android:layout_marginBottom="32dp"
             android:text="@string/dialog_select_schedule_please_select_schedule"
             app:layout_constraintBottom_toTopOf="@id/rv_dialog_select_schedule_main"

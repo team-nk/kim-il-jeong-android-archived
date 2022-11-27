@@ -153,17 +153,6 @@
         <item name="android:textColor">@color/color_strong_explanation</item>
     </style>
 
-    <!-- TODO -->
-    <style name="TextViewDialogScheduleAddictionTitle" parent="Widget.AppCompat.TextView">
-        <item name="android:textSize">22sp</item>
-        <item name="android:textStyle">bold</item>
-        <item name="maxLines">1</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/color_text</item>
-    </style>
-
     <style name="RadioButtonDialogScheduleAddiction" parent="Widget.AppCompat.CompoundButton.RadioButton">
         <item name="android:layout_width">24dp</item>
         <item name="android:layout_height">24dp</item>

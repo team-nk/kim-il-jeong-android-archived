@@ -21,7 +21,7 @@
 
                 <TextView
                     android:id="@+id/tv_dialog_create_schedule_title"
-                    style="@style/TextViewDialogScheduleAddictionTitle"
+                    style="@style/TextViewTitlePrimary"
                     android:layout_marginBottom="32dp"
                     android:text="@string/dialog_schedule_addiction_create_new_schedule"
                     app:layout_constraintBottom_toTopOf="@id/layout_dialog_create_schedule_information"
