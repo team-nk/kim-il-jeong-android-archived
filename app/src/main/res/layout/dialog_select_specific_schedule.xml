@@ -59,7 +59,7 @@
 
             <TextView
                 android:id="@+id/tv_dialog_select_specific_schedule_schedule"
-                style="@style/TextViewDialogDescriptionPrimary"
+                style="@style/TextViewDescriptionPrimary"
                 android:layout_marginTop="4dp"
                 tools:text="대마고 자습" />
         </LinearLayout>

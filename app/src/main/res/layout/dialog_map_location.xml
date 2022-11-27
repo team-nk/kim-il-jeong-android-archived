@@ -37,7 +37,7 @@
 
             <TextView
                 android:id="@+id/tv_dialog_map_location_schedule"
-                style="@style/TextViewDialogDescriptionPrimary"
+                style="@style/TextViewDescriptionPrimary"
                 android:layout_marginTop="4dp"
                 tools:text="2022-05-02 16:30 ~ 2022-05-02 20:00" />
         </LinearLayout>

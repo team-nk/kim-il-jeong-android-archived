@@ -197,8 +197,8 @@
         <item name="android:textColor">@color/color_strong_explanation</item>
     </style>
 
-    <style name="TextViewDialogDescriptionPrimary" parent="Widget.AppCompat.TextView">
-        <item name="android:textSize">10sp</item>
+    <style name="TextViewDescriptionPrimary" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">12sp</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
