@@ -136,7 +136,7 @@
         <item name="android:src">@drawable/icon_depth</item>
     </style>
 
-    <style name="TextViewCalendarTitle" parent="Widget.AppCompat.TextView">
+    <style name="TextViewCalendarTitlePrimary" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">bold</item>
         <item name="maxLines">1</item>
