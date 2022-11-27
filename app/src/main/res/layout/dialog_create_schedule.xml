@@ -175,12 +175,12 @@
 
                             <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btn_dialog_create_schedule_day_start"
-                                style="@style/ButtonDialogScheduleAddictionTime"
+                                style="@style/ButtonDialogCreateScheduleTime"
                                 tools:text="2006-05-08" />
 
                             <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btn_dialog_create_schedule_time_start"
-                                style="@style/ButtonDialogScheduleAddictionTime"
+                                style="@style/ButtonDialogCreateScheduleTime"
                                 tools:text="오전 6:00" />
                         </LinearLayout>
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -208,12 +208,12 @@
 
                             <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btn_dialog_create_schedule_date_start"
-                                style="@style/ButtonDialogScheduleAddictionTime"
+                                style="@style/ButtonDialogCreateScheduleTime"
                                 tools:text="종료 날짜" />
 
                             <androidx.appcompat.widget.AppCompatButton
                                 android:id="@+id/btn_dialog_create_schedule_time_end"
-                                style="@style/ButtonDialogScheduleAddictionTime"
+                                style="@style/ButtonDialogCreateScheduleTime"
                                 tools:text="종료 시간" />
                         </LinearLayout>
                     </androidx.constraintlayout.widget.ConstraintLayout>
