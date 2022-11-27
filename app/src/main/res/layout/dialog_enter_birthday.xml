@@ -59,7 +59,7 @@
 
                 <TextView
                     android:id="@+id/btn_dialog_enter_birthday_cancel"
-                    style="@style/TextViewPrimary"
+                    style="@style/TextViewCancelButtonPrimary"
                     android:layout_marginEnd="8dp"
                     android:minHeight="48dp"
                     android:text="@string/do_cancel"

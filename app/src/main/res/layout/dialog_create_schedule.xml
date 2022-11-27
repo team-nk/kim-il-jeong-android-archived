@@ -226,7 +226,7 @@
 
                         <TextView
                             android:id="@+id/btn_dialog_create_schedule_cancel"
-                            style="@style/TextViewPrimary"
+                            style="@style/TextViewCancelButtonPrimary"
                             android:layout_marginEnd="8dp"
                             android:text="@string/do_cancel"
                             app:layout_constraintBottom_toBottomOf="parent"
