@@ -50,10 +50,9 @@
 
                 <TextView
                     android:id="@+id/tv_dialog_select_specific_schedule_location"
-                    style="@style/TextViewDialogBodySecondary"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    style="@style/TextViewHintSecondary"
                     android:layout_weight="1"
+                    android:gravity="start"
                     tools:text="대마고 자습" />
             </LinearLayout>
 
