@@ -68,7 +68,7 @@
 
                     <TextView
                         android:id="@+id/tv_activity_create_new_post_select_schedule_select"
-                        style="@style/TextViewMyPagePrimary"
+                        style="@style/TextViewTitleSecondary"
                         android:layout_width="wrap_content"
                         android:text="@string/activity_create_new_post_select_schedule"
                         app:layout_constraintBottom_toBottomOf="parent"

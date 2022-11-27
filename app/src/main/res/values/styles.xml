@@ -115,8 +115,8 @@
         <item name="itemIconTint">@drawable/background_bottom_navigation_icon_color_selector</item>
     </style>
 
-    <style name="TextViewMyPagePrimary" parent="Widget.AppCompat.TextView">
-        <item name="android:textSize">14sp</item>
+    <style name="TextViewTitleSecondary" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
         <item name="maxLines">1</item>
         <item name="android:gravity">start|center_vertical</item>

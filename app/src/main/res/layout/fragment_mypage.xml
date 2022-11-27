@@ -66,7 +66,7 @@
 
                         <TextView
                             android:id="@+id/tv_fragment_mypage_id"
-                            style="@style/TextViewMyPagePrimary"
+                            style="@style/TextViewTitleSecondary"
                             android:layout_weight="1"
                             tools:text="JungSeungHoon" />
 
@@ -123,7 +123,7 @@
                     android:layout_marginHorizontal="16dp">
 
                     <TextView
-                        style="@style/TextViewMyPagePrimary"
+                        style="@style/TextViewTitleSecondary"
                         android:layout_marginVertical="12dp"
                         android:text="@string/fragment_mypage_enter_or_edit_birthday"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -153,7 +153,7 @@
                     android:layout_marginHorizontal="16dp">
 
                     <TextView
-                        style="@style/TextViewMyPagePrimary"
+                        style="@style/TextViewTitleSecondary"
                         android:layout_marginVertical="12dp"
                         android:text="@string/fragment_mypage_application_information"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -183,7 +183,7 @@
                     android:layout_marginHorizontal="16dp">
 
                     <TextView
-                        style="@style/TextViewMyPagePrimary"
+                        style="@style/TextViewTitleSecondary"
                         android:layout_marginVertical="12dp"
                         android:text="@string/fragment_mypage_change_password"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -213,7 +213,7 @@
                     android:layout_marginHorizontal="16dp">
 
                     <TextView
-                        style="@style/TextViewMyPagePrimary"
+                        style="@style/TextViewTitleSecondary"
                         android:layout_marginVertical="12dp"
                         android:text="@string/log_out"
                         android:textColor="@color/color_error"
