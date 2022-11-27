@@ -96,7 +96,8 @@
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_fragment_mypage_check_my_schedule"
-                        style="@style/ButtonMyPagePrimary"
+                        style="@style/ButtonSecondary"
+                        android:layout_width="0dp"
                         android:layout_marginEnd="8dp"
                         android:text="@string/fragment_mypage_check_my_schedule"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -107,7 +108,8 @@
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/btn_fragment_mypage_show_my_post"
-                        style="@style/ButtonMyPagePrimary"
+                        style="@style/ButtonSecondary"
+                        android:layout_width="0dp"
                         android:layout_marginStart="8dp"
                         android:text="@string/fragment_mypage_show_my_post"
                         app:layout_constraintBottom_toBottomOf="parent"
