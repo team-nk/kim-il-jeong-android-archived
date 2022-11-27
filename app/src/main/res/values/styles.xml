@@ -161,7 +161,7 @@
         <item name="android:textColor">@color/color_text</item>
     </style>
 
-    <style name="TextViewPrimary" parent="Widget.AppCompat.TextView">
+    <style name="TextViewBodyPrimary" parent="Widget.AppCompat.TextView">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">16sp</item>
