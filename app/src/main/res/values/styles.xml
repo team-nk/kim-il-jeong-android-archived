@@ -65,7 +65,7 @@
         <item name="android:textColor">@color/color_strong_explanation</item>
     </style>
 
-    <style name="ButtonAuthRegisterCheck" parent="Widget.AppCompat.Button">
+    <style name="ButtonSecondary" parent="Widget.AppCompat.Button">
         <item name="android:textSize">15sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_height">40dp</item>
