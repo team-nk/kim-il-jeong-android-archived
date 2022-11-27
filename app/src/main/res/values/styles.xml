@@ -136,8 +136,8 @@
         <item name="android:src">@drawable/icon_depth</item>
     </style>
 
-    <style name="TextViewCalendarTitlePrimary" parent="Widget.AppCompat.TextView">
-        <item name="android:textSize">18sp</item>
+    <style name="TextViewTitlePrimary" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
         <item name="maxLines">1</item>
         <item name="android:gravity">start|center_vertical</item>
@@ -153,6 +153,7 @@
         <item name="android:textColor">@color/color_strong_explanation</item>
     </style>
 
+    <!-- TODO -->
     <style name="TextViewDialogScheduleAddictionTitle" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">22sp</item>
         <item name="android:textStyle">bold</item>
