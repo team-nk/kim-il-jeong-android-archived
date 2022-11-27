@@ -72,8 +72,9 @@
 
                         <TextView
                             android:id="@+id/tv_fragment_mypage_email"
-                            style="@style/TextViewMyPageSecondary"
+                            style="@style/TextViewHintSecondary"
                             android:layout_weight="1"
+                            android:textColor="@color/color_description"
                             tools:text="alwaysAwake@gmail.com" />
                     </LinearLayout>
 

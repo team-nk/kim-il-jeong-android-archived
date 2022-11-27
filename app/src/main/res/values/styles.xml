@@ -125,15 +125,6 @@
         <item name="android:textColor">@color/color_text</item>
     </style>
 
-    <style name="TextViewMyPageSecondary" parent="Widget.AppCompat.TextView">
-        <item name="android:textSize">12sp</item>
-        <item name="android:gravity">start|center_vertical</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="maxLines">1</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/color_description</item>
-    </style>
-
     <style name="ButtonMyPagePrimary" parent="Widget.AppCompat.Button">
         <item name="android:textSize">14sp</item>
         <item name="android:gravity">center</item>
