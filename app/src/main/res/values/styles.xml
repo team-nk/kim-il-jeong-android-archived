@@ -57,7 +57,7 @@
         <item name="android:textColor">@color/color_text</item>
     </style>
 
-    <style name="TextViewAuthRegisterHint" parent="Widget.AppCompat.TextView">
+    <style name="TextViewHintSecondary" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">10sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_height">wrap_content</item>
