@@ -97,7 +97,7 @@
     </style>
 
     <style name="TextViewDialogContent" parent="Widget.AppCompat.TextView">
-        <item name="android:textSize">13sp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
