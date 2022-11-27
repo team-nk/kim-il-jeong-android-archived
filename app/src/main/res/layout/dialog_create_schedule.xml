@@ -57,7 +57,7 @@
                         android:minHeight="48dp">
 
                         <TextView
-                            style="@style/TextViewScheduleItemTitle"
+                            style="@style/TextViewPrimary"
                             android:layout_gravity="start|center_vertical"
                             android:text="@string/dialog_create_schedule_enter_location"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -66,7 +66,7 @@
 
                         <TextView
                             android:id="@+id/tv_dialog_create_schedule_search_location"
-                            style="@style/TextViewScheduleItemTitle"
+                            style="@style/TextViewPrimary"
                             android:layout_gravity="end|center_vertical"
                             android:text="@string/dialog_create_schedule_search_location"
                             android:textColor="@color/color_text"
@@ -83,7 +83,7 @@
                         android:minHeight="48dp">
 
                         <TextView
-                            style="@style/TextViewScheduleItemTitle"
+                            style="@style/TextViewPrimary"
                             android:text="@string/dialog_create_schedule_select_color"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -136,7 +136,7 @@
                         android:minHeight="48dp">
 
                         <TextView
-                            style="@style/TextViewScheduleItemTitle"
+                            style="@style/TextViewPrimary"
                             android:text="@string/dialog_create_schedule_is_schedule_all_day"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -159,7 +159,7 @@
                         android:minHeight="48dp">
 
                         <TextView
-                            style="@style/TextViewScheduleItemTitle"
+                            style="@style/TextViewPrimary"
                             android:text="@string/dialog_create_schedule_time_start"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
@@ -192,7 +192,7 @@
                         android:minHeight="48dp">
 
                         <TextView
-                            style="@style/TextViewScheduleItemTitle"
+                            style="@style/TextViewPrimary"
                             android:text="@string/dialog_create_schedule_time_end"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
