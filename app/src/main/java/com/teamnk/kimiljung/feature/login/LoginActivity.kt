@@ -51,7 +51,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
         if (email == "local" && password == "local") {
             loginWithAdminAccount()
         } else {
-            viewModel.postLogin(
+            viewModel.login(
                 LoginRequest(
                     email = email,
                     password = password,
@@ -83,17 +83,17 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
     }
 
     override fun observeEvent() {
-        viewModel.loginResponse.observe(
+        viewModel.loginResponseCode.observe(
             this
         ) {
-            when (it.code()) {
+            when (it) {
                 200 -> moveToMainActivity()
 
                 // TODO 서버 상태 코드 핸들링 로직 추가
 
                 else -> {
                     showShortSnackBar(
-                        binding.root, "${getString(R.string.error_login_failed)} ${it.code()}"
+                        binding.root, "${getString(R.string.error_login_failed)} $it"
                     )
                 }
             }
