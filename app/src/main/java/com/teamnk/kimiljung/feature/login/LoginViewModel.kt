@@ -4,26 +4,26 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import retrofit2.Response
 
 class LoginViewModel(
     private val repository: LoginRepository
 ) : ViewModel() {
 
-    private val _loginResponse = MutableLiveData<Response<LoginResponse>>()
-    val loginResponse: LiveData<Response<LoginResponse>> = _loginResponse
+    private val _loginResponseCode = MutableLiveData<Pair<LoginResponse?, Int?>>()
+    val loginResponseCode: LiveData<Pair<LoginResponse?, Int?>> = _loginResponseCode
 
-    fun postLogin(loginRequest: LoginRequest) {
+    fun login(loginRequest: LoginRequest) {
         viewModelScope.launch {
             kotlin.runCatching {
-                withContext(Dispatchers.IO) {
-                    repository.login(loginRequest)
-                }
+                repository.login(loginRequest)
             }.onSuccess {
-                _loginResponse.postValue(it)
+                _loginResponseCode.postValue(
+                    Pair(
+                        it.body(),
+                        it.code(),
+                    )
+                )
             }
         }
     }

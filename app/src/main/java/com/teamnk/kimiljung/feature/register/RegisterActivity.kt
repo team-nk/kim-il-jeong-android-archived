@@ -7,7 +7,7 @@ import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityRegisterBinding
 import com.teamnk.kimiljung.feature.login.LoginActivity
 import com.teamnk.kimiljung.util.showDialogWithSingleButton
-import com.teamnk.kimiljung.util.startActivity
+import com.teamnk.kimiljung.util.showShortSnackBar
 
 class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     R.layout.activity_register
@@ -33,9 +33,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
             btnActivityRegisterVerifyEmail.setOnClickListener {
                 val email = etActivityRegisterEmail.text.toString()
                 if (email.isNotBlank()) {
-
                 } else {
-
                 }
             }
         }
@@ -59,12 +57,16 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
             btnActivityRegisterCheckIdDuplication.setOnClickListener {
                 val userId = etActivityRegisterId.text.toString()
                 if (userId.isNotBlank()) {
-                    // TODO UserIdDuplicate Logic
-                    viewModel.run {
-
-                    }
+                    viewModel.checkIdDuplication(
+                        CheckIdDuplicationRequest(
+                            accountId = etActivityRegisterId.text.toString()
+                        )
+                    )
                 } else {
-
+                    showShortSnackBar(
+                        binding.root,
+                        getString(R.string.error_please_enter_id),
+                    )
                 }
             }
         }
@@ -72,15 +74,53 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
 
     private fun initNextButton() {
         binding.btnActivityRegisterNext.setOnClickListener {
-            showDialogWithSingleButton(
-                this,
-                getString(R.string.activity_register_dialog_title_register_success),
-                getString(R.string.activity_register_dialog_content_register_success)
-            ) {
-                startActivity(this, LoginActivity::class.java)
-            }
+            viewModel.register(
+                RegisterRequest(
+                    email = binding.etActivityRegisterEmail.text.toString(),
+                    verificationCode = binding.etActivityRegisterVerificationCode.text.toString(),
+                    accountId = binding.etActivityRegisterId.text.toString(),
+                    password = binding.etActivityRegisterPassword.text.toString(),
+                    repeatPassword = binding.etActivityRegisterPasswordRepeat.text.toString(),
+                )
+            )
         }
     }
 
-    override fun observeEvent() {}
+    override fun observeEvent() {
+        viewModel.checkIdDuplicationResponse.observe(
+            this
+        ) {
+            if (it) {
+                showShortSnackBar(
+                    binding.root,
+                    getString(R.string.activity_register_available_id),
+                )
+                // TODO 비활성화 로직
+            } else {
+                showShortSnackBar(
+                    binding.root,
+                    getString(R.string.activity_register_unavailbale_id),
+                )
+            }
+        }
+
+        viewModel.registerResponse.observe(
+            this
+        ) {
+            if (it) {
+                showDialogWithSingleButton(
+                    this,
+                    getString(R.string.activity_register_dialog_title_register_success),
+                    getString(R.string.activity_register_dialog_content_register_success)
+                ) {
+                    com.teamnk.kimiljung.util.startActivity(this, LoginActivity::class.java)
+                }
+            } else {
+                showShortSnackBar(
+                    binding.root,
+                    getString(R.string.activity_register_failed_to_register),
+                )
+            }
+        }
+    }
 }
