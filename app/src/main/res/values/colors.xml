@@ -13,6 +13,7 @@
     <color name="color_background">#F9FAFE</color>
     <color name="color_surface">#FFFFFF</color>
     <color name="color_surface_secondary">#EBEDF4</color>
+    <color name="color_surface_secondary_pressed">#B1B8CF</color>
 
     <color name="color_description">#A7B8CA</color>
     <color name="color_strong_explanation">#757575</color>
