@@ -10,8 +10,8 @@ class LoginViewModel(
     private val repository: LoginRepository
 ) : ViewModel() {
 
-    private val _loginResponseCode = MutableLiveData<Pair<LoginResponse, Int>>()
-    val loginResponseCode: LiveData<Pair<LoginResponse, Int>> = _loginResponseCode
+    private val _loginResponseCode = MutableLiveData<Pair<LoginResponse?, Int?>>()
+    val loginResponseCode: LiveData<Pair<LoginResponse?, Int?>> = _loginResponseCode
 
     fun login(loginRequest: LoginRequest) {
         viewModelScope.launch {
@@ -20,7 +20,7 @@ class LoginViewModel(
             }.onSuccess {
                 _loginResponseCode.postValue(
                     Pair(
-                        it.body()!!,
+                        it.body(),
                         it.code(),
                     )
                 )

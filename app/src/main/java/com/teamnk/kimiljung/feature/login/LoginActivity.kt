@@ -91,8 +91,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
             when (it.second) {
                 200 -> {
                     moveToMainActivity()
-                    accessToken = it.first.accessToken
-                    refreshToken = it.first.refreshToken
+                    accessToken = it.first?.accessToken
+                    refreshToken = it.first?.refreshToken
                 }
 
                 // TODO 서버 상태 코드 핸들링 로직 추가
