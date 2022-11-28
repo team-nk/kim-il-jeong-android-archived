@@ -3,6 +3,8 @@ package com.teamnk.kimiljung.feature.login
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
+import com.teamnk.kimiljung.api.accessToken
+import com.teamnk.kimiljung.api.refreshToken
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityLoginBinding
 import com.teamnk.kimiljung.feature.main.MainActivity
@@ -86,14 +88,18 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
         viewModel.loginResponseCode.observe(
             this
         ) {
-            when (it) {
-                200 -> moveToMainActivity()
+            when (it.second) {
+                200 -> {
+                    moveToMainActivity()
+                    accessToken = it.first.accessToken
+                    refreshToken = it.first.refreshToken
+                }
 
                 // TODO 서버 상태 코드 핸들링 로직 추가
 
                 else -> {
                     showShortSnackBar(
-                        binding.root, "${getString(R.string.error_login_failed)} $it"
+                        binding.root, "${getString(R.string.error_login_failed)} ${it.second}"
                     )
                 }
             }
