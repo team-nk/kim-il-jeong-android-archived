@@ -8,7 +8,7 @@ data class CheckIdDuplicationRequest(
 
 data class RegisterRequest(
     @SerializedName("email") val email: String,
-    @SerializedName("code") val code: String,
+    @SerializedName("code") val verificationCode: String,
     @SerializedName("accountId") val accountId: String,
     @SerializedName("password") val password: String,
     @SerializedName("repassword") val repeatPassword: String,
