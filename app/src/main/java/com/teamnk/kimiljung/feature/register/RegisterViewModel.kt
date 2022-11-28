@@ -55,6 +55,9 @@ class RegisterViewModel(
                     )
                     Log.d(tag, "register success!")
                 } else {
+                    _registerResponse.postValue(
+                        false
+                    )
                     Log.e(tag, "register failure..")
                 }
             }
