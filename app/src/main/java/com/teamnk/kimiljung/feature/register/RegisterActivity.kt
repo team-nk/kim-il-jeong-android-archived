@@ -5,6 +5,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityRegisterBinding
+import com.teamnk.kimiljung.feature.login.LoginActivity
+import com.teamnk.kimiljung.util.showDialogWithSingleButton
 import com.teamnk.kimiljung.util.showShortSnackBar
 
 class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
@@ -98,6 +100,25 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
                 showShortSnackBar(
                     binding.root,
                     getString(R.string.activity_register_unavailbale_id),
+                )
+            }
+        }
+
+        viewModel.registerResponse.observe(
+            this
+        ) {
+            if (it) {
+                showDialogWithSingleButton(
+                    this,
+                    getString(R.string.activity_register_dialog_title_register_success),
+                    getString(R.string.activity_register_dialog_content_register_success)
+                ) {
+                    com.teamnk.kimiljung.util.startActivity(this, LoginActivity::class.java)
+                }
+            } else {
+                showShortSnackBar(
+                    binding.root,
+                    getString(R.string.activity_register_failed_to_register),
                 )
             }
         }
