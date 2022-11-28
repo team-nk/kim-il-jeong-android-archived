@@ -10,4 +10,10 @@ class RegisterRepository {
     ): Response<Boolean> {
         return registerAPIProvider.checkIdDuplication(checkIdDuplicationRequest)
     }
+
+    suspend fun register(
+        registerRequest: RegisterRequest
+    ): Response<Void> {
+        return registerAPIProvider.register(registerRequest)
+    }
 }
