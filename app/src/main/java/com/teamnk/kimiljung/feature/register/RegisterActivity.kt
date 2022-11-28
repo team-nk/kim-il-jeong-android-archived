@@ -5,10 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityRegisterBinding
-import com.teamnk.kimiljung.feature.login.LoginActivity
-import com.teamnk.kimiljung.util.showDialogWithSingleButton
 import com.teamnk.kimiljung.util.showShortSnackBar
-import com.teamnk.kimiljung.util.startActivity
 
 class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     R.layout.activity_register
@@ -75,13 +72,15 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
 
     private fun initNextButton() {
         binding.btnActivityRegisterNext.setOnClickListener {
-            showDialogWithSingleButton(
-                this,
-                getString(R.string.activity_register_dialog_title_register_success),
-                getString(R.string.activity_register_dialog_content_register_success)
-            ) {
-                startActivity(this, LoginActivity::class.java)
-            }
+            viewModel.register(
+                RegisterRequest(
+                    email = binding.etActivityRegisterEmail.text.toString(),
+                    verificationCode = binding.etActivityRegisterVerificationCode.text.toString(),
+                    accountId = binding.etActivityRegisterId.text.toString(),
+                    password = binding.etActivityRegisterPassword.text.toString(),
+                    repeatPassword = binding.etActivityRegisterPasswordRepeat.text.toString(),
+                )
+            )
         }
     }
 
