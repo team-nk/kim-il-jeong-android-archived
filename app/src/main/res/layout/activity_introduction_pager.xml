@@ -18,6 +18,7 @@
             android:id="@+id/tabLayout_introduction_viewPager"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@null"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/vp_introduction"
             app:layout_constraintStart_toStartOf="@id/vp_introduction"
@@ -72,10 +73,6 @@
                 android:layout_height="24dp"
                 android:contentDescription="@string/activity_introduction_pager_content_description_next_icon"
                 android:src="@drawable/icon_next" />
-
         </LinearLayout>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </layout>
