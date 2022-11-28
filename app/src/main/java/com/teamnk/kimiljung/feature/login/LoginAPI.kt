@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.api
+package com.teamnk.kimiljung.feature.login
 
 import com.teamnk.kimiljung.feature.login.LoginRequest
 import com.teamnk.kimiljung.feature.login.LoginResponse

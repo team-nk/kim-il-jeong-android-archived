@@ -1,6 +1,5 @@
-package com.teamnk.kimiljung.api
+package com.teamnk.kimiljung.feature.register
 
-import com.teamnk.kimiljung.feature.register.CheckIdDuplicationRequest
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
