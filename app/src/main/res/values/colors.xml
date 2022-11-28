@@ -9,9 +9,11 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="color_main">#76A9FF</color>
+    <color name="color_main_pressed">#5E9AFF</color>
     <color name="color_background">#F9FAFE</color>
     <color name="color_surface">#FFFFFF</color>
     <color name="color_surface_secondary">#EBEDF4</color>
+    <color name="color_surface_secondary_pressed">#B1B8CF</color>
 
     <color name="color_description">#A7B8CA</color>
     <color name="color_strong_explanation">#757575</color>
@@ -25,5 +27,7 @@
     <color name="color_yellow">#EDEF76</color>
     <color name="color_green">#50DF44</color>
     <color name="color_pink">#DB76FF</color>
+
     <color name="color_background_button_cancel">#FFF0F0</color>
+    <color name="color_background_button_cancel_pressed">#FFD3D3</color>
 </resources>
