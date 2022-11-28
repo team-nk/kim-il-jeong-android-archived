@@ -7,6 +7,7 @@ import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityRegisterBinding
 import com.teamnk.kimiljung.feature.login.LoginActivity
 import com.teamnk.kimiljung.util.showDialogWithSingleButton
+import com.teamnk.kimiljung.util.showShortSnackBar
 import com.teamnk.kimiljung.util.startActivity
 
 class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
@@ -33,9 +34,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
             btnActivityRegisterVerifyEmail.setOnClickListener {
                 val email = etActivityRegisterEmail.text.toString()
                 if (email.isNotBlank()) {
-
                 } else {
-
                 }
             }
         }
@@ -59,12 +58,16 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
             btnActivityRegisterCheckIdDuplication.setOnClickListener {
                 val userId = etActivityRegisterId.text.toString()
                 if (userId.isNotBlank()) {
-                    // TODO UserIdDuplicate Logic
-                    viewModel.run {
-
-                    }
+                    viewModel.checkIdDuplication(
+                        CheckIdDuplicationRequest(
+                            accountId = etActivityRegisterId.text.toString()
+                        )
+                    )
                 } else {
-
+                    showShortSnackBar(
+                        binding.root,
+                        getString(R.string.error_please_enter_id),
+                    )
                 }
             }
         }
@@ -82,5 +85,22 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
         }
     }
 
-    override fun observeEvent() {}
+    override fun observeEvent() {
+        viewModel.checkIdDuplicationResponse.observe(
+            this
+        ) {
+            if (it) {
+                showShortSnackBar(
+                    binding.root,
+                    getString(R.string.activity_register_available_id),
+                )
+                // TODO 비활성화 로직
+            } else {
+                showShortSnackBar(
+                    binding.root,
+                    getString(R.string.activity_register_unavailbale_id),
+                )
+            }
+        }
+    }
 }
