@@ -108,6 +108,7 @@
     <string name="error_please_enter_id">아이디를 입력해 주세요.</string>
     <string name="activity_register_available_id">사용하실 수 있는 아이디입니다.</string>
     <string name="activity_register_unavailbale_id">사용하실 수 없는 아이디입니다.</string>
+    <string name="activity_register_failed_to_register">회원가입에 실패하였습니다.</string>
 
     <string-array name="fragment_calendar_string_array_calendar_week">
         <item>SUN</item>
