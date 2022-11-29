@@ -1,6 +1,7 @@
 package com.teamnk.kimiljung.api
 
 import com.teamnk.kimiljung.feature.login.LoginAPI
+import com.teamnk.kimiljung.feature.mypage.MyPageAPI
 import com.teamnk.kimiljung.feature.register.RegisterAPI
 
 val loginAPIProvider: LoginAPI by lazy {
@@ -9,4 +10,8 @@ val loginAPIProvider: LoginAPI by lazy {
 
 val registerAPIProvider: RegisterAPI by lazy {
     RetrofitClient.getRetrofit()!!.create(RegisterAPI::class.java)
+}
+
+val myPageAPIProvider: MyPageAPI by lazy {
+    RetrofitClient.getRetrofit()!!.create(MyPageAPI::class.java)
 }
