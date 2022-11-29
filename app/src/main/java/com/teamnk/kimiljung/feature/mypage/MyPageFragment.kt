@@ -12,6 +12,7 @@ import com.teamnk.kimiljung.base.BaseFragment
 import com.teamnk.kimiljung.databinding.FragmentMypageBinding
 import com.teamnk.kimiljung.feature.start.StartActivity
 import com.teamnk.kimiljung.util.showDialogWithDoubleButton
+import com.teamnk.kimiljung.util.showShortSnackBar
 import com.teamnk.kimiljung.util.startActivityRemovingBackStack
 
 class MyPageFragment : BaseFragment<FragmentMypageBinding>(
@@ -96,8 +97,17 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
         ) {
             initSelfInformationView(it)
         }
-    }
 
+        viewModel.snackBarMessage.observe(
+            viewLifecycleOwner
+        ) {
+            showShortSnackBar(
+                binding.root,
+                it,
+            )
+        }
+    }
+    
     private fun initSelfInformationView(selfInformationResponse: GetSelfInformationResponse) {
         with(binding) {
             // TODO add image on imageFragmentMypageUserProfile
