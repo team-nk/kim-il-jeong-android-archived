@@ -1,6 +1,7 @@
 package com.teamnk.kimiljung.feature.mypage
 
 import android.app.Application
+import android.content.Context
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -17,6 +18,9 @@ class MyPageViewModel(
     init {
         getSelfInformation()
     }
+
+    private val AndroidViewModel.context: Context
+        get() = getApplication<Application>().applicationContext
 
     private val tag = this.javaClass.simpleName
 
@@ -35,9 +39,6 @@ class MyPageViewModel(
                     _selfInformation.postValue(it.body())
                     Log.d(tag, "getSelfInformation success!")
                 } else {
-                    _shouldShowSnackBar.postValue(
-                        Pair(true, .getString(R.string.error_loading_failed))
-                    )
                     Log.d(tag, "getSelfInformation failure..")
                 }
             }
