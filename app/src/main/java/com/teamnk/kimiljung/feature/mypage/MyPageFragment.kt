@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseFragment
 import com.teamnk.kimiljung.databinding.FragmentMypageBinding
@@ -16,6 +17,12 @@ import com.teamnk.kimiljung.util.startActivityRemovingBackStack
 class MyPageFragment : BaseFragment<FragmentMypageBinding>(
     R.layout.fragment_mypage
 ) {
+
+    private val viewModel by lazy {
+        ViewModelProvider(
+            requireActivity(), MyPageViewModelFactory(MyPageRepository())
+        )[MyPageViewModel::class.java]
+    }
 
     private lateinit var changeUserInformationActivityResultLauncher: ActivityResultLauncher<Intent>
 
@@ -80,5 +87,6 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
 
     private fun initEditBirthDayButton() {}
 
-    override fun observeEvent() {}
+    override fun observeEvent() {
+    }
 }
