@@ -20,7 +20,10 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
 
     private val viewModel by lazy {
         ViewModelProvider(
-            requireActivity(), MyPageViewModelFactory(MyPageRepository())
+            requireActivity(), MyPageViewModelFactory(
+                MyPageRepository(),
+                requireActivity().application,
+            )
         )[MyPageViewModel::class.java]
     }
 
@@ -91,7 +94,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
         viewModel.selfInformation.observe(
             viewLifecycleOwner
         ) {
-            
+
         }
     }
 }
