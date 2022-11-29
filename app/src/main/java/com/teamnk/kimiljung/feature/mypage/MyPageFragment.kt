@@ -107,7 +107,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
             )
         }
     }
-    
+
     private fun initSelfInformationView(selfInformationResponse: GetSelfInformationResponse) {
         with(binding) {
             // TODO add image on imageFragmentMypageUserProfile
