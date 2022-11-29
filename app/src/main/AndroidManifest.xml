@@ -17,6 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KimIlJung"
         android:usesCleartextTraffic="true"
+        tools:ignore="LockedOrientationActivity"
         tools:targetApi="31">
         <activity
             android:name=".feature.posthistory.PostHistoryActivity"
@@ -74,14 +75,17 @@
         <activity
             android:name=".feature.main.MainActivity"
             android:exported="true"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".feature.mypage.ChangePasswordActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
