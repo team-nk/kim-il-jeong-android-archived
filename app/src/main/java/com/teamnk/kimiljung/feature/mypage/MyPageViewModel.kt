@@ -39,6 +39,12 @@ class MyPageViewModel(
                     _selfInformation.postValue(it.body())
                     Log.d(tag, "getSelfInformation success!")
                 } else {
+                    _shouldShowSnackBar.postValue(
+                        Pair(
+                            true,
+                            context.getString(R.string.error_loading_failed),
+                        )
+                    )
                     Log.d(tag, "getSelfInformation failure..")
                 }
             }
