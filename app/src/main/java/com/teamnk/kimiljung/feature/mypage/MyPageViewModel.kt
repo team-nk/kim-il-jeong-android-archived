@@ -11,12 +11,16 @@ class MyPageViewModel(
     private val repository: MyPageRepository,
 ) : ViewModel() {
 
+    init {
+        getSelfInformation()
+    }
+
     private val tag = this.javaClass.simpleName
 
     private val _selfInformation = MutableLiveData<GetSelfInformationResponse>()
     val selfInformation: LiveData<GetSelfInformationResponse> = _selfInformation
 
-    fun getSelfInformation() {
+    private fun getSelfInformation() {
         viewModelScope.launch {
             kotlin.runCatching {
                 repository.getSelfInformation()
