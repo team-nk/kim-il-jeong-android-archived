@@ -88,5 +88,10 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
     private fun initEditBirthDayButton() {}
 
     override fun observeEvent() {
+        viewModel.selfInformation.observe(
+            viewLifecycleOwner
+        ) {
+            
+        }
     }
 }
