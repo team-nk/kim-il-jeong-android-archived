@@ -11,9 +11,7 @@ class RegisterViewModel(
     private val repository: RegisterRepository
 ) : ViewModel() {
 
-    companion object {
-        private const val tag = "RegisterViewModel"
-    }
+    private val tag = this.javaClass.simpleName
 
     private val _checkIdDuplicationResponse = MutableLiveData<Boolean>()
     val checkIdDuplicationResponse: LiveData<Boolean> = _checkIdDuplicationResponse

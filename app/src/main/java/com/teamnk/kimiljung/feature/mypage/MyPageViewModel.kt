@@ -1,7 +1,56 @@
 package com.teamnk.kimiljung.feature.mypage
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import android.content.Context
+import android.util.Log
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
+import com.teamnk.kimiljung.R
+import kotlinx.coroutines.launch
 
 class MyPageViewModel(
     private val repository: MyPageRepository,
-) : ViewModel() {}
+    application: Application,
+) : AndroidViewModel(application) {
+
+    init {
+        getSelfInformation()
+    }
+
+    private val AndroidViewModel.context: Context
+        get() = getApplication<Application>().applicationContext
+
+    private val tag = this.javaClass.simpleName
+
+    private val _selfInformation = MutableLiveData<GetSelfInformationResponse>()
+    val selfInformation: LiveData<GetSelfInformationResponse> = _selfInformation
+
+    private val _snackBarMessage = MutableLiveData<String>()
+    val snackBarMessage: LiveData<String> = _snackBarMessage
+
+    private fun getSelfInformation() {
+        viewModelScope.launch {
+            kotlin.runCatching {
+                repository.getSelfInformation()
+            }.onSuccess {
+                if (it.isSuccessful) {
+                    _selfInformation.postValue(it.body())
+                    Log.d(tag, "getSelfInformation success!")
+                } else {
+                    setToShowSnackBar(
+                        context.getString(
+                            R.string.error_loading_failed,
+                        )
+                    )
+                    Log.d(tag, "getSelfInformation failure..")
+                }
+            }
+        }
+    }
+
+    private fun setToShowSnackBar(message: String) {
+        _snackBarMessage.value = message
+    }
+}
