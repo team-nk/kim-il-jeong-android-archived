@@ -13,6 +13,7 @@ import com.teamnk.kimiljung.databinding.FragmentMypageBinding
 import com.teamnk.kimiljung.feature.start.StartActivity
 import com.teamnk.kimiljung.util.showDialogWithDoubleButton
 import com.teamnk.kimiljung.util.showShortSnackBar
+import com.teamnk.kimiljung.util.startActivity
 import com.teamnk.kimiljung.util.startActivityRemovingBackStack
 
 class MyPageFragment : BaseFragment<FragmentMypageBinding>(
@@ -89,7 +90,14 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
 
     private fun initApplicationInformationButton() {}
 
-    private fun initEditBirthDayButton() {}
+    private fun initEditBirthDayButton() {
+        binding.btnFrgamentMypageEditBirthday.setOnClickListener {
+            startActivity(
+                requireActivity(),
+                ChangePasswordActivity::class.java,
+            )
+        }
+    }
 
     override fun observeEvent() {
         viewModel.selfInformation.observe(
