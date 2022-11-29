@@ -94,7 +94,15 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
         viewModel.selfInformation.observe(
             viewLifecycleOwner
         ) {
+            initSelfInformationView(it)
+        }
+    }
 
+    private fun initSelfInformationView(selfInformationResponse: GetSelfInformationResponse) {
+        with(binding) {
+            // TODO add image on imageFragmentMypageUserProfile
+            tvFragmentMypageEmail.text = selfInformationResponse.email
+            tvFragmentMypageId.text = selfInformationResponse.accountId
         }
     }
 }
