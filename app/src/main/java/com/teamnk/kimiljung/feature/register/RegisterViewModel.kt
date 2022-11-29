@@ -11,7 +11,7 @@ class RegisterViewModel(
     private val repository: RegisterRepository
 ) : ViewModel() {
 
-    private val tag = "RegisterViewModel"
+    private val tag = this.javaClass.simpleName
 
     private val _checkIdDuplicationResponse = MutableLiveData<Boolean>()
     val checkIdDuplicationResponse: LiveData<Boolean> = _checkIdDuplicationResponse
