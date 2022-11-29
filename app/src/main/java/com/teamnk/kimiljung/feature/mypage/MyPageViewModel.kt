@@ -27,8 +27,8 @@ class MyPageViewModel(
     private val _selfInformation = MutableLiveData<GetSelfInformationResponse>()
     val selfInformation: LiveData<GetSelfInformationResponse> = _selfInformation
 
-    private val _shouldShowSnackBar = MutableLiveData<Pair<Boolean, String>>()
-    val shouldShowSnackBar: LiveData<Pair<Boolean, String>> = _shouldShowSnackBar
+    private val _snackBarMessage = MutableLiveData<String>()
+    val snackBarMessage: LiveData<String> = _snackBarMessage
 
     private fun getSelfInformation() {
         viewModelScope.launch {
@@ -39,15 +39,18 @@ class MyPageViewModel(
                     _selfInformation.postValue(it.body())
                     Log.d(tag, "getSelfInformation success!")
                 } else {
-                    _shouldShowSnackBar.postValue(
-                        Pair(
-                            true,
-                            context.getString(R.string.error_loading_failed),
+                    setToShowSnackBar(
+                        context.getString(
+                            R.string.error_loading_failed,
                         )
                     )
                     Log.d(tag, "getSelfInformation failure..")
                 }
             }
         }
+    }
+
+    private fun setToShowSnackBar(message: String) {
+        _snackBarMessage.value = message
     }
 }
