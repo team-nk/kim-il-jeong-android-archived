@@ -88,16 +88,20 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
         }
     }
 
-    private fun initChangePasswordButton() {}
+    private fun initChangePasswordButton() {
+        binding.btnFragmentMypageChangePassword.setOnClickListener {
+            startActivity(
+                requireActivity(),
+                ChangePasswordActivity::class.java,
+            )
+        }
+    }
 
     private fun initApplicationInformationButton() {}
 
     private fun initEditBirthDayButton() {
         binding.btnFrgamentMypageEditBirthday.setOnClickListener {
-            startActivity(
-                requireActivity(),
-                ChangePasswordActivity::class.java,
-            )
+
         }
     }
 
