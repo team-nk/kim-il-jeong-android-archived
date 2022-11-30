@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.feature.mypage
+package com.teamnk.kimiljung.feature.changeuserinformation
 
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity

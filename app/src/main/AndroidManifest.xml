@@ -48,7 +48,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".feature.mypage.ChangeUserInformationActivity"
+            android:name=".feature.changeuserinformation.ChangeUserInformationActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -83,7 +83,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".feature.mypage.ChangePasswordActivity"
+            android:name=".feature.changepassword.ChangePasswordActivity"
             android:exported="true"
             android:screenOrientation="portrait" />
     </application>

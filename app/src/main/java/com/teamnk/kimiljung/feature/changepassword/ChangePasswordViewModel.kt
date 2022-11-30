@@ -1,2 +1,2 @@
-package com.teamnk.kimiljung.feature.mypage
+package com.teamnk.kimiljung.feature.changepassword
 
