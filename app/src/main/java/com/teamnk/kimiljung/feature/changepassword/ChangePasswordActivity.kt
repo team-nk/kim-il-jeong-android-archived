@@ -7,5 +7,8 @@ import com.teamnk.kimiljung.databinding.ActivityChangePasswordBinding
 class ChangePasswordActivity : BaseActivity<ActivityChangePasswordBinding>(
     R.layout.activity_change_password
 ) {
-    override fun observeEvent() {}
+
+    override fun observeEvent() {
+
+    }
 }
