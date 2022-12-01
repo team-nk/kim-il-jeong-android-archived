@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".feature.fragment.calendar.ScheduleFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/BackgroundBottomSheetDialogPrimary">
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_dialog_create_schedule_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_dialog_create_schedule_vertical_1"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_dialog_create_schedule_title"
+                    style="@style/TextViewTitlePrimary"
+                    android:layout_marginBottom="32dp"
+                    android:text="@string/dialog_schedule_addiction_create_new_schedule"
+                    app:layout_constraintBottom_toTopOf="@id/layout_dialog_create_schedule_information"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/layout_dialog_create_schedule_information"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_dialog_create_schedule_title">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="@string/dialog_schedule_addiction_type_schedule" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="12dp"
+                        android:minHeight="48dp">
+
+                        <TextView
+                            style="@style/TextViewBodyPrimary"
+                            android:layout_gravity="start|center_vertical"
+                            android:text="@string/dialog_create_schedule_enter_location"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_dialog_create_schedule_search_location"
+                            style="@style/TextViewBodyPrimary"
+                            android:layout_gravity="end|center_vertical"
+                            android:text="@string/dialog_create_schedule_search_location"
+                            android:textColor="@color/color_text"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="12dp"
+                        android:minHeight="48dp">
+
+                        <TextView
+                            style="@style/TextViewBodyPrimary"
+                            android:text="@string/dialog_create_schedule_select_color"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <RadioGroup
+                            android:id="@+id/radio_group_dialog_create_schedule_color_pallet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checkedButton="@id/radio_btn_radio_group_dialog_schedule_addiction_color_red"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <RadioButton
+                                android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_red"
+                                style="@style/RadioButtonDialogCreateScheduleColorIndicator"
+                                android:background="@drawable/background_color_indicator_red_selector" />
+
+                            <RadioButton
+                                android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_blue"
+                                style="@style/RadioButtonDialogCreateScheduleColorIndicator"
+                                android:background="@drawable/background_color_indicator_blue_selector" />
+
+
+                            <RadioButton
+                                android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_yellow"
+                                style="@style/RadioButtonDialogCreateScheduleColorIndicator"
+                                android:background="@drawable/background_color_indicator_yellow_selector" />
+
+                            <RadioButton
+                                android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_green"
+                                style="@style/RadioButtonDialogCreateScheduleColorIndicator"
+                                android:background="@drawable/background_color_indicator_green_selector" />
+
+                            <RadioButton
+                                android:id="@+id/radio_btn_radio_group_dialog_schedule_addiction_color_purple"
+                                style="@style/RadioButtonDialogCreateScheduleColorIndicator"
+                                android:background="@drawable/background_color_indicator_purple_selector" />
+
+                        </RadioGroup>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="12dp"
+                        android:minHeight="48dp">
+
+                        <TextView
+                            style="@style/TextViewBodyPrimary"
+                            android:text="@string/dialog_create_schedule_is_schedule_all_day"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.google.android.material.switchmaterial.SwitchMaterial
+                            android:id="@+id/switch_dialog_create_schedule_is_schedule_all_day"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:thumbTint="@drawable/background_switch_primary_thumb_selector" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="12dp"
+                        android:minHeight="48dp">
+
+                        <TextView
+                            style="@style/TextViewBodyPrimary"
+                            android:text="@string/dialog_create_schedule_time_start"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btn_dialog_create_schedule_day_start"
+                                style="@style/ButtonDialogCreateScheduleTime"
+                                tools:text="2006-05-08" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btn_dialog_create_schedule_time_start"
+                                style="@style/ButtonDialogCreateScheduleTime"
+                                tools:text="오전 6:00" />
+                        </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="12dp"
+                        android:minHeight="48dp">
+
+                        <TextView
+                            style="@style/TextViewBodyPrimary"
+                            android:text="@string/dialog_create_schedule_time_end"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btn_dialog_create_schedule_date_start"
+                                style="@style/ButtonDialogCreateScheduleTime"
+                                tools:text="종료 날짜" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btn_dialog_create_schedule_time_end"
+                                style="@style/ButtonDialogCreateScheduleTime"
+                                tools:text="종료 시간" />
+                        </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="96dp"
+                        android:minHeight="48dp">
+
+                        <TextView
+                            android:id="@+id/btn_dialog_create_schedule_cancel"
+                            style="@style/TextViewCancelButtonPrimary"
+                            android:layout_marginEnd="8dp"
+                            android:text="@string/do_cancel"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@id/btn_dialog_create_schedule_create"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btn_dialog_create_schedule_create"
+                            style="@style/ButtonPrimary"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/do_create"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/btn_dialog_create_schedule_cancel"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_dialog_create_schedule_vertical_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_dialog_create_schedule_vertical_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

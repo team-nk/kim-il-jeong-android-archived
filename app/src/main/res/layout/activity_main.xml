@@ -2,29 +2,24 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        style="@style/BackgroundAll"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:backgroundTint="@color/color_background">
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/BackgroundPrimary">
 
         <FrameLayout
-            android:id="@+id/container_main"
+            android:id="@+id/container_activity_main"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/bn_main"
+            app:layout_constraintBottom_toTopOf="@id/bottom_navigation_view_activity_main"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- TODO indicator shape -->
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bn_main"
-            style="@style/MainBottomNavigationView"
+            android:id="@+id/bottom_navigation_view_activity_main"
+            style="@style/BottomNavigationViewMain"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/container_main"
-            app:menu="@menu/menu_main_bottom_navigation" />
+            app:layout_constraintTop_toBottomOf="@id/container_activity_main"
+            app:menu="@menu/menu_bottom_navigation_main" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

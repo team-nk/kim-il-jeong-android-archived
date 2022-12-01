@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:behavior_hideable="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/BackgroundBottomSheetDialogPrimary">
+
+        <LinearLayout
+            android:id="@+id/layout_dialog_map_location_contents"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/card_view_dialog_map_location_map"
+            app:layout_constraintEnd_toEndOf="@id/guideline_dialog_map_location_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_dialog_map_location_vertical_1"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/view_dialog_map_location_color_indicator"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginEnd="12dp"
+                    tools:background="@drawable/background_color_indicator_blue_unchecked" />
+
+                <TextView
+                    android:id="@+id/tv_dialog_map_location_title"
+                    style="@style/TextViewTitlePrimary"
+                    tools:text="대덕대학교 자습" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_dialog_map_location_schedule"
+                style="@style/TextViewDescriptionPrimary"
+                android:layout_marginTop="4dp"
+                tools:text="2022-05-02 16:30 ~ 2022-05-02 20:00" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_dialog_map_location_map"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toTopOf="@id/layout_dialog_map_location_buttons"
+            app:layout_constraintEnd_toEndOf="@id/guideline_dialog_map_location_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_dialog_map_location_vertical_1"
+            app:layout_constraintTop_toBottomOf="@id/layout_dialog_map_location_contents">
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/map_dialog_map_location_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_dialog_map_location_buttons"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_dialog_map_location_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_dialog_map_location_vertical_1"
+            app:layout_constraintTop_toBottomOf="@id/card_view_dialog_map_location_map">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_dialog_map_location_delete"
+                style="@style/ButtonPrimary"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/background_button_delete"
+                android:text="@string/do_delete"
+                android:textColor="@color/color_error"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_dialog_map_location_modify"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_dialog_map_location_modify"
+                style="@style/ButtonPrimary"
+                android:layout_marginStart="8dp"
+                android:text="@string/do_change"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_dialog_map_location_delete"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_dialog_map_location_vertical_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_dialog_map_location_vertical_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

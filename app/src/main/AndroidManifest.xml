@@ -4,6 +4,8 @@
     package="com.teamnk.kimiljung">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -17,26 +19,69 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ui.activity.introduction.IntroductionPagerActivity"
-            android:exported="true">
+            android:name=".feature.posthistory.PostHistoryActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".feature.postcomment.PostCommentActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".feature.postinspect.PostInspectActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".feature.post.CreateNewPostActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".feature.mypage.ChangeUserInformationActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAIS6OUMsW_KE72EL6mVX4Y3uBuKbky_nU" />
+
+        <activity
+            android:name=".feature.introduction.IntroductionPagerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.register.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.login.LoginActivity"
+            android:exported="false"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".feature.start.StartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".feature.main.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.activity.auth.RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.activity.auth.LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.activity.StartActivity"
-            android:exported="false"/>
-        <activity
-            android:name=".ui.activity.MainActivity"
-            android:exported="true" />
     </application>
 
 </manifest>

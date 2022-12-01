@@ -3,146 +3,151 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.activity.auth.RegisterActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/BackgroundPrimary">
 
         <TextView
-            android:id="@+id/tv_register_mainTitle"
-            style="@style/AuthTextViewMainTitle"
-            android:text="@string/signUp"
-            app:layout_constraintBottom_toTopOf="@id/tableLayout_register_info"
-            app:layout_constraintEnd_toEndOf="@id/tableLayout_register_info"
-            app:layout_constraintStart_toStartOf="@id/tableLayout_register_info"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.2" />
+            android:id="@+id/tv_activity_register_title"
+            style="@style/TextViewHeaderPrimary"
+            android:text="@string/activity_register_sign_up"
+            app:layout_constraintBottom_toTopOf="@id/layout_activity_register_information"
+            app:layout_constraintEnd_toEndOf="@id/layout_activity_register_information"
+            app:layout_constraintStart_toStartOf="@id/layout_activity_register_information"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TableLayout
-            android:id="@+id/tableLayout_register_info"
+            android:id="@+id/layout_activity_register_information"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            app:layout_constraintBottom_toTopOf="@id/tv_register_hint"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_register_mainTitle"
-            app:layout_constraintVertical_bias="0.4">
+            app:layout_constraintBottom_toTopOf="@id/btn_activity_register_next"
+            app:layout_constraintEnd_toEndOf="@id/guideline_activity_register_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_activity_register_vertical_1"
+            app:layout_constraintTop_toBottomOf="@id/tv_activity_register_title">
 
             <TableRow
-                android:layout_marginBottom="14dp"
+                android:layout_marginBottom="12dp"
                 android:gravity="center">
 
                 <EditText
-                    android:id="@+id/et_register_email"
+                    android:id="@+id/et_activity_register_email"
                     style="@style/EditTextPrimary"
-                    android:layout_marginEnd="11dp"
+                    android:layout_marginEnd="12dp"
                     android:layout_marginBottom="0dp"
                     android:layout_weight="1"
-                    android:autofillHints=""
-                    android:hint="@string/register_email"
+                    android:hint="@string/activity_register_please_enter_email"
+                    android:importantForAutofill="no"
                     android:inputType="textEmailAddress" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_register_verifyEmail"
-                    style="@style/AuthButtonRegisterCheck"
-                    android:text="@string/register_verifyEmail" />
+                    android:id="@+id/btn_activity_register_verify_email"
+                    style="@style/ButtonSecondary"
+                    android:text="@string/activity_register_verify_email" />
             </TableRow>
 
             <TableRow
-                android:layout_marginBottom="14dp"
+                android:layout_marginBottom="12dp"
                 android:gravity="center">
 
                 <EditText
-                    android:id="@+id/et_register_verificationCode"
+                    android:id="@+id/et_activity_register_verification_code"
                     style="@style/EditTextPrimary"
-                    android:layout_marginEnd="11dp"
+                    android:layout_marginEnd="12dp"
                     android:layout_marginBottom="0dp"
                     android:layout_weight="1"
-                    android:autofillHints=""
-                    android:hint="@string/register_verificationCode"
+                    android:hint="@string/activity_register_please_enter_verification_code"
+                    android:importantForAutofill="no"
                     android:inputType="number" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_register_checkEmailVerified"
-                    style="@style/AuthButtonRegisterCheck"
-                    android:text="@string/register_checkEmailVerified" />
+                    android:id="@+id/btn_activity_register_check_verification_code"
+                    style="@style/ButtonSecondary"
+                    android:text="@string/activity_register_check_verification_code" />
             </TableRow>
 
             <TableRow
-                android:layout_marginBottom="14dp"
+                android:layout_marginBottom="12dp"
                 android:gravity="center">
 
                 <EditText
-                    android:id="@+id/et_register_userId"
+                    android:id="@+id/et_activity_register_id"
                     style="@style/EditTextPrimary"
-                    android:layout_marginEnd="11dp"
+                    android:layout_marginEnd="12dp"
                     android:layout_marginBottom="0dp"
                     android:layout_weight="1"
-                    android:autofillHints=""
-                    android:hint="@string/register_userId"
+                    android:hint="@string/activity_register_please_enter_id"
+                    android:importantForAutofill="no"
                     android:inputType="text" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_register_checkUserIdDuplicate"
-                    style="@style/AuthButtonRegisterCheck"
-                    android:text="@string/register_checkUserIdDuplicate" />
+                    android:id="@+id/btn_activity_register_check_id_duplication"
+                    style="@style/ButtonSecondary"
+                    android:text="@string/activity_register_check_id_duplication" />
             </TableRow>
 
             <TableRow
-                android:layout_marginBottom="14dp"
+                android:layout_marginBottom="12dp"
                 android:gravity="center">
 
                 <EditText
-                    android:id="@+id/et_register_password"
+                    android:id="@+id/et_activity_register_password"
                     style="@style/EditTextPrimary"
                     android:layout_marginBottom="0dp"
                     android:layout_weight="1"
-                    android:autofillHints=""
-                    android:hint="@string/register_password"
+                    android:hint="@string/activity_register_please_enter_password"
+                    android:importantForAutofill="no"
                     android:inputType="textPassword" />
             </TableRow>
 
             <TableRow android:gravity="center">
 
                 <EditText
-                    android:id="@+id/et_register_repeatPassword"
+                    android:id="@+id/et_activity_register_password_repeat"
                     style="@style/EditTextPrimary"
                     android:layout_marginBottom="0dp"
                     android:layout_weight="1"
-                    android:autofillHints=""
-                    android:hint="@string/register_repeatPassword"
+                    android:hint="@string/activity_register_please_enter_password_again"
+                    android:importantForAutofill="no"
                     android:inputType="textPassword" />
             </TableRow>
         </TableLayout>
 
         <TextView
-            android:id="@+id/tv_register_hint"
-            style="@style/AuthTextViewRegisterHint"
-            android:layout_marginTop="10dp"
-            android:text="@string/register_passwordFormatHint"
-            app:layout_constraintBottom_toTopOf="@id/btn_register_next"
-            app:layout_constraintEnd_toEndOf="@id/tableLayout_register_info"
-            app:layout_constraintStart_toStartOf="@id/tableLayout_register_info"
-            app:layout_constraintTop_toBottomOf="@id/tableLayout_register_info" />
+            style="@style/TextViewHintSecondary"
+            android:layout_marginTop="12dp"
+            android:text="@string/activity_register_password_format_hint"
+            app:layout_constraintEnd_toEndOf="@id/layout_activity_register_information"
+            app:layout_constraintStart_toStartOf="@id/layout_activity_register_information"
+            app:layout_constraintTop_toBottomOf="@id/layout_activity_register_information" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_register_next"
+            android:id="@+id/btn_activity_register_next"
             style="@style/ButtonPrimary"
-            android:layout_marginHorizontal="20dp"
-            android:text="@string/register_next"
+            android:text="@string/next"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/tableLayout_register_info"
-            app:layout_constraintStart_toStartOf="@id/tableLayout_register_info"
-            app:layout_constraintTop_toBottomOf="@id/tv_register_hint" />
+            app:layout_constraintEnd_toEndOf="@id/layout_activity_register_information"
+            app:layout_constraintStart_toStartOf="@id/layout_activity_register_information"
+            app:layout_constraintTop_toBottomOf="@id/layout_activity_register_information" />
 
         <TextView
-            android:id="@+id/tv_register_error"
-            style="@style/AuthTextViewRegisterError"
-            android:layout_marginBottom="10dp"
-            app:layout_constraintBottom_toTopOf="@id/btn_register_next"
-            app:layout_constraintEnd_toEndOf="@id/btn_register_next"
-            app:layout_constraintStart_toStartOf="@id/btn_register_next"
+            android:id="@+id/tv_activity_register_error"
+            style="@style/TextViewErrorPrimary"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_activity_register_next"
+            app:layout_constraintEnd_toEndOf="@id/btn_activity_register_next"
+            app:layout_constraintStart_toStartOf="@id/btn_activity_register_next"
             tools:text="정승훈 최고." />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_activity_register_vertical_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_activity_register_vertical_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

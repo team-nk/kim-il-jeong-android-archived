@@ -4,9 +4,8 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/img_item_viewpager"
+        android:id="@+id/image_item_introduction_pager_item"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="@string/introduction_viewpager_image_introduction" />
-
+        android:contentDescription="@string/activity_introduction_pager_content_description_view_pager_image" />
 </LinearLayout>

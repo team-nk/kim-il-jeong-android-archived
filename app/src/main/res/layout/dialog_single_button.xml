@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView style="@style/BackgroundAlertDialogPrimary">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="320dp"
+            android:layout_height="200dp"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tv_dialog_single_button_title"
+                style="@style/TextViewDialogTitlePrimary"
+                app:layout_constraintBottom_toTopOf="@id/btn_dialog_single_button_action"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="(다이얼로그 제목)" />
+
+            <TextView
+                android:id="@+id/tv_dialog_single_button_content"
+                style="@style/TextViewDialogContentPrimary"
+                app:layout_constraintBottom_toTopOf="@id/btn_dialog_single_button_action"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_dialog_single_button_title"
+                tools:text="(설명)" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_dialog_single_button_action"
+                style="@style/ButtonPrimary"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:text="@string/accept"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

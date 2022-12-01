@@ -8,9 +8,11 @@
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
 .DS_Store
-/build
+/build/
 /captures
 .externalNativeBuild
 .cxx
 local.properties
-.DS_Store
+.DS_STORE
+gradle.properties
+*.properties

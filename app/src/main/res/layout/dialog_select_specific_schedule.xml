@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/BackgroundBottomSheetDialogPrimary">
+
+        <LinearLayout
+            android:id="@+id/layout_dialog_select_specific_schedule_contents"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/layout_dialog_select_specific_schedule_buttons"
+            app:layout_constraintEnd_toEndOf="@id/guideline_dialog_select_specific_schedule_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_dialog_select_specific_schedule_vertical_1"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/view_dialog_select_specific_schedule_color_indicator"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginEnd="12dp"
+                    tools:background="@drawable/background_color_indicator_blue_unchecked" />
+
+                <TextView
+                    android:id="@+id/tv_dialog_select_specific_schedule_title"
+                    style="@style/TextViewTitlePrimary"
+                    tools:text="대마고 자습" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="@string/dialog_select_specific_schedule_content_description_ping"
+                    android:src="@drawable/icon_ping" />
+
+                <TextView
+                    android:id="@+id/tv_dialog_select_specific_schedule_location"
+                    style="@style/TextViewHintSecondary"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    tools:text="대마고 자습" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_dialog_select_specific_schedule_schedule"
+                style="@style/TextViewDescriptionPrimary"
+                android:layout_marginTop="4dp"
+                tools:text="대마고 자습" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_dialog_select_specific_schedule_buttons"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_dialog_select_specific_schedule_vertical_2"
+            app:layout_constraintStart_toStartOf="@id/guideline_dialog_select_specific_schedule_vertical_1"
+            app:layout_constraintTop_toBottomOf="@id/layout_dialog_select_specific_schedule_contents">
+
+            <TextView
+                android:id="@+id/btn_dialog_select_specific_schedule_cancel"
+                style="@style/TextViewCancelButtonPrimary"
+                android:layout_marginEnd="8dp"
+                android:text="@string/do_cancel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_dialog_select_specific_schedule_select"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_dialog_select_specific_schedule_select"
+                style="@style/ButtonPrimary"
+                android:layout_marginStart="8dp"
+                android:text="@string/do_select"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_dialog_select_specific_schedule_cancel"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_dialog_select_specific_schedule_vertical_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_dialog_select_specific_schedule_vertical_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

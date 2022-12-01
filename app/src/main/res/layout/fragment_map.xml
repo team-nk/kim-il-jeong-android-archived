@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/BackgroundPrimary">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/material_dynamic_primary50">
-
-
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/map_fragment_map_main"
+            android:name="com.teamnk.kimiljung.feature.fragment.map.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
-    

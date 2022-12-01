@@ -1,34 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="BackgroundAll">
+    <style name="BackgroundPrimary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/color_background</item>
     </style>
 
     <style name="EditTextPrimary" parent="Widget.AppCompat.EditText">
-        <item name="android:textSize">15sp</item>
-        <item name="android:layout_height">40dp</item>
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
         <item name="android:paddingStart">16dp</item>
-        <item name="android:layout_marginBottom">14dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:textColor">@color/color_text</item>
         <item name="android:textColorHint">@color/color_text_deactivation</item>
-        <item name="android:background">@drawable/all_text_primary</item>
+        <item name="android:background">@drawable/background_text_input_primary</item>
     </style>
 
     <style name="ButtonPrimary" parent="Widget.AppCompat.Button">
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textAlignment">center</item>
         <item name="android:gravity">center</item>
-        <item name="android:layout_height">40dp</item>
-        <item name="android:layout_width">match_parent</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
         <item name="android:textColor">@color/color_surface</item>
-        <item name="android:background">@drawable/all_button_primary</item>
+        <item name="android:background">@drawable/background_button_primary</item>
         <item name="android:stateListAnimator">@null</item>
     </style>
 
-    <style name="AuthTextViewPrimary" parent="Widget.AppCompat.TextView">
+    <style name="TextViewCancelButtonPrimary" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:textColor">@color/color_text</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="TextViewHintPrimary" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">14sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_width">wrap_content</item>
@@ -36,15 +51,7 @@
         <item name="android:textColor">@color/color_text</item>
     </style>
 
-    <style name="AuthTextViewStartWithEmail" parent="Widget.AppCompat.TextView">
-        <item name="android:textSize">16sp</item>
-        <item name="android:gravity">center</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/color_text</item>
-    </style>
-
-    <style name="AuthTextViewMainTitle" parent="Widget.AppCompat.TextView">
+    <style name="TextViewHeaderPrimary" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">28sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_width">wrap_content</item>
@@ -53,25 +60,33 @@
         <item name="android:textColor">@color/color_text</item>
     </style>
 
-    <style name="AuthTextViewRegisterHint" parent="Widget.AppCompat.TextView">
-        <item name="android:textSize">10sp</item>
+    <style name="TextViewHeaderSecondary" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_text</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextViewHintSecondary" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">12sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:textColor">@color/color_strong_explanation</item>
     </style>
 
-    <style name="AuthButtonRegisterCheck" parent="Widget.AppCompat.Button">
-        <item name="android:textSize">15sp</item>
+    <style name="ButtonSecondary" parent="Widget.AppCompat.Button">
+        <item name="android:textSize">16sp</item>
         <item name="android:gravity">center</item>
-        <item name="android:layout_height">40dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">80dp</item>
-        <item name="android:background">@drawable/auth_button_check</item>
+        <item name="android:background">@drawable/background_button_secondary</item>
         <item name="android:textColor">@color/color_text</item>
         <item name="android:stateListAnimator">@null</item>
     </style>
 
-    <style name="AuthTextViewRegisterError" parent="Widget.AppCompat.TextView">
+    <style name="TextViewErrorPrimary" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">12sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_height">wrap_content</item>
@@ -79,7 +94,7 @@
         <item name="android:textColor">@color/color_error</item>
     </style>
 
-    <style name="DialogTextViewTitle" parent="Widget.AppCompat.TextView">
+    <style name="TextViewDialogTitlePrimary" parent="Widget.AppCompat.TextView">
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:gravity">center</item>
@@ -88,22 +103,119 @@
         <item name="android:textColor">@color/color_text</item>
     </style>
 
-    <style name="DialogTextViewDescription" parent="Widget.AppCompat.TextView">
-        <item name="android:textSize">13sp</item>
+    <style name="TextViewDialogContentPrimary" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">12sp</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/color_description</item>
     </style>
 
-    <style name="MainBottomNavigationView">
-        <item name="android:background">@drawable/background_bn</item>
+    <style name="TextViewDialogContentPrimaryAlignStart" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_description</item>
+    </style>
+
+    <style name="BottomNavigationViewMain">
+        <item name="android:background">@drawable/background_bottom_navigation</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">72dp</item>
         <item name="android:paddingHorizontal" tools:targetApi="o">48dp</item>
         <item name="labelVisibilityMode">selected</item>
-        <item name="itemTextColor">@drawable/bn_main_color_selector</item>
+        <item name="itemTextColor">@drawable/background_bottom_navigation_icon_color_selector</item>
         <item name="itemIconSize">32dp</item>
-        <item name="itemIconTint">@drawable/bn_main_color_selector</item>
+        <item name="itemIconTint">@drawable/background_bottom_navigation_icon_color_selector</item>
+    </style>
+
+    <style name="SectionLinePrimary">
+        <item name="android:background">@color/color_description</item>
+        <item name="android:layout_height">1dp</item>
+    </style>
+
+    <style name="ImageMyPageDepth">
+        <item name="android:layout_height">16dp</item>
+        <item name="android:layout_width">16dp</item>
+        <item name="android:src">@drawable/icon_depth</item>
+    </style>
+
+    <style name="TextViewTitlePrimary" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="maxLines">1</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_text</item>
+    </style>
+
+    <style name="TextViewTitleSecondary" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="maxLines">1</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_text</item>
+    </style>
+
+    <style name="TextViewBodyPrimary" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/color_strong_explanation</item>
+    </style>
+
+    <style name="RadioButtonDialogCreateScheduleColorIndicator" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_marginHorizontal" tools:targetApi="o">4dp</item>
+    </style>
+
+    <style name="ButtonDialogCreateScheduleTime" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/color_text</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:background">@drawable/background_dialog_create_schedule_time</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingVertical" tools:targetApi="o">4dp</item>
+        <item name="android:paddingHorizontal" tools:targetApi="o">12dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="TextViewDialogHintPrimary" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_strong_explanation</item>
+    </style>
+
+    <style name="TextViewDescriptionPrimary" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_description</item>
+    </style>
+
+    <style name="BackgroundAlertDialogPrimary" parent="Widget.MaterialComponents.CardView">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="cardCornerRadius">20dp</item>
+    </style>
+
+    <style name="BackgroundBottomSheetDialogPrimary" parent="BottomSheetDialog">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:backgroundTint">@color/color_background</item>
+        <item name="android:paddingVertical" tools:targetApi="o">32dp</item>
     </style>
 </resources>
