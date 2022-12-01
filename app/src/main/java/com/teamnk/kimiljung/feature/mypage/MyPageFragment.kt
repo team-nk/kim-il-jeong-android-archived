@@ -1,6 +1,7 @@
 package com.teamnk.kimiljung.feature.mypage
 
 import android.app.Activity
+import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -10,6 +11,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseFragment
 import com.teamnk.kimiljung.databinding.FragmentMypageBinding
+import com.teamnk.kimiljung.feature.changepassword.ChangePasswordActivity
+import com.teamnk.kimiljung.feature.changeuserinformation.ChangeUserInformationActivity
 import com.teamnk.kimiljung.feature.start.StartActivity
 import com.teamnk.kimiljung.util.showDialogWithDoubleButton
 import com.teamnk.kimiljung.util.showShortSnackBar
@@ -18,6 +21,32 @@ import com.teamnk.kimiljung.util.startActivityRemovingBackStack
 class MyPageFragment : BaseFragment<FragmentMypageBinding>(
     R.layout.fragment_mypage
 ) {
+
+    private val changePasswordActivityResultLauncher: ActivityResultLauncher<Intent> by lazy {
+        registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult(),
+        ) {
+            if (it.resultCode == RESULT_OK) {
+                if (it.data?.getBooleanExtra("isChangePasswordSuccess", false) == true) {
+                    showShortSnackBar(
+                        view = binding.root,
+                        getString(R.string.fragment_mypage_change_password_success),
+                    )
+                }
+            }
+        }
+    }
+
+    private val changeUserInformationActivityResultLauncher: ActivityResultLauncher<Intent> by lazy {
+        registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult(),
+        ) {
+            if (it.resultCode == Activity.RESULT_OK) {
+                //TODO 유저 정보 재호출 로직
+            }
+        }
+    }
+
 
     private val viewModel by lazy {
         ViewModelProvider(
@@ -28,17 +57,15 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
         )[MyPageViewModel::class.java]
     }
 
-    private lateinit var changeUserInformationActivityResultLauncher: ActivityResultLauncher<Intent>
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        changePasswordActivityResultLauncher
+        changeUserInformationActivityResultLauncher
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        changeUserInformationActivityResultLauncher =
-            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-                if (it.resultCode == Activity.RESULT_OK) {
-                    //TODO 유저 정보 재호출 로직
-                }
-            }
 
         initPersonalInformationButtons()
         initInteractButtons()
@@ -85,11 +112,24 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
         }
     }
 
-    private fun initChangePasswordButton() {}
+    private fun initChangePasswordButton() {
+        binding.btnFragmentMypageChangePassword.setOnClickListener {
+            changeUserInformationActivityResultLauncher.launch(
+                Intent(
+                    requireActivity(),
+                    ChangePasswordActivity::class.java,
+                )
+            )
+        }
+    }
 
     private fun initApplicationInformationButton() {}
 
-    private fun initEditBirthDayButton() {}
+    private fun initEditBirthDayButton() {
+        binding.btnFrgamentMypageEditBirthday.setOnClickListener {
+
+        }
+    }
 
     override fun observeEvent() {
         viewModel.selfInformation.observe(
