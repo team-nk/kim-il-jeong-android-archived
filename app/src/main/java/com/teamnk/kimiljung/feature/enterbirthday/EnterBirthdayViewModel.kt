@@ -15,14 +15,20 @@ class EnterBirthdayViewModel(
     val isEnterBirthdaySuccess: LiveData<Boolean>
         get() = _isEnterBirthdaySuccess
 
-    val selectedDate = MutableLiveData<String>()
+    private var selectedBirthday: String? = String()
 
-    fun enterBirthday(
-        enterBirthdayRequest: EnterBirthdayRequest
-    ) {
+    fun setBirthday(birthday: String) {
+        selectedBirthday = birthday
+    }
+
+    fun enterBirthday() {
         viewModelScope.launch(Dispatchers.IO) {
             kotlin.runCatching {
-                repository.enterBirthday(enterBirthdayRequest)
+                repository.enterBirthday(
+                    EnterBirthdayRequest(
+                        selectedBirthday!!,
+                    )
+                )
             }.onSuccess {
                 _isEnterBirthdaySuccess.postValue(
                     it.isSuccessful
