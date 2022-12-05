@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseBottomSheetDialogFragment
 import com.teamnk.kimiljung.databinding.DialogEnterBirthdayBinding
+import com.teamnk.kimiljung.util.showShortSnackBar
 
 class EnterBirthdayBottomSheetDialogFragment :
     BaseBottomSheetDialogFragment<DialogEnterBirthdayBinding>(
@@ -29,12 +30,18 @@ class EnterBirthdayBottomSheetDialogFragment :
 
     override fun onEnterButtonClick() {
         binding.btnDialogEnterBirthdayEnter.setOnClickListener {
-            // TODO Enter birthday logic
-            viewModel.enterBirthday(
-                EnterBirthdayRequest(
-                    binding.tvDialogEnterBirthdaySelectedBirthday.text.toString(),
+            if (binding.tvDialogEnterBirthdaySelectedBirthday.text.isNotBlank()) {
+                viewModel.enterBirthday(
+                    EnterBirthdayRequest(
+                        binding.tvDialogEnterBirthdaySelectedBirthday.text.toString(),
+                    )
                 )
-            )
+            } else {
+                showShortSnackBar(
+                    dialog!!.window!!.decorView,
+                    getString(R.string.dialog_enter_birthday_please_select_birthday),
+                )
+            }
         }
     }
 
