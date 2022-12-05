@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class RegisterViewModel(
@@ -22,7 +23,7 @@ class RegisterViewModel(
     fun checkIdDuplication(
         checkIdDuplicationRequest: CheckIdDuplicationRequest,
     ) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             kotlin.runCatching {
                 repository.checkIdDuplication(
                     checkIdDuplicationRequest
@@ -41,7 +42,7 @@ class RegisterViewModel(
     fun register(
         registerRequest: RegisterRequest
     ) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             kotlin.runCatching {
                 repository.register(
                     registerRequest

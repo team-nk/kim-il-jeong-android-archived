@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class ChangePasswordViewModel(
@@ -19,7 +20,7 @@ class ChangePasswordViewModel(
     fun changePassword(
         changePasswordRequest: ChangePasswordRequest
     ) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             kotlin.runCatching {
                 repository.changePassword(
                     changePasswordRequest = changePasswordRequest

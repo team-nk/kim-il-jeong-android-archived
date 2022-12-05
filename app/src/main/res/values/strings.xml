@@ -112,6 +112,10 @@
     <string name="error_loading_failed">로딩 실패..</string>
     <string name="fragment_mypage_change_password_success">비밀번호 변경에 성공했습니다.</string>
 
+    <string name="dialog_enter_birthday_select_birthday">생년월일 선택</string>
+
+    <string name="error_dialog_enter_birthday_please_select_birthday">생년월일을 선택해 주세요</string>
+
     <string-array name="fragment_calendar_string_array_calendar_week">
         <item>SUN</item>
         <item>MON</item>

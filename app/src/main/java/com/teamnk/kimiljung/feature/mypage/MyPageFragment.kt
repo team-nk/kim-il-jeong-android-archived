@@ -1,6 +1,5 @@
 package com.teamnk.kimiljung.feature.mypage
 
-import android.app.Activity
 import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.os.Bundle
@@ -13,6 +12,7 @@ import com.teamnk.kimiljung.base.BaseFragment
 import com.teamnk.kimiljung.databinding.FragmentMypageBinding
 import com.teamnk.kimiljung.feature.changepassword.ChangePasswordActivity
 import com.teamnk.kimiljung.feature.changeuserinformation.ChangeUserInformationActivity
+import com.teamnk.kimiljung.feature.enterbirthday.EnterBirthdayBottomSheetDialogFragment
 import com.teamnk.kimiljung.feature.start.StartActivity
 import com.teamnk.kimiljung.util.showDialogWithDoubleButton
 import com.teamnk.kimiljung.util.showShortSnackBar
@@ -41,12 +41,11 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
         registerForActivityResult(
             ActivityResultContracts.StartActivityForResult(),
         ) {
-            if (it.resultCode == Activity.RESULT_OK) {
+            if (it.resultCode == RESULT_OK) {
                 //TODO 유저 정보 재호출 로직
             }
         }
     }
-
 
     private val viewModel by lazy {
         ViewModelProvider(
@@ -79,7 +78,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
         binding.btnFragmentMypageEditProfile.setOnClickListener {
             changeUserInformationActivityResultLauncher.launch(
                 Intent(
-                    requireActivity(), ChangeUserInformationActivity::class.java
+                    requireActivity(), ChangeUserInformationActivity::class.java,
                 )
             )
         }
@@ -99,9 +98,8 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
                 title = getString(R.string.fragment_mypage_dialog_are_you_sure_you_log_out),
                 actionText = getString(R.string.log_out),
             ) {
-                startActivityRemovingBackStack(requireActivity(), StartActivity::class.java)
+                logOut()
             }
-            logOut()
         }
     }
 
@@ -110,6 +108,10 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
             clear()
             apply()
         }
+        startActivityRemovingBackStack(
+            requireActivity(),
+            StartActivity::class.java,
+        )
     }
 
     private fun initChangePasswordButton() {
@@ -127,7 +129,12 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
 
     private fun initEditBirthDayButton() {
         binding.btnFrgamentMypageEditBirthday.setOnClickListener {
-
+            EnterBirthdayBottomSheetDialogFragment().also {
+                it.show(
+                    requireActivity().supportFragmentManager,
+                    tag,
+                )
+            }
         }
     }
 

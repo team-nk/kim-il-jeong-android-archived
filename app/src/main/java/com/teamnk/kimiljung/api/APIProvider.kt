@@ -1,6 +1,7 @@
 package com.teamnk.kimiljung.api
 
 import com.teamnk.kimiljung.feature.changepassword.ChangePasswordAPI
+import com.teamnk.kimiljung.feature.enterbirthday.EnterBirthdayAPI
 import com.teamnk.kimiljung.feature.login.LoginAPI
 import com.teamnk.kimiljung.feature.mypage.MyPageAPI
 import com.teamnk.kimiljung.feature.register.RegisterAPI
@@ -19,4 +20,8 @@ val myPageAPIProvider: MyPageAPI by lazy {
 
 val changePasswordAPIProvider: ChangePasswordAPI by lazy {
     RetrofitClient.getRetrofit()!!.create(ChangePasswordAPI::class.java)
+}
+
+val enterBirthdayAPIProvider: EnterBirthdayAPI by lazy {
+    RetrofitClient.getRetrofit()!!.create(EnterBirthdayAPI::class.java)
 }
