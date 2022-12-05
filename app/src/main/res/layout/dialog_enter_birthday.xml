@@ -42,7 +42,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/color_surface_secondary"
-                    app:cardCornerRadius="8dp">
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="0dp">
 
                     <TextView
                         android:id="@+id/tv_dialog_enter_birthday_selected_birthday"
