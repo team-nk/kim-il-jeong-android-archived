@@ -47,7 +47,6 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
         }
     }
 
-
     private val viewModel by lazy {
         ViewModelProvider(
             requireActivity(), MyPageViewModelFactory(
@@ -99,9 +98,8 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
                 title = getString(R.string.fragment_mypage_dialog_are_you_sure_you_log_out),
                 actionText = getString(R.string.log_out),
             ) {
-                startActivityRemovingBackStack(requireActivity(), StartActivity::class.java)
+                logOut()
             }
-            logOut()
         }
     }
 
@@ -110,6 +108,10 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
             clear()
             apply()
         }
+        startActivityRemovingBackStack(
+            requireActivity(),
+            StartActivity::class.java,
+        )
     }
 
     private fun initChangePasswordButton() {
