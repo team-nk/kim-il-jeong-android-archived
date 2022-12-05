@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class LoginViewModel(
@@ -14,7 +15,7 @@ class LoginViewModel(
     val loginResponseCode: LiveData<Pair<LoginResponse?, Int?>> = _loginResponseCode
 
     fun login(loginRequest: LoginRequest) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO){
             kotlin.runCatching {
                 repository.login(loginRequest)
             }.onSuccess {
