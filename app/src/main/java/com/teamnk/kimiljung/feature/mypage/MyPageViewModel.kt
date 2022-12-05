@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.teamnk.kimiljung.R
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MyPageViewModel(
@@ -31,7 +32,7 @@ class MyPageViewModel(
     val snackBarMessage: LiveData<String> = _snackBarMessage
 
     private fun getSelfInformation() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             kotlin.runCatching {
                 repository.getSelfInformation()
             }.onSuccess {
