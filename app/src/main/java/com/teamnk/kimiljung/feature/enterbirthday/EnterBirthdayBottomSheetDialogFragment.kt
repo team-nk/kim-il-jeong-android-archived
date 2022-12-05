@@ -50,7 +50,7 @@ class EnterBirthdayBottomSheetDialogFragment :
         binding.btnDialogEnterBirthdaySelectBirthday.setOnClickListener {
             // TODO date select calendar dialog, and show selected date
             // save received date at viewModel
-//            val birthday = TODO("get birthday")
+            // val birthday = TODO("get birthday")
         }
     }
 
