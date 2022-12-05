@@ -56,18 +56,18 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
         )[MyPageViewModel::class.java]
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        changePasswordActivityResultLauncher
-        changeUserInformationActivityResultLauncher
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initActivityResultLaunchers()
+
         initPersonalInformationButtons()
         initInteractButtons()
+    }
+
+    private fun initActivityResultLaunchers() {
+        changePasswordActivityResultLauncher
+        changeUserInformationActivityResultLauncher
     }
 
     private fun initPersonalInformationButtons() {
