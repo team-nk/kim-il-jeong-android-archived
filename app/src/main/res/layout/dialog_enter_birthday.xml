@@ -36,22 +36,13 @@
                     android:layout_weight="1"
                     android:text="@string/dialog_enter_birthday_please_select_birthday" />
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/btn_dialog_enter_birthday_birthday"
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_dialog_enter_birthday_select_birthday"
+                    style="@style/ButtonSecondary"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/color_surface_secondary"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="0dp">
-
-                    <TextView
-                        android:id="@+id/tv_dialog_enter_birthday_selected_birthday"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="12dp"
-                        android:layout_marginVertical="4dp"
-                        android:text="@string/dialog_enter_birthday_select_birthday" />
-                </androidx.cardview.widget.CardView>
+                    android:minHeight="0dp"
+                    android:padding="8dp"
+                    android:text="@string/dialog_enter_birthday_select_birthday" />
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
