@@ -30,10 +30,11 @@ class EnterBirthdayBottomSheetDialogFragment :
 
     override fun onEnterButtonClick() {
         binding.btnDialogEnterBirthdayEnter.setOnClickListener {
-            if (binding.tvDialogEnterBirthdaySelectedBirthday.text.isNotBlank()) {
+            if (binding.btnDialogEnterBirthdaySelectBirthday.text.isNotBlank()) {
+                // Todo use viewModel variable
                 viewModel.enterBirthday(
                     EnterBirthdayRequest(
-                        binding.tvDialogEnterBirthdaySelectedBirthday.text.toString(),
+                        binding.btnDialogEnterBirthdaySelectBirthday.text.toString(),
                     )
                 )
             } else {
@@ -46,7 +47,7 @@ class EnterBirthdayBottomSheetDialogFragment :
     }
 
     override fun onBirthdayButtonClick() {
-        binding.btnDialogEnterBirthdayBirthday.setOnClickListener {
+        binding.btnDialogEnterBirthdaySelectBirthday.setOnClickListener {
             // TODO date select calendar dialog, and show selected date
             // save received date at viewModel
 //            val birthday = TODO("get birthday")
