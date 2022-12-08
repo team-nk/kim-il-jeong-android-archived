@@ -35,8 +35,18 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
             btnActivityRegisterVerifyEmail.setOnClickListener {
                 val email = etActivityRegisterEmail.text.toString()
                 if (email.isNotBlank()) {
-
+                    viewModel.verifyEmail(
+                        VerifyEmailRequest(
+                            email,
+                        )
+                    )
                 } else {
+                    showShortSnackBar(
+                        binding.root,
+                        getString(
+                            R.string.error_activity_register_please_enter_email,
+                        ),
+                    )
                 }
             }
         }
@@ -107,7 +117,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
             }
         }
 
-        viewModel.registerResponse.observe(
+        viewModel.canRegister.observe(
             this
         ) {
             if (it) {
@@ -130,7 +140,21 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
             this,
         ) {
             if (it.first) {
-                // TODO show error SnackBar
+                showShortSnackBar(
+                    binding.root,
+                    it.second,
+                )
+            }
+        }
+
+        viewModel.isEmailVerificationCodeSent.observe(
+            this,
+        ) {
+            if (it) {
+                with(binding) {
+                    etActivityRegisterEmail.isEnabled = false
+                    btnActivityRegisterVerifyEmail.isEnabled = false
+                }
             }
         }
     }
