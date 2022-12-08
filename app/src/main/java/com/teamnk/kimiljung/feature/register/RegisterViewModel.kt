@@ -24,14 +24,44 @@ class RegisterViewModel(
     private val _checkIdDuplicationResponse = MutableLiveData<Boolean>()
     val checkIdDuplicationResponse: LiveData<Boolean> = _checkIdDuplicationResponse
 
-    private val _registerResponse = MutableLiveData<Boolean>()
-    val registerResponse: LiveData<Boolean> = _registerResponse
+    private val _canRegister = MutableLiveData<Boolean>()
+    val canRegister: LiveData<Boolean> = _canRegister
 
-    var isEmailVerified = false
+    private val _isEmailVerificationCodeSent = MutableLiveData<Boolean>()
+    val isEmailVerificationCodeSent: LiveData<Boolean> = _isEmailVerificationCodeSent
 
-    var isVerificationCodeChecked = false
+    private val _isVerificationCodeChecked = MutableLiveData<Boolean>()
+    val isVerificationCodeChecked: LiveData<Boolean> = _isVerificationCodeChecked
 
-    var isIdDuplicationChecked = false
+    private val _isIdDuplicationChecked = MutableLiveData<Boolean>()
+    val isIdDuplicationChecked: LiveData<Boolean> = _isIdDuplicationChecked
+
+    fun verifyEmail(
+        verifyEmailRequest: VerifyEmailRequest,
+    ) {
+        viewModelScope.launch(Dispatchers.IO) {
+            kotlin.runCatching {
+                repository.verifyEmail(
+                    verifyEmailRequest,
+                )
+            }.onSuccess {
+                if (it.isSuccessful) {
+                    _isEmailVerificationCodeSent.postValue(
+                        true,
+                    )
+                } else {
+                    _shouldShowSnackBar.postValue(
+                        Pair(
+                            true,
+                            mApplication.getString(
+                                R.string.error_failed_to_connect_to_server,
+                            ),
+                        )
+                    )
+                }
+            }
+        }
+    }
 
     fun checkIdDuplication(
         checkIdDuplicationRequest: CheckIdDuplicationRequest,
@@ -44,7 +74,7 @@ class RegisterViewModel(
             }.onSuccess {
                 if (it.isSuccessful) {
                     _checkIdDuplicationResponse.postValue(it.body())
-                    isIdDuplicationChecked = true
+                    _isIdDuplicationChecked.postValue(true)
                     Log.d(tag, "checkIdDuplication success!")
                 } else {
                     Log.e(tag, "checkIdDuplication failure..")
@@ -54,9 +84,9 @@ class RegisterViewModel(
     }
 
     fun register(
-        registerRequest: RegisterRequest
+        registerRequest: RegisterRequest,
     ) {
-        if (isEmailVerified && isVerificationCodeChecked && isIdDuplicationChecked) {
+        if (isEmailVerificationCodeSent.value == true && isVerificationCodeChecked.value == true && isIdDuplicationChecked.value == true) {
             viewModelScope.launch(Dispatchers.IO) {
                 kotlin.runCatching {
                     repository.register(
@@ -64,12 +94,12 @@ class RegisterViewModel(
                     )
                 }.onSuccess {
                     if (it.isSuccessful) {
-                        _registerResponse.postValue(
+                        _canRegister.postValue(
                             it.isSuccessful
                         )
                         Log.d(tag, "register success!")
                     } else {
-                        _registerResponse.postValue(
+                        _canRegister.postValue(
                             false
                         )
                         Log.e(tag, "register failure..")
