@@ -33,6 +33,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
             btnActivityRegisterVerifyEmail.setOnClickListener {
                 val email = etActivityRegisterEmail.text.toString()
                 if (email.isNotBlank()) {
+
                 } else {
                 }
             }
@@ -120,6 +121,14 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
                     binding.root,
                     getString(R.string.activity_register_failed_to_register),
                 )
+            }
+        }
+
+        viewModel.shouldShowSnackBar.observe(
+            this,
+        ) {
+            if (it.first) {
+                // TODO show error SnackBar
             }
         }
     }
