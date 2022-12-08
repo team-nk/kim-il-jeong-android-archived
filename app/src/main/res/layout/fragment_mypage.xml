@@ -123,7 +123,8 @@
                     android:id="@+id/btn_frgament_mypage_edit_birthday"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="16dp">
+                    android:layout_marginHorizontal="16dp"
+                    android:minHeight="48dp">
 
                     <TextView
                         style="@style/TextViewTitleSecondary"
@@ -153,7 +154,8 @@
                     android:id="@+id/btn_fragment_mypage_application_information"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="16dp">
+                    android:layout_marginHorizontal="16dp"
+                    android:minHeight="48dp">
 
                     <TextView
                         style="@style/TextViewTitleSecondary"
@@ -183,7 +185,8 @@
                     android:id="@+id/btn_fragment_mypage_change_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="16dp">
+                    android:layout_marginHorizontal="16dp"
+                    android:minHeight="48dp">
 
                     <TextView
                         style="@style/TextViewTitleSecondary"
@@ -213,7 +216,8 @@
                     android:id="@+id/btn_fragment_mypage_logout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="16dp">
+                    android:layout_marginHorizontal="16dp"
+                    android:minHeight="48dp">
 
                     <TextView
                         style="@style/TextViewTitleSecondary"
