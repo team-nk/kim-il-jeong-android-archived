@@ -15,7 +15,9 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
 
     private val viewModel by lazy {
         ViewModelProvider(
-            this, RegisterViewModelFactory(RegisterRepository())
+            this, RegisterViewModelFactory(
+                RegisterRepository(), this.application,
+            )
         )[RegisterViewModel::class.java]
     }
 
