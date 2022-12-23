@@ -1,11 +1,13 @@
 package com.teamnk.kimiljung.feature.map
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapView
 import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.teamnk.kimiljung.R
@@ -24,11 +26,16 @@ class MapFragment : BaseFragment<FragmentMapBinding>(
         LatLng(37.554891, 126.970814)
     }
 
+    private val mapFragment by lazy {
+        SupportMapFragment.newInstance()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mapView.run {
             this.onCreate(savedInstanceState)
-            getMapAsync(this@MapFragment)
+            childFragmentManager.beginTransaction().replace(R.id.map_fragment_map_main, mapFragment, "MapTag").commit()
+            mapFragment.getMapAsync(this@MapFragment)
         }
     }
 
@@ -47,36 +54,6 @@ class MapFragment : BaseFragment<FragmentMapBinding>(
             )
             mapType = GoogleMap.MAP_TYPE_NORMAL
         }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        mapView.onStart()
-    }
-
-    override fun onStop() {
-        super.onStop()
-        mapView.onStop()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        mapView.onResume()
-    }
-
-    override fun onPause() {
-        super.onPause()
-        mapView.onPause()
-    }
-
-    override fun onLowMemory() {
-        super.onLowMemory()
-        mapView.onLowMemory()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        mapView.onDestroy()
     }
 
     override fun observeEvent() {}
