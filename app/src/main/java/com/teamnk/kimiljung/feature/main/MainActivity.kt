@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
+import com.teamnk.kimiljung.api.accessToken
+import com.teamnk.kimiljung.api.refreshToken
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityMainBinding
 import com.teamnk.kimiljung.feature.calendar.CalendarFragment
@@ -11,7 +13,9 @@ import com.teamnk.kimiljung.feature.fragment.map.MapFragment
 import com.teamnk.kimiljung.feature.mypage.MyPageFragment
 import com.teamnk.kimiljung.feature.post.PostFragment
 import com.teamnk.kimiljung.feature.start.StartActivity
+import com.teamnk.kimiljung.util.SharedPreferencesKey.ACCESS_TOKEN
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_LOGGED_IN
+import com.teamnk.kimiljung.util.SharedPreferencesKey.REFRESH_TOKEN
 import com.teamnk.kimiljung.util.startActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>(
@@ -40,7 +44,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         checkLoggedIn()
-
+        saveUserToken()
         initBottomNavigationView()
     }
 
@@ -83,6 +87,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     private fun changeFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().replace(R.id.container_activity_main, fragment)
             .commitAllowingStateLoss()
+    }
+
+    private fun saveUserToken(){
+        defaultSharedPreferences.run {
+            accessToken = this.getString(ACCESS_TOKEN, "")
+            refreshToken = this.getString(REFRESH_TOKEN, "")
+        }
     }
 
     override fun observeEvent() {}

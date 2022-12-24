@@ -3,13 +3,13 @@ package com.teamnk.kimiljung.feature.login
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
-import com.teamnk.kimiljung.api.accessToken
-import com.teamnk.kimiljung.api.refreshToken
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityLoginBinding
 import com.teamnk.kimiljung.feature.main.MainActivity
 import com.teamnk.kimiljung.feature.register.RegisterActivity
+import com.teamnk.kimiljung.util.SharedPreferencesKey.ACCESS_TOKEN
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_LOGGED_IN
+import com.teamnk.kimiljung.util.SharedPreferencesKey.REFRESH_TOKEN
 import com.teamnk.kimiljung.util.showShortSnackBar
 import com.teamnk.kimiljung.util.startActivity
 
@@ -90,8 +90,10 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
         ) {
             when (it.second) {
                 200 -> {
-                    accessToken = "Bearer ${it.first?.accessToken}"
-                    refreshToken = "Bearer ${it.first?.refreshToken}"
+                    defaultSharedPreferencesEditor.run {
+                        putString(ACCESS_TOKEN, "Bearer ${it.first?.accessToken}")
+                        putString(REFRESH_TOKEN, "Bearer ${it.first?.refreshToken}")
+                    }
                     moveToMainActivity()
                 }
 
