@@ -8,6 +8,6 @@ interface MyPageAPI {
 
     @GET("/user")
     suspend fun getSelfInformation(
-        @Header("Authorization") accessToken: String,
+        @Header("Authorization") access_token: String,
     ): Response<GetSelfInformationResponse>
 }
