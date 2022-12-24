@@ -96,7 +96,7 @@ class MapFragment : BaseFragment<FragmentMapBinding>(
             ActivityCompat.requestPermissions(
                 requireActivity(),
                 arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-                10
+                10,
             )
         } else {
             locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)?.apply {
