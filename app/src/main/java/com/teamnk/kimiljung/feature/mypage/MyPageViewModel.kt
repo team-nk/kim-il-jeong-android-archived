@@ -16,10 +16,6 @@ class MyPageViewModel(
     application: Application,
 ) : AndroidViewModel(application) {
 
-    init {
-        getSelfInformation()
-    }
-
     private val AndroidViewModel.context: Context
         get() = getApplication<Application>().applicationContext
 
@@ -31,7 +27,7 @@ class MyPageViewModel(
     private val _snackBarMessage = MutableLiveData<String>()
     val snackBarMessage: LiveData<String> = _snackBarMessage
 
-    private fun getSelfInformation() {
+    fun getSelfInformation() {
         viewModelScope.launch(Dispatchers.IO) {
             kotlin.runCatching {
                 repository.getSelfInformation()
