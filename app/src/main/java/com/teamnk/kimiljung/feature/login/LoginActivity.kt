@@ -90,8 +90,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
         ) {
             when (it.second) {
                 200 -> {
-                    accessToken = it.first?.accessToken
-                    refreshToken = it.first?.refreshToken
+                    accessToken = "Bearer ${it.first?.accessToken}"
+                    refreshToken = "Bearer ${it.first?.refreshToken}"
                     moveToMainActivity()
                 }
 
