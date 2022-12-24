@@ -7,7 +7,7 @@ import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityMainBinding
 import com.teamnk.kimiljung.feature.calendar.CalendarFragment
-import com.teamnk.kimiljung.feature.map.MapFragment
+import com.teamnk.kimiljung.feature.fragment.map.MapFragment
 import com.teamnk.kimiljung.feature.mypage.MyPageFragment
 import com.teamnk.kimiljung.feature.post.PostFragment
 import com.teamnk.kimiljung.feature.start.StartActivity
