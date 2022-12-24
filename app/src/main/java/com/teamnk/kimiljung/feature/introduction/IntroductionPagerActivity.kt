@@ -1,6 +1,10 @@
 package com.teamnk.kimiljung.feature.introduction
 
+import android.Manifest
+import android.content.pm.PackageManager
+import android.location.LocationManager
 import android.os.Bundle
+import androidx.core.app.ActivityCompat
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityIntroductionPagerBinding
@@ -17,6 +21,7 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
         initViewPager()
         initNextButton()
         initTabLayout()
+        requestPermission()
     }
 
     private fun initViewPager() {
@@ -56,6 +61,14 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
             to = StartActivity::class.java,
         )
         finish()
+    }
+
+    private fun requestPermission(){
+        ActivityCompat.requestPermissions(
+            this,
+            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+            10,
+        )
     }
 
     override fun observeEvent() {}
