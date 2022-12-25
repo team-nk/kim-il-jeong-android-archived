@@ -23,6 +23,7 @@
 
     <string name="activity_introduction_pager_content_description_next_icon">Introduction Next Page Icon</string>
     <string name="activity_introduction_pager_content_description_view_pager_image">ViewPager Image</string>
+    <string name="activity_introduction_pager_accept_permission">위치 권한을 허용해 주세요.</string>
 
     <string name="activity_start_login_with_email"><u>이메일로 로그인하기</u></string>
     <string name="activity_start_content_description_google_social_login">Google Social Login</string>
