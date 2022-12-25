@@ -7,7 +7,7 @@ import retrofit2.Response
 class MyPageRepository {
     suspend fun getSelfInformation(): Response<GetSelfInformationResponse> {
         return myPageAPIProvider.getSelfInformation(
-            accessToken = accessToken!!
+            access_token = accessToken!!
         )
     }
 }

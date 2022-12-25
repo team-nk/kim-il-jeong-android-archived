@@ -8,6 +8,6 @@ data class LoginRequest(
 )
 
 data class LoginResponse(
-    @SerializedName("accessToken") val accessToken: String,
-    @SerializedName("refreshToken") val refreshToken: String,
+    @SerializedName("access_token") val accessToken: String,
+    @SerializedName("refresh_token") val refreshToken: String,
 )
