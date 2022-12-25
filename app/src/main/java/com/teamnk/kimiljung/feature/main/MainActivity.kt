@@ -44,7 +44,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         checkLoggedIn()
-        saveUserToken()
+        saveAccessToken()
         initBottomNavigationView()
     }
 
@@ -89,7 +89,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
             .commitAllowingStateLoss()
     }
 
-    private fun saveUserToken(){
+    private fun saveAccessToken(){
         defaultSharedPreferences.run {
             accessToken = this.getString(ACCESS_TOKEN, "")
             refreshToken = this.getString(REFRESH_TOKEN, "")
