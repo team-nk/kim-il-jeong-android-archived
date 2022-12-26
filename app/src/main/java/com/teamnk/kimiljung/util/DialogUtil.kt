@@ -5,6 +5,12 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
+import android.view.View
+import androidx.databinding.ViewDataBinding
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.teamnk.kimiljung.databinding.DialogCreateScheduleBinding
 import com.teamnk.kimiljung.databinding.DialogDoubleButtonBinding
 import com.teamnk.kimiljung.databinding.DialogSingleButtonBinding
 
@@ -21,12 +27,10 @@ fun showDialogWithSingleButton(
         )
     }
 
-    val dialog = Dialog(context).apply {
-        setContentView(binding.root)
-        setCancelable(false)
-        window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        show()
-    }
+    val dialog = initDialog(
+        context = context,
+        binding = binding,
+    )
 
     with(binding) {
         tvDialogSingleButtonTitle.text = title
@@ -52,12 +56,10 @@ fun showDialogWithDoubleButton(
         )
     }
 
-    val dialog = Dialog(context).apply {
-        setContentView(binding.root)
-        setCancelable(false)
-        window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        show()
-    }
+    val dialog = initDialog(
+        context = context,
+        binding = binding,
+    )
 
     with(binding) {
         tvDialogDoubleButtonTitle.text = title
@@ -74,3 +76,41 @@ fun showDialogWithDoubleButton(
         }
     }
 }
+
+fun showScheduleCreateDialog(
+    context : Context,
+){
+    val binding: DialogCreateScheduleBinding by lazy {
+        DialogCreateScheduleBinding.inflate(
+            LayoutInflater.from(context)
+        )
+    }
+
+    val dialog = initBottomSheetDialog(
+        context = context,
+        binding = binding,
+    )
+
+}
+
+private fun initDialog(
+    context : Context,
+    binding : ViewDataBinding
+) : Dialog =
+    Dialog(context).apply {
+        setContentView(binding.root)
+        setCancelable(false)
+        window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        show()
+    }
+
+private fun initBottomSheetDialog(
+    context : Context,
+    binding : ViewDataBinding
+) : BottomSheetDialog =
+    BottomSheetDialog(context).apply {
+        setContentView(binding.root)
+        window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        behavior.state = BottomSheetBehavior.STATE_EXPANDED
+        show()
+    }

@@ -3,12 +3,15 @@ package com.teamnk.kimiljung.feature.calendar
 import android.os.Bundle
 import android.view.View
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.format.ArrayWeekDayFormatter
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseFragment
 import com.teamnk.kimiljung.databinding.FragmentCalendarBinding
 import com.teamnk.kimiljung.util.TodayDecorator
+import com.teamnk.kimiljung.util.showScheduleCreateDialog
 
 class CalendarFragment : BaseFragment<FragmentCalendarBinding>(
     R.layout.fragment_calendar
@@ -53,6 +56,9 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(
     private fun initAddScheduleButton() {
         binding.btnFragmentCalendarAddSchedule.setOnClickListener {
             //TODO When Create Button Clicked
+            showScheduleCreateDialog(
+                context = requireActivity(),
+            )
         }
     }
 
