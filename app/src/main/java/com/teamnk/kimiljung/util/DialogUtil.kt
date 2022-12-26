@@ -12,6 +12,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.teamnk.kimiljung.databinding.DialogCreateScheduleBinding
 import com.teamnk.kimiljung.databinding.DialogDoubleButtonBinding
+import com.teamnk.kimiljung.databinding.DialogSearchLocationBinding
 import com.teamnk.kimiljung.databinding.DialogSingleButtonBinding
 
 fun showDialogWithSingleButton(
@@ -91,6 +92,26 @@ fun showScheduleCreateDialog(
         binding = binding,
     )
 
+    binding.tvDialogCreateScheduleSearchLocation.setOnClickListener {
+        showSearchLocationDialog(
+            context = context,
+        )
+    }
+}
+
+fun showSearchLocationDialog(
+    context : Context,
+){
+    val binding : DialogSearchLocationBinding by lazy {
+        DialogSearchLocationBinding.inflate(
+            LayoutInflater.from(context)
+        )
+    }
+
+    val dialog = initBottomSheetDialog(
+        context = context,
+        binding = binding,
+    )
 }
 
 private fun initDialog(
