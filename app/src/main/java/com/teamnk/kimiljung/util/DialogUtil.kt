@@ -4,12 +4,16 @@ import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.FragmentManager
+import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.teamnk.kimiljung.R
+import com.teamnk.kimiljung.base.BaseBottomSheetDialogFragment
 import com.teamnk.kimiljung.databinding.DialogCreateScheduleBinding
 import com.teamnk.kimiljung.databinding.DialogDoubleButtonBinding
 import com.teamnk.kimiljung.databinding.DialogSearchLocationBinding
@@ -79,8 +83,9 @@ fun showDialogWithDoubleButton(
 }
 
 fun showScheduleCreateDialog(
-    context : Context,
-){
+    context: Context,
+    fragmentManager: FragmentManager,
+) {
     val binding: DialogCreateScheduleBinding by lazy {
         DialogCreateScheduleBinding.inflate(
             LayoutInflater.from(context)
@@ -93,31 +98,55 @@ fun showScheduleCreateDialog(
     )
 
     binding.tvDialogCreateScheduleSearchLocation.setOnClickListener {
-        showSearchLocationDialog(
-            context = context,
-        )
+        val searchLocationDialog = SearchLocationDialog()
+        searchLocationDialog.show(fragmentManager, searchLocationDialog.tag)
     }
 }
 
-fun showSearchLocationDialog(
-    context : Context,
+class SearchLocationDialog : BaseBottomSheetDialogFragment<DialogSearchLocationBinding>(
+    R.layout.dialog_search_location
 ){
-    val binding : DialogSearchLocationBinding by lazy {
-        DialogSearchLocationBinding.inflate(
-            LayoutInflater.from(context)
-        )
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        childFragmentManager.beginTransaction()
+            .replace(
+                R.id.map_dialog_search_location_main,
+                SupportMapFragment.newInstance(),
+                "MapTag",
+            ).commit()
     }
 
-    val dialog = initBottomSheetDialog(
-        context = context,
-        binding = binding,
-    )
+    override fun onCreateDialog(
+        savedInstanceState: Bundle?,
+    ): Dialog {
+
+        isCancelable = false
+
+        return BottomSheetDialog(requireContext()
+        ).apply {
+            behavior.state = BottomSheetBehavior.STATE_EXPANDED
+            behavior.addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback(){
+                override fun onStateChanged(bottomSheet: View, newState: Int) {
+                    if(newState == BottomSheetBehavior.STATE_DRAGGING){
+                        behavior.state = BottomSheetBehavior.STATE_EXPANDED
+                    }
+                }
+
+                override fun onSlide(bottomSheet: View, slideOffset: Float) {
+
+                }
+            })
+        }
+    }
+
+    override fun observeEvent() {}
 }
 
 private fun initDialog(
-    context : Context,
-    binding : ViewDataBinding
-) : Dialog =
+    context: Context,
+    binding: ViewDataBinding
+): Dialog =
     Dialog(context).apply {
         setContentView(binding.root)
         setCancelable(false)
@@ -126,9 +155,9 @@ private fun initDialog(
     }
 
 private fun initBottomSheetDialog(
-    context : Context,
-    binding : ViewDataBinding
-) : BottomSheetDialog =
+    context: Context,
+    binding: ViewDataBinding
+): BottomSheetDialog =
     BottomSheetDialog(context).apply {
         setContentView(binding.root)
         window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
