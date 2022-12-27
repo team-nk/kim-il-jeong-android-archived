@@ -111,9 +111,18 @@ fun showScheduleCreateDialog(
 class SearchLocationDialog : BaseBottomSheetDialogFragment<DialogSearchLocationBinding>(
     R.layout.dialog_search_location
 ), OnMapReadyCallback{
+
+    private val mapFragment by lazy {
+        SupportMapFragment.newInstance()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        SupportMapFragment().getMapAsync(this@SearchLocationDialog)
+        initMapView()
+    }
+
+    private fun initMapView(){
+        mapFragment.getMapAsync(this@SearchLocationDialog)
     }
 
     override fun onCreateDialog(
@@ -141,8 +150,15 @@ class SearchLocationDialog : BaseBottomSheetDialogFragment<DialogSearchLocationB
 
     override fun onMapReady(googleMap: GoogleMap) {
         googleMap.run {
+            addMarker(
+                MarkerOptions()
+                    .position(LatLng(3.4, 5.6))
+            )
             setMinZoomPreference(10F)
             setMaxZoomPreference(18F)
+            moveCamera(
+                CameraUpdateFactory.newLatLng(LatLng(3.4, 5.6))
+            )
             animateCamera(
                 CameraUpdateFactory.zoomTo(500F)
             )
