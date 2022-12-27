@@ -2,12 +2,7 @@ package com.teamnk.kimiljung.feature.calendar
 
 import android.os.Bundle
 import android.view.View
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.format.ArrayWeekDayFormatter
 import com.teamnk.kimiljung.R
@@ -62,7 +57,6 @@ class CalendarFragment : BaseFragment<FragmentCalendarBinding>(
             showScheduleCreateDialog(
                 context = requireActivity(),
                 fragmentManager = childFragmentManager,
-                mapFragment = SupportMapFragment.newInstance(),
             )
         }
     }
