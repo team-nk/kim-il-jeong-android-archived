@@ -6,11 +6,11 @@ data class PostListResponse(
 
 data class PostList(
     val title : String,
-    val scheduleContent : String,
+    val schedule_content : String,
     val address : String,
     val color : String,
-    val commentCount : Int,
-    val accountId : String,
-    val createTime : String,
-    val mine : Boolean,
+    val comment_count : Int,
+    val account_id : String,
+    val create_time : String,
+    val is_mine : Boolean,
 )
