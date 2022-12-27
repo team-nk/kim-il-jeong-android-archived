@@ -9,7 +9,12 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.FragmentManager
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.teamnk.kimiljung.R
@@ -105,16 +110,10 @@ fun showScheduleCreateDialog(
 
 class SearchLocationDialog : BaseBottomSheetDialogFragment<DialogSearchLocationBinding>(
     R.layout.dialog_search_location
-){
+), OnMapReadyCallback{
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        childFragmentManager.beginTransaction()
-            .replace(
-                R.id.map_dialog_search_location_main,
-                SupportMapFragment.newInstance(),
-                "MapTag",
-            ).commit()
+        SupportMapFragment().getMapAsync(this@SearchLocationDialog)
     }
 
     override fun onCreateDialog(
@@ -140,7 +139,20 @@ class SearchLocationDialog : BaseBottomSheetDialogFragment<DialogSearchLocationB
         }
     }
 
-    override fun observeEvent() {}
+    override fun onMapReady(googleMap: GoogleMap) {
+        googleMap.run {
+            setMinZoomPreference(10F)
+            setMaxZoomPreference(18F)
+            animateCamera(
+                CameraUpdateFactory.zoomTo(500F)
+            )
+            mapType = GoogleMap.MAP_TYPE_NORMAL
+        }
+    }
+
+    override fun observeEvent() {
+
+    }
 }
 
 private fun initDialog(

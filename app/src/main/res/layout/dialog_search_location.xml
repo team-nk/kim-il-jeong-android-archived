@@ -1,41 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout style="@style/BackgroundBottomSheetDialogPrimary">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="800dp"
+        android:background="@color/white">
 
-        <ScrollView
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/map_dialog_search_location_map_main"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:scrollbars="none"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/constraintLayout"
+            app:layout_constraintEnd_toStartOf="@id/guideline_dialog_search_location_vertical_2"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@id/guideline_dialog_search_location_vertical_1"
-            app:layout_constraintEnd_toStartOf="@id/guideline_dialog_search_location_vertical_2">
+            app:layout_constraintTop_toBottomOf="@id/tv_dialog_search_location_select_location"
+            app:layout_constraintVertical_bias="0.0"/>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="48dp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/et_dialog_search_type_location"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:hint="@string/dialog_create_schedule_search_location"/>
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </ScrollView>
+        <TextView
+            android:id="@+id/tv_dialog_search_location_select_location"
+            style="@style/TextViewTitlePrimary"
+            android:layout_width="0dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/dialog_search_location_select_location"
+            app:layout_constraintEnd_toEndOf="@id/guideline_dialog_search_location_vertical_2"
+            app:layout_constraintStart_toEndOf="@id/guideline_dialog_search_location_vertical_1"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_dialog_search_location_vertical_1"
@@ -50,6 +42,37 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="36dp"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline_dialog_search_location_vertical_2"
+            app:layout_constraintStart_toEndOf="@id/guideline_dialog_search_location_vertical_1">
+
+            <TextView
+                android:id="@+id/btn_dialog_create_schedule_cancel"
+                style="@style/TextViewCancelButtonPrimary"
+                android:layout_marginEnd="8dp"
+                android:text="@string/do_cancel"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btn_dialog_create_schedule_create"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_dialog_create_schedule_create"
+                style="@style/ButtonPrimary"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_dialog_create_schedule_cancel"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

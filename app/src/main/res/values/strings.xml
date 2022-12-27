@@ -117,7 +117,7 @@
 
     <string name="error_dialog_enter_birthday_please_select_birthday">생년월일을 선택해 주세요</string>
 
-    <string name="diaog_search_location_type_location">위치를 입력하세요</string>
+    <string name="dialog_search_location_select_location">위치 선택</string>
 
     <string-array name="fragment_calendar_string_array_calendar_week">
         <item>SUN</item>
