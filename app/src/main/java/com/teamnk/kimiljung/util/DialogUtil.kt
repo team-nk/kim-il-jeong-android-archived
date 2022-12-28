@@ -119,10 +119,19 @@ class SearchLocationDialog : BaseBottomSheetDialogFragment<DialogSearchLocationB
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initMapView()
+        initCloseButton()
     }
 
     private fun initMapView(){
+        childFragmentManager.beginTransaction()
+            .replace(R.id.map_dialog_search_location_map_main, mapFragment, "MapTag").commit()
         mapFragment.getMapAsync(this@SearchLocationDialog)
+    }
+
+    private fun initCloseButton(){
+        binding.btnDialogSearchLocationCancel.setOnClickListener {
+            dismiss()
+        }
     }
 
     override fun onCreateDialog(
