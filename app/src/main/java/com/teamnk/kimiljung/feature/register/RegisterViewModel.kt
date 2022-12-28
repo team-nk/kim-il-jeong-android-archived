@@ -1,7 +1,6 @@
 package com.teamnk.kimiljung.feature.register
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -46,7 +45,6 @@ class RegisterViewModel(
                     email,
                 )
             }.onSuccess {
-                Log.d("verifyEmail", "${it.code()}")
                 if (it.isSuccessful) {
                     when (it.code()) {
                         200 -> {
@@ -57,8 +55,7 @@ class RegisterViewModel(
                         else -> {
                             _shouldShowSnackBar.postValue(
                                 Pair(
-                                    true,
-                                    mApplication.getString(
+                                    true, mApplication.getString(
                                         R.string.error_activity_register_please_check_email_format,
                                     )
                                 )
@@ -66,7 +63,6 @@ class RegisterViewModel(
                         }
                     }
                 } else {
-                    Log.d("verifyEmail", "${it.code()}")
                     _shouldShowSnackBar.postValue(
                         Pair(
                             true,
@@ -77,7 +73,13 @@ class RegisterViewModel(
                     )
                 }
             }.onFailure {
-                println("Failure..")
+                _shouldShowSnackBar.postValue(
+                    Pair(
+                        true, mApplication.getString(
+                            R.string.error_failed_to_connect_to_server,
+                        )
+                    )
+                )
             }
         }
     }
@@ -102,9 +104,6 @@ class RegisterViewModel(
                 if (it.isSuccessful) {
                     _checkIdDuplicationResponse.postValue(it.body())
                     _isIdDuplicationChecked.postValue(true)
-                    Log.d(tag, "checkIdDuplication success!")
-                } else {
-                    Log.e(tag, "checkIdDuplication failure..")
                 }
             }
         }
@@ -124,12 +123,10 @@ class RegisterViewModel(
                         _canRegister.postValue(
                             it.isSuccessful
                         )
-                        Log.d(tag, "register success!")
                     } else {
                         _canRegister.postValue(
                             false
                         )
-                        Log.e(tag, "register failure..")
                     }
                 }
             }
@@ -142,14 +139,6 @@ class RegisterViewModel(
                     ),
                 )
             )
-        }
-    }
-
-    fun showSnackBar(
-        text: String,
-    ) {
-        CoroutineScope(Dispatchers.Main).launch {
-
         }
     }
 }
