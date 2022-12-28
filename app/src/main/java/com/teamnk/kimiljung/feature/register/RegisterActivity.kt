@@ -1,6 +1,7 @@
 package com.teamnk.kimiljung.feature.register
 
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
@@ -8,7 +9,6 @@ import com.teamnk.kimiljung.databinding.ActivityRegisterBinding
 import com.teamnk.kimiljung.feature.login.LoginActivity
 import com.teamnk.kimiljung.util.showDialogWithSingleButton
 import com.teamnk.kimiljung.util.showShortSnackBar
-import com.teamnk.kimiljung.util.showShortToast
 import com.teamnk.kimiljung.util.startActivity
 
 class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
@@ -161,23 +161,23 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
         viewModel.isEmailVerificationCodeSent.observe(
             this,
         ) {
-            showShortToast(
-                this, "Success"
+            showShortSnackBar(
+                binding.root,
+                getString(R.string.activity_register_email_verification_code_has_sent),
             )
             if (it) {
                 with(binding) {
-                    etActivityRegisterEmail.apply {
-                        isEnabled = false
-                        alpha = ALPHA_DISABLED
-                    }
-                    btnActivityRegisterVerifyEmail.apply {
-                        isEnabled = false
-                        alpha = ALPHA_DISABLED
-                    }
+                    etActivityRegisterEmail.disable()
+                    btnActivityRegisterVerifyEmail.disable()
                 }
             }
         }
     }
 }
 
-const val ALPHA_DISABLED = 0.8f
+internal fun View.disable() {
+    this.isEnabled = false
+    this.alpha = ALPHA_DISABLED
+}
+
+const val ALPHA_DISABLED = 0.4f
