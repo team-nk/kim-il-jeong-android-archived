@@ -8,8 +8,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.teamnk.kimiljung.R
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MyPageViewModel(
     private val repository: MyPageRepository,
@@ -48,6 +50,8 @@ class MyPageViewModel(
     }
 
     private fun setToShowSnackBar(message: String) {
-        _snackBarMessage.value = message
+        CoroutineScope(Dispatchers.Main).launch {
+            _snackBarMessage.value = message
+        }
     }
 }
