@@ -5,13 +5,14 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface RegisterAPI {
 
     @GET("/mail")
     suspend fun verifyEmail(
-        @Body verifyEmailRequest: VerifyEmailRequest,
-    ): Response<Boolean>
+        @Query("email") email: String,
+    ): Response<String>
 
     @GET("/user/code")
     suspend fun checkVerificationCode(
