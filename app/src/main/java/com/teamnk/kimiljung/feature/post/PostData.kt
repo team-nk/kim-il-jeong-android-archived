@@ -1,7 +1,7 @@
 package com.teamnk.kimiljung.feature.post
 
 data class PostListResponse(
-    val post_list : ArrayList<PostList>
+    val post_list : ArrayList<PostList>,
 )
 
 data class PostList(
