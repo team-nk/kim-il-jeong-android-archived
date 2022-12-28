@@ -8,6 +8,8 @@ import com.teamnk.kimiljung.databinding.ActivityRegisterBinding
 import com.teamnk.kimiljung.feature.login.LoginActivity
 import com.teamnk.kimiljung.util.showDialogWithSingleButton
 import com.teamnk.kimiljung.util.showShortSnackBar
+import com.teamnk.kimiljung.util.showShortToast
+import com.teamnk.kimiljung.util.startActivity
 
 class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     R.layout.activity_register
@@ -15,13 +17,20 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
 
     private val viewModel by lazy {
         ViewModelProvider(
-            this, RegisterViewModelFactory(RegisterRepository())
+            this,
+            RegisterViewModelFactory(
+                RegisterRepository(), this.application,
+            ),
         )[RegisterViewModel::class.java]
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        initWidgets()
+    }
+
+    private fun initWidgets() {
         initNextButton()
         initVerifyEmailButton()
         initCheckVerificationCodeButton()
@@ -31,9 +40,20 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     private fun initVerifyEmailButton() {
         with(binding) {
             btnActivityRegisterVerifyEmail.setOnClickListener {
-                val email = etActivityRegisterEmail.text.toString()
-                if (email.isNotBlank()) {
-                } else {
+
+                etActivityRegisterEmail.text.toString().run {
+                    if (this.isNotBlank()) {
+                        viewModel.verifyEmail(
+                            this,
+                        )
+                    } else {
+                        showShortSnackBar(
+                            binding.root,
+                            getString(
+                                R.string.error_activity_register_please_enter_email,
+                            ),
+                        )
+                    }
                 }
             }
         }
@@ -42,11 +62,12 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     private fun initCheckVerificationCodeButton() {
         with(binding) {
             btnActivityRegisterCheckVerificationCode.setOnClickListener {
-                val key = etActivityRegisterVerificationCode.text
-                if (key.isNotBlank()) {
+                with(etActivityRegisterVerificationCode.text) {
+                    if (this.isNotBlank()) {
 
-                } else {
+                    } else {
 
+                    }
                 }
             }
         }
@@ -55,18 +76,19 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     private fun initCheckIdDuplicationButton() {
         with(binding) {
             btnActivityRegisterCheckIdDuplication.setOnClickListener {
-                val userId = etActivityRegisterId.text.toString()
-                if (userId.isNotBlank()) {
-                    viewModel.checkIdDuplication(
-                        CheckIdDuplicationRequest(
-                            accountId = etActivityRegisterId.text.toString()
+                with(etActivityRegisterId.text.toString()) {
+                    if (this.isNotBlank()) {
+                        viewModel.checkIdDuplication(
+                            CheckIdDuplicationRequest(
+                                accountId = this,
+                            ),
                         )
-                    )
-                } else {
-                    showShortSnackBar(
-                        binding.root,
-                        getString(R.string.error_please_enter_id),
-                    )
+                    } else {
+                        showShortSnackBar(
+                            binding.root,
+                            getString(R.string.error_please_enter_id),
+                        )
+                    }
                 }
             }
         }
@@ -81,14 +103,14 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
                     accountId = binding.etActivityRegisterId.text.toString(),
                     password = binding.etActivityRegisterPassword.text.toString(),
                     repeatPassword = binding.etActivityRegisterPasswordRepeat.text.toString(),
-                )
+                ),
             )
         }
     }
 
     override fun observeEvent() {
         viewModel.checkIdDuplicationResponse.observe(
-            this
+            this,
         ) {
             if (it) {
                 showShortSnackBar(
@@ -104,16 +126,18 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
             }
         }
 
-        viewModel.registerResponse.observe(
+        viewModel.canRegister.observe(
             this
         ) {
             if (it) {
                 showDialogWithSingleButton(
                     this,
                     getString(R.string.activity_register_dialog_title_register_success),
-                    getString(R.string.activity_register_dialog_content_register_success)
+                    getString(R.string.activity_register_dialog_content_register_success),
                 ) {
-                    com.teamnk.kimiljung.util.startActivity(this, LoginActivity::class.java)
+                    startActivity(
+                        this, LoginActivity::class.java,
+                    )
                 }
             } else {
                 showShortSnackBar(
@@ -122,5 +146,38 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
                 )
             }
         }
+
+        viewModel.shouldShowSnackBar.observe(
+            this,
+        ) {
+            if (it.first) {
+                showShortSnackBar(
+                    binding.root,
+                    it.second,
+                )
+            }
+        }
+
+        viewModel.isEmailVerificationCodeSent.observe(
+            this,
+        ) {
+            showShortToast(
+                this, "Success"
+            )
+            if (it) {
+                with(binding) {
+                    etActivityRegisterEmail.apply {
+                        isEnabled = false
+                        alpha = ALPHA_DISABLED
+                    }
+                    btnActivityRegisterVerifyEmail.apply {
+                        isEnabled = false
+                        alpha = ALPHA_DISABLED
+                    }
+                }
+            }
+        }
     }
 }
+
+const val ALPHA_DISABLED = 0.8f

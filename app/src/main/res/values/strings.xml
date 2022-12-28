@@ -116,6 +116,9 @@
     <string name="dialog_enter_birthday_select_birthday">생년월일 선택</string>
 
     <string name="error_dialog_enter_birthday_please_select_birthday">생년월일을 선택해 주세요</string>
+    <string name="error_activity_register_please_enter_necessary_information">필수 정보를 입력해 주세요</string>
+    <string name="error_activity_register_please_enter_email">이메일을 입력해 주세요</string>
+    <string name="error_activity_register_please_check_email_format">이메일 형식을 확인해 주세요</string>
 
     <string name="dialog_search_location_select_location">위치 선택</string>
     <string name="dialog_search_location_do_select">선택하기</string>
