@@ -36,7 +36,7 @@ class PostViewModel(
                 } else {
                     setSnackBarMessage(
                         context.getString(
-                            R.string.error_loading_failed
+                            R.string.error_loading_failed,
                         )
                     )
                 }
