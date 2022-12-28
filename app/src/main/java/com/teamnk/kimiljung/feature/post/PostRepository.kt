@@ -7,6 +7,6 @@ import retrofit2.Response
 class PostRepository {
     suspend fun getPostList() : Response<PostListResponse> =
         postAPIProvider.getPostList(
-            access_token = accessToken!!
+            access_token = accessToken!!,
         )
 }
