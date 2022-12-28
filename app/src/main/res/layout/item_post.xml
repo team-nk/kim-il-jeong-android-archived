@@ -37,7 +37,7 @@
             android:layout_marginStart="6dp"
             android:textSize="11sp"
             android:textStyle="normal"
-            android:text="@{postList.accountId}"
+            android:text="@{postList.account_id}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="JunJaBoy" />
@@ -47,7 +47,7 @@
             style="@style/TextViewPostTitle"
             android:layout_marginTop="2dp"
             android:textStyle="normal"
-            android:text="@{postList.scheduleContent}"
+            android:text="@{postList.schedule_content}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_item_post_title"
             tools:text="학교 자치 회의" />
