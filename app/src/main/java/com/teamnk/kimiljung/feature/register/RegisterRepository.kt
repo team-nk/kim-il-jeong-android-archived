@@ -6,8 +6,8 @@ import retrofit2.Response
 
 class RegisterRepository : RegisterAPI {
 
-    override suspend fun verifyEmail(verifyEmailRequest: VerifyEmailRequest): Response<Boolean> {
-        return registerAPIProvider.verifyEmail(verifyEmailRequest)
+    override suspend fun verifyEmail(email: String): Response<String> {
+        return registerAPIProvider.verifyEmail(email)
     }
 
     override suspend fun checkVerificationCode(checkVerificationCodeRequest: CheckVerificationCodeRequest): Response<BooleanResponse> {

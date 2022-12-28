@@ -7,6 +7,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.teamnk.kimiljung.R
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -18,38 +19,54 @@ class RegisterViewModel(
     private val tag = this.javaClass.simpleName
 
     private val _shouldShowSnackBar = MutableLiveData<Pair<Boolean, String>>()
-    val shouldShowSnackBar: LiveData<Pair<Boolean, String>>
+    internal val shouldShowSnackBar: LiveData<Pair<Boolean, String>>
         get() = _shouldShowSnackBar
 
     private val _checkIdDuplicationResponse = MutableLiveData<Boolean>()
-    val checkIdDuplicationResponse: LiveData<Boolean> = _checkIdDuplicationResponse
+    internal val checkIdDuplicationResponse: LiveData<Boolean> = _checkIdDuplicationResponse
 
     private val _canRegister = MutableLiveData<Boolean>()
-    val canRegister: LiveData<Boolean> = _canRegister
+    internal val canRegister: LiveData<Boolean> = _canRegister
 
     private val _isEmailVerificationCodeSent = MutableLiveData<Boolean>()
-    val isEmailVerificationCodeSent: LiveData<Boolean> = _isEmailVerificationCodeSent
+    internal val isEmailVerificationCodeSent: LiveData<Boolean> = _isEmailVerificationCodeSent
 
     private val _isVerificationCodeChecked = MutableLiveData<Boolean>()
-    val isVerificationCodeChecked: LiveData<Boolean> = _isVerificationCodeChecked
+    internal val isVerificationCodeChecked: LiveData<Boolean> = _isVerificationCodeChecked
 
     private val _isIdDuplicationChecked = MutableLiveData<Boolean>()
-    val isIdDuplicationChecked: LiveData<Boolean> = _isIdDuplicationChecked
+    internal val isIdDuplicationChecked: LiveData<Boolean> = _isIdDuplicationChecked
 
-    fun verifyEmail(
-        verifyEmailRequest: VerifyEmailRequest,
+    internal fun verifyEmail(
+        email: String,
     ) {
         viewModelScope.launch(Dispatchers.IO) {
             kotlin.runCatching {
                 repository.verifyEmail(
-                    verifyEmailRequest,
+                    email,
                 )
             }.onSuccess {
+                Log.d("verifyEmail", "${it.code()}")
                 if (it.isSuccessful) {
-                    _isEmailVerificationCodeSent.postValue(
-                        true,
-                    )
+                    when (it.code()) {
+                        200 -> {
+                            _isEmailVerificationCodeSent.postValue(
+                                true,
+                            )
+                        }
+                        else -> {
+                            _shouldShowSnackBar.postValue(
+                                Pair(
+                                    true,
+                                    mApplication.getString(
+                                        R.string.error_activity_register_please_check_email_format,
+                                    )
+                                )
+                            )
+                        }
+                    }
                 } else {
+                    Log.d("verifyEmail", "${it.code()}")
                     _shouldShowSnackBar.postValue(
                         Pair(
                             true,
@@ -59,7 +76,17 @@ class RegisterViewModel(
                         )
                     )
                 }
+            }.onFailure {
+                println("Failure..")
             }
+        }
+    }
+
+    fun checkVerificationCode(
+        checkVerificationCodeRequest: CheckVerificationCodeRequest,
+    ) {
+        viewModelScope.launch(Dispatchers.IO) {
+
         }
     }
 
@@ -90,7 +117,7 @@ class RegisterViewModel(
             viewModelScope.launch(Dispatchers.IO) {
                 kotlin.runCatching {
                     repository.register(
-                        registerRequest
+                        registerRequest,
                     )
                 }.onSuccess {
                     if (it.isSuccessful) {
@@ -115,6 +142,14 @@ class RegisterViewModel(
                     ),
                 )
             )
+        }
+    }
+
+    fun showSnackBar(
+        text: String,
+    ) {
+        CoroutineScope(Dispatchers.Main).launch {
+
         }
     }
 }
