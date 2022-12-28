@@ -117,6 +117,7 @@
     <string name="error_dialog_enter_birthday_please_select_birthday">생년월일을 선택해 주세요</string>
     <string name="error_activity_register_please_enter_necessary_information">필수 정보를 입력해 주세요</string>
     <string name="error_activity_register_please_enter_email">이메일을 입력해 주세요</string>
+    <string name="error_activity_register_please_check_email_format">이메일 형식을 확인해 주세요</string>
 
     <string-array name="fragment_calendar_string_array_calendar_week">
         <item>SUN</item>
