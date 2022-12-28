@@ -48,6 +48,6 @@ class MyPageViewModel(
     }
 
     private fun setToShowSnackBar(message: String) {
-        _snackBarMessage.value = message
+        _snackBarMessage.postValue(message)
     }
 }
