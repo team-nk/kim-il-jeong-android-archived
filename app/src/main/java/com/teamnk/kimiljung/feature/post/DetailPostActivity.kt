@@ -32,7 +32,7 @@ class DetailPostActivity : BaseActivity<ActivityDetailPostBinding>(
             "schedule_content",
             "account_id",
             "address",
-            "create_time"
+            "create_time",
         )
     }
 
