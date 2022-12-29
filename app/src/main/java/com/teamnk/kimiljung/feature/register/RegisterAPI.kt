@@ -16,7 +16,8 @@ interface RegisterAPI {
 
     @GET("/user/code")
     suspend fun checkVerificationCode(
-        @Body checkVerificationCodeRequest: CheckVerificationCodeRequest,
+        @Query("email") email: String,
+        @Query("code") verificationCode: String,
     ): Response<BooleanResponse>
 
     @GET("/user/check")
