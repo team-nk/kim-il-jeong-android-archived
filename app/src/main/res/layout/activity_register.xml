@@ -55,7 +55,7 @@
                     android:layout_weight="1"
                     android:hint="@string/activity_register_please_enter_verification_code"
                     android:importantForAutofill="no"
-                    android:inputType="number" />
+                    android:inputType="text" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_activity_register_check_verification_code"
