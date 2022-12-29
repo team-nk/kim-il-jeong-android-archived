@@ -1,7 +1,6 @@
 package com.teamnk.kimiljung.feature.register
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -42,17 +41,15 @@ class RegisterViewModel(
     ) {
         viewModelScope.launch(Dispatchers.IO) {
             kotlin.runCatching {
+                println("HIHI")
                 repository.verifyEmail(
                     email,
                 )
             }.onSuccess {
-                Log.d("verifyEmail", "${it.code()}")
                 if (it.isSuccessful) {
                     when (it.code()) {
                         200 -> {
-                            _isEmailVerificationCodeSent.postValue(
-                                true,
-                            )
+                            _isEmailVerificationCodeSent.postValue(true)
                         }
                         else -> {
                             _shouldShowSnackBar.postValue(
@@ -60,13 +57,12 @@ class RegisterViewModel(
                                     true,
                                     mApplication.getString(
                                         R.string.error_activity_register_please_check_email_format,
-                                    )
+                                    ),
                                 )
                             )
                         }
                     }
                 } else {
-                    Log.d("verifyEmail", "${it.code()}")
                     _shouldShowSnackBar.postValue(
                         Pair(
                             true,
@@ -76,17 +72,25 @@ class RegisterViewModel(
                         )
                     )
                 }
-            }.onFailure {
-                println("Failure..")
             }
         }
     }
 
     fun checkVerificationCode(
-        checkVerificationCodeRequest: CheckVerificationCodeRequest,
+        email: String,
+        verificationCode: String,
     ) {
         viewModelScope.launch(Dispatchers.IO) {
-
+            kotlin.runCatching {
+                repository.checkVerificationCode(
+                    email,
+                    verificationCode,
+                )
+            }.onSuccess {
+                if (it.isSuccessful) {
+                    _isVerificationCodeChecked.postValue(true)
+                }
+            }
         }
     }
 
@@ -100,36 +104,36 @@ class RegisterViewModel(
                 )
             }.onSuccess {
                 if (it.isSuccessful) {
-                    _checkIdDuplicationResponse.postValue(it.body())
-                    _isIdDuplicationChecked.postValue(true)
-                    Log.d(tag, "checkIdDuplication success!")
-                } else {
-                    Log.e(tag, "checkIdDuplication failure..")
+                    if (it.body() == true) {
+                        _checkIdDuplicationResponse.postValue(it.body())
+                        _isIdDuplicationChecked.postValue(true)
+                    } else {
+                        _shouldShowSnackBar.postValue(
+                            Pair(
+                                true,
+                                mApplication.getString(R.string.activity_register_error_id_already_exists),
+                            )
+                        )
+                    }
                 }
             }
         }
     }
 
-    fun register(
+    internal fun register(
         registerRequest: RegisterRequest,
     ) {
         if (isEmailVerificationCodeSent.value == true && isVerificationCodeChecked.value == true && isIdDuplicationChecked.value == true) {
             viewModelScope.launch(Dispatchers.IO) {
                 kotlin.runCatching {
-                    repository.register(
-                        registerRequest,
-                    )
+                    repository.register(registerRequest)
                 }.onSuccess {
                     if (it.isSuccessful) {
                         _canRegister.postValue(
                             it.isSuccessful
                         )
-                        Log.d(tag, "register success!")
                     } else {
-                        _canRegister.postValue(
-                            false
-                        )
-                        Log.e(tag, "register failure..")
+                        _canRegister.postValue(false)
                     }
                 }
             }
