@@ -20,6 +20,13 @@
         tools:ignore="LockedOrientationActivity"
         tools:targetApi="31">
         <activity
+            android:name=".feature.post.DetailPostActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".feature.posthistory.PostHistoryActivity"
             android:exported="false">
             <meta-data
