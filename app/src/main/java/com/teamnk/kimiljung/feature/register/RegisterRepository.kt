@@ -10,8 +10,13 @@ class RegisterRepository : RegisterAPI {
         return registerAPIProvider.verifyEmail(email)
     }
 
-    override suspend fun checkVerificationCode(checkVerificationCodeRequest: CheckVerificationCodeRequest): Response<BooleanResponse> {
-        return registerAPIProvider.checkVerificationCode(checkVerificationCodeRequest)
+    override suspend fun checkVerificationCode(
+        email: String,
+        verificationCode: String,
+    ): Response<BooleanResponse> {
+        return registerAPIProvider.checkVerificationCode(
+            email, verificationCode,
+        )
     }
 
     override suspend fun checkIdDuplication(
