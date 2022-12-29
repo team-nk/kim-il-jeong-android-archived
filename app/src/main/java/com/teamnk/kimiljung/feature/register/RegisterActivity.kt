@@ -6,10 +6,7 @@ import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityRegisterBinding
 import com.teamnk.kimiljung.feature.login.LoginActivity
-import com.teamnk.kimiljung.util.showDialogWithSingleButton
-import com.teamnk.kimiljung.util.showShortSnackBar
-import com.teamnk.kimiljung.util.showShortToast
-import com.teamnk.kimiljung.util.startActivity
+import com.teamnk.kimiljung.util.*
 
 class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     R.layout.activity_register
@@ -40,12 +37,9 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     private fun initVerifyEmailButton() {
         with(binding) {
             btnActivityRegisterVerifyEmail.setOnClickListener {
-
                 etActivityRegisterEmail.text.toString().run {
                     if (this.isNotBlank()) {
-                        viewModel.verifyEmail(
-                            this,
-                        )
+                        viewModel.verifyEmail(this)
                     } else {
                         showShortSnackBar(
                             binding.root,
@@ -166,18 +160,11 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
             )
             if (it) {
                 with(binding) {
-                    etActivityRegisterEmail.apply {
-                        isEnabled = false
-                        alpha = ALPHA_DISABLED
-                    }
-                    btnActivityRegisterVerifyEmail.apply {
-                        isEnabled = false
-                        alpha = ALPHA_DISABLED
-                    }
+                    etActivityRegisterEmail.disable()
+                    btnActivityRegisterVerifyEmail.disable()
                 }
             }
         }
     }
 }
 
-const val ALPHA_DISABLED = 0.8f
