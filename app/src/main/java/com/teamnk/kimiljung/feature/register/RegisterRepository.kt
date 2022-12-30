@@ -20,9 +20,9 @@ class RegisterRepository : RegisterAPI {
     }
 
     override suspend fun checkIdDuplication(
-        checkIdDuplicationRequest: CheckIdDuplicationRequest,
-    ): Response<Boolean> {
-        return registerAPIProvider.checkIdDuplication(checkIdDuplicationRequest)
+        accountId: String,
+    ): Response<BooleanResponse> {
+        return registerAPIProvider.checkIdDuplication(accountId)
     }
 
     override suspend fun register(
