@@ -16,8 +16,8 @@ class RegisterViewModel(
 
     private val tag = this.javaClass.simpleName
 
-    private val _shouldShowSnackBar = MutableLiveData<Pair<Boolean, String>>()
-    internal val shouldShowSnackBar: LiveData<Pair<Boolean, String>>
+    private val _shouldShowSnackBar = MutableLiveData<String>()
+    internal val shouldShowSnackBar: LiveData<String>
         get() = _shouldShowSnackBar
 
     private val _checkIdDuplicationResponse = MutableLiveData<Boolean>()
@@ -52,23 +52,17 @@ class RegisterViewModel(
                         }
                         else -> {
                             _shouldShowSnackBar.postValue(
-                                Pair(
-                                    true,
-                                    mApplication.getString(
-                                        R.string.error_activity_register_please_check_email_format,
-                                    ),
-                                )
+                                mApplication.getString(
+                                    R.string.error_activity_register_please_check_email_format,
+                                ),
                             )
                         }
                     }
                 } else {
                     _shouldShowSnackBar.postValue(
-                        Pair(
-                            true,
-                            mApplication.getString(
-                                R.string.error_failed_to_connect_to_server,
-                            ),
-                        )
+                        mApplication.getString(
+                            R.string.error_failed_to_connect_to_server,
+                        ),
                     )
                 }
             }
@@ -92,23 +86,17 @@ class RegisterViewModel(
                         }
                         else -> {
                             _shouldShowSnackBar.postValue(
-                                Pair(
-                                    true,
-                                    mApplication.getString(
-                                        R.string.activity_register_error_please_enter_correct_verification_code,
-                                    ),
-                                )
+                                mApplication.getString(
+                                    R.string.activity_register_error_please_enter_correct_verification_code,
+                                ),
                             )
                         }
                     }
                 } else {
                     _shouldShowSnackBar.postValue(
-                        Pair(
-                            true,
-                            mApplication.getString(
-                                R.string.error_failed_to_connect_to_server,
-                            ),
-                        )
+                        mApplication.getString(
+                            R.string.error_failed_to_connect_to_server,
+                        ),
                     )
                 }
             }
@@ -130,10 +118,9 @@ class RegisterViewModel(
                         _isIdDuplicationChecked.postValue(true)
                     } else {
                         _shouldShowSnackBar.postValue(
-                            Pair(
-                                true,
-                                mApplication.getString(R.string.activity_register_error_id_already_exists),
-                            )
+                            mApplication.getString(
+                                R.string.activity_register_error_id_already_exists,
+                            ),
                         )
                     }
                 }
@@ -144,28 +131,31 @@ class RegisterViewModel(
     internal fun register(
         registerRequest: RegisterRequest,
     ) {
-        if (isEmailVerificationCodeSent.value == true && isVerificationCodeChecked.value == true && isIdDuplicationChecked.value == true) {
-            viewModelScope.launch(Dispatchers.IO) {
-                kotlin.runCatching {
-                    repository.register(registerRequest)
-                }.onSuccess {
-                    if (it.isSuccessful) {
-                        _registerSuccess.postValue(
-                            it.isSuccessful
-                        )
-                    } else {
-                        _registerSuccess.postValue(false)
+        if (registerRequest.password == registerRequest.repeatPassword) {
+            if (isEmailVerificationCodeSent.value == true && isVerificationCodeChecked.value == true && isIdDuplicationChecked.value == true) {
+                viewModelScope.launch(Dispatchers.IO) {
+                    kotlin.runCatching {
+                        repository.register(registerRequest)
+                    }.onSuccess {
+                        if (it.isSuccessful) {
+                            _registerSuccess.postValue(
+                                it.isSuccessful
+                            )
+                        } else {
+                            _registerSuccess.postValue(false)
+                        }
                     }
                 }
-            }
-        } else {
-            _shouldShowSnackBar.postValue(
-                Pair(
-                    true,
+            } else {
+                _shouldShowSnackBar.postValue(
                     mApplication.getString(
                         R.string.error_activity_register_please_enter_necessary_information,
                     ),
                 )
+            }
+        } else {
+            _shouldShowSnackBar.postValue(
+                mApplication.getString(R.string.activity_register_error_password_incorrect),
             )
         }
     }
