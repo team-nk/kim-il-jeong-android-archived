@@ -23,8 +23,8 @@ class RegisterViewModel(
     private val _checkIdDuplicationResponse = MutableLiveData<Boolean>()
     internal val checkIdDuplicationResponse: LiveData<Boolean> = _checkIdDuplicationResponse
 
-    private val _registerSuccess = MutableLiveData<Boolean>()
-    internal val registerSuccess: LiveData<Boolean> = _registerSuccess
+    private val _isRegisterSuccess = MutableLiveData<Boolean>()
+    internal val isRegisterSuccess: LiveData<Boolean> = _isRegisterSuccess
 
     private val _isEmailVerificationCodeSent = MutableLiveData<Boolean>()
     internal val isEmailVerificationCodeSent: LiveData<Boolean> = _isEmailVerificationCodeSent
@@ -138,11 +138,18 @@ class RegisterViewModel(
                         repository.register(registerRequest)
                     }.onSuccess {
                         if (it.isSuccessful) {
-                            _registerSuccess.postValue(
-                                it.isSuccessful
-                            )
-                        } else {
-                            _registerSuccess.postValue(false)
+                            when (it.code()) {
+                                201 -> {
+                                    _isRegisterSuccess.postValue(true)
+                                }
+                                else -> {
+                                    _shouldShowSnackBar.postValue(
+                                        mApplication.getString(
+                                            R.string.activity_register_failed_to_register,
+                                        ),
+                                    )
+                                }
+                            }
                         }
                     }
                 }
