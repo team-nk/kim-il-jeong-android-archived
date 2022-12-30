@@ -130,7 +130,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
             }
         }
 
-        viewModel.registerSuccess.observe(
+        viewModel.isRegisterSuccess.observe(
             this,
         ) {
             if (it) {
@@ -143,11 +143,6 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
                         this, LoginActivity::class.java,
                     )
                 }
-            } else {
-                showShortSnackBar(
-                    binding.root,
-                    getString(R.string.activity_register_failed_to_register),
-                )
             }
         }
 
