@@ -154,12 +154,10 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
         viewModel.shouldShowSnackBar.observe(
             this,
         ) {
-            if (it.first) {
-                showShortSnackBar(
-                    binding.root,
-                    it.second,
-                )
-            }
+            showShortSnackBar(
+                binding.root,
+                it,
+            )
         }
 
         viewModel.isEmailVerificationCodeSent.observe(
