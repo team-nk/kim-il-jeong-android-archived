@@ -56,11 +56,16 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     private fun initCheckVerificationCodeButton() {
         with(binding) {
             btnActivityRegisterCheckVerificationCode.setOnClickListener {
-                with(etActivityRegisterVerificationCode.text) {
+                etActivityRegisterVerificationCode.text.toString().run {
                     if (this.isNotBlank()) {
-
+                        viewModel.checkVerificationCode(this)
                     } else {
-
+                        showShortSnackBar(
+                            binding.root,
+                            getString(
+                                R.string.activity_register_incorrect_verification_code,
+                            ),
+                        )
                     }
                 }
             }
@@ -73,9 +78,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
                 with(etActivityRegisterId.text.toString()) {
                     if (this.isNotBlank()) {
                         viewModel.checkIdDuplication(
-                            CheckIdDuplicationRequest(
-                                accountId = this,
-                            ),
+                            accountId = this,
                         )
                     } else {
                         showShortSnackBar(
@@ -102,6 +105,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
         }
     }
 
+    // todo cleanup (viewModel)
     override fun observeEvent() {
         viewModel.checkIdDuplicationResponse.observe(
             this,
@@ -120,8 +124,8 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
             }
         }
 
-        viewModel.canRegister.observe(
-            this
+        viewModel.registerSuccess.observe(
+            this,
         ) {
             if (it) {
                 showDialogWithSingleButton(
@@ -155,13 +159,25 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
         viewModel.isEmailVerificationCodeSent.observe(
             this,
         ) {
-            showShortToast(
-                this, "Success"
-            )
+            //TODO remove
+            showShortToast("Success")
             if (it) {
                 with(binding) {
                     etActivityRegisterEmail.disable()
                     btnActivityRegisterVerifyEmail.disable()
+                }
+            }
+        }
+
+        viewModel.isVerificationCodeChecked.observe(
+            this,
+        ) {
+            // TODO remove
+            showShortToast("Success")
+            if (it) {
+                with(binding) {
+                    etActivityRegisterVerificationCode.disable()
+                    btnActivityRegisterCheckVerificationCode.disable()
                 }
             }
         }
