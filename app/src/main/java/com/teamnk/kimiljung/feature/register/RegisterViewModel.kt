@@ -43,9 +43,7 @@ class RegisterViewModel(
         viewModelScope.launch(Dispatchers.IO) {
             kotlin.runCatching {
                 this@RegisterViewModel.email = email
-                repository.verifyEmail(
-                    email,
-                )
+                repository.verifyEmail(email)
             }.onSuccess {
                 if (it.isSuccessful) {
                     when (it.code()) {
