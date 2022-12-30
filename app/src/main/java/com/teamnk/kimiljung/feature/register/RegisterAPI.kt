@@ -22,8 +22,8 @@ interface RegisterAPI {
 
     @GET("/user/check")
     suspend fun checkIdDuplication(
-        @Body checkIdDuplicationRequest: CheckIdDuplicationRequest,
-    ): Response<Boolean>
+        @Query("account_id") accountId: String,
+    ): Response<BooleanResponse>
 
     @POST("/user")
     suspend fun register(
