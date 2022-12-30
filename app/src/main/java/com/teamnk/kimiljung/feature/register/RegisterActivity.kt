@@ -61,8 +61,8 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
                         viewModel.checkVerificationCode(this)
                     } else {
                         showShortSnackBar(
-                            binding.root,
-                            getString(
+                            view = binding.root,
+                            text = getString(
                                 R.string.activity_register_incorrect_verification_code,
                             ),
                         )
@@ -70,12 +70,16 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
                 }
             }
         }
+
+        binding.run {
+
+        }
     }
 
     private fun initCheckIdDuplicationButton() {
         with(binding) {
             btnActivityRegisterCheckIdDuplication.setOnClickListener {
-                with(etActivityRegisterId.text.toString()) {
+                etActivityRegisterId.text.toString().run {
                     if (this.isNotBlank()) {
                         viewModel.checkIdDuplication(
                             accountId = this,
@@ -115,7 +119,9 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
                     binding.root,
                     getString(R.string.activity_register_available_id),
                 )
-                // TODO 비활성화 로직
+                binding.etActivityRegisterId.disable()
+                binding.btnActivityRegisterCheckIdDuplication.disable()
+
             } else {
                 showShortSnackBar(
                     binding.root,
