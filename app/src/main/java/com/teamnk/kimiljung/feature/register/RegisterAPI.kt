@@ -22,7 +22,7 @@ interface RegisterAPI {
 
     @GET("/user/check")
     suspend fun checkIdDuplication(
-        @Query("account_id") accountId: String,
+        @Query("account-id") accountId: String,
     ): Response<BooleanResponse>
 
     @POST("/user")
