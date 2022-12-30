@@ -7,6 +7,9 @@ import android.widget.TextView
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityDetailPostBinding
+import com.teamnk.kimiljung.feature.postcomment.PostCommentActivity
+import com.teamnk.kimiljung.util.startActivity
+import com.teamnk.kimiljung.util.startActivityRemovingBackStack
 
 class DetailPostActivity : BaseActivity<ActivityDetailPostBinding>(
     R.layout.activity_detail_post,
@@ -39,6 +42,13 @@ class DetailPostActivity : BaseActivity<ActivityDetailPostBinding>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initDetailPost()
+        initPostCommentButton()
+    }
+
+    private fun initPostCommentButton() {
+        binding.tvActivityDetailPostPostComment.setOnClickListener {
+            startActivityRemovingBackStack(applicationContext, PostCommentActivity::class.java)
+        }
     }
 
     private fun initDetailPost() {

@@ -116,6 +116,7 @@
                 tools:text="대덕대학교 자습" />
 
             <TextView
+                android:id="@+id/tv_activity_detail_post_post_comment"
                 style="@style/TextViewPostTitle"
                 android:textSize="14sp"
                 android:text="@string/activity_post_comment_post_comment"
