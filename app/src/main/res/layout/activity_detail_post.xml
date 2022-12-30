@@ -118,7 +118,7 @@
             <TextView
                 style="@style/TextViewPostTitle"
                 android:textSize="14sp"
-                android:text="@string/activity_detail_post_write_comment"
+                android:text="@string/activity_post_comment_post_comment"
                 android:layout_marginEnd="16dp"
                 android:layout_gravity="end|center_vertical"/>
 
