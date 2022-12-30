@@ -101,6 +101,7 @@ class Adapter(
             COMMENT_LIST -> {
                 (holder as CommentViewHolder).apply {
                     bind(commentList = commentList[position])
+                    binding.tvItemCommentCreateTime.text = commentList[position].create_time.split('T').get(1)
                 }
             }
         }

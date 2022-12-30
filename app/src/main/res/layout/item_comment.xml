@@ -17,7 +17,7 @@
             android:id="@+id/image_item_comment_image_profile"
             android:layout_width="26dp"
             android:layout_height="26dp"
-            android:src="@drawable/ic_launcher_background"
+            loadImage="@{commentList.profile}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -29,6 +29,7 @@
             android:textSize="12sp"
             android:text="@{commentList.account_id}"
             android:textStyle="normal"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@id/image_item_comment_image_profile"
             tools:text="egors" />
 
@@ -51,7 +52,6 @@
             style="@style/TextViewHintSecondary"
             android:layout_marginTop="4dp"
             android:textSize="10dp"
-            android:text="@{commentList.create_time}"
             app:layout_constraintStart_toStartOf="@id/tv_item_comment_account_id"
             app:layout_constraintTop_toBottomOf="@id/tv_item_comment_account_id"
             tools:text="18:00" />
