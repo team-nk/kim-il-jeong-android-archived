@@ -1,48 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="16dp">
+<layout>
+    <data>
+        <variable
+            name="commentList"
+            type="com.teamnk.kimiljung.feature.postcomment.CommentList" />
+    </data>
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/image_item_comment_image_profile"
-        android:layout_width="22dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_height="22dp"
-        android:src="@drawable/ic_launcher_background"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp">
 
-    <TextView
-        android:id="@+id/tv_item_comment_account_id"
-        style="@style/TextViewPostTitle"
-        android:layout_marginStart="8dp"
-        android:textSize="10sp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toEndOf="@id/image_item_comment_image_profile"
-        tools:text="egors" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_item_comment_image_profile"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_item_comment_content"
-        style="@style/TextViewPostTitle"
-        android:layout_marginStart="6dp"
-        android:textSize="10sp"
-        android:maxLines="1"
-        android:layout_marginEnd="22dp"
-        android:layout_width="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textStyle="normal"
-        app:layout_constraintStart_toEndOf="@id/tv_item_comment_account_id" />
+        <TextView
+            android:id="@+id/tv_item_comment_account_id"
+            style="@style/TextViewPostTitle"
+            android:layout_marginStart="8dp"
+            android:textSize="12sp"
+            android:text="@{commentList.account_id}"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@id/image_item_comment_image_profile"
+            tools:text="egors" />
 
-    <TextView
-        android:id="@+id/tv_item_comment_create_time"
-        style="@style/TextViewHintSecondary"
-        tools:text="18:00"
-        android:textSize="8dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="@id/tv_item_comment_account_id"
-        app:layout_constraintTop_toBottomOf="@id/tv_item_comment_account_id"/>
+        <TextView
+            android:id="@+id/tv_item_comment_content"
+            style="@style/TextViewPostTitle"
+            android:layout_width="0dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="22dp"
+            android:maxLines="1"
+            android:text="@{commentList.content}"
+            tools:text="zㅜㄴ영아..?"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_item_comment_account_id" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_item_comment_create_time"
+            style="@style/TextViewHintSecondary"
+            android:layout_marginTop="4dp"
+            android:textSize="10dp"
+            android:text="@{commentList.create_time}"
+            app:layout_constraintStart_toStartOf="@id/tv_item_comment_account_id"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_comment_account_id"
+            tools:text="18:00" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

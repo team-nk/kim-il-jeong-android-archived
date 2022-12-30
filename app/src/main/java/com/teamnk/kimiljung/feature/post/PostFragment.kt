@@ -1,14 +1,11 @@
 package com.teamnk.kimiljung.feature.post
 
-import android.os.Bundle
-import android.util.Log
-import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseFragment
-import com.teamnk.kimiljung.databinding.FragmentCalendarBinding
 import com.teamnk.kimiljung.databinding.FragmentPostBinding
+import com.teamnk.kimiljung.util.Adapter
 import com.teamnk.kimiljung.util.showShortSnackBar
 
 class PostFragment : BaseFragment<FragmentPostBinding>(
@@ -30,8 +27,10 @@ class PostFragment : BaseFragment<FragmentPostBinding>(
             viewLifecycleOwner
         ) {
             binding.rvFragmentPostMain.run {
-                adapter = PostAdapter(
-                    postList = it.body()!!.post_list
+                adapter = Adapter(
+                    postList = it.body()!!.post_list,
+                    commentList = arrayListOf(),
+                    temp = 1,
                 )
                 layoutManager = LinearLayoutManager(
                     requireActivity(),

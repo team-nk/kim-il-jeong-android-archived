@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.feature.post
+package com.teamnk.kimiljung.util
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -8,9 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.databinding.ItemCommentBinding
 import com.teamnk.kimiljung.databinding.ItemPostBinding
+import com.teamnk.kimiljung.feature.post.DetailPostActivity
+import com.teamnk.kimiljung.feature.post.PostList
 import com.teamnk.kimiljung.feature.postcomment.CommentList
 
-class PostAdapter(
+class Adapter(
     private val postList: ArrayList<PostList>,
     private val commentList: ArrayList<CommentList>,
     private val temp: Int,
@@ -45,7 +47,7 @@ class PostAdapter(
         viewType: Int,
     ): RecyclerView.ViewHolder =
         when(temp){
-            POST_LIST->{
+            POST_LIST ->{
                 PostViewHolder(
                     DataBindingUtil.inflate(
                         LayoutInflater.from(parent.context),
