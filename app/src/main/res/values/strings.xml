@@ -121,6 +121,7 @@
     <string name="activity_register_error_id_already_exists">이미 존재하는 아이디입니다</string>
     <string name="activity_register_incorrect_verification_code">인증번호가 올바르지 않습니다</string>
     <string name="activity_register_error_please_enter_correct_verification_code">올바른 인증 코드를 입력해 주세요</string>
+    <string name="activity_register_error_password_incorrect">비밀번호가 일치하지 않습니다</string>
 
     <string-array name="fragment_calendar_string_array_calendar_week">
         <item>SUN</item>
