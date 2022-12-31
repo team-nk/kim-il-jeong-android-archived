@@ -12,16 +12,16 @@ class ChangeUserInformationActivity : BaseActivity<ActivityChangeUserInformation
 
     private val viewModel by viewModels<ChangeUserInformationViewModel>()
 
-    override fun observeEvent() {}
+    override fun observeEvent() {
+        initView()
+    }
 
     private fun initView() {
         with(binding) {
             intent.getStringExtra(
                 PROFILE_URL,
             )?.let {
-                imageActivityChangeUserInformationUserProfile.loadImage(
-                    it
-                )
+                imageActivityChangeUserInformationUserProfile.loadImage(it)
             }
 
             intent.getStringExtra(
