@@ -2,6 +2,10 @@ package com.teamnk.kimiljung.api
 
 import com.google.gson.GsonBuilder
 import com.teamnk.kimiljung.BuildConfig
+import com.teamnk.kimiljung.api.ResponseCodes.UNAUTHORIZED
+import okhttp3.Interceptor
+import okhttp3.OkHttpClient
+import okhttp3.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -15,8 +19,12 @@ object RetrofitClient {
             GsonConverterFactory.create(
                 GsonBuilder().setLenient().create(),
             )
+        ).client(
+            OkHttpClient().newBuilder().addInterceptor(RequestInterceptor)
+                .addInterceptor(ResponseInterceptor).build(),
         ).build()
     }
+}
 
 object RequestInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
