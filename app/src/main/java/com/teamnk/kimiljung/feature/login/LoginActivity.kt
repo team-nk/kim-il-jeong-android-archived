@@ -12,6 +12,7 @@ import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_LOGGED_IN
 import com.teamnk.kimiljung.util.SharedPreferencesKey.REFRESH_TOKEN
 import com.teamnk.kimiljung.util.showShortSnackBar
 import com.teamnk.kimiljung.util.startActivity
+import com.teamnk.kimiljung.util.startActivityFinishingCurrentActivity
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(
     R.layout.activity_login
@@ -68,11 +69,10 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(
 
     private fun moveToMainActivity() {
         defaultSharedPreferencesEditor.putBoolean(IS_LOGGED_IN, true).apply()
-        startActivity(
+        startActivityFinishingCurrentActivity(
             context = this,
             to = MainActivity::class.java,
         )
-        finishAndRemoveTask()
     }
 
     private fun initGoToRegisterText() {
