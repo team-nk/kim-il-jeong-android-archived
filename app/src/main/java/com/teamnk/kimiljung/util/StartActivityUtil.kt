@@ -22,7 +22,7 @@ private fun <T : Activity> Activity.startActivity(
 
 /**
  * @author junsuPark
- * Default
+ * default startActivity function, which let context activity maintain single activity.
  */
 internal fun <T : Activity> Activity.startActivity(
     context: Context,
