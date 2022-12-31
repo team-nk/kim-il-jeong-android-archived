@@ -46,7 +46,13 @@ internal fun <T : Activity> Activity.startActivityRemovingBackStack(
  * @author junsuPark
  * must be removed after migration of startActivity utility functions.
  */
-fun <T> startActivity(context: Context, to: Class<T>) {
+@Deprecated(
+    "Legacy Code", ReplaceWith(
+        "Activity.startActivity(Context, Class)",
+        "android.content.Intent"
+    )
+)
+fun <T> startActivityLegacy(context: Context, to: Class<T>) {
     context.startActivity(Intent(context, to))
 }
 

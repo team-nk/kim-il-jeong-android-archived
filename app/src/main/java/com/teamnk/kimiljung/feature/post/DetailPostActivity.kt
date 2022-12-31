@@ -1,15 +1,12 @@
 package com.teamnk.kimiljung.feature.post
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.TextView
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityDetailPostBinding
 import com.teamnk.kimiljung.feature.postcomment.PostCommentActivity
-import com.teamnk.kimiljung.util.startActivity
-import com.teamnk.kimiljung.util.startActivityRemovingBackStack
+import com.teamnk.kimiljung.util.startActivityLegacy
 
 class DetailPostActivity : BaseActivity<ActivityDetailPostBinding>(
     R.layout.activity_detail_post,
@@ -47,7 +44,7 @@ class DetailPostActivity : BaseActivity<ActivityDetailPostBinding>(
 
     private fun initPostCommentButton() {
         binding.tvActivityDetailPostPostComment.setOnClickListener {
-            startActivity(this, PostCommentActivity::class.java)
+            startActivityLegacy(this, PostCommentActivity::class.java)
         }
     }
 
