@@ -24,5 +24,9 @@ fun <T> startActivity(context: Context, to: Class<T>) {
 }
 
 fun <T> startActivityRemovingBackStack(context: Context, to: Class<T>) {
-    context.startActivity(Intent(context, to).addFlags(FLAG_ACTIVITY_NEW_TASK or FLAG_ACTIVITY_CLEAR_TASK))
+    context.startActivity(
+        Intent(
+            context, to
+        ).addFlags(FLAG_ACTIVITY_NEW_TASK or FLAG_ACTIVITY_CLEAR_TASK)
+    )
 }
