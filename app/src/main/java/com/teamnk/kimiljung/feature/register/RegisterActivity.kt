@@ -135,7 +135,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
                     getString(R.string.activity_register_dialog_title_register_success),
                     getString(R.string.activity_register_dialog_content_register_success),
                 ) {
-                    startActivityLegacy(
+                    startActivityFinishingCurrentActivity(
                         this, LoginActivity::class.java,
                     )
                 }
