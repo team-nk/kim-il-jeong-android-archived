@@ -14,6 +14,7 @@ import com.teamnk.kimiljung.feature.changepassword.ChangePasswordActivity
 import com.teamnk.kimiljung.feature.changeuserinformation.ChangeUserInformationActivity
 import com.teamnk.kimiljung.feature.enterbirthday.EnterBirthdayBottomSheetDialogFragment
 import com.teamnk.kimiljung.feature.start.StartActivity
+import com.teamnk.kimiljung.util.loadImage
 import com.teamnk.kimiljung.util.showDialogWithDoubleButton
 import com.teamnk.kimiljung.util.showShortSnackBar
 import com.teamnk.kimiljung.util.startActivityRemovingBackStack
@@ -58,7 +59,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
                 }
             }
         }
-        
+
         changeUserInformationActivityResultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult(),
         ) {
@@ -155,7 +156,13 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
 
     private fun initSelfInformationView(selfInformationResponse: GetSelfInformationResponse) {
         with(binding) {
-            // TODO add image on imageFragmentMypageUserProfile
+            imageFragmentMypageUserProfile.loadImage(selfInformationResponse.profileImageURL.run {
+                if (this@run == "'a'") {
+                    "https://avatars.githubusercontent.com/u/101160207?s=80&v=4"
+                } else {
+                    this@run
+                }
+            })
             tvFragmentMypageEmail.text = selfInformationResponse.email
             tvFragmentMypageId.text = selfInformationResponse.accountId
         }
