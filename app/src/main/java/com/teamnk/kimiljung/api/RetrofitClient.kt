@@ -28,4 +28,19 @@ object RequestInterceptor : Interceptor {
         )
     }
 }
+
+object ResponseInterceptor : Interceptor {
+    override fun intercept(chain: Interceptor.Chain): Response {
+        return chain.proceed(chain.request()).also {
+            when (it.code()) {
+                UNAUTHORIZED -> {
+                    renewToken()
+                }
+                else -> {
+                    // other processing logic
+                }
+            }
+        }
+    }
+}
 }
