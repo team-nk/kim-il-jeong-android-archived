@@ -16,7 +16,7 @@ import com.teamnk.kimiljung.feature.start.StartActivity
 import com.teamnk.kimiljung.util.SharedPreferencesKey.ACCESS_TOKEN
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_LOGGED_IN
 import com.teamnk.kimiljung.util.SharedPreferencesKey.REFRESH_TOKEN
-import com.teamnk.kimiljung.util.startActivityLegacy
+import com.teamnk.kimiljung.util.startActivityFinishingCurrentActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
@@ -50,7 +50,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
 
     private fun checkLoggedIn() {
         if (defaultSharedPreferences.getBoolean(IS_LOGGED_IN, false).not()) {
-            startActivityLegacy(
+            startActivityFinishingCurrentActivity(
                 context = this,
                 to = StartActivity::class.java,
             )
@@ -89,7 +89,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(
             .commitAllowingStateLoss()
     }
 
-    private fun saveAccessToken(){
+    private fun saveAccessToken() {
         defaultSharedPreferences.run {
             accessToken = this.getString(ACCESS_TOKEN, "")
             refreshToken = this.getString(REFRESH_TOKEN, "")
