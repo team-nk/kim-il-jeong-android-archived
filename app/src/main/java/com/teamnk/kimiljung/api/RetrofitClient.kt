@@ -17,4 +17,15 @@ object RetrofitClient {
             )
         ).build()
     }
+
+object RequestInterceptor : Interceptor {
+    override fun intercept(chain: Interceptor.Chain): Response {
+        return chain.proceed(
+            chain.request().newBuilder().addHeader(
+                "Authorization",
+                accessToken!!,
+            ).build(),
+        )
+    }
+}
 }
