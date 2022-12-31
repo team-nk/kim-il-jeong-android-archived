@@ -2,6 +2,7 @@ package com.teamnk.kimiljung.api
 
 var accessToken: String? = null
 var refreshToken: String? = nulldata class TokenResponse(
+// todo move alllll logic
 
 interface TokenAPI {
 
