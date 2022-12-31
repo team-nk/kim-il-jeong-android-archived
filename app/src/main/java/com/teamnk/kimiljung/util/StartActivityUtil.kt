@@ -42,6 +42,10 @@ internal fun <T : Activity> Activity.startActivityRemovingBackStack(
 }
 
 // todo remove two functions about activity
+/**
+ * @author junsuPark
+ * must be removed after migration of startActivity utility functions.
+ */
 fun <T> startActivity(context: Context, to: Class<T>) {
     context.startActivity(Intent(context, to))
 }
