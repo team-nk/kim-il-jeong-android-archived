@@ -1,13 +1,10 @@
 package com.teamnk.kimiljung.feature.postcomment
 
-import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityPostCommentBinding
-import com.teamnk.kimiljung.util.Adapter
 
 class PostCommentActivity : BaseActivity<ActivityPostCommentBinding>(
     R.layout.activity_post_comment
@@ -24,7 +21,9 @@ class PostCommentActivity : BaseActivity<ActivityPostCommentBinding>(
     }
 
     override fun observeEvent() {
-        commentViewModel.commentListResponse.observe(this){
+        commentViewModel.commentListResponse.observe(
+            this,
+        ){
             initCommentListRecyclerView(
                 commentList = it.body()!!.comment_list,
             )
@@ -35,12 +34,12 @@ class PostCommentActivity : BaseActivity<ActivityPostCommentBinding>(
         commentList : ArrayList<CommentList>,
     ) {
         binding.rvActivityPostCommentMain.apply {
-            adapter = Adapter(
+            adapter = PostCommentAdapter(
                 postList = arrayListOf(),
                 commentList = commentList,
                 temp = 2,
             )
-            layoutManager = LinearLayoutManager(applicationContext)
+            layoutManager = LinearLayoutManager(this@PostCommentActivity)
         }
     }
 }

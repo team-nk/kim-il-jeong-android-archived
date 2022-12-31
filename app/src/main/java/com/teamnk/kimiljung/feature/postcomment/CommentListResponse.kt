@@ -8,7 +8,7 @@ data class CommentListResponse(
 
 data class CommentList(
     @SerializedName("content") val content: String,
-    @SerializedName("account_id") val account_id: String,
+    @SerializedName("account_id") val accountId: String,
     @SerializedName("profile") val profile: String,
-    @SerializedName("create_time") val create_time: String,
+    @SerializedName("create_time") val createTime: String,
 )

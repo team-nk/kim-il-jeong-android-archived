@@ -1,4 +1,4 @@
-package com.teamnk.kimiljung.util
+package com.teamnk.kimiljung.feature.postcomment
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -10,9 +10,8 @@ import com.teamnk.kimiljung.databinding.ItemCommentBinding
 import com.teamnk.kimiljung.databinding.ItemPostBinding
 import com.teamnk.kimiljung.feature.post.DetailPostActivity
 import com.teamnk.kimiljung.feature.post.PostList
-import com.teamnk.kimiljung.feature.postcomment.CommentList
 
-class Adapter(
+class PostCommentAdapter(
     private val postList: ArrayList<PostList>,
     private val commentList: ArrayList<CommentList>,
     private val temp: Int,
@@ -24,7 +23,7 @@ class Adapter(
         const val COMMENT_LIST = 2
     }
 
-    class PostViewHolder(
+    inner class PostViewHolder(
         val binding: ItemPostBinding,
     ) :
         RecyclerView.ViewHolder(binding.root) {
@@ -33,7 +32,7 @@ class Adapter(
         }
     }
 
-    class CommentViewHolder(
+    inner class CommentViewHolder(
         val binding: ItemCommentBinding,
     ) :
         RecyclerView.ViewHolder(binding.root) {
@@ -57,7 +56,7 @@ class Adapter(
                     )
                 )
             }
-            COMMENT_LIST ->{
+            else ->{
                 CommentViewHolder(
                     DataBindingUtil.inflate(
                         LayoutInflater.from(parent.context),
@@ -66,9 +65,6 @@ class Adapter(
                         false,
                     )
                 )
-            }
-            else->{
-                TODO()
             }
         }
 
@@ -101,7 +97,7 @@ class Adapter(
             COMMENT_LIST -> {
                 (holder as CommentViewHolder).apply {
                     bind(commentList = commentList[position])
-                    binding.tvItemCommentCreateTime.text = commentList[position].create_time.split('T').get(1)
+                    binding.tvItemCommentCreateTime.text = commentList[position].createTime.split('T').get(1)
                 }
             }
         }
@@ -110,10 +106,7 @@ class Adapter(
     override fun getItemCount(): Int {
         return when(temp){
             POST_LIST -> postList.size
-            COMMENT_LIST -> commentList.size
-            else -> {
-                TODO()
-            }
+            else -> commentList.size
         }
     }
 }

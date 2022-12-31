@@ -19,7 +19,7 @@ class CommentViewModel(
     }
 
     private val AndroidViewModel.context: Context
-    get() = getApplication<Application>().applicationContext
+        get() = getApplication<Application>().applicationContext
 
     private val _commentListResponse = MutableLiveData<Response<CommentListResponse>>()
     val commentListResponse: LiveData<Response<CommentListResponse>> = _commentListResponse

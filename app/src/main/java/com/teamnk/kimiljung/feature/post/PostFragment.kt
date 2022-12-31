@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseFragment
 import com.teamnk.kimiljung.databinding.FragmentPostBinding
-import com.teamnk.kimiljung.util.Adapter
+import com.teamnk.kimiljung.feature.postcomment.PostCommentAdapter
 import com.teamnk.kimiljung.util.showShortSnackBar
 
 class PostFragment : BaseFragment<FragmentPostBinding>(
@@ -27,7 +27,7 @@ class PostFragment : BaseFragment<FragmentPostBinding>(
             viewLifecycleOwner
         ) {
             binding.rvFragmentPostMain.run {
-                adapter = Adapter(
+                adapter = PostCommentAdapter(
                     postList = it.body()!!.post_list,
                     commentList = arrayListOf(),
                     temp = 1,

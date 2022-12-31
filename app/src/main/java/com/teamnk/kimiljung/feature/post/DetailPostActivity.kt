@@ -47,7 +47,7 @@ class DetailPostActivity : BaseActivity<ActivityDetailPostBinding>(
 
     private fun initPostCommentButton() {
         binding.tvActivityDetailPostPostComment.setOnClickListener {
-            startActivityRemovingBackStack(applicationContext, PostCommentActivity::class.java)
+            startActivity(this, PostCommentActivity::class.java)
         }
     }
 
