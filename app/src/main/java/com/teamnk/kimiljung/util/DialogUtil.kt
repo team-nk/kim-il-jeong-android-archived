@@ -97,11 +97,6 @@ fun showScheduleCreateDialog(
         )
     }
 
-    val dialog = initBottomSheetDialog(
-        context = context,
-        binding = binding,
-    )
-
     binding.tvDialogCreateScheduleSearchLocation.setOnClickListener {
         val searchLocationDialog = SearchLocationDialog()
         searchLocationDialog.show(fragmentManager, searchLocationDialog.tag)

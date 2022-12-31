@@ -17,7 +17,7 @@
             android:id="@+id/image_item_comment_image_profile"
             android:layout_width="26dp"
             android:layout_height="26dp"
-            loadImage="@{commentList.profile}"
+            profileImage="@{commentList.profile}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
