@@ -1,9 +1,9 @@
 package com.teamnk.kimiljung.util
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK
-import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
+import android.content.Intent.*
 
 internal fun <T : Activity> Activity.startActivity(
     context: Context,
