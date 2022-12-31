@@ -31,7 +31,7 @@ class CommentViewModel(
     private val _snackBarMessage = MutableLiveData<String>()
     val snackBarMessage: LiveData<String> = _snackBarMessage
 
-    private fun getCommentList() {
+    fun getCommentList() {
         viewModelScope.launch(Dispatchers.IO) {
             kotlin.runCatching {
                 commentRepository.getCommentList()

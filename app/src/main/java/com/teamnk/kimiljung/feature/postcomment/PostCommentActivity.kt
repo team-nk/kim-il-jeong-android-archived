@@ -13,6 +13,18 @@ class PostCommentActivity : BaseActivity<ActivityPostCommentBinding>(
     R.layout.activity_post_comment
 ) {
 
+    private val commentList : ArrayList<CommentList> by lazy {
+        arrayListOf()
+    }
+
+    private val postCommentAdapter by lazy {
+        PostCommentAdapter(
+            postList = arrayListOf(),
+            commentList = commentList,
+            temp = 2,
+        )
+    }
+
     private val viewModel by lazy {
         ViewModelProvider(
             this,
@@ -52,9 +64,25 @@ class PostCommentActivity : BaseActivity<ActivityPostCommentBinding>(
         viewModel.commentListResponse.observe(
             this,
         ) {
-            initCommentListRecyclerView(
-                commentList = it.body()!!.comment_list,
-            )
+            commentList.run {
+                val tempList = it.body()!!.comment_list
+                if(size == 0){
+                    clear()
+                    addAll(tempList)
+                    initCommentListRecyclerView()
+                }else{
+                    add(0, tempList[0])
+                    postCommentAdapter.notifyItemInserted(0)
+                    binding.rvActivityPostCommentMain.scrollToPosition(0)
+                }
+            }
+        }
+
+        viewModel.postCommentResponse.observe(
+            this,
+        ){
+            binding.etActivityPostCommentComment.text = null
+            viewModel.getCommentList()
         }
 
         viewModel.snackBarMessage.observe(
@@ -67,15 +95,9 @@ class PostCommentActivity : BaseActivity<ActivityPostCommentBinding>(
         }
     }
 
-    private fun initCommentListRecyclerView(
-        commentList: ArrayList<CommentList>,
-    ) {
-        binding.rvActivityPostCommentMain.apply {
-            adapter = PostCommentAdapter(
-                postList = arrayListOf(),
-                commentList = commentList,
-                temp = 2,
-            )
+    private fun initCommentListRecyclerView() {
+        binding.rvActivityPostCommentMain.run {
+            adapter = postCommentAdapter
             layoutManager = LinearLayoutManager(this@PostCommentActivity)
         }
     }
