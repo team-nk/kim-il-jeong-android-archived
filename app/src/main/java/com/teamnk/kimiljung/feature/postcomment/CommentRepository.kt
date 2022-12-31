@@ -9,4 +9,14 @@ class CommentRepository {
         commentAPIProvider.getCommentList(
             access_token = accessToken!!,
         )
+
+    suspend fun postComment(
+        postId : Int,
+        commentRequest : CommentRequest,
+    ) : Response<Void> =
+        commentAPIProvider.postComment(
+            access_token = accessToken!!,
+            postId = postId,
+            commentRequest = commentRequest,
+        )
 }

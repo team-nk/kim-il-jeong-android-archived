@@ -78,6 +78,7 @@
                             android:importantForAutofill="no"
                             android:inputType="text"
                             android:maxLines="1"
+                            android:maxLength="36"
                             android:paddingHorizontal="12dp"
                             android:textSize="16sp"
                             app:layout_constraintBottom_toBottomOf="parent"
