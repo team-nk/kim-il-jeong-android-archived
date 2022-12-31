@@ -29,6 +29,17 @@ internal fun <T : Activity> Activity.startActivityFinishingCurrentActivity(
         to = to,
     )
 }
+
+internal fun <T : Activity> Activity.startActivityRemovingBackStack(
+    context: Context,
+    to: Class<out T>,
+) {
+    startActivity(
+        context = context,
+        to = to,
+        flag = FLAG_ACTIVITY_CLEAR_TASK,
+    )
+}
 fun <T> startActivity(context: Context, to: Class<T>) {
     context.startActivity(Intent(context, to))
 }
