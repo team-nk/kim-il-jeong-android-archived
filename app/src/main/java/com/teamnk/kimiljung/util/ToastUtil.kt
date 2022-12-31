@@ -1,18 +1,26 @@
 package com.teamnk.kimiljung.util
 
-import android.content.Context
 import android.widget.Toast
-import android.widget.Toast.LENGTH_SHORT
 import android.widget.Toast.LENGTH_LONG
+import android.widget.Toast.LENGTH_SHORT
+import androidx.appcompat.app.AppCompatActivity
 
-fun showShortToast(context: Context, text: String) {
-    showToast(context, text, LENGTH_SHORT)
+internal fun AppCompatActivity.showToast(
+    text: String, length: Int,
+) {
+    Toast.makeText(this, text, length).show()
 }
 
-fun showLongToast(context: Context, text: String) {
-    showToast(context, text, LENGTH_LONG)
+internal fun AppCompatActivity.showShortToast(text: String) {
+    showToast(
+        text = text,
+        length = LENGTH_SHORT,
+    )
 }
 
-fun showToast(context: Context, text: String, length: Int) {
-    Toast.makeText(context, text, length).show()
+internal fun AppCompatActivity.showLongToast(text: String) {
+    showToast(
+        text = text,
+        length = LENGTH_LONG,
+    )
 }

@@ -16,13 +16,14 @@ interface RegisterAPI {
 
     @GET("/user/code")
     suspend fun checkVerificationCode(
-        @Body checkVerificationCodeRequest: CheckVerificationCodeRequest,
+        @Query("email") email: String,
+        @Query("code") verificationCode: String,
     ): Response<BooleanResponse>
 
     @GET("/user/check")
     suspend fun checkIdDuplication(
-        @Body checkIdDuplicationRequest: CheckIdDuplicationRequest,
-    ): Response<Boolean>
+        @Query("account-id") accountId: String,
+    ): Response<BooleanResponse>
 
     @POST("/user")
     suspend fun register(
