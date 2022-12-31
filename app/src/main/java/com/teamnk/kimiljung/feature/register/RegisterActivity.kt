@@ -1,7 +1,6 @@
 package com.teamnk.kimiljung.feature.register
 
 import android.os.Bundle
-import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
@@ -71,10 +70,6 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
                 }
             }
         }
-
-        binding.run {
-
-        }
     }
 
     private fun initCheckIdDuplicationButton() {
@@ -140,7 +135,7 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
                     getString(R.string.activity_register_dialog_title_register_success),
                     getString(R.string.activity_register_dialog_content_register_success),
                 ) {
-                    startActivity(
+                    startActivityFinishingCurrentActivity(
                         this, LoginActivity::class.java,
                     )
                 }

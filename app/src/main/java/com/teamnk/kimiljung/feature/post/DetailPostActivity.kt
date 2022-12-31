@@ -1,15 +1,12 @@
 package com.teamnk.kimiljung.feature.post
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.TextView
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityDetailPostBinding
 import com.teamnk.kimiljung.feature.postcomment.PostCommentActivity
 import com.teamnk.kimiljung.util.startActivity
-import com.teamnk.kimiljung.util.startActivityRemovingBackStack
 
 class DetailPostActivity : BaseActivity<ActivityDetailPostBinding>(
     R.layout.activity_detail_post,
@@ -19,7 +16,7 @@ class DetailPostActivity : BaseActivity<ActivityDetailPostBinding>(
         StringBuilder()
     }
 
-    private val viewList : ArrayList<TextView> by lazy {
+    private val viewList: ArrayList<TextView> by lazy {
         arrayListOf(
             binding.tvActivityDetailPostTitle,
             binding.tvActivityDetailPostScheduleContent,
@@ -29,7 +26,7 @@ class DetailPostActivity : BaseActivity<ActivityDetailPostBinding>(
         )
     }
 
-    private val intentKeyList : ArrayList<String> by lazy {
+    private val intentKeyList: ArrayList<String> by lazy {
         arrayListOf(
             "title",
             "schedule_content",
@@ -47,20 +44,22 @@ class DetailPostActivity : BaseActivity<ActivityDetailPostBinding>(
 
     private fun initPostCommentButton() {
         binding.tvActivityDetailPostPostComment.setOnClickListener {
-            startActivity(this, PostCommentActivity::class.java)
+            startActivity(
+                this, PostCommentActivity::class.java,
+            )
         }
     }
 
     private fun initDetailPost() {
         binding.apply {
             intent.apply {
-                for(i in 0.until(5)){
+                for (i in 0.until(5)) {
                     viewList[i].text = getStringExtra(intentKeyList[i])
                 }
-                tvActivityDetailPostComment.text = stringBuilder.append(getString(R.string.activity_detail_post_comment))
-                    .append(" ")
-                    .append(getIntExtra("comment_count", 0))
-                    .append(getString(R.string.activity_detail_post_count))
+                tvActivityDetailPostComment.text =
+                    stringBuilder.append(getString(R.string.activity_detail_post_comment))
+                        .append(" ").append(getIntExtra("comment_count", 0))
+                        .append(getString(R.string.activity_detail_post_count))
             }
         }
     }
