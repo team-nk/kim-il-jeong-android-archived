@@ -5,10 +5,10 @@ import android.content.Context
 import android.content.Intent
 import android.content.Intent.*
 
-internal fun <T : Activity> Activity.startActivity(
+private fun <T : Activity> Activity.startActivity(
     context: Context,
     to: Class<out T>,
-    flag: Int = FLAG_ACTIVITY_CLEAR_TOP,
+    flag: Int,
 ) {
     startActivity(
         Intent(
@@ -17,6 +17,17 @@ internal fun <T : Activity> Activity.startActivity(
             /* cls = */
             to,
         )
+    )
+}
+
+internal fun <T : Activity> Activity.startActivity(
+    context: Context,
+    to: Class<out T>,
+) {
+    startActivity(
+        context = context,
+        to = to,
+        flag = FLAG_ACTIVITY_CLEAR_TOP,
     )
 }
 
@@ -49,7 +60,7 @@ internal fun <T : Activity> Activity.startActivityRemovingBackStack(
 @Deprecated(
     "Legacy Code", ReplaceWith(
         "Activity.startActivity(Context, Class)",
-        "android.content.Intent"
+        "android.content.Intent",
     )
 )
 fun <T> startActivityLegacy(context: Context, to: Class<T>) {
