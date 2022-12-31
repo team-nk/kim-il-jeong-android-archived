@@ -17,6 +17,7 @@ import com.teamnk.kimiljung.BuildConfig
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseFragment
 import com.teamnk.kimiljung.databinding.FragmentMapBinding
+import com.teamnk.kimiljung.util.showShortSnackBar
 import com.teamnk.kimiljung.util.showShortToast
 
 class MapFragment : BaseFragment<FragmentMapBinding>(
@@ -43,7 +44,7 @@ class MapFragment : BaseFragment<FragmentMapBinding>(
 
     private fun checkUserPermission(){
         if(requireActivity().checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
-            showShortToast(requireActivity(), getString(R.string.activity_introduction_pager_accept_permission))
+            showShortSnackBar(requireView(), getString(R.string.activity_introduction_pager_accept_permission))
             startActivity(Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + BuildConfig.APPLICATION_ID)))
         }
     }

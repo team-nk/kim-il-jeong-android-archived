@@ -25,7 +25,7 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
             ActivityResultContracts.RequestPermission()
         ){
             if(it.not()) {
-                showShortToast(this, getString(R.string.activity_introduction_pager_accept_permission))
+                showShortToast(getString(R.string.activity_introduction_pager_accept_permission))
                 startActivity(Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + BuildConfig.APPLICATION_ID)))
             }
         }
