@@ -1,7 +1,14 @@
 package com.teamnk.kimiljung.api
 
+import com.google.gson.annotations.SerializedName
+import retrofit2.Response
+import retrofit2.http.PUT
+
 var accessToken: String? = null
-var refreshToken: String? = nulldata class TokenResponse(
+var refreshToken: String? = null
+
+
+
 // todo move alllll logic
 
 interface TokenAPI {
@@ -13,7 +20,7 @@ interface TokenAPI {
 data class TokenResponse(
     @SerializedName("access_token") val accessToken: String,
     @SerializedName("refresh_token") val refreshToken: String,
-))
+)
 
 internal fun renewToken() {
     tokenAPIProvider.renewToken().run {
