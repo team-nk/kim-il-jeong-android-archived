@@ -46,6 +46,7 @@ internal fun <T : Activity> Activity.startActivityFinishingCurrentActivity(
         context = context,
         to = to,
     )
+    finish()
 }
 
 internal fun <T : Activity> Activity.startActivityRemovingBackStack(
