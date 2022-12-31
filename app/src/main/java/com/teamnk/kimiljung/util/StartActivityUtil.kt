@@ -19,6 +19,16 @@ internal fun <T : Activity> Activity.startActivity(
         )
     )
 }
+
+internal fun <T : Activity> Activity.startActivityFinishingCurrentActivity(
+    context: Context,
+    to: Class<out T>,
+) {
+    startActivity(
+        context = context,
+        to = to,
+    )
+}
 fun <T> startActivity(context: Context, to: Class<T>) {
     context.startActivity(Intent(context, to))
 }
