@@ -70,10 +70,6 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
                 }
             }
         }
-
-        binding.run {
-
-        }
     }
 
     private fun initCheckIdDuplicationButton() {
