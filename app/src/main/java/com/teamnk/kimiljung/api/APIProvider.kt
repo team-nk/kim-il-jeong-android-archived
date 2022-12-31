@@ -35,3 +35,7 @@ val postAPIProvider : PostAPI by lazy {
 val commentAPIProvider : CommentAPI by lazy {
     RetrofitClient.getRetrofit()!!.create(CommentAPI::class.java)
 }
+
+val tokenAPIProvider: TokenAPI by lazy {
+    RetrofitClient.getRetrofit()!!.create(TokenAPI::class.java)
+}
