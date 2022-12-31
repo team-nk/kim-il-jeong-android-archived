@@ -20,6 +20,10 @@ private fun <T : Activity> Activity.startActivity(
     )
 }
 
+/**
+ * @author junsuPark
+ * Default
+ */
 internal fun <T : Activity> Activity.startActivity(
     context: Context,
     to: Class<out T>,
@@ -27,7 +31,7 @@ internal fun <T : Activity> Activity.startActivity(
     startActivity(
         context = context,
         to = to,
-        flag = FLAG_ACTIVITY_CLEAR_TOP,
+        flag = FLAG_ACTIVITY_SINGLE_TOP,
     )
 }
 
