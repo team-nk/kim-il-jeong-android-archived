@@ -7,7 +7,7 @@ import com.teamnk.kimiljung.databinding.ActivityStartBinding
 import com.teamnk.kimiljung.feature.introduction.IntroductionPagerActivity
 import com.teamnk.kimiljung.feature.login.LoginActivity
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_INTRODUCTION_PAGER_SHOWN
-import com.teamnk.kimiljung.util.startActivityLegacy
+import com.teamnk.kimiljung.util.startActivity
 
 class StartActivity : BaseActivity<ActivityStartBinding>(
     R.layout.activity_start
@@ -25,7 +25,7 @@ class StartActivity : BaseActivity<ActivityStartBinding>(
                 IS_INTRODUCTION_PAGER_SHOWN, false
             ).not()
         ) {
-            startActivityLegacy(
+            startActivity(
                 context = this,
                 to = IntroductionPagerActivity::class.java,
             )
@@ -34,7 +34,7 @@ class StartActivity : BaseActivity<ActivityStartBinding>(
 
     private fun initLoginEmailButton() {
         binding.tvActivityStartLoginEmail.setOnClickListener {
-            startActivityLegacy(
+            startActivity(
                 context = this,
                 to = LoginActivity::class.java,
             )
