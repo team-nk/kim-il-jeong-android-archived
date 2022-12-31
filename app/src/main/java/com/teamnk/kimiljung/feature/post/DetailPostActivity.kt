@@ -1,5 +1,6 @@
 package com.teamnk.kimiljung.feature.post
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import com.teamnk.kimiljung.R
@@ -44,8 +45,9 @@ class DetailPostActivity : BaseActivity<ActivityDetailPostBinding>(
 
     private fun initPostCommentButton() {
         binding.tvActivityDetailPostPostComment.setOnClickListener {
-            startActivity(
-                this, PostCommentActivity::class.java,
+            this.startActivity(
+                Intent(this, PostCommentActivity::class.java)
+                    .putExtra("id", intent.getIntExtra("id", 0))
             )
         }
     }
