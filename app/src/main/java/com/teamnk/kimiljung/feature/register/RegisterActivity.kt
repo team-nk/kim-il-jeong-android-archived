@@ -1,6 +1,7 @@
 package com.teamnk.kimiljung.feature.register
 
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
@@ -158,8 +159,12 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
         viewModel.isEmailVerificationCodeSent.observe(
             this,
         ) {
-            //TODO remove
+            // TODO remove
             showShortToast("Success")
+            showShortSnackBar(
+                binding.root,
+                getString(R.string.activity_register_email_verification_code_has_sent),
+            )
             if (it) {
                 with(binding) {
                     etActivityRegisterEmail.disable()
@@ -182,4 +187,3 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
         }
     }
 }
-

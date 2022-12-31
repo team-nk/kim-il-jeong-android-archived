@@ -220,4 +220,19 @@
         <item name="android:backgroundTint">@color/color_background</item>
         <item name="android:paddingVertical" tools:targetApi="o">32dp</item>
     </style>
+
+    <style name="TextViewPostTitle" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">13sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_text</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="CardViewPostPage" parent="CardView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal" tools:targetApi="o">18dp</item>
+        <item name="android:backgroundTint">@color/color_surface_secondary</item>
+    </style>
 </resources>

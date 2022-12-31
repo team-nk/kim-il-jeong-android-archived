@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".feature.post.DetailPostActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tv_activity_detail_post_title"
+                style="@style/TextViewPostTitle"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Starbucks 인수 결정 했습니다" />
+
+            <View
+                android:id="@+id/view_activity_detail_post"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/background_color_indicator_yellow_selector"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_activity_detail_post_title" />
+
+            <TextView
+                android:id="@+id/tv_activity_detail_post_schedule_content"
+                style="@style/TextViewPostTitle"
+                android:layout_gravity="center"
+                android:layout_marginStart="4dp"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@id/view_activity_detail_post"
+                app:layout_constraintStart_toEndOf="@id/view_activity_detail_post"
+                app:layout_constraintTop_toTopOf="@id/view_activity_detail_post"
+                tools:text="홀홀홀" />
+
+            <TextView
+                android:id="@+id/tv_activity_detail_post_account_id"
+                style="@style/TextViewPostTitle"
+                android:layout_gravity="end"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@id/tv_activity_detail_post_schedule_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_activity_detail_post_schedule_content"
+                tools:text="JunJaBoy" />
+
+            <TextView
+                android:id="@+id/tv_activity_detail_post_address"
+                style="@style/TextViewHintSecondary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_activity_detail_post_schedule_content"
+                tools:text="android developer velog" />
+
+            <TextView
+                android:id="@+id/tv_activity_detail_post_create_time"
+                style="@style/TextViewHintSecondary"
+                app:layout_constraintBottom_toBottomOf="@id/tv_activity_detail_post_address"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_activity_detail_post_address"
+                tools:text="android developer velog" />
+
+            <View
+                style="@style/SectionLinePrimary"
+                android:layout_width="0dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_activity_detail_post_address" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_activity_detail_post_content"
+            style="@style/TextViewPostTitle"
+            android:layout_width="0dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="12dp"
+            android:lineSpacingExtra="10dp"
+            android:textSize="18sp"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constraintLayout"
+            tools:text="이번에 스타벅스 둔산점을 (주)Daehee.corp이 인수하게 되었습니다. 이번 일을 계기로 대전시에 위치하고 있는 스타벅스 매장을 CJ로부터 강탈해 보려는 계획을 세겨보려 합니다." />
+
+        <androidx.cardview.widget.CardView
+            style="@style/CardViewPostPage"
+            android:layout_marginBottom="42dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tv_activity_detail_post_comment"
+                style="@style/TextViewHintSecondary"
+                android:layout_gravity="center_vertical"
+                android:layout_marginVertical="16dp"
+                android:layout_marginStart="16dp"
+                android:elevation="0dp"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_activity_detail_post_schedule_content"
+                tools:text="대덕대학교 자습" />
+
+            <TextView
+                android:id="@+id/tv_activity_detail_post_post_comment"
+                style="@style/TextViewPostTitle"
+                android:textSize="14sp"
+                android:text="@string/activity_post_comment_post_comment"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="end|center_vertical"/>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

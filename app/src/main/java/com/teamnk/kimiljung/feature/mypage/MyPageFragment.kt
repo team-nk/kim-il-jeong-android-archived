@@ -63,6 +63,8 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
 
         initPersonalInformationButtons()
         initInteractButtons()
+
+        viewModel.getSelfInformation()
     }
 
     private fun initActivityResultLaunchers() {

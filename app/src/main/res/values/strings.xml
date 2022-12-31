@@ -23,6 +23,7 @@
 
     <string name="activity_introduction_pager_content_description_next_icon">Introduction Next Page Icon</string>
     <string name="activity_introduction_pager_content_description_view_pager_image">ViewPager Image</string>
+    <string name="activity_introduction_pager_accept_permission">위치 권한을 허용해 주세요.</string>
 
     <string name="activity_start_login_with_email"><u>이메일로 로그인하기</u></string>
     <string name="activity_start_content_description_google_social_login">Google Social Login</string>
@@ -122,6 +123,13 @@
     <string name="activity_register_incorrect_verification_code">인증번호가 올바르지 않습니다</string>
     <string name="activity_register_error_please_enter_correct_verification_code">올바른 인증 코드를 입력해 주세요</string>
     <string name="activity_register_error_password_incorrect">비밀번호가 일치하지 않습니다</string>
+
+    <string name="dialog_search_location_select_location">위치 선택</string>
+    <string name="dialog_search_location_do_select">선택하기</string>
+    <string name="activity_register_email_verification_code_has_sent">이메일 인증 코드가 전송되었습니다.</string>
+
+    <string name="activity_detail_post_comment">댓글 </string>
+    <string name="activity_detail_post_count">개</string>
 
     <string-array name="fragment_calendar_string_array_calendar_week">
         <item>SUN</item>
