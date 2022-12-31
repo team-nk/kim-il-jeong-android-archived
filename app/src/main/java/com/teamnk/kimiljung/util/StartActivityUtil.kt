@@ -16,6 +16,9 @@ private fun <T : Activity> Activity.startActivity(
             context,
             /* cls = */
             to,
+        ).addFlags(
+            /* flags = */
+            flag,
         )
     )
 }
