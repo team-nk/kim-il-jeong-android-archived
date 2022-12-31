@@ -22,30 +22,8 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
     R.layout.fragment_mypage
 ) {
 
-    private val changePasswordActivityResultLauncher: ActivityResultLauncher<Intent> by lazy {
-        registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult(),
-        ) {
-            if (it.resultCode == RESULT_OK) {
-                if (it.data?.getBooleanExtra("isChangePasswordSuccess", false) == true) {
-                    showShortSnackBar(
-                        view = binding.root,
-                        getString(R.string.fragment_mypage_change_password_success),
-                    )
-                }
-            }
-        }
-    }
-
-    private val changeUserInformationActivityResultLauncher: ActivityResultLauncher<Intent> by lazy {
-        registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult(),
-        ) {
-            if (it.resultCode == RESULT_OK) {
-                //TODO 유저 정보 재호출 로직
-            }
-        }
-    }
+    private lateinit var changePasswordActivityResultLauncher: ActivityResultLauncher<Intent>
+    private lateinit var changeUserInformationActivityResultLauncher: ActivityResultLauncher<Intent>
 
     private val viewModel by lazy {
         ViewModelProvider(
@@ -68,8 +46,26 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
     }
 
     private fun initActivityResultLaunchers() {
-        changePasswordActivityResultLauncher
-        changeUserInformationActivityResultLauncher
+        changePasswordActivityResultLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult(),
+        ) {
+            if (it.resultCode == RESULT_OK) {
+                if (it.data?.getBooleanExtra("isChangePasswordSuccess", false) == true) {
+                    showShortSnackBar(
+                        view = binding.root,
+                        getString(R.string.fragment_mypage_change_password_success),
+                    )
+                }
+            }
+        }
+        
+        changeUserInformationActivityResultLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult(),
+        ) {
+            if (it.resultCode == RESULT_OK) {
+                //TODO 유저 정보 재호출 로직
+            }
+        }
     }
 
     private fun initPersonalInformationButtons() {
