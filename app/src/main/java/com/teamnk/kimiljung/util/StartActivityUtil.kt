@@ -40,6 +40,8 @@ internal fun <T : Activity> Activity.startActivityRemovingBackStack(
         flag = FLAG_ACTIVITY_CLEAR_TASK,
     )
 }
+
+// todo remove two functions about activity
 fun <T> startActivity(context: Context, to: Class<T>) {
     context.startActivity(Intent(context, to))
 }
