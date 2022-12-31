@@ -12,17 +12,6 @@ abstract class BaseActivity<B : ViewDataBinding>(
     @LayoutRes private val layoutId: Int,
 ) : AppCompatActivity() {
 
-    protected val defaultSharedPreferences: SharedPreferences by lazy {
-        getSharedPreferences(
-            SharedPreferencesName.DEFAULT,
-            MODE_PRIVATE,
-        )
-    }
-
-    protected val defaultSharedPreferencesEditor: SharedPreferences.Editor by lazy {
-        defaultSharedPreferences.edit()
-    }
-
     protected val binding: B by lazy {
         DataBindingUtil.setContentView(this, layoutId)
     }
