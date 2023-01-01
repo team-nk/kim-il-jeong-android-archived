@@ -23,10 +23,15 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
     private val permissionResult by lazy {
         registerForActivityResult(
             ActivityResultContracts.RequestPermission()
-        ){
-            if(it.not()) {
+        ) {
+            if (it.not()) {
                 showShortToast(getString(R.string.activity_introduction_pager_accept_permission))
-                startActivity(Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + BuildConfig.APPLICATION_ID)))
+                startActivity(
+                    Intent(
+                        Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                        Uri.parse("package:" + BuildConfig.APPLICATION_ID)
+                    )
+                )
             }
         }
     }
@@ -78,7 +83,7 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
         finish()
     }
 
-    private fun requestPermission(){
+    private fun requestPermission() {
         permissionResult.launch(Manifest.permission.ACCESS_FINE_LOCATION)
         ActivityCompat.requestPermissions(
             this,
