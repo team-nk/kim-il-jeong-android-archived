@@ -1,8 +1,13 @@
 package com.teamnk.kimiljung.feature.postcomment
 
+import android.content.Context
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.teamnk.kimiljung.R
@@ -15,10 +20,11 @@ class PostCommentAdapter(
     private val postList: ArrayList<PostList>,
     private val commentList: ArrayList<CommentList>,
     private val temp: Int,
+    private val context : Context,
 ) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    companion object{
+    companion object {
         const val POST_LIST = 1
         const val COMMENT_LIST = 2
     }
@@ -45,8 +51,8 @@ class PostCommentAdapter(
         parent: ViewGroup,
         viewType: Int,
     ): RecyclerView.ViewHolder =
-        when(temp){
-            POST_LIST ->{
+        when (temp) {
+            POST_LIST -> {
                 PostViewHolder(
                     DataBindingUtil.inflate(
                         LayoutInflater.from(parent.context),
@@ -56,7 +62,7 @@ class PostCommentAdapter(
                     )
                 )
             }
-            else ->{
+            else -> {
                 CommentViewHolder(
                     DataBindingUtil.inflate(
                         LayoutInflater.from(parent.context),
@@ -76,6 +82,7 @@ class PostCommentAdapter(
             POST_LIST -> {
                 (holder as PostViewHolder).apply {
                     bind(postList[position])
+                    binding.viewItemPostPostTag.background = postColor(postList[position].color)
                     itemView.apply {
                         setOnClickListener {
                             context.startActivity(
@@ -98,16 +105,28 @@ class PostCommentAdapter(
             COMMENT_LIST -> {
                 (holder as CommentViewHolder).apply {
                     bind(commentList = commentList[position])
-                    binding.tvItemCommentCreateTime.text = commentList[position].createTime.split('T').get(1)
+                    binding.tvItemCommentCreateTime.text =
+                        commentList[position].createTime.split('T')[1]
                 }
             }
         }
     }
 
     override fun getItemCount(): Int {
-        return when(temp){
+        return when (temp) {
             POST_LIST -> postList.size
             else -> commentList.size
         }
     }
+
+    private fun postColor(
+        color : String,
+    ) : Drawable? =
+        when(color){
+            "RED" -> ActivityCompat.getDrawable(context, R.drawable.background_color_indicator_red_selector)
+            "BLUE" -> ActivityCompat.getDrawable(context, R.drawable.background_color_indicator_blue_selector)
+            "YELLOW" -> ActivityCompat.getDrawable(context, R.drawable.background_color_indicator_yellow_selector)
+            "GREEN" -> ActivityCompat.getDrawable(context, R.drawable.background_color_indicator_green_selector)
+            else -> ActivityCompat.getDrawable(context, R.drawable.background_color_indicator_purple_selector)
+        }
 }
