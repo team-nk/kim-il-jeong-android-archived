@@ -1,9 +1,12 @@
 package com.teamnk.kimiljung.feature.changeuserinformation
 
+import android.content.Intent
 import androidx.activity.viewModels
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityChangeUserInformationBinding
+import com.teamnk.kimiljung.feature.changepassword.ChangePasswordActivity
+import com.teamnk.kimiljung.util.StartActivityUtil.startActivityFinishingCurrentActivity
 import com.teamnk.kimiljung.util.loadImage
 
 class ChangeUserInformationActivity : BaseActivity<ActivityChangeUserInformationBinding>(
@@ -34,6 +37,19 @@ class ChangeUserInformationActivity : BaseActivity<ActivityChangeUserInformation
                 )?.let {
                     etActivityChangeUserInformationId.hint = it
                 }
+            }
+
+            btnActivityChangeUserInformationCancel.setOnClickListener { finish() }
+
+            btnActivityChangeUserInformationChange.setOnClickListener {
+                // TODO ViewModel API Call
+                viewModel
+            }
+
+            tvActivityChangeUserInformationChangePassword.setOnClickListener {
+                startActivityFinishingCurrentActivity(
+                    this@ChangeUserInformationActivity, ChangePasswordActivity::class.java,
+                )
             }
         }
     }
