@@ -6,21 +6,22 @@ import android.content.Intent
 import android.content.Intent.*
 
 private fun <T : Activity> Activity.startActivity(
-    context: Context,
-    to: Class<out T>,
-    flag: Int,
+    context: Context, to: Class<out T>,
+    flag: List<Int> = listOf(FLAG_ACTIVITY_SINGLE_TOP),
 ) {
-    startActivity(
-        Intent(
-            /* packageContext = */
-            context,
-            /* cls = */
-            to,
-        ).addFlags(
-            /* flags = */
-            flag,
-        )
-    )
+    startActivity(Intent(
+        /* packageContext = */
+        context,
+        /* cls = */
+        to,
+    ).apply {
+        flag.forEach {
+            this.addFlags(
+                /* flags = */
+                it,
+            )
+        }
+    })
 }
 
 /**
@@ -34,13 +35,13 @@ internal fun <T : Activity> Activity.startActivity(
     startActivity(
         context = context,
         to = to,
-        flag = FLAG_ACTIVITY_SINGLE_TOP,
+        flag = listOf(FLAG_ACTIVITY_SINGLE_TOP),
     )
 }
 
 internal fun <T : Activity> Activity.startActivityFinishingCurrentActivity(
-    context: Context,
-    to: Class<out T>,
+    context: Context, to: Class<out T>,
+    flag: List<Int> = listOf(FLAG_ACTIVITY_SINGLE_TOP),
 ) {
     startActivity(
         context = context,
@@ -53,10 +54,10 @@ internal fun <T : Activity> Activity.startActivityRemovingBackStack(
     context: Context,
     to: Class<out T>,
 ) {
-    startActivity(
+    startActivityFinishingCurrentActivity(
         context = context,
         to = to,
-        flag = FLAG_ACTIVITY_CLEAR_TASK,
+        flag = listOf(FLAG_ACTIVITY_CLEAR_TASK, FLAG_ACTIVITY_NEW_TASK),
     )
 }
 
