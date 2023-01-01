@@ -17,10 +17,10 @@ import com.teamnk.kimiljung.feature.changeuserinformation.ID
 import com.teamnk.kimiljung.feature.changeuserinformation.PROFILE_URL
 import com.teamnk.kimiljung.feature.enterbirthday.EnterBirthdayBottomSheetDialogFragment
 import com.teamnk.kimiljung.feature.start.StartActivity
+import com.teamnk.kimiljung.util.StartActivityUtil.startActivityRemovingBackStack
 import com.teamnk.kimiljung.util.loadImage
 import com.teamnk.kimiljung.util.showDialogWithDoubleButton
 import com.teamnk.kimiljung.util.showShortSnackBar
-import com.teamnk.kimiljung.util.startActivityRemovingBackStack
 
 class MyPageFragment : BaseFragment<FragmentMypageBinding>(
     R.layout.fragment_mypage
