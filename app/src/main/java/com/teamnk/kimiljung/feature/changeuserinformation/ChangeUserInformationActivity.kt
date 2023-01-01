@@ -48,7 +48,8 @@ class ChangeUserInformationActivity : BaseActivity<ActivityChangeUserInformation
 
             tvActivityChangeUserInformationChangePassword.setOnClickListener {
                 startActivityFinishingCurrentActivity(
-                    this@ChangeUserInformationActivity, ChangePasswordActivity::class.java,
+                    this@ChangeUserInformationActivity,
+                    ChangePasswordActivity::class.java,
                 )
             }
         }
