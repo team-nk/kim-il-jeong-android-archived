@@ -47,6 +47,7 @@ object StartActivityUtil {
         startActivity(
             context = context,
             to = to,
+            flag = flag,
         )
         finish()
     }
