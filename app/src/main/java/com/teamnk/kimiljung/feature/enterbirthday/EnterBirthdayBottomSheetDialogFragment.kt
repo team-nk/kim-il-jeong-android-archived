@@ -86,14 +86,16 @@ class EnterBirthdayBottomSheetDialogFragment :
         viewModel.isEnterBirthdaySuccess.observe(
             requireActivity(),
         ) {
-            if (it) {
-                dismiss()
-            } else {
-                showShortSnackBar(
-                    dialog!!.window!!.decorView,
-                    getString(R.string.error_failed_to_connect_to_server),
-                )
-            }
+            dismiss()
+        }
+
+        viewModel.snackBarMessage.observe(
+            requireActivity(),
+        ) {
+            showShortSnackBar(
+                binding.root,
+                it,
+            )
         }
     }
 }
