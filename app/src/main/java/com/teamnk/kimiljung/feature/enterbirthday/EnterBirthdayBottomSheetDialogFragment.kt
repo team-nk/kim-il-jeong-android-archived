@@ -64,9 +64,7 @@ class EnterBirthdayBottomSheetDialogFragment :
                     "${selectedYear.toString().padStart(4, '0')}-${
                         (selectedMonth + 1).toString().padStart(2, '0')
                     }-${selectedDate.toString().padStart(2, '0')}".apply {
-                        viewModel.setBirthday(
-                            this
-                        )
+                        viewModel.setBirthday(this)
                         binding.btnDialogEnterBirthdaySelectBirthday.text = this
                     }
                 },
