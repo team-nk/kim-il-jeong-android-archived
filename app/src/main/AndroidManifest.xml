@@ -80,7 +80,8 @@
             android:launchMode="singleTop" />
         <activity
             android:name=".feature.start.StartActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:launchMode="singleInstance" />
         <activity
             android:name=".feature.main.MainActivity"
             android:exported="true"
