@@ -120,7 +120,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
             clear()
             apply()
         }
-        startActivityRemovingBackStack(
+        requireActivity().startActivityRemovingBackStack(
             requireActivity(),
             StartActivity::class.java,
         )
