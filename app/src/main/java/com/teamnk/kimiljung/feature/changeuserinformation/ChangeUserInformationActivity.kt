@@ -18,26 +18,27 @@ class ChangeUserInformationActivity : BaseActivity<ActivityChangeUserInformation
 
     private fun initView() {
         with(binding) {
-            intent.getStringExtra(
-                PROFILE_URL,
-            )?.let {
-                imageActivityChangeUserInformationUserProfile.loadImage(it)
-            }
-
-            intent.getStringExtra(
-                EMAIL,
-            )?.let {
-                etActivityChangeUserInformationEmail.hint = it
-            }
-
-            intent.getStringExtra(
-                ID,
-            )?.let {
-                etActivityChangeUserInformationId.hint = it
+            intent.run {
+                getStringExtra(
+                    PROFILE_URL,
+                )?.let {
+                    imageActivityChangeUserInformationUserProfile.loadImage(it)
+                }
+                getStringExtra(
+                    EMAIL,
+                )?.let {
+                    etActivityChangeUserInformationEmail.hint = it
+                }
+                getStringExtra(
+                    ID,
+                )?.let {
+                    etActivityChangeUserInformationId.hint = it
+                }
             }
         }
     }
 }
+
 
 const val PROFILE_URL = "profile_url"
 const val EMAIL = "email"
