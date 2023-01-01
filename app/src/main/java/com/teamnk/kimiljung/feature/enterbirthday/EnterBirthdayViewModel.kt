@@ -19,8 +19,8 @@ class EnterBirthdayViewModel(
         get() = _isEnterBirthdaySuccess
 
     private val _snackBarMessage = MutableLiveData<String>()
-    val snackBarMessage : LiveData<String>
-    get() = _snackBarMessage
+    val snackBarMessage: LiveData<String>
+        get() = _snackBarMessage
 
     private lateinit var selectedBirthday: String
 
@@ -38,7 +38,11 @@ class EnterBirthdayViewModel(
                 )
             }.onSuccess {
                 if (it.isSuccessful) {
-                    _isEnterBirthdaySuccess.postValue(true)
+                    when (it.code()) {
+                        204 -> {
+                            _isEnterBirthdaySuccess.postValue(true)
+                        }
+                    }
                 } else {
                     _snackBarMessage.postValue(
                         mApplication.getString(
