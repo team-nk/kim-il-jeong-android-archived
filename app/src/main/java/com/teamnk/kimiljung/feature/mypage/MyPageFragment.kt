@@ -12,6 +12,9 @@ import com.teamnk.kimiljung.base.BaseFragment
 import com.teamnk.kimiljung.databinding.FragmentMypageBinding
 import com.teamnk.kimiljung.feature.changepassword.ChangePasswordActivity
 import com.teamnk.kimiljung.feature.changeuserinformation.ChangeUserInformationActivity
+import com.teamnk.kimiljung.feature.changeuserinformation.EMAIL
+import com.teamnk.kimiljung.feature.changeuserinformation.ID
+import com.teamnk.kimiljung.feature.changeuserinformation.PROFILE_URL
 import com.teamnk.kimiljung.feature.enterbirthday.EnterBirthdayBottomSheetDialogFragment
 import com.teamnk.kimiljung.feature.start.StartActivity
 import com.teamnk.kimiljung.util.loadImage
@@ -25,6 +28,8 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
 
     private lateinit var changePasswordActivityResultLauncher: ActivityResultLauncher<Intent>
     private lateinit var changeUserInformationActivityResultLauncher: ActivityResultLauncher<Intent>
+
+    private lateinit var mSelfInformationResponse: GetSelfInformationResponse
 
     private val viewModel by lazy {
         ViewModelProvider(
@@ -149,6 +154,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
         viewModel.selfInformation.observe(
             viewLifecycleOwner
         ) {
+            mSelfInformationResponse = it
             initSelfInformationView(it)
         }
 
@@ -166,7 +172,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
         with(binding) {
             imageFragmentMypageUserProfile.loadImage(selfInformationResponse.profileImageURL.run {
                 if (this@run == "'a'") {
-                    "https://avatars.githubusercontent.com/u/101160207?s=80&v=4"
+                    "https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/319434847_5649133131801893_2185983307325290194_n.jpg?stp=c660.0.1080.1080a_dst-jpg&_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=B8dLqczU7rwAX8noE_k&_nc_ht=scontent-ssn1-1.xx&oh=00_AfCVpvDZANh7dczhT92uSDtoVnRh_Fop_1IWyrELWs-p2w&oe=63B5AC87"
                 } else {
                     this@run
                 }
