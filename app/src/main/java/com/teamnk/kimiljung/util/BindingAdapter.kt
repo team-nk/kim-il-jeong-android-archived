@@ -5,8 +5,8 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 
 @BindingAdapter("profileImage")
-fun ImageView.loadImage(profile : String){
+fun ImageView.loadImage(url : String){
     Glide.with(this)
-        .load(profile)
+        .load(url)
         .into(this)
 }

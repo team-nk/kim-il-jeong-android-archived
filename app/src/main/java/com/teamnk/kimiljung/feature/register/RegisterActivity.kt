@@ -6,7 +6,11 @@ import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityRegisterBinding
 import com.teamnk.kimiljung.feature.login.LoginActivity
-import com.teamnk.kimiljung.util.*
+import com.teamnk.kimiljung.util.StartActivityUtil.startActivityFinishingCurrentActivity
+import com.teamnk.kimiljung.util.disable
+import com.teamnk.kimiljung.util.showDialogWithSingleButton
+import com.teamnk.kimiljung.util.showShortSnackBar
+import com.teamnk.kimiljung.util.showShortToast
 
 class RegisterActivity : BaseActivity<ActivityRegisterBinding>(
     R.layout.activity_register

@@ -10,9 +10,10 @@ import com.teamnk.kimiljung.feature.register.RegisterActivity
 import com.teamnk.kimiljung.util.SharedPreferencesKey.ACCESS_TOKEN
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_LOGGED_IN
 import com.teamnk.kimiljung.util.SharedPreferencesKey.REFRESH_TOKEN
+import com.teamnk.kimiljung.util.StartActivityUtil.startActivity
+import com.teamnk.kimiljung.util.StartActivityUtil.startActivityFinishingCurrentActivity
+import com.teamnk.kimiljung.util.defaultSharedPreferencesEditor
 import com.teamnk.kimiljung.util.showShortSnackBar
-import com.teamnk.kimiljung.util.startActivity
-import com.teamnk.kimiljung.util.startActivityFinishingCurrentActivity
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>(
     R.layout.activity_login
