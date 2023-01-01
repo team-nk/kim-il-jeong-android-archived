@@ -18,7 +18,8 @@ abstract class BaseFragment<B : ViewDataBinding>(
 
     protected val defaultSharedPreferences: SharedPreferences by lazy {
         requireActivity().getSharedPreferences(
-            SharedPreferencesName.DEFAULT, AppCompatActivity.MODE_PRIVATE
+            SharedPreferencesName.DEFAULT,
+            AppCompatActivity.MODE_PRIVATE,
         )
     }
 
