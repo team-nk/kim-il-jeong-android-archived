@@ -132,6 +132,8 @@
     <string name="activity_detail_post_comment">댓글 </string>
     <string name="activity_detail_post_count">개</string>
 
+    <string name="fragment_map_please_allow_permisson">지도를 사용하려면 위치 권한을 허용해 주세요.</string>
+
     <string-array name="fragment_calendar_string_array_calendar_week">
         <item>SUN</item>
         <item>MON</item>
