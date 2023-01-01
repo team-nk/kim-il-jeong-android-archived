@@ -31,6 +31,7 @@ class PostFragment : BaseFragment<FragmentPostBinding>(
                     postList = it.body()!!.post_list,
                     commentList = arrayListOf(),
                     temp = 1,
+                    context = requireActivity(),
                 )
                 layoutManager = LinearLayoutManager(
                     requireActivity(),

@@ -22,6 +22,7 @@ class PostCommentActivity : BaseActivity<ActivityPostCommentBinding>(
             postList = arrayListOf(),
             commentList = commentList,
             temp = 2,
+            context = this,
         )
     }
 
