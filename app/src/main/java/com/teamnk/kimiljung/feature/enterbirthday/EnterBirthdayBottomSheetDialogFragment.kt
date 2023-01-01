@@ -20,8 +20,9 @@ class EnterBirthdayBottomSheetDialogFragment :
 
     private val viewModel by lazy {
         ViewModelProvider(
-            requireActivity(), EnterBirthdayViewModelFactory(
+            this, EnterBirthdayViewModelFactory(
                 EnterBirthdayRepository(),
+                requireActivity().application,
             )
         )[EnterBirthdayViewModel::class.java]
     }
