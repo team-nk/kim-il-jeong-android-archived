@@ -87,6 +87,7 @@
 
     <string name="activity_post_inspect_post_comment">댓글 작성하기</string>
 
+    <string name="error_please_enter_comment">댓글을 입력해 주세요.</string>
     <string name="activity_post_comment_post_comment">댓글 작성</string>
 
     <string name="activity_post_history_check_my_post">내 글 확인하기</string>
@@ -130,6 +131,8 @@
 
     <string name="activity_detail_post_comment">댓글 </string>
     <string name="activity_detail_post_count">개</string>
+
+    <string name="fragment_map_please_allow_permisson">지도를 사용하려면 위치 권한을 허용해 주세요.</string>
 
     <string-array name="fragment_calendar_string_array_calendar_week">
         <item>SUN</item>

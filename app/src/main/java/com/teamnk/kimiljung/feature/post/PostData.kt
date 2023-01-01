@@ -5,6 +5,7 @@ data class PostListResponse(
 )
 
 data class PostList(
+    val id : Int,
     val title : String,
     val schedule_content : String,
     val address : String,

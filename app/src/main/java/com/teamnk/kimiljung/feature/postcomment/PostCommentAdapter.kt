@@ -80,6 +80,7 @@ class PostCommentAdapter(
                         setOnClickListener {
                             context.startActivity(
                                 Intent(holder.itemView.context, DetailPostActivity::class.java)
+                                    .putExtra("id", postList[position].id)
                                     .putExtra("title", postList[position].title)
                                     .putExtra(
                                         "schedule_content",
