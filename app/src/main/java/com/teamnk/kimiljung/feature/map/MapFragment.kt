@@ -8,9 +8,12 @@ import android.location.LocationManager
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
-import android.util.Log
 import android.view.View
-import com.google.android.gms.maps.*
+import androidx.core.content.ContextCompat
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.teamnk.kimiljung.BuildConfig
@@ -18,7 +21,6 @@ import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseFragment
 import com.teamnk.kimiljung.databinding.FragmentMapBinding
 import com.teamnk.kimiljung.util.showShortSnackBar
-import com.teamnk.kimiljung.util.showShortToast
 
 class MapFragment : BaseFragment<FragmentMapBinding>(
     R.layout.fragment_map,
@@ -32,21 +34,49 @@ class MapFragment : BaseFragment<FragmentMapBinding>(
         requireActivity().getSystemService(LOCATION_SERVICE) as LocationManager
     }
 
-    private lateinit var currentLocation: LatLng
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         checkUserPermission()
-        setUserLocation()
-        initMapView()
-
     }
 
-    private fun checkUserPermission(){
-        if(requireActivity().checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
-            showShortSnackBar(requireView(), getString(R.string.activity_introduction_pager_accept_permission))
-            startActivity(Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + BuildConfig.APPLICATION_ID)))
+    override fun onResume() {
+        super.onResume()
+        if(checkGranted()){
+            initMapView()
+            setUserLocation()
+        }else{
+            showShortSnackBar(
+                view = binding.root,
+                text = getString(R.string.fragment_map_please_allow_permisson)
+            )
         }
+    }
+
+    private lateinit var currentLocation: LatLng
+
+    private fun checkUserPermission(){
+        if(checkGranted()){
+            initMapView()
+            setUserLocation()
+        }else{
+            moveToOption()
+        }
+    }
+
+    private fun checkGranted() : Boolean =
+        ContextCompat.checkSelfPermission(
+                requireActivity(),
+                Manifest.permission.ACCESS_FINE_LOCATION,
+            ) == PackageManager.PERMISSION_GRANTED
+
+
+    private fun moveToOption(){
+        startActivity(
+            Intent(
+                Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                Uri.parse("package:" + BuildConfig.APPLICATION_ID)
+            )
+        )
     }
 
     private fun initMapView(){
