@@ -37,7 +37,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/layout_fragment_mypage_user_information"
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="15dp">
 
@@ -46,11 +46,11 @@
                         android:layout_width="52dp"
                         android:layout_height="52dp"
                         android:contentDescription="@string/content_description_profile_image"
-                        android:src="@drawable/image_temp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@id/layout_fragment_mypage_personal_information"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@drawable/image_temp" />
 
                     <LinearLayout
                         android:id="@+id/layout_fragment_mypage_personal_information"
