@@ -75,11 +75,19 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
 
     private fun initEditProfileButton() {
         binding.btnFragmentMypageEditProfile.setOnClickListener {
-            changeUserInformationActivityResultLauncher.launch(
-                Intent(
-                    requireActivity(), ChangeUserInformationActivity::class.java,
+            mSelfInformationResponse.run {
+                changeUserInformationActivityResultLauncher.launch(
+                    Intent(
+                        requireActivity(), ChangeUserInformationActivity::class.java,
+                    ).putExtra(
+                        PROFILE_URL, this@run.profileImageURL,
+                    ).putExtra(
+                        ID, this@run.accountId,
+                    ).putExtra(
+                        EMAIL, this@run.email,
+                    )
                 )
-            )
+            }
         }
     }
 
