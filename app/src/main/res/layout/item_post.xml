@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="postList"
             type="com.teamnk.kimiljung.feature.post.PostList" />
@@ -8,26 +10,24 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp">
 
-        <RadioButton
-            android:id="@+id/radio_btn_item_post"
+        <View
+            android:id="@+id/view_item_post_post_tag"
             android:layout_width="4dp"
             android:layout_height="4dp"
             android:layout_marginTop="8dp"
-            android:background="@drawable/background_color_indicator_blue_selector"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_item_post_title"
             style="@style/TextViewPostTitle"
-            android:text="@{postList.title}"
             android:layout_marginStart="6dp"
-            app:layout_constraintStart_toEndOf="@id/radio_btn_item_post"
+            android:text="@{postList.title}"
+            app:layout_constraintStart_toEndOf="@id/view_item_post_post_tag"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="자치 회의를 시작하려 합니다" />
 
@@ -35,9 +35,9 @@
             android:id="@+id/tv_item_post_accountId"
             style="@style/TextViewPostTitle"
             android:layout_marginStart="6dp"
+            android:text="@{postList.account_id}"
             android:textSize="11sp"
             android:textStyle="normal"
-            android:text="@{postList.account_id}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="JunJaBoy" />
@@ -46,8 +46,8 @@
             android:id="@+id/tv_item_post_schedule_content"
             style="@style/TextViewPostTitle"
             android:layout_marginTop="2dp"
-            android:textStyle="normal"
             android:text="@{postList.schedule_content}"
+            android:textStyle="normal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_item_post_title"
             tools:text="학교 자치 회의" />
@@ -59,13 +59,15 @@
             android:textSize="9sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_item_post_accountId"
-            tools:text="2022-12-12" />
+            tools:text="2022-12-12"
+            tools:ignore="SmallSp" />
 
         <TextView
             android:id="@+id/tv_item_post_address"
             style="@style/TextViewHintSecondary"
             android:layout_marginTop="2dp"
             android:text="@{postList.address}"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_item_post_schedule_content"
             tools:text="태양계-지구-대한민국-대전광역시-유성구-가정북로-76" />
 
@@ -73,6 +75,8 @@
             style="@style/SectionLinePrimary"
             android:layout_width="0dp"
             android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_item_post_address" />
 
 
