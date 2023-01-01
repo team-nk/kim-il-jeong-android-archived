@@ -33,13 +33,19 @@ class EnterBirthdayViewModel(
             kotlin.runCatching {
                 repository.enterBirthday(
                     EnterBirthdayRequest(
-                        selectedBirthday!!,
+                        selectedBirthday,
                     )
                 )
             }.onSuccess {
-                _isEnterBirthdaySuccess.postValue(
-                    it.isSuccessful
-                )
+                if (it.isSuccessful) {
+                    _isEnterBirthdaySuccess.postValue(true)
+                } else {
+                    _snackBarMessage.postValue(
+                        mApplication.getString(
+                            R.string.error_failed_to_connect_to_server,
+                        ),
+                    )
+                }
             }
         }
     }
