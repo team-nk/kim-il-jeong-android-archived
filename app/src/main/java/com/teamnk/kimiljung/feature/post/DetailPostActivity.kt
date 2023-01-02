@@ -43,7 +43,7 @@ class DetailPostActivity : BaseActivity<ActivityDetailPostBinding>(
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setResult()
+        initActivityResultLauncher()
         initDetailPost()
         initPostCommentButton()
         setCommentCount(intent.getIntExtra("comment_count", 0))
@@ -70,7 +70,7 @@ class DetailPostActivity : BaseActivity<ActivityDetailPostBinding>(
         }
     }
 
-    private fun setResult(){
+    private fun initActivityResultLauncher(){
        postCommentActivityResultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ){
