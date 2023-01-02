@@ -4,9 +4,10 @@ import retrofit2.Response
 import retrofit2.http.*
 
 interface CommentAPI {
-    @GET("/comment")
+    @GET("/comment/{post-id}")
     suspend fun getCommentList(
         @Header("Authorization") access_token : String,
+        @Path("post-id") postId : Int,
     ) : Response<CommentListResponse>
 
     @POST("/comment/{post-id}")
