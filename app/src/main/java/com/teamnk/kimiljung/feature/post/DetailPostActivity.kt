@@ -3,6 +3,7 @@ package com.teamnk.kimiljung.feature.post
 import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
+import androidx.core.app.ActivityCompat
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityDetailPostBinding
@@ -62,6 +63,10 @@ class DetailPostActivity : BaseActivity<ActivityDetailPostBinding>(
                     stringBuilder.append(getString(R.string.activity_detail_post_comment))
                         .append(" ").append(getIntExtra("comment_count", 0))
                         .append(getString(R.string.activity_detail_post_count))
+                viewActivityDetailPost.background = ActivityCompat.getDrawable(
+                    this@DetailPostActivity,
+                    getIntExtra("color", 0,)
+                )
             }
         }
     }
