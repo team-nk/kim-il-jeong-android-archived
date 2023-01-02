@@ -14,6 +14,10 @@ class MyPageViewModel(
     mApplication: Application,
 ) : AndroidViewModel(mApplication) {
 
+    init {
+        getSelfInformation()
+    }
+
     private val tag = this.javaClass.simpleName
 
     private val _selfInformation = MutableLiveData<GetSelfInformationResponse>()
