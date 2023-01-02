@@ -1,7 +1,7 @@
 package com.teamnk.kimiljung.feature.postcomment
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.teamnk.kimiljung.R
@@ -15,6 +15,10 @@ class PostCommentActivity : BaseActivity<ActivityPostCommentBinding>(
 
     private val commentList : ArrayList<CommentList> by lazy {
         arrayListOf()
+    }
+
+    private val postId : Int by lazy {
+        intent.getIntExtra("id", 0)
     }
 
     private val postCommentAdapter by lazy {
@@ -38,6 +42,7 @@ class PostCommentActivity : BaseActivity<ActivityPostCommentBinding>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initSendButton()
+        viewModel.getCommentList(postId)
     }
 
     private fun initSendButton() {
@@ -46,7 +51,7 @@ class PostCommentActivity : BaseActivity<ActivityPostCommentBinding>(
                 etActivityPostCommentComment.text.toString().run {
                     if(this.isNotBlank()){
                         viewModel.postComment(
-                            postId = intent.getIntExtra("id", 0),
+                            postId = postId,
                             commentRequest = CommentRequest(etActivityPostCommentComment.text.toString())
                         )
                     }else{
@@ -74,6 +79,13 @@ class PostCommentActivity : BaseActivity<ActivityPostCommentBinding>(
                     add(0, tempList[0])
                     postCommentAdapter.notifyItemInserted(0)
                     binding.rvActivityPostCommentMain.scrollToPosition(0)
+                    setResult(
+                        RESULT_OK,
+                        Intent().putExtra(
+                            "comment_count",
+                            commentList.size,
+                        )
+                    )
                 }
             }
         }
@@ -82,7 +94,7 @@ class PostCommentActivity : BaseActivity<ActivityPostCommentBinding>(
             this,
         ){
             binding.etActivityPostCommentComment.text = null
-            viewModel.getCommentList()
+            viewModel.getCommentList(postId)
         }
 
         viewModel.snackBarMessage.observe(

@@ -15,10 +15,6 @@ class CommentViewModel(
     application: Application,
 ) : AndroidViewModel(application) {
 
-    init {
-        getCommentList()
-    }
-
     private val AndroidViewModel.context: Context
         get() = getApplication<Application>().applicationContext
 
@@ -31,10 +27,12 @@ class CommentViewModel(
     private val _snackBarMessage = MutableLiveData<String>()
     val snackBarMessage: LiveData<String> = _snackBarMessage
 
-    fun getCommentList() {
+    fun getCommentList(
+        postId : Int,
+    ) {
         viewModelScope.launch(Dispatchers.IO) {
             kotlin.runCatching {
-                commentRepository.getCommentList()
+                commentRepository.getCommentList(postId)
             }.onSuccess {
                 if (it.isSuccessful) {
                     _commentListResponse.postValue(it)
