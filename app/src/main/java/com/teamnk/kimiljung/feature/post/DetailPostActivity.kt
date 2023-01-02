@@ -8,6 +8,7 @@ import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityDetailPostBinding
 import com.teamnk.kimiljung.feature.postcomment.PostCommentActivity
+import com.teamnk.kimiljung.util.StartActivityUtil.startActivity
 
 class DetailPostActivity : BaseActivity<ActivityDetailPostBinding>(
     R.layout.activity_detail_post,

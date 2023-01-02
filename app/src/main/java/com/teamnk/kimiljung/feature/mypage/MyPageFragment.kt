@@ -12,40 +12,24 @@ import com.teamnk.kimiljung.base.BaseFragment
 import com.teamnk.kimiljung.databinding.FragmentMypageBinding
 import com.teamnk.kimiljung.feature.changepassword.ChangePasswordActivity
 import com.teamnk.kimiljung.feature.changeuserinformation.ChangeUserInformationActivity
+import com.teamnk.kimiljung.feature.changeuserinformation.EMAIL
+import com.teamnk.kimiljung.feature.changeuserinformation.ID
+import com.teamnk.kimiljung.feature.changeuserinformation.PROFILE_URL
 import com.teamnk.kimiljung.feature.enterbirthday.EnterBirthdayBottomSheetDialogFragment
 import com.teamnk.kimiljung.feature.start.StartActivity
+import com.teamnk.kimiljung.util.StartActivityUtil.startActivityRemovingBackStack
+import com.teamnk.kimiljung.util.loadImage
 import com.teamnk.kimiljung.util.showDialogWithDoubleButton
 import com.teamnk.kimiljung.util.showShortSnackBar
-import com.teamnk.kimiljung.util.startActivityRemovingBackStack
 
 class MyPageFragment : BaseFragment<FragmentMypageBinding>(
     R.layout.fragment_mypage
 ) {
 
-    private val changePasswordActivityResultLauncher: ActivityResultLauncher<Intent> by lazy {
-        registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult(),
-        ) {
-            if (it.resultCode == RESULT_OK) {
-                if (it.data?.getBooleanExtra("isChangePasswordSuccess", false) == true) {
-                    showShortSnackBar(
-                        view = binding.root,
-                        getString(R.string.fragment_mypage_change_password_success),
-                    )
-                }
-            }
-        }
-    }
+    private lateinit var changePasswordActivityResultLauncher: ActivityResultLauncher<Intent>
+    private lateinit var changeUserInformationActivityResultLauncher: ActivityResultLauncher<Intent>
 
-    private val changeUserInformationActivityResultLauncher: ActivityResultLauncher<Intent> by lazy {
-        registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult(),
-        ) {
-            if (it.resultCode == RESULT_OK) {
-                //TODO 유저 정보 재호출 로직
-            }
-        }
-    }
+    private lateinit var mSelfInformationResponse: GetSelfInformationResponse
 
     private val viewModel by lazy {
         ViewModelProvider(
@@ -68,8 +52,26 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
     }
 
     private fun initActivityResultLaunchers() {
-        changePasswordActivityResultLauncher
-        changeUserInformationActivityResultLauncher
+        changePasswordActivityResultLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult(),
+        ) {
+            if (it.resultCode == RESULT_OK) {
+                if (it.data?.getBooleanExtra("isChangePasswordSuccess", false) == true) {
+                    showShortSnackBar(
+                        view = binding.root,
+                        getString(R.string.fragment_mypage_change_password_success),
+                    )
+                }
+            }
+        }
+
+        changeUserInformationActivityResultLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult(),
+        ) {
+            if (it.resultCode == RESULT_OK) {
+                //TODO 유저 정보 재호출 로직
+            }
+        }
     }
 
     private fun initPersonalInformationButtons() {
@@ -78,11 +80,19 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
 
     private fun initEditProfileButton() {
         binding.btnFragmentMypageEditProfile.setOnClickListener {
-            changeUserInformationActivityResultLauncher.launch(
-                Intent(
-                    requireActivity(), ChangeUserInformationActivity::class.java,
+            mSelfInformationResponse.run {
+                changeUserInformationActivityResultLauncher.launch(
+                    Intent(
+                        requireActivity(), ChangeUserInformationActivity::class.java,
+                    ).putExtra(
+                        PROFILE_URL, this@run.profileImageURL,
+                    ).putExtra(
+                        ID, this@run.accountId,
+                    ).putExtra(
+                        EMAIL, this@run.email,
+                    )
                 )
-            )
+            }
         }
     }
 
@@ -110,7 +120,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
             clear()
             apply()
         }
-        startActivityRemovingBackStack(
+        requireActivity().startActivityRemovingBackStack(
             requireActivity(),
             StartActivity::class.java,
         )
@@ -144,6 +154,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
         viewModel.selfInformation.observe(
             viewLifecycleOwner
         ) {
+            mSelfInformationResponse = it
             initSelfInformationView(it)
         }
 
@@ -159,7 +170,13 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
 
     private fun initSelfInformationView(selfInformationResponse: GetSelfInformationResponse) {
         with(binding) {
-            // TODO add image on imageFragmentMypageUserProfile
+            imageFragmentMypageUserProfile.loadImage(selfInformationResponse.profileImageURL.run {
+                if (this@run == "'a'") {
+                    "https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/319434847_5649133131801893_2185983307325290194_n.jpg?stp=c660.0.1080.1080a_dst-jpg&_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=B8dLqczU7rwAX8noE_k&_nc_ht=scontent-ssn1-1.xx&oh=00_AfCVpvDZANh7dczhT92uSDtoVnRh_Fop_1IWyrELWs-p2w&oe=63B5AC87"
+                } else {
+                    this@run
+                }
+            })
             tvFragmentMypageEmail.text = selfInformationResponse.email
             tvFragmentMypageId.text = selfInformationResponse.accountId
         }

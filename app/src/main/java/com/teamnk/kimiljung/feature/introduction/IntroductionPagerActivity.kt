@@ -11,10 +11,9 @@ import com.teamnk.kimiljung.BuildConfig
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityIntroductionPagerBinding
-import com.teamnk.kimiljung.feature.start.StartActivity
 import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_INTRODUCTION_PAGER_SHOWN
+import com.teamnk.kimiljung.util.defaultSharedPreferencesEditor
 import com.teamnk.kimiljung.util.showShortToast
-import com.teamnk.kimiljung.util.startActivityRemovingBackStack
 
 class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>(
     R.layout.activity_introduction_pager
@@ -55,7 +54,9 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
                 if (currentItem < 3) {
                     setCurrentItem(currentItem + 1, true)
                 } else {
-                    moveToStartActivity()
+                    defaultSharedPreferencesEditor.putBoolean(IS_INTRODUCTION_PAGER_SHOWN, true)
+                        .apply()
+                    finish()
                 }
             }
         }
@@ -72,15 +73,6 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
                 else -> {}
             }
         }
-    }
-
-    private fun moveToStartActivity() {
-        defaultSharedPreferencesEditor.putBoolean(IS_INTRODUCTION_PAGER_SHOWN, true).apply()
-        startActivityRemovingBackStack(
-            context = this,
-            to = StartActivity::class.java,
-        )
-        finish()
     }
 
     private fun requestPermission() {

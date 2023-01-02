@@ -3,6 +3,8 @@ package com.teamnk.kimiljung.api
 import com.google.gson.GsonBuilder
 import com.teamnk.kimiljung.BuildConfig
 import com.teamnk.kimiljung.api.ResponseCodes.UNAUTHORIZED
+import com.teamnk.kimiljung.util.SharedPreferencesKey.IS_LOGGED_IN
+import com.teamnk.kimiljung.util.defaultSharedPreferencesEditor
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
@@ -42,7 +44,7 @@ object ResponseInterceptor : Interceptor {
         return chain.proceed(chain.request()).also {
             when (it.code()) {
                 UNAUTHORIZED -> {
-                    renewToken()
+                    defaultSharedPreferencesEditor.putBoolean(IS_LOGGED_IN, false)
                 }
                 else -> {
                     // other processing logic

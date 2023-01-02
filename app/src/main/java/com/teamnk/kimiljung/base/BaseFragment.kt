@@ -19,7 +19,7 @@ abstract class BaseFragment<B : ViewDataBinding>(
     protected val defaultSharedPreferences: SharedPreferences by lazy {
         requireActivity().getSharedPreferences(
             SharedPreferencesName.DEFAULT,
-            AppCompatActivity.MODE_PRIVATE
+            AppCompatActivity.MODE_PRIVATE,
         )
     }
 
@@ -43,6 +43,12 @@ abstract class BaseFragment<B : ViewDataBinding>(
 
         binding.lifecycleOwner = this
         observeEvent()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+
+        binding.unbind()
     }
 
     abstract fun observeEvent()

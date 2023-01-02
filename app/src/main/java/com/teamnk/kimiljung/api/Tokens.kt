@@ -8,7 +8,6 @@ var accessToken: String? = null
 var refreshToken: String? = null
 
 
-
 // todo move alllll logic
 
 interface TokenAPI {
@@ -22,7 +21,7 @@ data class TokenResponse(
     @SerializedName("refresh_token") val refreshToken: String,
 )
 
-internal fun renewToken() {
+internal suspend fun renewToken() {
     tokenAPIProvider.renewToken().run {
         if (isSuccessful) {
             this.body().let {
