@@ -17,6 +17,10 @@ class PostCommentActivity : BaseActivity<ActivityPostCommentBinding>(
         arrayListOf()
     }
 
+    private val postId : Int by lazy {
+        intent.getIntExtra("id", 0)
+    }
+
     private val postCommentAdapter by lazy {
         PostCommentAdapter(
             postList = arrayListOf(),
@@ -38,6 +42,7 @@ class PostCommentActivity : BaseActivity<ActivityPostCommentBinding>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initSendButton()
+        viewModel.getCommentList(postId)
     }
 
     private fun initSendButton() {
@@ -46,7 +51,7 @@ class PostCommentActivity : BaseActivity<ActivityPostCommentBinding>(
                 etActivityPostCommentComment.text.toString().run {
                     if(this.isNotBlank()){
                         viewModel.postComment(
-                            postId = intent.getIntExtra("id", 0),
+                            postId = postId,
                             commentRequest = CommentRequest(etActivityPostCommentComment.text.toString())
                         )
                     }else{
@@ -82,7 +87,7 @@ class PostCommentActivity : BaseActivity<ActivityPostCommentBinding>(
             this,
         ){
             binding.etActivityPostCommentComment.text = null
-            viewModel.getCommentList()
+            viewModel.getCommentList(postId)
         }
 
         viewModel.snackBarMessage.observe(

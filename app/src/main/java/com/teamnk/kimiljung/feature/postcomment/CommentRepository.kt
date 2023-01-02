@@ -5,9 +5,12 @@ import com.teamnk.kimiljung.api.commentAPIProvider
 import retrofit2.Response
 
 class CommentRepository {
-    suspend fun getCommentList(): Response<CommentListResponse> =
+    suspend fun getCommentList(
+        postId : Int,
+    ): Response<CommentListResponse> =
         commentAPIProvider.getCommentList(
             access_token = accessToken!!,
+            postId = postId,
         )
 
     suspend fun postComment(
