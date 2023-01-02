@@ -1,7 +1,7 @@
 package com.teamnk.kimiljung.feature.postcomment
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.teamnk.kimiljung.R
@@ -79,6 +79,13 @@ class PostCommentActivity : BaseActivity<ActivityPostCommentBinding>(
                     add(0, tempList[0])
                     postCommentAdapter.notifyItemInserted(0)
                     binding.rvActivityPostCommentMain.scrollToPosition(0)
+                    setResult(
+                        RESULT_OK,
+                        Intent().putExtra(
+                            "comment_count",
+                            commentList.size,
+                        )
+                    )
                 }
             }
         }
