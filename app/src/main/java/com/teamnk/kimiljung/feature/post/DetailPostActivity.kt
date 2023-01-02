@@ -3,16 +3,19 @@ package com.teamnk.kimiljung.feature.post
 import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import com.teamnk.kimiljung.R
 import com.teamnk.kimiljung.base.BaseActivity
 import com.teamnk.kimiljung.databinding.ActivityDetailPostBinding
 import com.teamnk.kimiljung.feature.postcomment.PostCommentActivity
-import com.teamnk.kimiljung.util.StartActivityUtil.startActivity
 
 class DetailPostActivity : BaseActivity<ActivityDetailPostBinding>(
     R.layout.activity_detail_post,
 ) {
+
+    private lateinit var postCommentActivityResultLauncher: ActivityResultLauncher<Intent>
 
     private val stringBuilder by lazy {
         StringBuilder()
@@ -40,17 +43,10 @@ class DetailPostActivity : BaseActivity<ActivityDetailPostBinding>(
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setResult()
         initDetailPost()
         initPostCommentButton()
-    }
-
-    private fun initPostCommentButton() {
-        binding.tvActivityDetailPostPostComment.setOnClickListener {
-            this.startActivity(
-                Intent(this, PostCommentActivity::class.java)
-                    .putExtra("id", intent.getIntExtra("id", 0))
-            )
-        }
+        setCommentCount(intent.getIntExtra("comment_count", 0))
     }
 
     private fun initDetailPost() {
@@ -59,16 +55,39 @@ class DetailPostActivity : BaseActivity<ActivityDetailPostBinding>(
                 for (i in 0.until(5)) {
                     viewList[i].text = getStringExtra(intentKeyList[i])
                 }
-                tvActivityDetailPostComment.text =
-                    stringBuilder.append(getString(R.string.activity_detail_post_comment))
-                        .append(" ").append(getIntExtra("comment_count", 0))
-                        .append(getString(R.string.activity_detail_post_count))
                 viewActivityDetailPost.background = ActivityCompat.getDrawable(
                     this@DetailPostActivity,
                     getIntExtra("color", 0,)
                 )
             }
         }
+    }
+
+    private fun initPostCommentButton() {
+        binding.tvActivityDetailPostPostComment.setOnClickListener {
+            postCommentActivityResultLauncher.launch(Intent(this, PostCommentActivity::class.java)
+                .putExtra("id", intent.getIntExtra("id", 0)))
+        }
+    }
+
+    private fun setResult(){
+       postCommentActivityResultLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ){
+            if(it.resultCode == RESULT_OK){
+                setCommentCount(it.data?.getIntExtra("comment_count", 0) ?: 0)
+            }
+        }
+    }
+
+    private fun setCommentCount(
+        count : Int,
+    ){
+        stringBuilder.clear()
+        binding.tvActivityDetailPostComment.text =
+            stringBuilder.append(getString(R.string.activity_detail_post_comment))
+                .append(" ").append(count)
+                .append(getString(R.string.activity_detail_post_count))
     }
 
     override fun observeEvent() {}
