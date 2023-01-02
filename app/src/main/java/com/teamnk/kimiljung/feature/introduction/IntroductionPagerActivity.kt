@@ -19,28 +19,11 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
     R.layout.activity_introduction_pager
 ) {
 
-    private val permissionResult by lazy {
-        registerForActivityResult(
-            ActivityResultContracts.RequestPermission()
-        ) {
-            if (it.not()) {
-                showShortToast(getString(R.string.activity_introduction_pager_accept_permission))
-                startActivity(
-                    Intent(
-                        Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
-                        Uri.parse("package:" + BuildConfig.APPLICATION_ID)
-                    )
-                )
-            }
-        }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initViewPager()
         initNextButton()
         initTabLayout()
-        requestPermission()
     }
 
     private fun initViewPager() {
@@ -73,15 +56,6 @@ class IntroductionPagerActivity : BaseActivity<ActivityIntroductionPagerBinding>
                 else -> {}
             }
         }
-    }
-
-    private fun requestPermission() {
-        permissionResult.launch(Manifest.permission.ACCESS_FINE_LOCATION)
-        ActivityCompat.requestPermissions(
-            this,
-            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-            10,
-        )
     }
 
     override fun observeEvent() {}
