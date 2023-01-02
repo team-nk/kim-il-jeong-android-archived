@@ -27,14 +27,10 @@ class ChangePasswordViewModel(
                 )
             }.onSuccess {
                 if (it.isSuccessful) {
-                    _isPasswordChangeSuccess.postValue(
-                        true
-                    )
+                    _isPasswordChangeSuccess.postValue(true)
                     Log.d(tag, "changePassword success!")
                 } else {
-                    _isPasswordChangeSuccess.postValue(
-                        false
-                    )
+                    _isPasswordChangeSuccess.postValue(false)
                     Log.d(tag, "changePassword failure..")
                 }
             }
