@@ -2,8 +2,12 @@ package com.teamnk.kimiljung.feature.postcomment
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.app.ActivityCompat
@@ -15,12 +19,12 @@ import com.teamnk.kimiljung.databinding.ItemCommentBinding
 import com.teamnk.kimiljung.databinding.ItemPostBinding
 import com.teamnk.kimiljung.feature.post.DetailPostActivity
 import com.teamnk.kimiljung.feature.post.PostList
+import java.io.ByteArrayOutputStream
 
 class PostCommentAdapter(
     private val postList: ArrayList<PostList>,
     private val commentList: ArrayList<CommentList>,
     private val temp: Int,
-    private val context : Context,
 ) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -80,23 +84,28 @@ class PostCommentAdapter(
     ) {
         when (temp) {
             POST_LIST -> {
-                (holder as PostViewHolder).apply {
-                    bind(postList[position])
-                    binding.viewItemPostPostTag.background = postColor(postList[position].color)
-                    itemView.apply {
-                        setOnClickListener {
-                            context.startActivity(
-                                Intent(holder.itemView.context, DetailPostActivity::class.java)
-                                    .putExtra("id", postList[position].id)
-                                    .putExtra("title", postList[position].title)
-                                    .putExtra(
-                                        "schedule_content",
-                                        postList[position].schedule_content
-                                    )
-                                    .putExtra("account_id", postList[position].account_id)
-                                    .putExtra("address", postList[position].address)
-                                    .putExtra("create_time", postList[position].create_time)
-                                    .putExtra("comment_count", postList[position].comment_count)
+                (holder as PostViewHolder).run {
+                    postList[position].run {
+                        setViewItemPostTagColor(
+                            view = binding.viewItemPostPostTag,
+                            context = itemView.context,
+                            color = color,
+                        )
+                        bind(this)
+                        itemView.setOnClickListener {
+                            itemView.context.startActivity(
+                                Intent(
+                                    holder.itemView.context,
+                                    DetailPostActivity::class.java,
+                                )
+                                    .putExtra("id", id)
+                                    .putExtra("title", title)
+                                    .putExtra("schedule_content", schedule_content)
+                                    .putExtra("account_id", account_id)
+                                    .putExtra("address", address)
+                                    .putExtra("create_time", create_time)
+                                    .putExtra("comment_count", comment_count)
+
                             )
                         }
                     }
@@ -119,14 +128,22 @@ class PostCommentAdapter(
         }
     }
 
-    private fun postColor(
+    private fun setViewItemPostTagColor(
+        view : View,
+        context : Context,
         color : String,
-    ) : Drawable? =
-        when(color){
-            "RED" -> ActivityCompat.getDrawable(context, R.drawable.background_color_indicator_red_selector)
-            "BLUE" -> ActivityCompat.getDrawable(context, R.drawable.background_color_indicator_blue_selector)
-            "YELLOW" -> ActivityCompat.getDrawable(context, R.drawable.background_color_indicator_yellow_selector)
-            "GREEN" -> ActivityCompat.getDrawable(context, R.drawable.background_color_indicator_green_selector)
-            else -> ActivityCompat.getDrawable(context, R.drawable.background_color_indicator_purple_selector)
+    ){
+        view.background = ActivityCompat.getDrawable(context, getPostColor(color))
+    }
+
+    private fun getPostColor(
+        color: String,
+    ): Int =
+        when (color) {
+            "RED" -> R.drawable.background_color_indicator_red_selector
+            "BLUE" -> R.drawable.background_color_indicator_blue_selector
+            "YELLOW" -> R.drawable.background_color_indicator_yellow_selector
+            "GREEN" -> R.drawable.background_color_indicator_yellow_selector
+            else -> R.drawable.background_color_indicator_purple_selector
         }
 }
