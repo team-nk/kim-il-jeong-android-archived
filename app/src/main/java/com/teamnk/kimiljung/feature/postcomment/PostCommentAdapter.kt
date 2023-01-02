@@ -105,6 +105,7 @@ class PostCommentAdapter(
                                     .putExtra("address", address)
                                     .putExtra("create_time", create_time)
                                     .putExtra("comment_count", comment_count)
+                                    .putExtra("color", getPostColor(color))
 
                             )
                         }
