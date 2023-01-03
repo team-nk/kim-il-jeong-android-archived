@@ -44,11 +44,8 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
         super.onViewCreated(view, savedInstanceState)
 
         initActivityResultLaunchers()
-
         initPersonalInformationButtons()
         initInteractButtons()
-
-        viewModel.getSelfInformation()
     }
 
     private fun initActivityResultLaunchers() {
@@ -116,7 +113,7 @@ class MyPageFragment : BaseFragment<FragmentMypageBinding>(
     }
 
     private fun logOut() {
-        with(defaultSharedPreferencesEditor) {
+        defaultSharedPreferencesEditor.run {
             clear()
             apply()
         }

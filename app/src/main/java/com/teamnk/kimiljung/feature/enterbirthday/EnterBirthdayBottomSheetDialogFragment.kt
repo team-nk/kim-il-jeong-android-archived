@@ -56,22 +56,23 @@ class EnterBirthdayBottomSheetDialogFragment :
             // val birthday = TODO("get birthday")
             isBirthdaySelected = true
 
-            val today = GregorianCalendar()
+            GregorianCalendar().let { today ->
 
-            DatePickerDialog(
-                requireActivity(),
-                { _, selectedYear, selectedMonth, selectedDate ->
-                    "${selectedYear.toString().padStart(4, '0')}-${
-                        (selectedMonth + 1).toString().padStart(2, '0')
-                    }-${selectedDate.toString().padStart(2, '0')}".apply {
-                        viewModel.setBirthday(this)
-                        binding.btnDialogEnterBirthdaySelectBirthday.text = this
-                    }
-                },
-                today.get(Calendar.YEAR),
-                today.get(Calendar.MONTH),
-                today.get(Calendar.DATE),
-            ).show()
+                DatePickerDialog(
+                    requireActivity(),
+                    { _, selectedYear, selectedMonth, selectedDate ->
+                        "${selectedYear.toString().padStart(4, '0')}-${
+                            (selectedMonth + 1).toString().padStart(2, '0')
+                        }-${selectedDate.toString().padStart(2, '0')}".apply {
+                            viewModel.setBirthday(this)
+                            binding.btnDialogEnterBirthdaySelectBirthday.text = this
+                        }
+                    },
+                    today.get(Calendar.YEAR),
+                    today.get(Calendar.MONTH),
+                    today.get(Calendar.DATE),
+                ).show()
+            }
         }
     }
 
