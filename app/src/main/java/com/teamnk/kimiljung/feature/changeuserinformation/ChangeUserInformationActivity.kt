@@ -22,6 +22,7 @@ class ChangeUserInformationActivity : BaseActivity<ActivityChangeUserInformation
     private fun initView() {
         with(binding) {
             intent.run {
+                // TODO 이 친구들 API 호출로 변경하기
                 getStringExtra(
                     PROFILE_URL,
                 )?.let {

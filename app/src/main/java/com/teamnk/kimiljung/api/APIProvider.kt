@@ -1,6 +1,7 @@
 package com.teamnk.kimiljung.api
 
 import com.teamnk.kimiljung.feature.changepassword.ChangePasswordAPI
+import com.teamnk.kimiljung.feature.changeuserinformation.ChangeUserInformationAPI
 import com.teamnk.kimiljung.feature.enterbirthday.EnterBirthdayAPI
 import com.teamnk.kimiljung.feature.login.LoginAPI
 import com.teamnk.kimiljung.feature.mypage.MyPageAPI
@@ -28,14 +29,19 @@ val enterBirthdayAPIProvider: EnterBirthdayAPI by lazy {
     RetrofitClient.getRetrofit()!!.create(EnterBirthdayAPI::class.java)
 }
 
-val postAPIProvider : PostAPI by lazy {
+val postAPIProvider: PostAPI by lazy {
     RetrofitClient.getRetrofit()!!.create(PostAPI::class.java)
 }
 
-val commentAPIProvider : CommentAPI by lazy {
+val commentAPIProvider: CommentAPI by lazy {
     RetrofitClient.getRetrofit()!!.create(CommentAPI::class.java)
 }
 
 val tokenAPIProvider: TokenAPI by lazy {
     RetrofitClient.getRetrofit()!!.create(TokenAPI::class.java)
+}
+
+// TODO API를 이런 식으로 만들면 안되겠다는 것을 꺠달았다..
+val changeUserInformationAPIProvider: ChangeUserInformationAPI by lazy {
+    RetrofitClient.getRetrofit()!!.create(ChangeUserInformationAPI::class.java)
 }
