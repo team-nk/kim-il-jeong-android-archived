@@ -5,6 +5,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
+import retrofit2.http.Header
 import retrofit2.http.PUT
 
 var accessToken: String? = null
@@ -16,7 +17,9 @@ var refreshToken: String? = null
 interface TokenAPI {
 
     @PUT("/auth")
-    suspend fun renewToken(): Response<TokenResponse>
+    suspend fun renewToken(
+        @Header("Refresh-Token") refreshToken: String,
+    ): Response<TokenResponse>
 }
 
 data class TokenResponse(
@@ -26,11 +29,12 @@ data class TokenResponse(
 
 internal fun renewToken() {
     CoroutineScope(Dispatchers.IO).launch {
-        tokenAPIProvider.renewToken().run {
-            if (isSuccessful) {
-                this.body().let {
-                    accessToken = it?.accessToken
-                    refreshToken = it?.refreshToken
+        tokenAPIProvider.renewToken(refreshToken!!).also {
+            println("Renewing Tokens")
+            if (it.isSuccessful) {
+                it.body().run {
+                    accessToken = this?.accessToken
+                    refreshToken = this?.refreshToken
                 }
             }
         }
